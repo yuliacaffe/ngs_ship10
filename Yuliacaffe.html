@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ユリアカフェ♪</title>
+    <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のホームページです♪。">
+    <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ">
+	<link rel="icon" href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/33db48ba43bcf409215a12d6b5ffc6fa_4166dcca86226da1ffbc6cd66d9e27d8.png" type="image/png">
+	<script type="application/ld+json">
+	{
+		"publisher": {
+			"name": "ユリアカフェ♪"
+		}
+	}
+	</script>
+    <style>
+	/* *** 全体 *** */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+		
+		
+	/* *** ヘッダー *** */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+	/* *** フッター *** */
+        footer {
+            background-color: #8e735b;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+			font-family: cursive;
+			border-radius: 10px;
+			border: 4px solid #ddd;
+        }
+
+	/* *** 見出し *** */
+	    .team-subtitle {
+            text-align: center;
+            font-size: 1em;
+            color: #c49e6c;
+            margin-top: -10px;
+            font-family: cursive;
+        }
+		
+		.text-section {
+            flex: 1;
+			color: #696969;
+			padding: 20px;
+			font-family: cursive;
+        }
+		
+		h1 {
+			color: #c49e6c;
+			font-family: cursive;
+			text-align: center;
+		}
+
+		h2 {
+			color: #fff;
+			font-size: 20px;
+			padding: 10px;
+			font-family: cursive;
+			text-align: left;
+			border-bottom: 3px solid #ddd;
+			background-color: #8e735b;
+			border-radius: 100px;
+		}
+
+		h3 {
+			color: #8e735b;
+			font-size: 20px;
+			padding: 10px;
+			font-family: cursive;
+			text-align: left;
+			border-bottom: 3px solid #ddd;
+
+		}
+		
+		h5 {
+			color: #8e735b;
+			font-size: 20px;
+			padding: 10px;
+			font-family: cursive;
+			text-align: center;
+			border-bottom: 3px solid #ddd;
+		}
+		
+		
+	/* *** タブボタン *** */
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #e8dcd0;
+            padding: 10px;
+            border-bottom: 2px solid #c49e6c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-button {
+            background-color: #c49e6c;
+            border: 2px solid #fff;
+            width: 150px;
+            height: 60px;
+            border-radius: 30px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: cursive;
+        }
+
+        .tab-button:hover, .tab-button.active {
+            background-color: #8e735b;
+            transform: scale(1.05);
+        }
+
+
+	/* *** 表示領域 *** */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #c49e6c;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            animation: fade-in 1s forwards;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+		
+		
+	/* *** 補助系 *** */
+	    table {
+            width: 100%;
+            border-collapse: collapse;
+			font-family: cursive;
+        }
+		
+        td {
+            padding: 10px;
+			color: #8e735b;
+        }
+		
+        .link {
+            color: #8e735b;
+        }
+		
+        .link:hover {
+            color: #c49e6c;
+        }
+		
+		.link-ss:hover img{
+            transform: scale(1.05);
+			transition: transform 0.3s ease;
+        }
+		
+	/* *** ユリアフォト(SS) *** */
+		.members-container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin-top: 20px;
+        }
+		
+        .photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-photo {
+            width: 80%;
+            height: 300px;
+            object-fit: contain;
+        }
+
+        .photo-description {
+            padding: 20px;
+            text-align: center;
+        }
+
+
+	/* *** ユリアフォト(説明＆スライド) *** */
+        .thumbnails {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 60%;
+            overflow: hidden;
+        }
+
+        .thumbnail-wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 330px;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        .arrow {
+            cursor: pointer;
+            font-size: 2em;
+            user-select: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+
+	/* *** 役職者フォト(SS) *** */
+        .members-container-2 {
+		    width: 80%;
+			margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+			
+        }
+        .photo-box {
+            width: 30%;
+            text-align: center;
+			
+        }
+        .photo-box img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+			border-radius: 50%;
+			object-fit: cover;
+        }
+		
+		
+	/* *** メンバーグラフ *** */	
+		.members-container-3 {
+			width: 90%;
+			margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+		
+		.nav-tabs {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+		
+        .nav-tabs .nav-item {
+            margin-right: 10px;
+        }
+		
+        .nav-tabs .nav-link {
+            display: block;
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            cursor: pointer;
+        }
+		
+        .nav-tabs .nav-link.active {
+            background: #fff;
+            border-bottom: 1px solid #fff;
+        }
+		
+        .tab-content2 .tab-pane {
+            display: none;
+			width: 70%;
+			min-width: 300px;
+			min-height: 300px;
+        }
+		
+        .tab-content2 .tab-pane.active {
+            display: block;
+			min-width: 300px;
+			min-height: 300px;
+        }
+		
+		
+	/* *** ルール4&プロフィールタブ *** */	
+		.rule4-tabs,.profile-tabs {
+			display: flex;
+			border-bottom: 2px solid #ccc;
+		}
+		
+		.rule4-tab,.profile-tab {
+			padding: 10px 20px;
+			cursor: pointer;
+			border: 1px solid #ccc;
+			border-bottom: none;
+			background-color: #f9f9f9;
+			font-family: cursive;
+		}
+		
+		.rule4-tab:hover,.rule4-tab.active,.profile-tab:hover,.profile-tab.active {
+			background-color: #ddd;
+		}
+		
+		.rule4-tab-content,.profile-tab-content {
+			border: 1px solid #ccc;
+			padding: 20px;
+			display: none;
+			font-family: cursive;
+		}
+		
+		.rule4-tab-content.active,.profile-tab-content.active {
+			display: block;
+		}
+		
+	/* *** プロフィール *** */
+	    .profile-container,.home-container {
+			width: 90%;
+			margin: 0 auto;
+            justify-content: space-between;
+			display: flex;
+        }
+		
+        .profile-text,.home-text {
+            flex: 1;
+        }
+		
+        .profile-photo,.home-photo {
+            flex: 1;
+        }
+		
+	/* *** プロフィール(チームスペース) *** */
+        .teamspace-text {
+            flex: 1;
+        }
+		
+		.teamspace-text img {
+			cursor: pointer;
+            border: 2px solid #8e735b;
+            border-radius: 4px;
+        }
+		
+		.teamspace-text img:hover {
+            border-color: #888;
+			transform: scale(1.15);
+        }
+		
+        .teamspace-photo {
+            flex: 1;
+        }
+
+	/* *** プロフィール(メニューボード) *** */
+        .menu-board {
+		    border: 10px solid #8e735b;
+            background-color: #333;
+			font-family: 'HGS行書体', cursive;
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 80%;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 1.3em;
+            padding: 10px 0;
+            border-bottom: 1px dashed #aaa;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .menu-item .item-name {
+            text-align: left;
+            flex: 1;
+        }
+
+        .menu-item .item-price {
+            text-align: right;
+            flex: 1;
+        }
+		
+	/* *** コーヒー豆(背景) *** */
+        .bean {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background-color: #6f4e37;
+            border-radius: 50% / 60%;
+            transform-origin: center;
+            opacity: 0.8;
+        }
+
+        .bean::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 70%;
+            background-color: black;
+            transform: translate(-50%, -50%);
+            border-radius: 2px;
+        }
+
+        @keyframes fall {
+            from {
+                top: -30px;
+            }
+            to {
+                top: 100vh;
+            }
+        }
+		
+		#start {
+            background-color: #8e735b;
+			border-radius: 20px;
+			color: white;
+			font-family: cursive;
+        }
+
+        #stop {
+            background-color: #white;
+			border-radius: 20px;
+			color: black;
+			font-family: cursive;
+        }
+		
+		#start:hover, #stop:hover {
+            transform: scale(1.15);
+        }
+		
+	/* *** ホーム(カップ) *** */		
+		.home-photo-container,.home-photo-container2 {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .home-photo-item {
+            text-align: center;
+            margin: 10px;
+            transition: transform 0.3s;
+			font-family: cursive;
+        }
+
+        .home-photo-item:hover {
+            transform: scale(1.1);
+
+        }
+
+        .home-photo-item img {
+            width: 50%;
+            height: auto;
+        }
+		
+	/* *** スマホ用設定 *** */		
+		@media only screen and (max-width: 768px) {
+			/* *** コンテナの調整 *** */
+			.container {
+				padding: 10px;
+			}
+		
+			/* *** メンバーコンテナの調整 *** */
+			.members-container, .members-container-2, .members-container-3 {
+				flex-direction: column;
+				align-items: center;
+			}
+		
+			/* *** フォトボックスの調整 *** */
+			.photo-box {
+				width: 100%;
+			}
+		
+			/* *** テキストセクションの調整 *** */
+			.text-section, .profile-text, .home-text, .teamspace-text {
+				padding: 10px;
+			}
+
+			/* *** サムネイルの調整 *** */
+			.thumbnails {
+				width: 20%;
+				left: 0px;
+			}
+		
+			.thumbnail-wrapper {
+				width: 100%;
+			}
+		
+			/* *** プロフィールの調整 *** */
+			.profile-container, .home-container {
+				flex-direction: column;
+			}
+		
+			/* *** メニューアイテムの調整 *** */
+			.menu-item {
+				flex-direction: column;
+				text-align: center;
+			}
+		
+			.menu-item .item-name, .menu-item .item-price {
+				text-align: center;
+			}
+		
+			/* *** ホームフォトの調整 *** */
+			.home-photo-container, .home-photo-container2 {
+				flex-direction: column;
+				align-items: center;
+			}
+		
+			.home-photo-item img {
+				width: 30%;
+			}
+			
+			/* *** ルール4&プロフィールタブ *** */
+			.rule4-tabs, .profile-tabs {
+				overflow-x: auto;
+				white-space: nowrap;
+			}
+			
+			/* *** メンバーページ(グラフ) *** */			
+			.tab-pane {
+				min-width: 300px;
+				min-height: 300px;
+			}
+			
+			/* *** ユリアフォトの調整 *** */
+			.photo-container img {
+			width: 30%;
+			}
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+			<img id="random-image" src="" alt="ヘッダー画像">
+        </div>
+        <br><br>
+        <p class="team-subtitle" style="font-size: 20px; font-family: 'HGS行書体', cursive; background-color: white; border-radius: 4px;"><span style="font-family: cursive;">PSO2 NGS Ship10 </span>で活動する、チーム「ユリアカフェ♪」のホームページです♬。</p>
+        <br><br>
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('home', this)">Home</button>
+            <button class="tab-button" onclick="showTab('profile', this)">Team Profile</button>
+            <button class="tab-button" onclick="showTab('rules', this)">Team Rule</button>
+            <button class="tab-button" onclick="showTab('members', this)">Team Member</button>
+            <button class="tab-button" onclick="showTab('locus', this)">Locus</button>
+            <button class="tab-button" onclick="showTab('links', this)">Link</button>
+        </div>
+        <br><br>
+        <div id="content">
+		<!------------------ ホームページ ------------------>
+            <div id="home" class="tab-content">
+				<div class="home-container">
+					<div class="home-text">
+						<p class="text-section" style="width: 90%; margin-left: 20px;">≪Coffee Time!?≫
+						<br><button id="start">Order</button>
+						<button id="stop">Stop</button></p>
+						<br><p style="text-align: center; font-family: cursive; font-size: 30px; margin-top: -30px">❦Team Item❦</p>
+						<div class="home-photo-container">
+							<div class="home-photo-item">
+								<a href="https://twitter.com/yuliacaffe" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b7290f638a7f2260409cd459d6db5f38_049fca6f82fdf84102965cbfe9f98ebf.jpg" alt="ほーむ1"></a>
+								<br><small>Team X</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://www.youtube.com/@yuliacaffe" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/e87409d30e9d803ba754adf796902861_082171a9194050ce04dcf0a2c7d1a42d.jpg" alt="ほーむ2"></a>
+								<br><small>Team YouTube</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Item/TeamSpreadSheet.html" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ff020ad56bfc0d9fdd10d9b00a3c48d5_122aa2fe659fd0c529b66ea5abc34659.jpg" alt="ほーむ3"></a>
+								<br><small>Spread Sheet</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://yuliacaffe.amebaownd.com/posts/55021622" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/49a57bd36aeae52a99f79aa139785ea2_4a3e3242bdc751bee0f6113748e53bec.jpg" alt="ほーむ4"></a>
+								<br><small>Group Ship10</small>
+							</div>
+						</div>
+						<br>
+						<div class="home-photo-container2">
+							<div class="home-photo-item">
+								<a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Item/TeamRoulettePartyAllocation.html" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/6126e8ab7925006ccca4d8a17bfcf00a_b7a8dc345d3d9b4ecef48832b33b4b49.jpg" alt="ほーむ5"></a>
+								<br><small>Party Function</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://yuliacaffe.amebaownd.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/8ab4b76a9cee9740d2d44aa5ae6a5f23_40573c461559f05783cc2808137bf7df.jpg" alt="ほーむ6"></a>
+								<br><small>Team Old Hp</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://yuliacaffe.amebaownd.com/posts/19955288" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/295d20c877138d900860329e02109a53_2f790c696c32d1a1f7f307e730d042c9.jpg" alt="ほーむ7"></a>
+								<br><small>Team Test</small>
+							</div>
+							<div class="home-photo-item">
+								<a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Item/TeamChatBot.html" target="_blank" rel="noopener noreferrer"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/6ae470fda10032af118bc19b3758478b_f7f301665a1db867f29a8bea81391a9e.jpg" alt="ほーむ8"></a>
+								<br><small>Team ChatBot</small>
+							</div>
+						</div>
+						<br>
+						<details>
+							<summary class="team-subtitle" style="width: 50%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+							<p class="text-section" style="width: 90%; margin-left: 20px; margin-top: -10px;"><small>※Spread Sheet(チームの情報共有用スプレッドシート)、Group Ship10(<span style="color: green">10鯖育ちの会</span>について)、Party Function(リーダー&パーティー編成機能)、Team Test(チームの適性試験)、Team ChatBot(チームのチャトボット)
+							<br><br>❦一般者さん用のお問い合わせ、参画希望用の掲示板は <a href="https://yuriacaffe2.apage.jp/" target="_blank" rel="noopener noreferrer">こちら</a>❦
+							</small></p>
+						</details>
+						<br><p class="text-section" style="width: 90%; margin-left: 20px;">≪Yulia School!?≫
+						<br><small>クエストマッチング方法＆グループチャットの解説動画は <a href="https://youtu.be/AQVxhKJtocU" target="_blank" rel="noopener noreferrer">こちら</a> ♬
+						<br>(※ユリアスクール♪のXは <a href="https://x.com/yuliaschool" target="_blank" rel="noopener noreferrer">こちら</a> ♬、YouTubeは <a href="https://www.youtube.com/@yuliaschool" target="_blank" rel="noopener noreferrer">こちら</a> ♬)
+						<br><br>
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/1e71d32a5c0bbd6298308bc5f6e6fd7e_b373c6b0aa1bb175b9c61e8414e731d7.png" alt="ゆりあすくーる" width="70%"></small></p>
+					</div>
+					<br>
+					<div class="home-photo" style="text-align: center;">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/26f60aba638c90a110802a05fae00090_ae1370e89afec06192179dfc5a150bb5.png" alt="にゃるるん絵" width="90%" style="pointer-events: none;">
+						<br><br><p style="text-align:center"><small>❦支援絵： <a href="https://x.com/yatyoQ" target="_blank" rel="noopener noreferrer">にゃるるん</a>ご制作、ロゴ： <a href="https://x.com/SnowFoxBugger" target="_blank" rel="noopener noreferrer">ゆきちゃん</a> ご制作❦</small></p>
+						<br><br><img id="YukiRogo" alt="ゆきちゃんロゴ" width="90%" style="pointer-events: none;"></small></p>
+					</div>
+				</div>
+            </div>
+
+		<!------------------ プロフィールページ ------------------>
+            <div id="profile" class="tab-content">
+                <h1>Team Profile</h1>
+				<p class="team-subtitle">(チームのプロフィールです♬)</p>
+				<br><br>
+				<div class="profile-container">
+					<div class="profile-text">
+					    <div class="menu-board">
+							<div style="font-size: 30px;"><u>☕チームの概要</u></div>
+							<br><br>
+							<div class="menu-item">
+								<span class="item-name">【正式名称】</span>
+								<span class="item-price">ユリアカフェ♪</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【設立日】</span>
+								<span class="item-price">2013年3月30日</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【Ship】</span>
+								<span class="item-price">10</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【在籍】</span>
+								<span class="item-price">86名</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【営業時間】</span>
+								<span class="item-price">22:00～24:00</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【チームロビー】</span>
+								<span class="item-price">エアリオB-006<br>(※or 交流推奨-001)</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【取得🏆】</span>
+								<span class="item-price"><span style="color: silver">(銀)</span>2個　<span style="color: #cc6600">(銅)</span>9個</span>
+							</div>
+							<div class="menu-item">
+								<span class="item-name">【タスクRank】</span>
+								<span class="item-price">10位以内を継続中～</span>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="profile-photo" style="text-align: center;">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/37f1263702e0bfc148cb1977932db7ca_a97bbf29c5ec84459e362e5ed9a97b15.jpg" alt="ぷろふぃーる" width="80%" style="pointer-events: none;">
+						<br><br><p style="text-align:center"><small>❦支援絵 <a href="https://x.com/yatyoQ" target="_blank" rel="noopener noreferrer">にゃるるん</a> ご制作❦</small></p>
+					</div>
+				</div>
+				<br><br>
+				<h5>☕チームの理念</h5>
+				<p class="text-section" style="width: 90%; margin-left: 20px;">各周年におけるチームの理念と、目的&目標、設立秘話!?については、以下の通り定めています♬。</p>
+				<div class="profile-tabs">
+					<div class="profile-tab active" data-tab2="profile-tab1"><small><span style="color: red">❦</span>理念(1～10周年)<span style="color: red">❦</span></small></div>
+					<div class="profile-tab" data-tab2="profile-tab2"><small><span style="color: blue">❦</span>理念(11周年～)<span style="color: blue">❦</span></small></div>
+					<div class="profile-tab" data-tab2="profile-tab3"><small><span style="color: green">❦</span>目的&目標<span style="color: green">❦</span></small></div>
+					<div class="profile-tab" data-tab2="profile-tab4"><small><span style="color: purple">❦</span>設立秘話<span style="color: purple">❦</span></small></div>
+				</div>
+				<div id="profile-tab1" class="profile-tab-content active">
+					<small><span style="color: #c71585"><u>「繋がりを築いたメンバー同士が、また再会出来る場所♪。各々の楽しみ方の先にあるナチュラリズムな繋がりは、きっと素敵な癒し場所♪。」</u></span>
+					<br><br>
+					チームの設立から変わらぬ理念は、チーム名にもあるカフェテリア☕。
+					<br>その日ごとに変わる、自分の楽しみ方やプレイスタイルと言ったものを、何よりも優先とする価値観の基、
+					<br>ユリアカフェ♪、メンバー各々が持つオリジナルなメニューを、各メンバーが持つブレンド方法に合わせ、
+					<br>日々まったりと嗜んでいるチームです♪。</small>
+				</div>
+				<div id="profile-tab2" class="profile-tab-content">
+					<small><span style="color: #4169e1"><u>「NGSを通したSelf Evolutionを策略せよ～(*★ω☆*)♪。」</u></span>
+					<br><br>
+					カフェテリア☕をモチーフとした、各々のプレイスタイル、ライフスタイル最優先の理念はそのままに、
+					<br>組織化によるNGS攻略、100人体制までの規模拡大に伴う多種多様な価値観との触れ合い･･･etc✨。
+					<br><br>1人では行えない、見る事の出来ないその景色の先を見据えるのは･･･NGSを通したSelf Evolution(*☆ω★*)♬。
+					<br><br>日々の<span style="color: green">リフレッシュ</span>は元より、動画編集、画像編集、ロゴ制作、HP制作、デザインスキル、言語習得(ITスキル)、調整・開催・コミュニケーションスキル等、
+					<br>好きなNGSを通した自己進化(クリエイティブ活動)にて、メンバー1人1人のライフスタイルに、<span style="color: #c71585"><b><u>1点の彩</b></u></span>を添えられるコミュニティーの1つとなる事が、
+					<br>当チームの新たな理念(命題)となっています❦。</small>
+				</div>
+				<div id="profile-tab3" class="profile-tab-content">
+					<small><span style="color: #32cd32"><u>「ナウシズ最高のメンバー達と、ナウシズ最高の時間を楽しむ♪。」</u></span>
+					<br><br>
+					上記チームの目的は、ベースとなる理念と合わせ、PSO2(NGS)がどんなに変わろうとも決して変える事のない、チーム設立時からの不変となる考え方となっています。
+					<br>当目的を叶える上で指標となるマイルストーン(目標)は以下3つと定めており、
+					<br>　①：新実装クエスト系(緊急、トリガー等)のゴールデンタイム(22:00～24:00)固定可能率、100%!!♪。
+					<br>　②：アクティブ平均、30名前後。最大同接、40名!!♪。
+					<br>　③：チームタスクランキング10位以内の継続!!♪。
+					<br><br>
+					目標を目指すに辺り、行っていく施策を以下3つと定めています♬。
+					<br>　❶：増員(※全ての目標を達成する為。)
+					<br>　❷：定例祭の運用(※目標③を達成する為。定例祭については、<a href="https://yuliacaffe.amebaownd.com/posts/47296803" target="_blank" rel="noopener noreferrer">こちら</a>をご参照～。)
+					<br>　❸：情報共有、ヒアリング力、方針策定等の強化(※全ての目標を達成する為。)</small>
+				</div>
+				<div id="profile-tab4" class="profile-tab-content">
+					<small>今から遡る事、2013年3月30日のお話♪。「あと少しで、10レベルだ～♪。о(ж＞▽＜)ｙ ☆♪。」とあるシップ10の初心者推奨ロビーで、
+					その日発令された緊急クエスト「暴走龍の怨磋」に挑んでいた、1人のアークスさんがおりました♪。
+					装備も魔法もヒヨッコな状態で、他に仲間はおらず、入り口付近に転送されるや否や、プライドの高い龍達の逆鱗に触れ…。。
+					あっと言う間に、休憩地点へと強制送還させられているのでした。＿(　_´ω`)_ﾍﾟｼｮ。
+					<br><br>
+					「でも…あと…もうちょっと…。」
+					<br><br>
+					そう…。PSO2では、複数あるクラスの中から1つでも10レベルを超えるクラスを出現させれば、「チーム」という、新たな可能性を設立出来る様になるのです♪。
+					<s>こやつらを、一緒に根絶やしにしてくれる仲間が欲しい。。</s>フィールドや、ロビーでの日々の交流を通じた一期一会な出会いをより美しいものへとしたい♪。
+					この日。そんな<s>邪な</s>漠然とした理想を胸にチームの設立を夢見てグラール太陽系から、オラクルへとやって来ていた新米アークスさんは、
+					遠くから安全に攻撃できるからと選んだフォースが遂に10レベルとなったことから、念願であるチーム、<b><u>ユリアカフェ♪</b></u>を設立するに至るのです(*>ω<*)♪。</small>
+				</div>
+				<br>
+				<h5>☕チームスペース</h5>
+				<div class="profile-container">
+					<div class="teamspace-text">
+						<p class="text-section" style="width: 90%; margin-left: 20px;">チームスペースについては、以下の2拠点を保有しています♬。
+						<br>(※画像は、Clickで右側表示)
+						<br><br><small><span style="color: blue"><u>≪①サイバーパンク風≫</u></span>：656919 532758<br> (製作者：猫にゃん&クロトノさん)</small>
+						<br>
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/211e3db4755d7f5f0dd0aa6028adb26d_cfab67d8dd7a47678d4d529c14157c96.jpg" alt="ちーむすぺーす1-1" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/9e8d274b4a2e57e4c80e2ea960920ba3_2533fd077b29a44f892cc45453afb8d5.jpg" alt="ちーむすぺーす1-2" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/82cfd7cc70617dd6c1903f20e1410bf7_768bf6b3d9b29f8ed5924e6a555442ab.jpg" alt="ちーむすぺーす1-3" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/551b86fa30576a3cc445e05befe3129f_06e1abdee71d1f061ccac88e90e49186.jpg" alt="ちーむすぺーす1-4" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<br><br>
+						<small><span style="color: purple"><u>≪②古代遺跡風≫</u></span>：105022 552140<br> (製作者：ユリア)</small>
+						<br>
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a454763c18880c48ec91e2c5623622d7_3769ee1febe69a1c30cd54e6b711e8d4.jpg" alt="ちーむすぺーす2-1" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/db4525b5e9ede6bd9a2fb78c14efe718_bfff94bbf4117ff1b5133e5260eff25b.jpg" alt="ちーむすぺーす2-2" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/e14f968df0c9cb0a49fae192d7d96da3_63cb4736b8bf047aa6db89ec95f67210.jpg" alt="ちーむすぺーす2-3" width="20%" onclick="TeamSpacePhoto(this.src)">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b895aa0e094ebbe45337eb01fbe7a5c8_a1759dd85ec7fa7764051bfd4aa868fb.jpg" alt="ちーむすぺーす2-4" width="20%" onclick="TeamSpacePhoto(this.src)">
+						</p>
+					</div>
+					<br><br>
+					<div class="teamspace-photo" style="text-align: center;">
+						<img id="TeamSpacePhoto" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a454763c18880c48ec91e2c5623622d7_3769ee1febe69a1c30cd54e6b711e8d4.jpg" alt="ちーむすぺーすSS" width="90%" style="margin-top: 60px; border: 4px solid #8e735b; border-radius: 15px;">
+					</div>
+				</div>				
+            </div>
+			
+		<!------------------ ルールページ ------------------>
+            <div id="rules" class="tab-content">
+			    <h1>Team Rule</h1>
+				<p class="team-subtitle">(計8つのチームルールを纏めたページです♬)</p>
+				<br>
+				<h3>☕Rule1～3：基本ルール</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<table style="width: 90%; margin: 0 auto;">
+						<tr>
+							<td style="width: 10%;"><b>●　Rule1</b></td>
+							<td style="width: 10%;">・・・・・・・</td>
+							<td style="width: 80%;">NGSの利用規約(※<a href="https://pso2.jp/players/support/rules/" target="_blank" rel="noopener noreferrer">PC版</a>・<a href="https://pso2.jp/players/support/rules/ps4/" target="_blank" rel="noopener noreferrer">PS4版</a>・<a href="https://pso2.jp/players/support/rules/cloud/" target="_blank" rel="noopener noreferrer">クラウド版</a>)の違反者は、入団及び、在籍を拒否(※強制脱退 & 悪質な場合は<a href="https://pso2.jp/players/support/login/?ref=players%2Fsupport%2Finquiry%2F%3Fmode%3Dwickeduser&action=" target="_blank" rel="noopener noreferrer">悪質ユーザー報告</a>)の対応と致します。</td>
+						</tr>
+						<tr>
+							<td style="width: 10%;"><b>●　Rule2</b></td>
+							<td style="width: 10%;">・・・・・・・</td>
+							<td style="width: 80%;">拘束や束縛・ノルマの設定・強制は行わないで下さい。</td>
+						</tr>
+						<tr>
+							<td style="width: 10%;"><b>●　Rule3</b></td>
+							<td style="width: 10%;">・・・・・・・</td>
+							<td style="width: 80%;">お悩み・相談事項等は、役職者(マスター or マネージャー)まで♪。</td>
+						</tr>
+					</table>
+					<br><br>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：設立日】</small></p>
+				</details>
+				<br>
+				<h3>☕Rule4：チームへの加入・脱退について</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 40px;">当チームへの加入・脱退周りについては、以下の通り定めています♬。
+					<div style="width: 90%; margin-left: 40px;">
+						<div class="rule4-tabs">
+							<div class="rule4-tab active" data-tab="rule4-tab1"><small><span style="color: red">❦</span>加入ルート<span style="color: red">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab2"><small><span style="color: blue">❦</span>入団可否<span style="color: blue">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab3"><small><span style="color: green">❦</span>向いてる人<span style="color: green">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab4"><small><span style="color: orange">❦</span>向いてない人<span style="color: orange">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab5"><small><span style="color: purple">❦</span>フレンド<span style="color: purple">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab6"><small><span style="color: pink">❦</span>定員数<span style="color: pink">❦</span></small></div>
+							<div class="rule4-tab" data-tab="rule4-tab7"><small><span style="color: silver">❦</span>脱退<span style="color: silver">❦</span></small></div>
+						</div>
+						<div id="rule4-tab1" class="rule4-tab-content active">
+							<small>当チームへの加入方法については、以下3つのルートが用意されています。(※各ルートの割合は、「Team Member」ページのグラフを参照。)
+							<br><br><b>≪<span style="color: blue"><u>入団希望</u></span>≫</b><br><a href="https://yuriacaffe2.apage.jp/" target="_blank" rel="noopener noreferrer">こちら</a>のフリー掲示板、<a href="https://twitter.com/yuliacaffe" target="_blank" rel="noopener noreferrer">チームX</a>のDM、NGS内ユリア(※プレイヤーID：Nevilia)までGJ、wis等により、入団希望を行う事が可能です♬。
+							<br><br><b>≪<span style="color: green"><u>フレンド・ルート</u></span>≫</b><br>在籍メンバーさん経由での加入方法です。「入団希望ルート」よりも加入がし易く!?なっていますので、もしも在籍メンバーさんにフレンドが居られた場合、こちらのルートがお勧めです✨。
+							<br><br><b>≪<span style="color: #ee82ee"><u>ユリア・ルート</u></span>≫</b><br>当チームの雰囲気や、価値観等にマッチされていそうな方で、自己の秘めたる魅力(*☆ω★*)!?がまだ隠されていそうな未所属さんを対象に、
+							私の方からお誘いをさせて頂くルートです。設立時より当ルートが8割以上を締めており、今ではチーム内ブランドの1つ!?となっています♪。<s>(本当かよっ!!)</s></small>
+						</div>
+						<div id="rule4-tab2" class="rule4-tab-content">
+							<small>入団の前には、簡単なお話の場を設けており、入団可否となる観点としては、「お互いのフィーリング」この一言に尽きます。詳細として、
+							その人の根底にある価値観や言動、プレイスタイル、チームに求めている事、在籍メンバーとの相性の良さ等も観点としていますが、最も重視している点としては、
+							「この人がチームでやらかしてしまった失敗やトラブルは、その責任全てを喜んで私が引き受けよう♪。」と思えた方のみが入団可となっています✨。
+							<br><br>※アークスカードが非表示、もしくは記載の無い方の入団は拒否します><。
+							<br>※チームルールを満たしている場合でも、チームの和を乱すと判断した場合、強制脱退、及び入団を拒否する場合があります><。
+							<br>※脱退する事が前提の方(「色々なチームをみてから決めたい」、「Ship旅行中」、「戻るチームが決まっており、一時的な気分転換等」)、Ship10がメインでない方の入団は拒否します><。
+							<br>※<a href="https://yuliacaffe.amebaownd.com/posts/19955288" target="_blank" rel="noopener noreferrer">こちら</a>のチーム適性試験でAランク以上の方は･･･入団前のお話の場、優遇～(*☆ω★*)ｨｪｨ♬。</small>
+						</div>
+						<div id="rule4-tab3" class="rule4-tab-content">
+							<small>当チームに向いている人は、以下傾向となっています♬。<br><br>　●　時には1人の時間も大事にしつつ、1人では見る事の出来ない景色を楽しみたい方(※チームに「仲間」の距離感を求める方)<br>　●　多くの人達と楽しみたい方(※皆で盛り上がるのが好きな方)<br>　●　NGSの組織化による攻略を楽しみたい方(※固定、情報共有、金策方法の分析、クエスト攻略、今後のNGS予想等)<br>　●　SS撮影が好きな方(※良く撮影が行われます✨)</small>
+						</div>
+							<div id="rule4-tab4" class="rule4-tab-content">
+							<small>当チームに向いていない人は、以下傾向となっています><。<br><br>　●　常にチーム内活動をスタンスとする方(※チームに「家族」の距離感を求める方)<br>　●　チームマネージメント等で常に先導を望まれる方(※自己が思い描く理想のチーム像がある方)<br>　●　効率重視(※交流 < 効率)の方<br>　●　自らは動かず、批判や揚げ足取りのみを行う方(※クレーマー)<br>　●　与えられる事のみを望まれ、反発を行う方(※自己中心)</small>
+						</div>
+							<div id="rule4-tab5" class="rule4-tab-content">
+							<small>チーム内活動(※緊急クエスト、チームイベント等)へのフレンドさんのお誘いについては、<b><u>原則禁止</b></u>としています><。
+							これは、メンバー間の交流をより楽しめる場、チームの雰囲気をより感じられる場として、「メンバー1人1人が参加し易いもの♪」であるべき姿を理想としている為です。
+							･･･も!?。当規約により、イベントの開催が不可能、または、時間が掛る等の弊害が出た場合は、主催者の方針に委ねます♬。</small>
+						</div>
+						<div id="rule4-tab6" class="rule4-tab-content">
+							<small>定員は、100名。在籍100名未満となった際、増員を行います。</small>
+						</div>
+						<div id="rule4-tab7" class="rule4-tab-content">
+							<small>脱退については、相談の無い脱退を行った場合の再入団は拒否となっており、
+							<br><b><u>「繋がり(*>ω<*)♬」</b></u>、<b><u>「ご恩(義)(*ﾉωﾉ)❦」</b></u>、<b><u>「相互リスペクト( ु ›ω‹ ) ुﾊﾟﾀﾊﾟﾀ✨」</b></u>についてを最も大切にしているチームである事から、
+							<br>脱退の際には以下について、ご留意下さいませ～><。
+							<br><br>　●　メール、もしくは<span style="color: #4169e1"><u>在籍年数</u></span>によってはマスターまで一言&掲示板等にも一言 ⇒ 一番無難な方法かなと思われます。
+							<br>　●　在籍のままインしなくなり、整理等のタイミングをチームに委ねる ⇒ 実はチームとしては、一番負担のない方法となっています。
+							<br><span style="color: #c71585">　●　それ以外、特に「XX日に抜けます」という時限ある予約報告 ⇒ 実はチームとしては、最も行って欲しくない方法で、
+							<br>可能であればお控え下さい～><。</span></small>
+						</div>
+					</div></p>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
+				</details>
+				<br>
+				<h3>☕Rule5：チームでの緊急クエスト時の運用方法について</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 40px;">チームで赴く緊急クエストは、メンバーが気軽に意思表示でき、主催者の負担が最も少ない方法を理想と考えています。
+					集まった人数に応じては、チーム固定で赴く事を最優先(※NGSより参加人数に応じたHP補正が掛る為)とし、極力調整する必要の無い自動的な流れを定めておく事と致します♬。
+					<br><br>
+					基本的には、独自の手法を優先としますが、問題(※開始時間になっても出発出来ない。主催者がジャッジを行えず、参加者さんの間で譲り合いや提案等が出てしまう。
+					メンバーさんからの問い合わせの回答が手一杯で行えない等)が続出の場合、以下手法での実施をよろしくお願い致します✨。(※画像は、Clickで拡大表示。)
+					<br>
+					<a href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/d761cb5c6bec73c2c634d542a6638d90_b9acef99d386e46caef1664b78ba2410.png" target="_blank" rel="noopener noreferrer">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/d761cb5c6bec73c2c634d542a6638d90_b9acef99d386e46caef1664b78ba2410.png" alt="るーる5-1" width="40%">
+					</a>
+					<br><br>
+					※上記資料に記載の「パターン定義」は、以下表の通り。</p>
+					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
+						<tr>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">参加人数</th>
+							<th bgcolor="#c49e6c" style="width: 35%; color: white">難易度【普通】(※1)</th>
+							<th bgcolor="#c49e6c" style="width: 35%; color: white">難易度【高】(※2)</th>
+							<th bgcolor="#c49e6c" style="width: 20%; color: white">遅れての参加希望(※3)</th>
+						</tr>
+						<tr>
+							<td><small>1～3人</small></td>
+							<td><small>野良</small></td>
+							<td><small>野良</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>4人</small></td>
+							<td><small>野良</small></td>
+							<td><small>野良</small></td>
+							<td><small>🌞【普通】 ⛄【高】</small></td>
+						</tr>
+						<tr>
+							<td><small>5人</small></td>
+							<td><small>固定</small></td>
+							<td><small>野良(4) + 野良(1) ⇒ 主催者</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>6～7人</small></td>
+							<td><small>固定</small></td>
+							<td><small>固定</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>8人</small></td>
+							<td><small>固定</small></td>
+							<td><small>固定</small></td>
+							<td><small>⛄</small></td>
+						</tr>
+						<tr>
+							<td><small>9人</small></td>
+							<td><small>固定(8) + 野良(1) ⇒ 主催者</small></td>
+							<td><small>固定(8) + 野良(1) ⇒ 主催者</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>10～11人</small></td>
+							<td><small>固定(5:5, 6:5)</small></td>
+							<td><small>固定(8) + 野良(2,3) ⇒ 主催者&後挙手順</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>12～15人</small></td>
+							<td><small>固定(6:6, 7:6, 7:7, 8:7)</small></td>
+							<td><small>固定(6:6, 7:6, 7:7, 8:7)</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>16人</small></td>
+							<td><small>固定(8:8)</small></td>
+							<td><small>固定(8:8)</small></td>
+							<td><small>⛄</small></td>
+						</tr>
+						<tr>
+							<td><small>17人</small></td>
+							<td><small>固定(6:6:5)</small></td>
+							<td><small>固定(8:8) + 野良(1) ⇒ 主催者</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>18～23人</small></td>
+							<td><small>固定(6:6:6, 7:6:6, 7:7:6, 7:7:7, 8:7:7, 8:8:7)</small></td>
+							<td><small>固定(6:6:6, 7:6:6, 7:7:6, 7:7:7, 8:7:7, 8:8:7)</small></td>
+							<td><small>🌞</small></td>
+						</tr>
+						<tr>
+							<td><small>24人</small></td>
+							<td><small>固定(8:8:8)</small></td>
+							<td><small>固定(8:8:8)</small></td>
+							<td><small>⛄</small></td>
+						</tr>
+					</table>
+					<br>
+					<p class="text-section" style="width: 90%; margin-left: 40px;"><small>(※1)固定基準5人。クエスト失敗 or Aランク以下の可能性が低い。</small>
+					<br><small>(※2)固定基準6人。クエスト失敗 or Aランク以下の可能性が高い。</small>
+					<br><small>(※3)🌞⇒大歓迎♬。⛄⇒不可><(※再編成が必要となる為、主催者さんが既に埋まっている旨、返答)</small>
+					</p>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2017年11月中旬】(※最終更新：2022年10月中旬)</small></p>
+				</details>
+				<br>
+				<h3>☕Rule6：チームでの方針決定時の運用方法について</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 40px;">当チームの根底にある「各々のプレイスタイル最優先」という考え方には美しい響きがある反面、
+					とても危険な側面も併せ持っています。価値観が近しい者同士であればオアシスに、やや遠い者同士であれば無法地帯となりうるからです。その為、当チームでは「誰もが望む」方針を定めるのではなく、
+					「誰もが納得できる」プロセスを事前に確立しておく事で、チーム内の透明化は元より、トラブルの解決や方針策定のスムーズ化を目指していく事と致します♬。
+					<br><br>上記の方向性より、実際のプロセスとしては、
+					<br><small style="color: #c71585"><u>「①課題発生⇒②メンバーの意見を吸い上げ(※規模拡大に伴い、アンケート実施が多い)⇒③マネージャー会議⇒④マスターが最終的な決断及び、決断理由と共に周知✨」</u></small>
+					<br><br>の流れを取っており、具体的には、以下3つのパターンに分類が行われます。(※画像は、Clickで拡大表示。)
+					<br>
+					<a href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/c54c1d8679516988e1e67479efa81f8d_1378984f7ebab3bd338085dcb96f1d39.png" target="_blank" rel="noopener noreferrer">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/c54c1d8679516988e1e67479efa81f8d_1378984f7ebab3bd338085dcb96f1d39.png" alt="るーる6-1" width="40%">
+					</a>
+					<a href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/fec7ca2ffe16ee80007bf58ebab1db05_1b2d20b4f010e379dce5ef91caf7e702.png" target="_blank" rel="noopener noreferrer">
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/fec7ca2ffe16ee80007bf58ebab1db05_1b2d20b4f010e379dce5ef91caf7e702.png" alt="るーる6-2" width="40%">
+					</a>
+					<br><br>
+					また、上記の「◆パターン３(メンバー起因の相談)_③相談内容は妥当？」における判定基準は、
+					<br>以下表の通りと定めています♬。</p>
+					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
+						<tr>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">事象</th>
+							<th bgcolor="#c49e6c" style="width: 30%; color: white">詳細(具体例)</th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">ターゲット(※1)</th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">ジャッジ</th>
+							<th bgcolor="#c49e6c" style="width: 40%; color: white">判定理由</th>
+						</tr>
+						<tr>
+							<td rowspan="2"><small>批判・強制</small></td>
+							<td rowspan="2"><small>・装備(この武器・能力を使うべき)<br>・キャラクリ(この服・アクセサリーを付けるべき)<br>・戦闘方法(このクラスを使うべき、この立ち回りをすべき)</small></td>
+							<td><small>自分</small></td>
+							<td><small style="color: #4169e1">妥当</small></td>
+							<td><small>「チームルール２」に該当の為。</small></td>
+						</tr>
+						<tr>
+							<td><small>自分以外</small></td>
+							<td><small style="color: #c71585">不当(※2)</small></td>
+							<td><small>人により感じ方が異なり、まずはその確認(統計)が必要となる事(全メンバーへのヒアリング等)、また、最終的には、人間性(性格・個性)の改善要求となる事から、
+							ターゲットが自分でない場合、不当の判定と致します。</small></td>
+						</tr>
+						<tr>
+							<td rowspan="2"><small>妨害</small></td>
+							<td rowspan="2"><small>・イベント、クエスト募集の進行(仕切り(指示)、許可無くチーム外の人を呼ぶ)</small></td>
+							<td><small>自分(主催者)</small></td>
+							<td><small style="color: #4169e1">妥当</small></td>
+							<td><small>あくまでも進行等は、主催者に委ねましょう。経験則等により「こうした方が良い」等が見えた場合、チームチャットではなく、主催者へのwisがベスト♪。</small></td>
+						</tr>
+						<tr>
+							<td><small>自分以外(主催者以外)</small></td>
+							<td><small style="color: #c71585">不当(※2)</small></td>
+							<td><small>基本的には、主催者からの相談時のみ、妥当の判定と致します。</small></td>
+						</tr>
+						<tr>
+							<td rowspan="2"><small>迷惑</small></td>
+							<td rowspan="2"><small>・戦闘中放置<br>・ストーカー行為(多数のwis等)</small></td>
+							<td><small>自分</small></td>
+							<td><small style="color: #4169e1">妥当</small></td>
+							<td><small>「チームルール1」、「チームルール2」に該当の為。</small></td>
+						</tr>
+						<tr>
+							<td><small>自分以外</small></td>
+							<td><small style="color: #4169e1">妥当</small></td>
+							<td><small>事実確認を行います。</small></td>
+						</tr>
+						<tr>
+							<td rowspan="2"><small>その他、不快事項</small></td>
+							<td rowspan="2"><small>・無視<br>・暴言</small></td>
+							<td><small>自分</small></td>
+							<td><small style="color: #4169e1">妥当</small></td>
+							<td><small>「チームルール１」に該当の為。</small></td>
+						</tr>
+						<tr>
+							<td><small>自分以外</small></td>
+							<td><small style="color: #c71585">不当(※2)</small></td>
+							<td><small>人により感じ方が異なり、まずはその確認(統計)が必要となる事(全メンバーへのヒアリング等)、また、最終的には、人間性(性格・個性)の改善要求となる事から、
+							ターゲットが自分でない場合、不当の判定と致します。</small></td>
+						</tr>
+					</table>
+					<br>
+					<p class="text-section" style="width: 90%; margin-left: 40px;"><small>(※1)「自分」⇒「詳細」に記載の内容を直接受けた。「自分以外」⇒「詳細」に記載の内容を見た、聞いた。</small>
+					<br><small>(※2)多数の相談があった場合、妥当と判断する場合が有ります。</small>
+					</p>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2017年11月中旬】(※最終更新：2022年10月中旬)</small></p>
+				</details>
+				<br>
+				<h3>☕Rule7：チームでのチャット周りの留意点について</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 40px;">当チームでの「チームチャット」とは、<b><u>「メンバー皆が気軽に参加できるOpenな会話(状態)」</b></u>を理想と考えています。
+					<br>これは、次の2つを主な理由としており、
+					<br><br>　<small style="color: #c71585">【1】各々のスタイルを最優先とするチーム方針より、誰もが不快なく自由に楽しめる(発言できる)環境をPriorityとしている為～♪。</small>
+					<br>　<small style="color: #4169e1">【2】根底として「性善説」を採用しているチームである事から、具体的なNGな話題、挨拶の強制等を細かくルールで定める事はしない。(※性善説だからこそ、ルールを定めるという価値観もあります♬。)</small>
+					<br><br>当スタイルを実現の為、以下行為は、苦情(注意)対象となる恐れがあります><。
+					<br>参画となる方は、ご留意～の程よろしくね～✨。
+					<br><br>　<small>　●　ネガティブな内容や、装備・クラス・クエスト・運営への過渡な批判等。<span style="color: red">(※例外あり!?)<span></small>
+					<br>　<small>　●　会話に入れる人が限られる(苦手としている方がいる)話題を、淡々と話し続ける行為。</small>
+					<br><br>･･･も!?。これらを回避すべく&リアルの会話の中でも使用できる!?いくつかの㊙コミュニケーション技法を以下に纏めてみました♬。
+					<br>ご参考～❦。(※レベルは、私の独断と偏見となっております。ご了承～(*ﾉωﾉ)。)</p>
+					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
+						<tr>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">技法</th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white">レベル</th>
+							<th bgcolor="#c49e6c" style="width: 80%; color: white">詳細</th>
+						</tr>
+						<tr>
+							<td><small>オノマトペ</small></td>
+							<td><small><span style="color: orange">★</span>☆☆☆☆</small></td>
+							<td><small>あらゆる物事や状態を音にして表現する、平安時代にはすでに見られたと言う歴史ある技法。直近だと、「ぴえん」もこれにあたる模様。。
+							自分が感じた感情等を、ありのままに擬音化するだけでも、会話の熱量が1ランクUPする即効性の強い魔法の技法。
+							<s>因みに私は、「ムニムニ(〃ﾉωﾉ)♪。」と、「ﾌﾟﾆﾌﾟﾆ(*>ω<*)っ♪。」を愛用。←これ、テストに出ます。ムニムニ(〃ﾉωﾉ)♪。</s></small></td>
+						</tr>
+						<tr>
+							<td><small>ネームコーリング</small></td>
+							<td><small><span style="color: orange">★</span>☆☆☆☆</small></td>
+							<td><small>相手の名前(キャラ名)を呼ぶ事で、相手からの好感度が無意識の内にUPすると言う<s>魔術的(*☆ω★*)</s>心理学的な技法。
+							相手のキャラ名が長すぎる場合？・・・ニックネームを良い感じに付けて、名付け親になっちゃえ～♪。</small></td>
+						</tr>
+						<tr>
+							<td><small>ミラーリング</small></td>
+							<td><small><span style="color: green">★★</span>☆☆☆</small></td>
+							<td><small>相手の仕草や反応等、しつこくなり過ぎない程度で真似をする事。相手が良く使う顔文字やロビーアクション、シンボルアート等を真似てみる事で、
+							信頼感、距離感が飛躍的にUP♪。</small></td>
+						</tr>
+						<tr>
+							<td><small>Yes And</small></td>
+							<td><small><span style="color: blue">★★★</span>☆☆</small></td>
+							<td><small>相手が自分の考えや感じる事を話してきたときは、まずはYes And法。いきなりButで返せば、開戦の火ぶたが切って落とされる♪。
+							まずは肯定という事は、「相互リスペクト」にも繋がる所があり、例え相手の考えが誤っていたとしても、最終的にはそれを美しく伝える事が出来る強烈な技法。</small></td>
+						</tr>
+						<tr>
+							<td><small>ドア・イン・ザ・フェイス</small></td>
+							<td><small><span style="color: red">★★★★★</span></small></td>
+							<td><small>ギリギリ断られる提案を行い、次に実際お願いしたい事を提案する反報性の原理(相手から良いことをされたら、良いことを返したい♪。相手が譲歩したので、自分も譲歩しなければ♪。)
+							を用いた技法。<s>私は多分、カモになります。(*_ω_*)。</s></small></td>
+						</tr>
+						<tr>
+							<td><small>フット・イン・ザ・ドア</small></td>
+							<td><small><span style="color: red">★★★★★</span></small></td>
+							<td><small>100%やってくれる提案を行い、段々と実際お願いしたい事に近付ける一貫性の原理(一度Yesと言えば、Noという前提を覆す事は言えにくくなる><)を用いた技法。
+							<s>マイショップの値下げ交渉に。。(*☆ω★*)(以下イメージ尊守の為、割愛。。ぇ。)</s></small></td>
+						</tr>
+						<tr>
+							<td><small>バックトラッキング</small></td>
+							<td><small><span style="color: blue">★★★</span>☆☆</small></td>
+							<td><small>相手の感情や、お話し内容を同じ温度感で共感、要約した内容を返し、相手に寄り添い話を膨らませて行く技法。
+							「ミラーリング」と同じく、「相互リスペクト」にも繋がる所があり、例え自分の中の話題量が少なくても、相手の話題に寄り添っていく事で会話のキャッチボールのレスポンススピードを維持できるという、切り札的な技法。</s></small></td>
+						</tr>
+						<tr>
+							<td><small>ページング</small></td>
+							<td><small><span style="color: green">★★</span>☆☆☆</small></td>
+							<td><small>相手の波長に合わせる事で、信頼関係や距離感を縮める事を可能にする技法。初対面時、チャットの速さや、話題の切り替えの早さ、ミッション受注の間隔等、
+							きっと人それぞれ異なるそのスピードを、まずは把握する事から、スタート行ってみよ～う♪。(*>ω<*)♪。</small></td>
+						</tr>
+						<tr>
+							<td><small>オープンマインド</small></td>
+							<td><small><span style="color: purple">★★★★</span>☆</small></td>
+							<td><small>自分の考えや感じる事、弱み等を包み隠さず公開し、まずは相手との距離感、警戒心を中和。徐々に露(あら)わとなる異なる価値観を把握していく事で、
+							親密度UPはもとより、自分には無かった価値観や知見を広めていく事も可能な技法。初対面時、ミラーリング、ページングと組み合わせる事で、一気に相手にとってのインパクトNo1となる可能性を秘めているものの、
+							逆に引かれてしまうリスクも伴う。。
+							<br><br>「私、エキスパート条件をまだ持っていなくて挑戦中なのん><」、「能力付けがイマイチ分からないのん><」、<s>「マスターのお話は、いつも校長先生のお話しみたいで長いのん><。。(*_ω_*)ぇ。」</s>
+							まずは雑談の切口として、その後に話を膨らませて行く事にも長けている為、所々で織り交ぜていくのがベストな技法。(最後のは、マイルーム呼び出しで一方通行の雑談になってしまう危険性有りだけどね。。♪。)</small></td>
+						</tr>
+						<tr>
+							<td><small>プランニング</small></td>
+							<td><small><span style="color: purple">★★★★</span>☆</small></td>
+							<td><small>おおよそのお話ししたい内容、ゴール(オチ、結論)を事前に用意しておき、所々脱線があったとしても、最終的にはブレずに美しく纏め上げる技法。
+							いくつかのゴールを用意しておくと、臨機応変に切り替えが可能な為、より柔軟な対応が可能となる♪。
+							<br><br>
+							上述の<span style="color: red">(※例外あり!?)</span>として「あえてネガティブな発言や、武具批判、仕事・リアル・ドロップ率・<s>運営さんムニムニ(〃ﾉωﾉ)♪。</s>の愚痴等」を語るというのは、ここに結び付く。
+							所々で織り交ぜ相手の共感具合、反応等を見つつ、当初用意していたゴールへと徐々に軌道修正していければ、完全にその場をコントロール出来たと言えよ～う♪。
+							<br><br>
+							ただし、逆を言えば、ノープランニング下におけるネガティブ発言は、相手のトーンが一段階変わった時、雲行きが怪しく、お通や状態となってしまった際の自力収拾が不可能になる恐れがある為、
+							また、ほぼほぼ100%の信頼を周りから得ている事、ポジティブ要素を含んだゴールの用意が必須である事から、話術にまだ実績・自信の無い方は、ネガティブ内容は避ける方が無難であろ～う。(*_ω_*)♪。
+							<br><s>(※実績が無い為、ヤケド覚悟で突き進むんだー！！という勇猛型アークスさんは、それを糧としてブラッシュアップしていける方に限り、このチームでは最大限フォロー致します♪。(*☆ω★*)♪。)</s></small></td>
+						</tr>
+					</table>
+					<br>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
+				</details>
+				<br>
+				<h3>☕Rule8：チーム内での配信について</h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 40px;">配信を行う際には、チーム内外でのトラブル未然防止の観点より、以下3点のご留意をお願い致します♬。
+					<br><br>　①：配信時は、各リージョンの撮影推奨ロビー【<リージョン名> 撮影推奨 00<1 or 2>】を使用。
+					<br>　②：チームチャットでの指名(話の振られ)等を回避の為、フリー(フレンド)メッセージ欄に配信中である旨を明記。
+					<br>　　　<small style="color: #c71585"><u>【※クイックメニュー➤オンラインステータス変更(フレンドメッセージ変更)➤フリー(フレンド)メッセージ欄に記入】</u></small>
+					<br><br>　③：配信中のチームチャット、グループチャット、wis内容の漏洩防止の為、チャットの吹き出し＆ログは非表示設定。
+					<br>　　　<small style="color: #4169e1"><u>【※システム➤ストリーマーモード➤「使用する」に設定】</u></small>
+					<br>　　　<small style="color: #32cd32"><u>【※チャットの表示画面➤「7.システム」等、発言内容が表示されない様に設定】</u></small></p>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
+				</details>
+				<br><br>
+			</div>
+			
+		<!------------------ メンバーページ ------------------>
+            <div id="members" class="tab-content">
+			    <h1>Team Member</h1>
+				<p class="team-subtitle">(チームのメンバー詳細です♬)</p>
+				<br>
+				<div class="members-container">
+				    <div class="left-section" style="flex: 1;">
+						<div class="photo-container">
+							<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b499352c4c84a3cda61ad7f4ae615b59_57855fde10425ae3b6373c58bd067388.jpg" alt="ユリア1" class="main-photo" id="main-photo" style="pointer-events: none;">
+							<div class="photo-description" id="photo-description">
+								<h4 class="team-subtitle">プロフィール絵♪</h4>
+								<p><small>❦<a href="https://x.com/yatyoQ" target="_blank" rel="noopener noreferrer">にゃるるん</a> ご制作❦</small></p>
+							</div>
+							<div class="thumbnails">
+								<span class="arrow" style="left: 10px;" onclick="prevThumbnail()">&#9664;</span>
+								<div class="thumbnail-wrapper">
+									<div class="thumbnail-list" id="thumbnail-list">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b499352c4c84a3cda61ad7f4ae615b59_57855fde10425ae3b6373c58bd067388.jpg" alt="ユリア1" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b499352c4c84a3cda61ad7f4ae615b59_57855fde10425ae3b6373c58bd067388.jpg', 'プロフィール絵♪', '❦<a href=&quot;https://x.com/yatyoQ&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>にゃるるん</a> ご制作❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/156487cd9d1183c847bdbfde2a0130f1_4bbaf368f8e41cb20f3d1772e021acee.jpg" alt="ユリア2" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/156487cd9d1183c847bdbfde2a0130f1_4bbaf368f8e41cb20f3d1772e021acee.jpg', '【PSO2】正装Ver～♪', '❦旧の正装【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b89b75e0ac336a46e4eb3d1e296b8b85_75a4b5afc9b2bf0e6613734ffc29b10b.jpg" alt="ユリア3" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b89b75e0ac336a46e4eb3d1e296b8b85_75a4b5afc9b2bf0e6613734ffc29b10b.jpg', '【PSO2】水着Ver～♪', '❦旧の水着ファッション【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a320dfa5119e8cfc0f8668e81d987b3e_d6b113e73c53c6349ee467f9bb481428.jpg" alt="ユリア4" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a320dfa5119e8cfc0f8668e81d987b3e_d6b113e73c53c6349ee467f9bb481428.jpg', '【PSO2】冬服Ver～♪', '❦旧の冬服【お気に度：<span style=&quot;color: red;&quot;>★★★</span>☆☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/1807746101c8472f8f5fa9bcc8f00bd3_fad0001bcdca342ad41338ba0853e79d.jpg" alt="ユリア5" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/1807746101c8472f8f5fa9bcc8f00bd3_fad0001bcdca342ad41338ba0853e79d.jpg', '【NGS】正装Ver～♪', '❦正装【お気に度：<span style=&quot;color: red;&quot;>★★★★★★★</span>】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7341d3e782827676defdb363430cffd4_a2ba52a6b605f8d606ea34da93e671ab.jpg" alt="ユリア6" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7341d3e782827676defdb363430cffd4_a2ba52a6b605f8d606ea34da93e671ab.jpg', '【NGS】メイド服Ver～♪', '❦チームの正装!?【お気に度：<span style=&quot;color: red;&quot;>★★★★★</span>】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a22383dc9761f6ada35f96eb1bea5ddb_5f90db3ad37e45f279aaa628e25dadce.jpg" alt="ユリア7" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a22383dc9761f6ada35f96eb1bea5ddb_5f90db3ad37e45f279aaa628e25dadce.jpg', '【NGS】プライベートVer～♪', '❦普段着【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/2e0420a855b4e1d72b07b06cebd8bcc3_619d0f7f7516e58e00cc2956a74501f6.jpg" alt="ユリア8" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/2e0420a855b4e1d72b07b06cebd8bcc3_619d0f7f7516e58e00cc2956a74501f6.jpg', '【NGS】パリピVer～♪', '❦パリピコーデ【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg" alt="ユリア9" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg', '【NGS】水着Ver～♪', '❦水着ファッション【お気に度：<span style=&quot;color: red;&quot;>★★★</span>☆☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/21a7038191a87e41e2c67304236ae61a_45798ab57e9cf99595932776e90378da.jpg" alt="ユリア10" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/21a7038191a87e41e2c67304236ae61a_45798ab57e9cf99595932776e90378da.jpg', '【NGS】冬服Ver～♪', '❦冬服【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+										<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7ec139329140f92a4e6c89a27f03b212_3391502d4b10918ac5695a7dbfe39534.jpg" alt="ユリア11" class="thumbnail" onclick="changePhoto('https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7ec139329140f92a4e6c89a27f03b212_3391502d4b10918ac5695a7dbfe39534.jpg', '【NGS】プライベート2Ver～♪', '❦普段着2【お気に度：<span style=&quot;color: red;&quot;>★★★★</span>☆】❦')">
+									</div>
+								</div>
+								<span class="arrow" style="right: 10px;" onclick="nextThumbnail()">&#9654;</span>
+							</div>
+						</div>
+					</div>
+					<div class="text-section">
+						<h5 style="font-size: 25px; margin-top: 0px;">☕ユリア(Master)</h5>
+						<p>チーム創設者にして、現チームマスターのユリアです♪。
+						<br>PSO関連は、グラール太陽系(Pspo2(psp)→Pspo2i(psp))でのリトルウィング社員時代？？、もともと野良部屋や、
+						フレンドさん部屋のパーティーリーダーを楽しむスタイルだった事から、2013年3月1日。チームの設立を夢見て、オラクル船団(PSO2(PC,vita,ps4))へと旅立ち。
+						<br><br>
+						<b><u>2013年3月30日♪</u></b>
+						<br><br>
+						念願であるチーム「ユリアカフェ♪」を設立し、多くの出会いや別れ、美しい景色や<s>カオスな修羅場（*☆ω★*）！？</s>を<s>チラ</s>見しつつも、
+						計11個のチームトロフィーを置き土産に、現在、惑星ハルファ(NGS(ps4,ps5))にて活動中のアークスです♪。
+						<br><br>
+						※左記は、ビジュアル一覧となっており、基本この中のどれかしか姿変えません(〃ﾉωﾉ)。
+						<br><br>
+						どうぞよろしくねぇぇ～❦。</p>
+					</div>
+				</div>
+				<div class="members-container-2">
+					<div class="photo-box">
+						<h5>☕猫にゃん(Manager)</h5>
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/cdfcfa229c72e99b3ba32487aa12ff29_50c2f397dc9dae839d3407d337e43f49.jpg" alt="ねこにゃん">
+						<p  class="text-section"><u>❦入団日：2018年4月下旬❦</u><br>・ 2020年7月下旬マネージャー就任～♪。</p>
+					</div>
+					<div class="photo-box">
+						<h5>☕ニスリーフ(Manager)</h5>
+						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/a80070c205de1bc9e43ae07cfb519522_d7b1040223d739e60f034204a1a26850.jpg" alt="にふちゃん">
+						<p  class="text-section"><u>❦入団日：2017年11月上旬❦</u><br>・ 2021年5月下旬マネージャー就任～♪。</p>
+					</div>
+					<div class="photo-box">
+						<h5>☕Team Member List</h5>
+						<a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Item/TeamMemberList.html" class="link-ss" target="_blank" rel="noopener noreferrer">
+							<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png" alt="メンバー">
+						</a>
+						<p  class="text-section"><u>❦更新日：2024年7月下旬❦</u><br>・ 在籍メンバーさんの一覧表です♪。(※画像Click)</p>
+					</div>
+				</div>
+				<h5>☕Team Member Ratio</h5>
+				<div class="members-container-3">
+					<div style="width: 40%;" class="text-section">
+						<h4 class="team-subtitle">加入者の割合♪</h4>
+						<p><small>● 累計加入者数(在籍者数)：<span id="a1">398</span>名(<span id="a2">86</span>名)</small></p>
+						<p><small>● ユリア・ルート加入者数(在籍者数)：<span id="b1">218</span>名(<span id="b2">68</span>名)</small></p>
+						<p><small>● メンバー・ルート加入者数(在籍者数)：<span id="c1">28</span>名(<span id="c2">9</span>名)</small></p>
+						<p><small>● 入団希望加入者数(在籍者数)：<span id="d1">31</span>名(<span id="d2">9</span>名)</small></p>
+						<p><small>● 体験のみ加入者数：<span id="e">121</span>名</small></p>
+					</div>
+					<div style="width: 60%;">
+						<ul class="nav-tabs" id="myTab">
+							<li class="nav-item">
+								<span class="nav-link active" id="tab1-tab" data-target="#tab1"><small>累計</small></span>
+							</li>
+							<li class="nav-item">
+								<span class="nav-link" id="tab2-tab" data-target="#tab2"><small>在籍</small></span>
+							</li>
+						</ul>
+						<div class="tab-content2">
+							<div class="tab-pane active" id="tab1">
+								<canvas id="ruikkanyu1"></canvas>
+							</div>
+							<div class="tab-pane" id="tab2">
+								<canvas id="ruikkanyu2"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br><br>
+			</div>
+
+		<!------------------ 軌跡ページ ------------------>
+            <div id="locus" class="tab-content">
+				<h1>Locus</h1>
+				<p class="team-subtitle">(チームの軌跡を纏めたページです♬)</p>	
+				<br>
+				<h2>☕1～10周年</h2>
+				<table>
+					<tr>
+						<td style="width: 40%;">　　●　チーム1～3周年の軌跡♪(旧ブログ)</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://ameblo.jp/nevilia/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+						<td style="width: 20%;">　</td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム4周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム４周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム４周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム5周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム５周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム５周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム6周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム６周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム６周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム7周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム７周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム７周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム8周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム８周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム８周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム9周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム９周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム９周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム10周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム１０周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2013-2023/チーム１０周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム10周年記念の特設ページ♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/42387176" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+						<td style="width: 20%;">　</td>
+					</tr>
+				</table>
+				<br><br><br>
+				<h2>☕11～20周年</h2>				
+				<table>
+					<tr>
+						<td style="width: 40%;">　　●　チーム11周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2023-2033/チーム１１周年の軌跡（前編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://pso2ngs-ship10-yuliacaffe.on.drv.tw/Team_Locus_2023-2033/チーム１１周年の軌跡（後編）.html" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　チーム12周年の軌跡♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/52587941" class="link" target="_blank" rel="noopener noreferrer">☕Link(前編)</a></td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/55498771" class="link" target="_blank" rel="noopener noreferrer">☕Link(後編)</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+				<h2>☕チーム動画</h2>				
+				<table>
+					<tr>
+						<td style="width: 40%;">　　●　Yuliacaffe♪'s movie ♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/18397766" class="link" target="_blank" rel="noopener noreferrer">☕Link(PSO2)</a></td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/18397826" class="link" target="_blank" rel="noopener noreferrer">☕Link(NGS)</a></td>
+					</tr>
+					<tr>
+						<td style="width: 40%;">　　●　Yulia's movie ♪</td>
+						<td style="width: 20%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/18398246" class="link" target="_blank" rel="noopener noreferrer">☕Link(PSO2)</a></td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/posts/18398769" class="link" target="_blank" rel="noopener noreferrer">☕Link(NGS)</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+			</div>
+			
+		<!------------------ リンクページ ------------------>
+            <div id="links" class="tab-content">
+				<h1>Link</h1>
+				<p class="team-subtitle">(リンクを纏めたページです♬)</p>
+				<br>
+				<h2>☕チーム関連</h2>
+				<table>
+					<tr>
+						<td style="width: 50%;">　　●　旧チームホームページ♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://yuliacaffe.amebaownd.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　旧チームブログ(チーム１～３周年の軌跡)♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://ameblo.jp/nevilia/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+				<h2>☕交流チームさん</h2>
+				<table>
+					<tr>
+						<td style="width: 50%;">　　●　めぐりあい宇宙さん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://rico714.wixsite.com/meguriai" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　アストラル・クラウンさん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://astralcrownpso2.blog.fc2.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　NostalG' Arkさん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://nostalgark.wixsite.com/nga-pso2ngs" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　Alspritさん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://alsprit.wixsite.com/yourowncolor0221" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+				<h2>☕フレンドさん</h2>
+				<table>
+					<tr>
+						<td style="width: 50%;">　　●　BLUEさん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="https://blue0204.amebaownd.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　ルナさん♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://angelsyuryounonikki.blog.fc2.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　クフィーユさん♪(元マネージャー)</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://ameblo.jp/mikann5594/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　リンフィールドさん♪(元マネージャー)</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://blog.livedoor.jp/lynnfield_raredrop/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　リコさん♪(めぐりあい宇宙さんのマスター)</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://rico714.blog.fc2.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+					<tr>
+						<td style="width: 50%;">　　●　みむさん♪(めぐり合い宇宙さんのマネージャー)</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://nonbiriepso2.blog.fc2.com/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+				<h2>☕公式関連</h2>
+				<table>
+					<tr>
+						<td style="width: 50%;">　　●　PSO2 NGS公式サイト♪</td>
+						<td style="width: 30%;">・・・・・・・</td>
+						<td style="width: 20%;"><a href="http://pso2.jp/" class="link" target="_blank" rel="noopener noreferrer">☕Link</a></td>
+					</tr>
+				</table>
+				<br><br><br>
+			</div>
+        </div>
+        <br><br>
+        <footer>
+            <p>&copy; <span id="current-year"></span> ユリアカフェ♪. All rights reserved.</p>
+        </footer>
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script>
+        // ページが読み込まれた際の初期表示
+        document.addEventListener('DOMContentLoaded', () => {
+            showTab('home', document.querySelector('.tab-button'));
+        });
+
+        // 年を算出して表示
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+		
+		// タブボタン押下時
+        function showTab(tabId, element) {
+            // 表示領域の初期化
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+
+            // ボタンの初期化
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+
+            // Clickされたボタンに応じた表示領域へのコンテンツ表示
+            const selectedContent = document.getElementById(tabId);
+            selectedContent.style.display = 'block';
+            selectedContent.classList.add('active');
+
+            // Clickされたボタンのクラス追記(※thisは押されたボタン要素を意味)
+            element.classList.add('active');
+        }
+
+		// ユリアフォトのスライド表示
+		document.addEventListener('DOMContentLoaded', function() {
+			const thumbnailList = document.getElementById('thumbnail-list');
+			const thumbnails = Array.from(thumbnailList.children);
+			const totalThumbnails = thumbnails.length;
+			const thumbnailWidth = 110;
+			let currentSlide = 0;
+	
+			thumbnailList.style.width = `${thumbnailWidth * totalThumbnails}px`;
+	
+			function updateSlidePosition() {
+				const maxSlide = totalThumbnails - 1;
+				currentSlide = Math.max(0, Math.min(currentSlide, maxSlide));// 念の為の保障
+				thumbnailList.style.transform = `translateX(-${currentSlide * thumbnailWidth}px)`;// スタート座標をズラす
+			}
+	
+			window.prevThumbnail = function() {
+				currentSlide = (currentSlide > 0) ? currentSlide - 1 : totalThumbnails - 1;// マイナスオーバーしたら最後のSS番号設定
+				updateSlidePosition();
+			};
+	
+			window.nextThumbnail = function() {
+				currentSlide = (currentSlide < totalThumbnails - 1) ? currentSlide + 1 : 0;// オーバーしたら最初のSS番号設定
+				updateSlidePosition();
+			};
+	
+			window.changePhoto = function(photoUrl, title, description) {
+				document.getElementById('main-photo').src = photoUrl;
+				document.getElementById('photo-description').innerHTML = `<h4 class="team-subtitle">${title}</h4><p><small>${description}</small></p>`;
+			};
+		});
+
+        // データを取得
+        var a1 = parseInt(document.getElementById("a1").textContent);
+        var a2 = parseInt(document.getElementById("a2").textContent);
+        var b1 = parseInt(document.getElementById("b1").textContent);
+        var b2 = parseInt(document.getElementById("b2").textContent);
+        var c1 = parseInt(document.getElementById("c1").textContent);
+        var c2 = parseInt(document.getElementById("c2").textContent);
+        var d1 = parseInt(document.getElementById("d1").textContent);
+        var d2 = parseInt(document.getElementById("d2").textContent);
+        var e = parseInt(document.getElementById("e").textContent);
+
+        // 累計加入者の割合のグラフ
+        var ctx1 = document.getElementById("ruikkanyu1").getContext('2d');
+        var ruikkanyu1 = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ["ユリア・ルート", "メンバー・ルート", "入団希望", "体験のみ"],
+                datasets: [{
+                    backgroundColor: ["#8e735b", "#d2691e", "#d2b48c", "#fffacd"],
+                    data: [b1, c1, d1, e],
+                    borderColor: "#000000"
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: '◆累計加入者の割合'
+                }
+            }
+        });
+
+        // 在籍者の割合のグラフ
+        var ctx2 = document.getElementById("ruikkanyu2").getContext('2d');
+        var ruikkanyu2 = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ["ユリア・ルート", "メンバー・ルート", "入団希望"],
+                datasets: [{
+                    backgroundColor: ["#8e735b", "#d2691e", "#fffacd"],
+                    data: [b2, c2, d2],
+                    borderColor: "#000000"
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: '◆在籍者の割合'
+                }
+            }
+        });
+
+        // タブ切り替え(メンバーページのグラフ)
+        document.querySelectorAll('.nav-link').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-pane').forEach(function(pane) {
+                    pane.classList.remove('active');
+                });
+                tab.classList.add('active');
+                document.querySelector(tab.getAttribute('data-target')).classList.add('active');
+            });
+        });
+		
+		// タブ切り替え(ルール4)
+		document.querySelectorAll('.rule4-tab').forEach(tab => {
+			tab.addEventListener('click', () => {
+				document.querySelectorAll('.rule4-tab').forEach(item => item.classList.remove('active'));
+				document.querySelectorAll('.rule4-tab-content').forEach(content => content.classList.remove('active'));
+	
+				tab.classList.add('active');
+				document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+			});
+		});
+		
+		// タブ切り替え(プロフィール)
+		document.querySelectorAll('.profile-tab').forEach(tab => {
+			tab.addEventListener('click', () => {
+				document.querySelectorAll('.profile-tab').forEach(item => item.classList.remove('active'));
+				document.querySelectorAll('.profile-tab-content').forEach(content => content.classList.remove('active'));
+	
+				tab.classList.add('active');
+				document.getElementById(tab.getAttribute('data-tab2')).classList.add('active');
+			});
+		});
+		
+		// チームスペースSS表示
+		function TeamSpacePhoto(src) {
+            document.getElementById('TeamSpacePhoto').src = src;
+        }
+		
+		// ヘッダーランダム表示
+		document.addEventListener("DOMContentLoaded", function() {
+        var images = ["https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/75625cf36d7efd63f1e490110cdb3924_f0327827518f9b104d4cb1bf3b191fd3.png", "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/18231cfc6cd708c8ac239d0a57e2dc30_9a6655bc8063a6226bdab57b374b7362.png"];
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+        document.getElementById("random-image").src = randomImage;
+		});
+		
+		// コーヒー豆背景
+		let animationInterval;
+		let beans = [];
+		const maxBeans = 15;
+		
+		function createBean() {
+			if (beans.length >= maxBeans) return;
+			
+			var bean = document.createElement("div");
+			bean.className = "bean";
+			var container = document.querySelector(".home-text");
+			
+			bean.style.left = Math.random() * 100 + "vw";
+			bean.style.top = Math.random() * -30 + "vh";
+			
+			var angle = Math.random() * 360;
+			bean.style.transform = `rotate(${angle}deg)`;
+			
+			bean.style.animation = `fall ${Math.random() * 5 + 5}s linear`;
+			
+			container.appendChild(bean);
+			beans.push(bean);
+			
+			// 画面外に出たら削除
+			bean.addEventListener('animationend', () => {
+				bean.remove();
+				beans = beans.filter(b => b !== bean);
+			});
+		}
+		
+		function startAnimation() {
+			if (!animationInterval) {
+				animationInterval = setInterval(createBean, 100);
+			}
+		}
+		
+		function stopAnimation() {
+			clearInterval(animationInterval);
+			animationInterval = null;
+		
+			beans.forEach(bean => {
+				bean.remove();
+			});
+			beans = [];
+		}
+		
+		document.getElementById("start").addEventListener("click", startAnimation);
+		document.getElementById("stop").addEventListener("click", stopAnimation);
+		
+		
+		// ロゴ
+		const encodedPart = "aHR0cHM6Ly9jZG4uYW1lYmFvd25kbWUuY29tL21hZHJpZC1wcmQvbWFkcmlkLXdlYi9pbWFnZXMvc2l0ZXMv";
+		const encodedPart2 = "MTI3NjEyLzBjOTQ3MmJlMDE5Y2NiNzMyYmUxNzQyZGU3YjVmOTA1XzAxM2VhNmViYWFlZGM3MTMxZWU1YTY4ODhlOTc4OTYwLnBuZw==";
+
+		const decodedURL = atob(encodedPart) + atob(encodedPart2);
+		document.getElementById("YukiRogo").src = decodedURL;
+    </script>
+</body>
+</html>
