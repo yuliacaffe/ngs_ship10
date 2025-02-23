@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>	
+  <meta charset="utf-8">
+  <title>ルーレット＆パーティー振り分け</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+	  background-color: #000;
+	  color: #fff;
+	  padding-left: 20px;
+    }
+    .mode-container {
+      margin-bottom: 20px;
+    }
+    .mode-button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    table {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<h1>リーダールーレット&パーティー自動振り分け♬</h1>
+<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7ec139329140f92a4e6c89a27f03b212_3391502d4b10918ac5695a7dbfe39534.jpg" width="50%" alt="トップSS">
+<br><br>
+<h2><u>◆使用方法♪</u></h2>
+<p><small>◇１．「ルーレットモード」 or 「パーティー振り分けモード」を選択。（※デフォルトは「ルーレットモード」）</small></p>
+<p><small><mark style="background-color:#c71585;color:inherit;">◇２．ルーレットモード（※パーティーリーダーの選定用♬）<mark></small></p>
+<p><small>　　①：全ての参加者の▢に「✔」を入れる。（※1人以上、16人以下。）</small></p>
+<p><small>　　②：ルーレット開始♪ボタンを押下⇒STOPボタンを押下♪。（ルーレット開始♪ボタンを押すと、ルーレットが再開します。）</small></p>
+<br>
+<p><small><mark style="background-color:#4169e1;color:inherit;">◇３．パーティー振り分けモード（※パーティー編成用♬）<mark></small></p>
+<p><small>　　①：全ての参加者のステータスを「〇」に変更。（※1人以上、16人以下。）</small></p>
+<p><small>　　②：実行ボタンを押下♪。（実行ごとに出力結果が変わります。）</small></p>
+<br><br>
+<div class="mode-container">
+  <button class="mode-button" onclick="showMode('roulette')">★ルーレットモード</button>
+  <button class="mode-button" onclick="showMode('party')">☆パーティー振り分けモード</button>
+</div>
+<br><br>
+<!-- ルーレットモード -->
+<div id="roulette" class="content active">
+  <h3>ルーレットモード</h3>
+  <form name="S0">
+	<table id="target-table-1" border="4">
+		<tbody>
+			<tr bgcolor="#8b0000" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table id="target-table-2" border="4">
+		<tbody>
+			<tr bgcolor="#00008b" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table id="target-table-3" border="4">
+		<tbody>
+			<tr bgcolor="#006400" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table id="target-table-4" border="4">
+		<tbody>
+			<tr bgcolor="#d2691e" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table id="target-table-5" border="4">
+		<tbody>
+			<tr bgcolor="#4b0082" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table id="target-table-6" border="4">
+		<tbody>
+			<tr bgcolor="#c71585" style="font-size:0.83em;">
+	<th>お名前</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+			</tr>
+			<tr style="font-size:0.83em;">
+				<td><b>参加有無</b></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+	<td><input type="checkbox" name="memg" value=""></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<input type="button" value="ルーレット開始♪" id="rstar" onclick="clickBtn()"/>
+	<input type="reset" name="riset1" value="選択リセット♪">
+	<br></br>
+	<br></br>
+	<form name="SR1">
+	<table id="target-table" border="4">
+		<tbody>
+			<tr bgcolor="#d3d3d3" font color="#ffffff" style="font-size:0.83em;">
+				<th width="200"><span style="color:#000000;">当選者A</span></th>
+				<th width="200"><span style="color:#000000;">当選者B</span></th>
+				<th width="200"><span style="color:#000000;">当選者C</span></th>
+				<th width="200"><span style="color:#000000;">当選者D</span></th>
+			</tr>
+			<tr style="font-size:1.5em;">
+				<td height="80"><div class="lule"><div id="lule0">????</div></td>
+				<td height="80"><div class="lule"><div id="lule1">????</div></td>
+				<td height="80"><div class="lule"><div id="lule2">????</div></td>
+				<td height="80"><div class="lule"><div id="lule3">????</div></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<table border="0">
+		<tbody>
+			<th width="200"><input type="button" value="STOP" id="stop0" style="width:100px;height:50px"></div></th>
+			<th width="200"><input type="button" value="STOP" id="stop1" style="width:100px;height:50px"></div></th>
+			<th width="200"><input type="button" value="STOP" id="stop2" style="width:100px;height:50px"></div></th>
+			<th width="200"><input type="button" value="STOP" id="stop3" style="width:100px;height:50px"></div></th>
+			</tr>
+		</tbody>
+	</table>
+</form>	
+</div>
+<br><br>
+
+<!-- パーティー振り分けモード -->
+<div id="party" class="content">
+  <h3>パーティー振り分けモード</h3>
+<form name="S1">
+<table id="target-table2-1" border="4">
+<tbody>
+<tr bgcolor="#cc0000" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<form name="S2"> 
+<table id="target-table2-2" border="4">
+<tbody>
+<tr bgcolor="#0000bf" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<form name="S3"> 
+<table id="target-table2-3" border="4">
+<tbody>
+<tr bgcolor="#006a2f" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<form name="S4"> 
+<table id="target-table2-4" border="4">
+<tbody>
+<tr bgcolor="#d3a900" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<form name="S5"> 
+<table id="target-table2-5" border="4">
+<tbody>
+<tr bgcolor="#8f20ff" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+<form name="S6"> 
+<table id="target-table2-6" border="4">
+<tbody>
+<tr bgcolor="#ff1493" style="font-size:0.83em;">
+<th>お名前</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr style="font-size:0.83em;">
+<td><b>参加：「〇」<br>
+不参加：「－」&nbsp; &nbsp;</b></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+<td><select name="mg"><option value="N">－</option><option value="">〇</option> </select></td>
+</tr>
+</tbody>
+</table>
+</form>
+<br>
+<input onclick="text()" type="BUTTON" value="実行">
+<input type="button" value="選択リセット♪" onclick="resetSelect()">
+<br><br><br><br>
+<form name="Ot">
+<table border="4">
+<tbody>
+<tr>
+<th>グループ</th>
+<th>パーティー<br>
+リーダー</th>
+<th>メンバーA</th>
+<th>メンバーB</th>
+<th>メンバーC</th>
+</tr>
+<tr>
+<th>1</th>
+<th><input name="t1" size="12"></th>
+<th><input name="t2" size="12"></th>
+<th><input name="t3" size="12"></th>
+<th><input name="t4" size="12"></th>
+</tr>
+<tr>
+<th>2</th>
+<th><input name="t5" size="12"></th>
+<th><input name="t6" size="12"></th>
+<th><input name="t7" size="12"></th>
+<th><input name="t8" size="12"></th>
+</tr>
+<tr>
+<th>3</th>
+<th><input name="t9" size="12"></th>
+<th><input name="t10" size="12"></th>
+<th><input name="t11" size="12"></th>
+<th><input name="t12" size="12"></th>
+</tr>
+<th>4</th>
+<th><input name="t13" size="12"></th>
+<th><input name="t14" size="12"></th>
+<th><input name="t15" size="12"></th>
+<th><input name="t16" size="12"></th>
+</tr></tbody></table></form>
+</div>
+<br><br>
+
+<script>
+    async function fetchTableData() {
+      try {
+        // Google Driveで公開したHTMLファイルのURLを指定
+        const fileUrl = 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html';
+        
+        // 公開されたHTMLファイルのURLをフェッチして、その中のテーブル要素を取得
+        const response = await fetch(fileUrl);
+        const text = await response.text();
+
+        // HTMLをDOMとして解析
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+
+        // 取得したHTMLの中からテーブルを探す
+        const table = doc.querySelector('table');
+        const rows = table.querySelectorAll('tr');
+
+        // 最初の<td>要素を配列に格納
+        const firstTdArray = [];
+        rows.forEach(row => {
+          const firstTd = row.querySelector('td');
+          if (firstTd) {
+            firstTdArray.push(firstTd.textContent);
+          }
+        });
+	
+		// データを6個のテーブルにセット
+		const setTableData = (tablePrefix, dataArray) => {
+			let thIndex = 0;
+			let valueIndex = 0;
+			let valueIndex2 = 0;
+		
+			for (let i = 1; i <= 6; i++) {
+				const table = document.querySelector(`#${tablePrefix}-${i}`);
+				if (!table) continue;
+		
+				const ths = table.querySelectorAll('th');
+				const checkboxes = table.querySelectorAll('input[type="checkbox"]');
+				const selects = table.querySelectorAll('select[name="mg"]');
+		
+				ths.forEach((th, idx) => {
+					if (idx > 0 && thIndex < dataArray.length) {
+						th.textContent = dataArray[thIndex++];
+					}
+				});
+		
+				checkboxes.forEach((checkbox) => {
+					if (valueIndex < dataArray.length) {
+						checkbox.value = dataArray[valueIndex++];
+					}
+				});
+		
+				selects.forEach((select) => {
+				if (valueIndex2 < dataArray.length) {
+					const value = dataArray[valueIndex2++];
+				
+					// textContentが"〇"のoptionを選択してvalueを変更
+					const option = Array.from(select.options).find(option => option.textContent === "〇");
+					if (option) {
+					option.value = value;  // "〇"のvalueをdataArrayの値に変更
+					}
+				}
+				});
+			}
+		};
+		
+		setTableData('target-table', firstTdArray);
+		setTableData('target-table2', firstTdArray);
+
+		
+
+		
+	} catch (error) {
+	}
+}
+
+window.onload = fetchTableData;
+
+
+
+// モード切り替え関数
+function showMode(mode) {
+  const contents = document.querySelectorAll('.content');
+  contents.forEach(content => {
+    content.classList.remove('active');
+  });
+  document.getElementById(mode).classList.add('active');
+}
+
+// ルーレットスクリプト
+function clickBtn() {
+  let i = 0, j = 0, k = 0;
+  const time = 1;
+  let timers = [];
+  let rez = [];
+  const memg0 = document.S0.memg; // チェックボックス取得
+
+  // チェックされたメンバーを配列に格納
+  for (let a = 0; a < memg0.length; a++) {
+    if (memg0[a].checked) {
+      rez.push(memg0[a].value);
+    }
+  }
+
+  if (rez.length <= 0) {
+    alert('メンバーが1人も選択されておりません。1人以上を選択くだちぃぃぃ♪。');
+    return;
+  }
+
+  // ストップボタン
+  document.getElementById('stop0').onclick = () => stoplule(0);
+  document.getElementById('stop1').onclick = () => stoplule(1);
+  document.getElementById('stop2').onclick = () => stoplule(2);
+  document.getElementById('stop3').onclick = () => stoplule(3);
+
+  // ルーレット開始ボタン
+  document.getElementById('rstar').onclick = () => {
+    stoplule(0);
+    stoplule(1);
+    stoplule(2);
+    stoplule(3);
+    startlule();
+  };
+
+  startlule();
+
+  // ルーレット開始
+  function startlule() {
+    let rez = [];
+    const memg = document.S0.memg;
+
+    // チェックされたメンバーを再度取得
+    for (let a = 0; a < memg.length; a++) {
+      if (memg[a].checked) {
+        rez.push(memg[a].value);
+      }
+    }
+
+    if (rez.length === 0) {
+      alert('メンバーが1人も選択されておりません。1人以上を選択くだちぃぃぃ♪。');
+      resetLule();
+      return;
+    }
+
+    if (rez.length <= 4) {
+      document.getElementById('lule' + 1).textContent = '????';
+      document.getElementById('lule' + 2).textContent = '????';
+      document.getElementById('lule' + 3).textContent = '????';
+      runlule(0);
+    } else if (rez.length >= 4 && rez.length <= 8) {
+      document.getElementById('lule' + 2).textContent = '????';
+	  document.getElementById('lule' + 3).textContent = '????';
+      runlule(0);
+      runlule(1);
+    } else if (rez.length >= 9 && rez.length <= 12) {
+	  document.getElementById('lule' + 3).textContent = '????';
+      runlule(0);
+      runlule(1);
+      runlule(2);
+	} else if (rez.length >= 13 && rez.length <= 16) {
+      runlule(0);
+      runlule(1);
+      runlule(2);
+      runlule(3);
+    } else {
+      alert('17人以上が選択されています。16人以下で選択してくだちぃぃぃ♪。');
+      resetLule();
+    }
+  }
+
+  function runlule(num) {
+    const rez = getCheckedValues();
+    const luleValue = document.getElementById('lule' + num);
+
+    if (i < rez.length) {
+      luleValue.textContent = rez[i];
+      i++;
+    } else {
+      luleValue.textContent = rez[0];
+      i = 0;
+    }
+
+    timers[num] = setTimeout(() => runlule(num), time);
+  }
+
+  function stoplule(num) {
+    clearTimeout(timers[num]);
+  }
+
+  function getCheckedValues() {
+    const memg = document.S0.memg;
+    let rez = [];
+    for (let a = 0; a < memg.length; a++) {
+      if (memg[a].checked) {
+        rez.push(memg[a].value);
+      }
+    }
+    return rez;
+  }
+
+  function resetLule() {
+    document.getElementById('lule' + 0).textContent = '????';
+    document.getElementById('lule' + 1).textContent = '????';
+    document.getElementById('lule' + 2).textContent = '????';
+    document.getElementById('lule' + 3).textContent = '????';
+  }
+}
+
+// パーティー振り分けスクリプト
+function text() {
+  let ay1 = [];
+  const mgs1 = document.S1.mg;
+  syori(mgs1);
+
+  const mgs2 = document.S2.mg;
+  syori(mgs2);
+
+  const mgs3 = document.S3.mg;
+  syori(mgs3);
+
+  const mgs4 = document.S4.mg;
+  syori(mgs4);
+
+  const mgs5 = document.S5.mg;
+  syori(mgs5);
+
+  const mgs6 = document.S6.mg;
+  syori(mgs6);
+
+  function syori(TT) {
+    for (let a = 0; a < TT.length; a++) {
+      ay1.push(TT[a].value);
+    }
+  }
+
+  let S = 0;
+  for (let i = 0; i < ay1.length; i++) {
+    if (ay1[i] !== "N") {
+      S++;
+    }
+  }
+
+  let ay2 = new Array(S);
+  let T = 0;
+  for (let i = 0; i < ay1.length; i++) {
+    if (ay1[i] !== "N") {
+      ay2[T] = ay1[i];
+      T++;
+    }
+  }
+
+  // シャッフル
+  for (let i = 0; i < ay2.length; i++) {
+    const U = Math.floor(Math.random() * ay2.length);
+    [ay2[i], ay2[U]] = [ay2[U], ay2[i]];
+  }
+
+  let ay3 = new Array(16).fill(' ');
+  for (let i = 0; i < ay2.length; i++) {
+    ay3[i] = ay2[i];
+  }
+
+  // パーティー振り分け
+switch (true) {
+    case ay2.length === 0:
+        alert('1人も「〇」が選択されていません。1人以上を選択してくだちぃ～♪。');
+        return;
+    case ay2.length === 5:
+        [ay3[5], ay3[3]] = [ay3[3], ay3[5]];
+        break;
+    case ay2.length === 6:
+        [ay3[6], ay3[3]] = [ay3[3], ay3[6]];
+        break;
+    case ay2.length === 9:
+        [ay3[9], ay3[3]] = [ay3[3], ay3[9]];
+        [ay3[10], ay3[7]] = [ay3[7], ay3[10]];
+        break;
+    case ay2.length === 10:
+        [ay3[10], ay3[7]] = [ay3[7], ay3[10]];
+        break;
+    case ay2.length === 13:
+        [ay3[13], ay3[7]] = [ay3[7], ay3[13]];
+        [ay3[14], ay3[11]] = [ay3[11], ay3[14]];
+        break;
+    case ay2.length === 14:
+        [ay3[14], ay3[11]] = [ay3[11], ay3[14]];
+        break;
+    case ay2.length > 16:
+        alert('17人以上に「〇」が選択されています。16人以下で設定してくだちぃ～♪。');
+        return;
+}
+
+  // 結果表示
+  for (let i = 0; i < 16; i++) {
+    document.Ot['t' + (i + 1)].value = ay3[i];
+  }
+  alert('パーティー振り分け完了♪。');
+}
+
+  function resetSelect() {
+    // "mg"というname属性を持つすべてのselect要素を取得
+    const selectElements = document.querySelectorAll('select[name="mg"]');
+    
+    // すべてのselect要素のselectedIndexを0にして選択解除
+    selectElements.forEach(selectElement => {
+      selectElement.selectedIndex = 0;  // 最初の選択肢（「－」）を選択
+    });
+	
+	// フォームのすべてのinputフィールドをリセット
+    const form = document.forms['Ot'];
+    form.reset();
+    }
+  
+</script>
+
+</body>
+</html>
