@@ -1300,7 +1300,7 @@
 				<div class="members-container-3">
 					<div style="width: 40%;" class="text-section">
 						<h4 class="team-subtitle">加入者の割合♪</h4>
-						<p><small>● 累計加入者数(在籍者数)：<span id="join-rui-kanyu">?</span>名(<span id="join-rui-zaiseki">?</span>名)</small></p>
+						<p><small>● 累計加入者数(在籍者数)：<span id="join-rui-kanyu">?</span>名(<span id="join-rui-zaiseki2">?</span>名)</small></p>
 						<p><small>● ユリア・ルート加入者数(在籍者数)：<span id="join-yulia-kanyu">?</span>名(<span id="join-yulia-zaiseki">?</span>名)</small></p>
 						<p><small>● メンバー・ルート加入者数(在籍者数)：<span id="join-mem-kanyu">?</span>名(<span id="join-mem-zaiseki">?</span>名)</small></p>
 						<p><small>● 入団希望加入者数(在籍者数)：<span id="join-hope-kanyu">?</span>名(<span id="join-hope-zaiseki">?</span>名)</small></p>
@@ -1553,6 +1553,7 @@
 				// 取得した加入者数をHTML側に表示
 				document.querySelector('#join-rui-kanyu').textContent = join_values[0];
 				document.querySelector('#join-rui-zaiseki').textContent = join_values[1];
+				document.querySelector('#join-rui-zaiseki2').textContent = join_values[1];
 				document.querySelector('#join-yulia-kanyu').textContent = join_values[2];
 				document.querySelector('#join-yulia-zaiseki').textContent = join_values[3];
 				document.querySelector('#join-mem-kanyu').textContent = join_values[4];
@@ -1622,7 +1623,7 @@
 
         // データを取得
         var a1 = parseInt(document.getElementById("join-rui-kanyu").textContent);
-        var a2 = parseInt(document.getElementById("join-rui-zaiseki").textContent);
+        var a2 = parseInt(document.getElementById("join-rui-zaiseki2").textContent);
         var b1 = parseInt(document.getElementById("join-yulia-kanyu").textContent);
         var b2 = parseInt(document.getElementById("join-yulia-zaiseki").textContent);
         var c1 = parseInt(document.getElementById("join-mem-kanyu").textContent);
