@@ -1561,6 +1561,47 @@
 				document.querySelector('#join-hope-kanyu').textContent = join_values[6];
 				document.querySelector('#join-hope-zaiseki').textContent = join_values[7];
 				document.querySelector('#join-taiken-kanyu').textContent = join_values[8];
+		
+				// 累計加入者の割合のグラフ
+				var ctx1 = document.getElementById("ruikkanyu1").getContext('2d');
+				var ruikkanyu1 = new Chart(ctx1, {
+					type: 'pie',
+					data: {
+						labels: ["ユリア・ルート", "メンバー・ルート", "入団希望", "体験のみ"],
+						datasets: [{
+							backgroundColor: ["#8e735b", "#d2691e", "#d2b48c", "#fffacd"],
+							data: [join_values[2], join_values[4], join_values[6], join_values[8]],
+							borderColor: "#000000"
+						}]
+					},
+					options: {
+						title: {
+							display: true,
+							text: '◆累計加入者の割合'
+						}
+					}
+				});
+		
+				// 在籍者の割合のグラフ
+				var ctx2 = document.getElementById("ruikkanyu2").getContext('2d');
+				var ruikkanyu2 = new Chart(ctx2, {
+					type: 'pie',
+					data: {
+						labels: ["ユリア・ルート", "メンバー・ルート", "入団希望"],
+						datasets: [{
+							backgroundColor: ["#8e735b", "#d2691e", "#fffacd"],
+							data: [join_values[3], join_values[5], join_values[7]],
+							borderColor: "#000000"
+						}]
+					},
+					options: {
+						title: {
+							display: true,
+							text: '◆在籍者の割合'
+						}
+					}
+				});
+
 				} catch (error) {
 				}
 			})();
@@ -1621,56 +1662,6 @@
 			};
 		});
 
-        // データを取得
-        var a1 = parseInt(document.getElementById("join-rui-kanyu").textContent);
-        var a2 = parseInt(document.getElementById("join-rui-zaiseki2").textContent);
-        var b1 = parseInt(document.getElementById("join-yulia-kanyu").textContent);
-        var b2 = parseInt(document.getElementById("join-yulia-zaiseki").textContent);
-        var c1 = parseInt(document.getElementById("join-mem-kanyu").textContent);
-        var c2 = parseInt(document.getElementById("join-mem-zaiseki").textContent);
-        var d1 = parseInt(document.getElementById("join-hope-kanyu").textContent);
-        var d2 = parseInt(document.getElementById("join-hope-zaiseki").textContent);
-        var e = parseInt(document.getElementById("join-taiken-kanyu").textContent);
-
-        // 累計加入者の割合のグラフ
-        var ctx1 = document.getElementById("ruikkanyu1").getContext('2d');
-        var ruikkanyu1 = new Chart(ctx1, {
-            type: 'pie',
-            data: {
-                labels: ["ユリア・ルート", "メンバー・ルート", "入団希望", "体験のみ"],
-                datasets: [{
-                    backgroundColor: ["#8e735b", "#d2691e", "#d2b48c", "#fffacd"],
-                    data: [b1, c1, d1, e],
-                    borderColor: "#000000"
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '◆累計加入者の割合'
-                }
-            }
-        });
-
-        // 在籍者の割合のグラフ
-        var ctx2 = document.getElementById("ruikkanyu2").getContext('2d');
-        var ruikkanyu2 = new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                labels: ["ユリア・ルート", "メンバー・ルート", "入団希望"],
-                datasets: [{
-                    backgroundColor: ["#8e735b", "#d2691e", "#fffacd"],
-                    data: [b2, c2, d2],
-                    borderColor: "#000000"
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '◆在籍者の割合'
-                }
-            }
-        });
 
         // タブ切り替え(メンバーページのグラフ)
         document.querySelectorAll('.nav-link').forEach(function(tab) {
