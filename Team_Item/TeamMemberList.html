@@ -333,7 +333,7 @@ tr:nth-child(even) {
     <tr>
       <td>ゆき</td>
       <td>2023年12月下旬</td>
-      <td>チ組</td>
+      <td>チ(コ)組</td>
       <td>3.0</td>
       <td>0.3518</td>
       <td>－</td>
@@ -749,7 +749,7 @@ tr:nth-child(even) {
     <tr>
       <td>ツチノコウ</td>
       <td>2025年7月下旬</td>
-      <td>チ組</td>
+      <td>チ(ズ)組</td>
       <td>0.0</td>
       <td>0.0000</td>
       <td>体験中♬</td>
@@ -781,7 +781,7 @@ tr:nth-child(even) {
     <tr>
       <td>しろにゃん</td>
       <td>2025年8月中旬</td>
-      <td>チ組</td>
+      <td>チ(ズ)組</td>
       <td>0.0</td>
       <td>0.0000</td>
       <td>体験中♬</td>
@@ -803,8 +803,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- グラフ描画用関数 ---
     function drawKumiChart() {
-        const labels = ["コ組", "メ組", "サ(ダ)組", "サ(ミ)組", "タ組", "ナ組", "チ組", "シ組"];
-        const countMap = { "コ組": 0, "メ組": 0, "サ(ダ)組": 0, "サ(ミ)組": 0, "タ組": 0, "ナ組": 0, "チ組": 0, "シ組": 0 };
+        const labels = ["コ組", "メ組", "サ(ダ)組", "サ(ミ)組", "タ組", "ナ組", "チ(コ)組", "チ(ズ)組", "シ組"];
+        const countMap = { "コ組": 0, "メ組": 0, "サ(ダ)組": 0, "サ(ミ)組": 0, "タ組": 0, "ナ組": 0, "チ(コ)組": 0, "チ(ズ)組": 0, "シ組": 0 };
 
         trList.forEach(row => {
             const cells = row.querySelectorAll('td');
@@ -823,7 +823,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: labels,
                 datasets: [{
-                    backgroundColor: ["#f0e68c", "#6a5acd", "#006400", "#db7093", "#a52a2a", "#4169e1", "#d2691e", "#f0f8ff"],
+                    backgroundColor: ["#f0e68c", "#6a5acd", "#006400", "#db7093", "#a52a2a", "#d2b48c", "#d2691e", "#4169e1", "#f0f8ff"],
                     data: data,
                     borderColor: "#696969"
                 }]
