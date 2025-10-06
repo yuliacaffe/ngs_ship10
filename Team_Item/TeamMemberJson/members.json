@@ -1,0 +1,41 @@
+{
+  "山田太郎": {
+    "id": "@taro",
+    "photo": "https://images.unsplash.com/photo-1603415526960-f7e0328f3f7b?q=80&w=400",
+    "xurl": "https://x.com/taro",
+    "origin": "家族の名前から取りました。",
+    "nickname": "たろちゃん",
+    "gear": "Windows 11 / RTX4070",
+    "favclass": "ウィザード",
+    "chars": "3",
+    "motto": "継続は力なり",
+    "goal": "大会で上位入賞すること",
+    "other": "最近は動画編集にも挑戦中です。"
+  },
+  "佐藤花子": {
+    "id": "@hanako",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400",
+    "xurl": "https://x.com/hanako",
+    "origin": "好きな花にちなんで。",
+    "nickname": "はなちゃん",
+    "gear": "MacBook Pro / iPad Pro",
+    "favclass": "アーチャー",
+    "chars": "1",
+    "motto": "笑う門には福来たる",
+    "goal": "コミュニティを作りたい",
+    "other": "休日はカフェ巡りが趣味です。"
+  },
+  "鈴木一郎": {
+    "id": "@ichiro",
+    "photo": "https://images.unsplash.com/photo-1614283264354-d09e6ec94d5d?q=80&w=400",
+    "xurl": "https://x.com/ichiro",
+    "origin": "祖父と同じ名前。",
+    "nickname": "いっちー",
+    "gear": "自作PC / Dual Monitor",
+    "favclass": "ナイト",
+    "chars": "2",
+    "motto": "努力は裏切らない",
+    "goal": "チームのMVPを取る",
+    "other": "プログラミングも勉強中。"
+  }
+}
