@@ -1,959 +1,564 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>チームメンバー一覧♬</title>
-        
-<style>
-/* ページ全体のスタイル */
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ユリアカフェ♪メンバー一覧表</title>
+    <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のメンバー一覧表です♪。">
+    <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ">
+	<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+	<style>
+/* ===== 全体スタイル ===== */
 body {
-    background-color: black;
-    color: white;
+  font-family: 'Yomogi', 'Zen Maru Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f3ee;
+  color: #4b2e05;
+  margin: 0;
+  padding: 0;
 }
 
-/* 通常のリンク */
-a {
-    color: yellow;
+header {
+  background-color: #d9c3a9;
+  padding: 16px;
+  text-align: center;
+  font-size: 27px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 訪問済みのリンク */
-a:visited {
-    color: lime;
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 16px;
 }
 
-/* テーブル全体のスタイル */
-table {
-    width: 90%;
-    border-collapse: collapse;
+/* ===== カード共通スタイル ===== */
+.card {
+  background: #fffdf8;
+  border: 2px solid #d9c3a9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
 }
 
-/* テーブルヘッダーのスタイル */
-th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
+/* ===== タブコンテナ ===== */
+.tab-container {
+  background: #fffdf8;
+  border: 2px solid #d9c3a9;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* テーブルデータのスタイル */
-td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
+/* ===== タブ行 ===== */
+.top-tabs,
+.second-tabs,
+.third-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
 
-/* テーブルストライプのスタイル */
-tr:nth-child(even) {
-    background-color: #8b0000;
+/* ===== タブボタン共通 ===== */
+.top-tabs button,
+.second-tabs button,
+.third-tabs button {
+  font-family: 'Yomogi', 'Zen Maru Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #d9c3a9;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #4b2e05;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* ソートアイコンのスタイル */
-.sort-icon {
-    float: right;
-    margin-top: 3px;
-    margin-left: 5px;
+/* ===== タブボタン個別カラー ===== */
+.top-tabs button { background: #f3e9de; }
+.second-tabs button { background: #f8f8ff; }
+.third-tabs button { background: #f0fff0; }
+
+/* ===== ホバー時 ===== */
+.top-tabs button:hover { background: #b8996f; color: #fff; transform: translateY(-2px); box-shadow: 0 3px 6px rgba(0,0,0,0.12); }
+.second-tabs button:hover { background: #4169e1; color: #fff; transform: translateY(-2px); box-shadow: 0 3px 6px rgba(0,0,0,0.12); }
+.third-tabs button:hover { background: #32cd32; color: #fff; transform: translateY(-2px); box-shadow: 0 3px 6px rgba(0,0,0,0.12); }
+
+/* ===== 選択中（アクティブ） ===== */
+.top-tabs button.active,
+.second-tabs button.active,
+.third-tabs button.active {
+  background: #ff1493;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+/* ===== プロフィール上段 ===== */
+.profile-header {
+  display: grid;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 写真とXリンクの縦並び */
+.photo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #c7aa82;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#xurl {
+  color: #937a58;
+  text-decoration: none;
+  font-size: 14px;
+  	  padding: 4px 9px;  /* ← ホバー時だけ広げる */
+}
+
+#xurl:hover {
+  background: #b8996f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 70%;
+
+}
+
+/* ===== プロフィール下段 ===== */
+.profile-lower {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 12px;
+}
+
+/* 左カラム(自己紹介) */
+.profile-lower .info {
+  flex: 1;
+}
+
+/* 右カラム(基本詳細&グラフ) */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* 上下に積む */
+  gap: 12px;             /* 上下要素の間隔 */
+}
+
+.profile-info {
+  background-color: #f3e5d0;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #4b2e05;
+  line-height: 1.6;
+  font-family: 'Yomogi', 'Zen Maru Gothic', sans-serif;
+}
+
+/* レーダーグラフはそのまま下に */
+.profile-lower .chart {
+  flex: 1; 
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 600px) {
+  .profile-lower {
+    flex-direction: column;
+  }
+  .profile-lower .info,
+  .profile-lower .chart {
+    width: 100%;
+  }
+
+  .top-tabs,
+  .second-tabs,
+  .third-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-tabs button,
+  .second-tabs button,
+  .third-tabs button {
+    width: 80%;
+  }
+}
+
+/* ===== レーダーキャンバス ===== */
+canvas {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+}
+
+#owninfo {
+  background-color: #f3e5d0; /* ベース色 */
+  background-image: 
+    radial-gradient(circle, rgba(200,150,100,0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgba(180,130,80,0.1) 1px, transparent 1px);
+  background-size: 30px 30px; /* 点の間隔 */
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #4b2e05;
+  line-height: 1.6;
+  font-family: 'Yomogi', 'Zen Maru Gothic', sans-serif;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+}
+
+#profileInfo {
+  background-color: #ffe6e6; 
+  background-image: 
+    radial-gradient(circle, rgba(255,150,150,0.2) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,120,120,0.15) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px; 
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #4b2e05;
+  line-height: 1.5;
+  font-family: 'Yomogi', 'Zen Maru Gothic', sans-serif;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 8px;
+}
+
+
+/* ===== フッター ===== */
+footer {
+  text-align: center;
+  margin: 24px 0;
+  color: #9a8468;
+  font-size: 13px;
 }
 </style>
+</head>
+<body>
+<header>☕ チームメンバー一覧♬</header>
+<div class="container">
 
-    </head>
-    <body>
-    <h1>チームメンバー一覧♬</h1>
-    <p>※ソート状態：デフォルト(黒)、昇順(赤)、降順(青)</p>
-    ※在籍者数：94名</p>
-    <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Name</th>
-      <th>Join Date</th>
-      <th>組</th>
-      <th>定例祭の累計リーダー数</th>
-      <th>定例祭の指標値</th>
-      <th>備考</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ユリア</td>
-      <td>2013年3月30日</td>
-      <td>コ組</td>
-      <td>107.0</td>
-      <td>6.4513</td>
-      <td>マスター(2013年3月30日～)</td>
-    </tr>
-    <tr>
-      <td>アレット</td>
-      <td>2014年1月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>シェルファニール</td>
-      <td>2015年10月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>元マネージャー(2017年10月上旬～2019年7月下旬)</td>
-    </tr>
-    <tr>
-      <td>みずき</td>
-      <td>2017年7月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>元マネージャー(2019年1月中旬～2022年1月下旬)</td>
-    </tr>
-    <tr>
-      <td>ニスリーフ</td>
-      <td>2017年11月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>マネージャー(2021年5月下旬～)</td>
-    </tr>
-    <tr>
-      <td>久遠</td>
-      <td>2017年12月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>マナ</td>
-      <td>2018年2月上旬～2018年8月上旬、2022年8月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>北の黒猫</td>
-      <td>2018年4月下旬</td>
-      <td>メ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>マネージャー(2020年7月下旬～)</td>
-    </tr>
-    <tr>
-      <td>レナ</td>
-      <td>2018年6月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ユリ</td>
-      <td>2018年7月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>にゃるるん</td>
-      <td>2018年7月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>シャウラ</td>
-      <td>2019年10月下旬</td>
-      <td>???</td>
-      <td>4.0</td>
-      <td>0.2412</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>フィリア</td>
-      <td>2019年10月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>元マネージャー(2021年1月上旬～2022年6月下旬)</td>
-    </tr>
-    <tr>
-      <td>アヤカ</td>
-      <td>2020年6月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>元マネージャー(2021年5月下旬～2023年2月上旬)</td>
-    </tr>
-    <tr>
-      <td>いずな</td>
-      <td>2020年8月上旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.0603</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ノエル</td>
-      <td>2020年12月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>さむ</td>
-      <td>2021年6月上旬～2022年10月上旬、2023年6月上旬</td>
-      <td>???</td>
-      <td>11.0</td>
-      <td>0.6632</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>りぃえ</td>
-      <td>2021年8月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>モチさん</td>
-      <td>2021年9月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>たこ焼き</td>
-      <td>2021年12月中旬</td>
-      <td>コ組</td>
-      <td>4.0</td>
-      <td>0.2412</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ルナ</td>
-      <td>2022年1月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ぐみ</td>
-      <td>2022年4月上旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.0603</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>クロトノ</td>
-      <td>2022年8月中旬</td>
-      <td>???</td>
-      <td>8.0</td>
-      <td>0.4823</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ミミ</td>
-      <td>2023年2月中旬</td>
-      <td>???</td>
-      <td>9.0</td>
-      <td>0.6515</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>アーミヤ</td>
-      <td>2023年4月上旬</td>
-      <td>???</td>
-      <td>2.0</td>
-      <td>0.1525</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>あゆむん</td>
-      <td>2023年5月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>あやめ</td>
-      <td>2023年5月上旬</td>
-      <td>コ組</td>
-      <td>2.0</td>
-      <td>0.1577</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ソアレ</td>
-      <td>2023年5月下旬</td>
-      <td>メ組</td>
-      <td>7.0</td>
-      <td>0.5645</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>まなはら</td>
-      <td>2023年7月中旬</td>
-      <td>???</td>
-      <td>3.0</td>
-      <td>0.2570</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>リース</td>
-      <td>2023年8月中旬</td>
-      <td>???</td>
-      <td>2.0</td>
-      <td>0.1781</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>まりん</td>
-      <td>2023年9月中旬</td>
-      <td>???</td>
-      <td>9.0</td>
-      <td>0.8344</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ルイ</td>
-      <td>2023年11月中旬</td>
-      <td>???</td>
-      <td>3.0</td>
-      <td>0.3026</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ゆき</td>
-      <td>2023年12月下旬</td>
-      <td>チ(コ)組</td>
-      <td>4.0</td>
-      <td>0.4281</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ゆかな</td>
-      <td>2023年6月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>えれ娘</td>
-      <td>2019年9月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>りん</td>
-      <td>2023年7月中旬</td>
-      <td>コ組</td>
-      <td>2.0</td>
-      <td>0.1714</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>園神凜</td>
-      <td>2022年3月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ぽむちゃん</td>
-      <td>2022年7月上旬</td>
-      <td>???</td>
-      <td>5.0</td>
-      <td>0.3015</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>中野一花</td>
-      <td>2022年9月上旬</td>
-      <td>ナ組</td>
-      <td>4.0</td>
-      <td>0.2478</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>wolf</td>
-      <td>2023年7月中旬</td>
-      <td>???</td>
-      <td>3.0</td>
-      <td>0.2570</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>SiNa</td>
-      <td>2023年7月中旬～2024年1月中旬、2024年3月上旬</td>
-      <td>???</td>
-      <td>2.0</td>
-      <td>0.1714</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>はる</td>
-      <td>2024年3月上旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.1201</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>双葉</td>
-      <td>2024年3月下旬</td>
-      <td>???</td>
-      <td>2.0</td>
-      <td>0.2487</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ミロ</td>
-      <td>2023年9月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>カバネリ</td>
-      <td>2023年8月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>Rina</td>
-      <td>2024年3月中旬</td>
-      <td>コ組</td>
-      <td>1.0</td>
-      <td>0.1222</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>こな</td>
-      <td>2024年4月中旬</td>
-      <td>タ組</td>
-      <td>14.0</td>
-      <td>1.8081</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>メル</td>
-      <td>2024年4月下旬</td>
-      <td>???</td>
-      <td>2.0</td>
-      <td>0.2632</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>しらたま</td>
-      <td>2024年5月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>桃</td>
-      <td>2024年5月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>超民</td>
-      <td>2024年5月中旬</td>
-      <td>メ組</td>
-      <td>3.0</td>
-      <td>0.4102</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>璃月</td>
-      <td>2024年5月下旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.1394</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>Layla</td>
-      <td>2024年6月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>リルヴィエート</td>
-      <td>2024年6月中旬</td>
-      <td>コ組</td>
-      <td>3.0</td>
-      <td>0.4366</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>のらてぃー</td>
-      <td>2024年6月下旬</td>
-      <td>???</td>
-      <td>4.0</td>
-      <td>0.5945</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>霧雨</td>
-      <td>2024年7月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ラスティ</td>
-      <td>2024年7月中旬</td>
-      <td>???</td>
-      <td>7.0</td>
-      <td>1.0865</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>アルティ</td>
-      <td>2024年7月中旬</td>
-      <td>コ組</td>
-      <td>7.0</td>
-      <td>1.0865</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ミウ</td>
-      <td>2024年7月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>つぐみん</td>
-      <td>2024年8月下旬</td>
-      <td>???</td>
-      <td>3.0</td>
-      <td>0.5122</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>零</td>
-      <td>2024年8月下旬</td>
-      <td>メ組</td>
-      <td>30.0</td>
-      <td>5.1220</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ユキ</td>
-      <td>2024年9月上旬</td>
-      <td>コ組</td>
-      <td>13.0</td>
-      <td>2.2807</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>アスミ</td>
-      <td>2024年9月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>レティ</td>
-      <td>2024年10月中旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>シスト</td>
-      <td>2024年11月下旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.2201</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>チョコ</td>
-      <td>2025年1月中旬</td>
-      <td>ナ組</td>
-      <td>3.0</td>
-      <td>0.7865</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>M.e.o</td>
-      <td>2025年1月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>霞</td>
-      <td>2025年1月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>リヒト</td>
-      <td>2025年2月上旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.2846</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>リルム</td>
-      <td>2025年2月上旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>結衣</td>
-      <td>2025年2月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>Flow</td>
-      <td>2025年3月中旬</td>
-      <td>???</td>
-      <td>1.0</td>
-      <td>0.3365</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>モルガーン</td>
-      <td>2025年3月下旬</td>
-      <td>???</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>まお</td>
-      <td>2025年4月中旬</td>
-      <td>サ(ダ)組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>散華</td>
-      <td>2025年4月中旬</td>
-      <td>タ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>かたまり</td>
-      <td>2025年4月中旬</td>
-      <td>サ(ダ)組</td>
-      <td>2.0</td>
-      <td>0.7910</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>きなこ</td>
-      <td>2025年5月中旬</td>
-      <td>タ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>犬走 椛</td>
-      <td>2025年5月下旬</td>
-      <td>コ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>Kira</td>
-      <td>2025年6月上旬</td>
-      <td>シ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>シアノーツ</td>
-      <td>2025年6月上旬</td>
-      <td>メ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>葵桜苺</td>
-      <td>2025年6月中旬</td>
-      <td>コ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>ふぁる</td>
-      <td>2025年6月下旬</td>
-      <td>ナ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>テュカ</td>
-      <td>2025年7月下旬</td>
-      <td>サ(ダ)組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>ツチノコウ</td>
-      <td>2025年7月下旬</td>
-      <td>チ(ズ)組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>みさのま</td>
-      <td>2025年7月下旬</td>
-      <td>ナ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>Furan</td>
-      <td>2025年7月下旬</td>
-      <td>サ(ダ)組</td>
-      <td>2.0</td>
-      <td>1.8421</td>
-      <td>－</td>
-    </tr>
-    <tr>
-      <td>Alice</td>
-      <td>2025年8月中旬</td>
-      <td>コ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>しろにゃん</td>
-      <td>2025年8月中旬</td>
-      <td>チ(ズ)組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>スターリー</td>
-      <td>2025年8月下旬</td>
-      <td>チ(ズ)組</td>
-      <td>1.0</td>
-      <td>1.5556</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>ツナキャン</td>
-      <td>2025年9月上旬</td>
-      <td>タ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>ホノカ</td>
-      <td>2025年9月上旬</td>
-      <td>メ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>アイシス</td>
-      <td>2025年9月上旬</td>
-      <td>コ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>九月</td>
-      <td>2025年10月上旬</td>
-      <td>タ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-    <tr>
-      <td>える</td>
-      <td>2025年10月上旬</td>
-      <td>メ組</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>体験中♬</td>
-    </tr>
-  </tbody>
-</table>
-    <br><br>
-    <h3>◆組列の集計</h3>
-    <div style="width: 50%;"><canvas id="kumi"></canvas></div>
-    
+  <!-- 階層タブ -->
+  <div class="card tab-container">
+    <div id="topTabs" class="top-tabs"></div>
+    <div id="secondTabs" class="second-tabs"></div>
+	<div id="thirdTabs" class="third-tabs"></div>
+  </div>
+  
+  <!-- プロフィールエリア -->
+<div class="card profile-box">
+  <div class="profile-header">
+    <!-- 左：名前 -->
+    <div id="profilename" class="profile-name"></div>
+
+    <!-- 右：写真＋Xリンクを縦並び -->
+    <div class="photo-area">
+      <div class="photo">
+        <img id="photo" src="" alt="photo">
+      </div>
+      <a id="xurl" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+  </div>
+  <br><br>
+
+<div class="profile-lower">
+  <!-- 左カラム -->
+  <div class="info">
+    <div id="owninfo"></div>
+  </div>
+
+  <!-- 右カラム -->
+  <div class="right-column">
+    <div class="profile-info" id="profileInfo"></div>
+    <div class="chart" id="chartInfo">
+      <canvas id="radarChart" width="300" height="300"></canvas>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<footer>
+  <p>☕ YuliaCaffe♪ Members © <span id="current-year"></span>.</p>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+let radarChart;
+let tableData = [];
+let memberData = {};
+const currentYear = new Date().getFullYear();
 
-    // 表のヘッダーと行を取得
-    var thList = Array.from(document.querySelectorAll('th'));
-    var tbody = document.querySelector('tbody');
-    var trList = Array.from(tbody.querySelectorAll('tr'));
+// ===============================
+// 年の自動表示
+// ===============================
+document.getElementById('current-year').textContent = currentYear;
 
-    // --- グラフ描画用関数 ---
-    function drawKumiChart() {
-        const labels = ["コ組", "メ組", "サ(ダ)組", "サ(ミ)組", "タ組", "ナ組", "チ(コ)組", "チ(ズ)組", "シ組"];
-        const countMap = { "コ組": 0, "メ組": 0, "サ(ダ)組": 0, "サ(ミ)組": 0, "タ組": 0, "ナ組": 0, "チ(コ)組": 0, "チ(ズ)組": 0, "シ組": 0 };
+// ===============================
+// 旧メンバー一覧ページ&JSONデータ取得
+// ===============================
+async function initData() {
+  try {
+    // HTMLテーブル取得
+	const tableRes = await fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html');
+    const tableText = await tableRes.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(tableText, 'text/html');
+    const table = doc.querySelector('table');
+    if (!table) throw new Error('テーブルが見つかりません');
 
-        trList.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const kumi = cells[2].textContent.trim(); // 組列インデックス:"2"
-            if (countMap.hasOwnProperty(kumi)) {
-                countMap[kumi]++;
-            }
-        });
-
-        const data = labels.map(label => countMap[label] || 0);
-
-        // 在籍者の割合のグラフ
-        var ctx = document.getElementById("kumi").getContext('2d');
-        var kumi = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    backgroundColor: ["#f0e68c", "#6a5acd", "#006400", "#db7093", "#a52a2a", "#d2b48c", "#d2691e", "#4169e1", "#f0f8ff"],
-                    data: data,
-                    borderColor: "#696969"
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '◆組の勢力!?割合',
-                    fontColor: '#ffffff' // タイトル文字色
-                },
-                legend: {
-                    labels: {
-                        fontColor: '#ffffff' // 凡例ラベルの文字色
-                    }
-                }
-            }
-        });
-    }
-
-    // グラフ描画
-    drawKumiChart();
-
-
-    // 各ヘッダーにクリックイベントを追加
-    thList.forEach(function(th) {
-        th.addEventListener('click', function() {
-
-            // クリックされたヘッダーのインデックスを取得
-            var hedIndex = thList.indexOf(th);
-
-            // 昇順 or 降順判定
-            var isAsc = !th.classList.contains('asc');
-
-            // 行ソート
-            trList.sort(function(a, b) {
-                var valueA = a.children[hedIndex].textContent.trim();
-                var valueB = b.children[hedIndex].textContent.trim();
-                return isAsc ? valueA.localeCompare(valueB, undefined, { numeric: true, sensitivity: 'base' }) : valueB.localeCompare(valueA, undefined, { numeric: true, sensitivity: 'base' });
-            });
-
-            // ソートされた行を再配置
-            trList.forEach(function(row) {
-                tbody.appendChild(row);
-            });
-
-            // ソートアイコンとクラスをリセット
-            resetSortIcons();
-            resetSortClasses();
-
-            // ソートされたヘッダーにクラスを追加し、アイコンの色を変更
-            th.classList.add(isAsc ? 'asc' : 'desc', 'sorted');
-            var sortIcon = th.querySelector('.sort-icon');
-            sortIcon.style.color = isAsc ? 'red' : 'blue';
-        });
-
-        // ソートアイコンを追加
-        var sortIcon = document.createElement('span');
-        sortIcon.className = 'sort-icon';
-        sortIcon.innerHTML = '&#x25B2;&#x25BC;';
-        th.appendChild(sortIcon);
-
+    const rows = table.querySelectorAll('tr');
+    const headers = Array.from(rows[0].querySelectorAll('th, td')).map(td => td.textContent.trim());
+    tableData = Array.from(rows).slice(1).map(row => {
+      const cells = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());
+      return Object.fromEntries(headers.map((h, i) => [h, cells[i] || '']));
     });
 
-    // ソートアイコンの色をリセットする関数
-    function resetSortIcons() {
-        var iconList = Array.from(document.querySelectorAll('.sort-icon'))
-        iconList.forEach(function(icon) {
-            icon.style.color = 'black';
-        });
-    }
+    // メンバーJSON取得
+	const memberRes = await fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberJson/members.json');
+    memberData = await memberRes.json();
 
-    // ソート用のクラスをリセットする関数
-    function resetSortClasses() {
-        thList.forEach(function(th) {
-            th.classList.remove('sorted', 'asc', 'desc');
-        });
+  } catch (err) {
+    console.error('❌ データ初期化失敗:', err);
+  }
+}
+	
+// ===============================
+// ボタン作成共通
+// ===============================
+function createButton(label, onClick) {
+  const btn = document.createElement('button');
+  btn.textContent = label;
+  btn.addEventListener('click', (e) => {
+    const siblings = e.currentTarget.parentElement.querySelectorAll('button');
+    siblings.forEach(b => b.classList.remove('active'));
+    e.currentTarget.classList.add('active');  // 押されたボタンのみ、アクティブへ
+    onClick();
+  });
+  return btn;
+}
+
+function createNameButton(name, info, isMember = false) {
+  const btn = createButton(name, () => displayProfile(info, name));  // メンバー情報の定義
+  btn.classList.add('name-button');
+  if (isMember) btn.style.marginLeft = '8px';
+  return btn;
+}
+
+// ===============================
+// タブ生成
+// ===============================
+function buildTabs() {
+  const topTabs = ['説明', 'Master', 'Manager', 'Member'];
+  const topContainer = document.getElementById('topTabs');
+  topContainer.innerHTML = '';
+  topTabs.forEach(tabName => topContainer.appendChild(createButton(tabName, () => handleTopTab(tabName))));  // tabNameには、topTabsの各要素が1つずつ入る
+}
+
+// ===============================
+// タブ切替('説明', 'Master', 'Manager', 'Member')
+// ===============================
+function handleTopTab(tabName) {
+  const secondContainer = document.getElementById('secondTabs');
+  const thirdContainer = document.getElementById('thirdTabs');
+  secondContainer.innerHTML = '';
+  thirdContainer.innerHTML = '';
+
+  if (tabName === '説明') return showDescription();  // 説明情報の表示
+
+  if (tabName === 'Master' || tabName === 'Manager') {
+    const role = tabName === 'Master' ? 'マスター' : 'マネージャー';
+    appendMembers(secondContainer, Object.entries(memberData), role);
+    return;
+  }
+
+  // Member タブ
+  for (let year = 2013; year <= currentYear; year++) {
+    const yearMembers = Object.entries(memberData).filter(([_, info]) =>
+      info.post !== 'マスター' && info.post !== 'マネージャー' && info.join === String(year)
+    );
+    if (!yearMembers.length) continue;
+
+    secondContainer.appendChild(createButton(year, () => {
+      thirdContainer.innerHTML = '';
+      yearMembers.forEach(([name, info]) => thirdContainer.appendChild(createNameButton(name, info, true)));
+    }));
+  }
+}
+
+// ===============================
+// メンバー追加(マスターorマネージャーのみの処理)
+// ===============================
+function appendMembers(container, members, role) {
+  members.filter(([_, info]) => info.post === role)  // JSONデータ(members)の名前が"_"、以降の情報が"info"
+         .forEach(([name, info]) => container.appendChild(createNameButton(name, info)));  // 上記フィルターに合致したデータ分、ボタンの生成処理
+}
+
+// ===============================
+// プロフィール表示
+// ===============================
+function displayProfile(info, name) {
+  document.getElementById('photo').src = info.photo || '';
+  const xurl = document.getElementById('xurl');
+
+  if (info.xurl) {
+    xurl.href = info.xurl;
+    xurl.style.display = "";
+  } else {
+    xurl.removeAttribute('href');
+    xurl.style.display = "none";
+  }
+
+  document.getElementById('owninfo').innerHTML =
+    '<div style="text-align:center; font-weight:bold; font-size:20px; margin-bottom:6px;">～ 自己紹介 ～</div><br>' +
+    (info.info || '').replace(/\\n/g, '<br>');
+
+  document.getElementById('profilename').textContent = "☕お名前：" + name;
+  document.getElementById('profileInfo').style.display = 'block';
+  document.querySelector('.chart').style.display = 'block';
+
+  // tableData から追加情報
+  const member = tableData.find(item => item.Name === name);
+  document.getElementById('profileInfo').innerHTML = member ? `
+    <div style="text-align:center; font-weight:bold; font-size:20px; margin-bottom:6px;">～ 基本詳細 ～</div><br>
+    ◇Join Date: ${member["Join Date"]} <br>
+    ◇組: ${member["組"]} <br>
+    ◇定例祭の指標値: ${member["定例祭の指標値"]} <br>
+    ◇定例祭の累計リーダー数: ${member["定例祭の累計リーダー数"]} 回<br>
+    ◇備考: ${member["備考"]}
+  ` : '';
+
+  // レーダーチャート
+  initRadarChart(info);
+}
+
+// ===============================
+// レーダーチャート初期化
+// ===============================
+function initRadarChart(info) {
+  const radarContainer = document.getElementById('radarChart').parentElement;
+  radarContainer.innerHTML = '<canvas id="radarChart" width="300" height="300"></canvas>';
+  radarContainer.insertAdjacentHTML('afterbegin', '<br><br><div style="text-align:center; font-weight:bold; font-size:20px; margin-bottom:6px;">～ ステータス ～</div><br>');
+
+  const radarLabels = ['クエスト', 'CS', 'LS', '交流', 'ファッション'];
+  const radarData = [info.radar_quest, info.radar_cs, info.radar_ls, info.radar_commu, info.radar_fashion].map(v => Number(v || 0));
+
+  if (radarChart) radarChart.destroy();
+  const ctx = document.getElementById('radarChart').getContext('2d');
+
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: radarLabels,
+      datasets: [{
+        label: 'プレイスタイル割合',
+        data: radarData,
+        backgroundColor: 'rgba(100,180,100,0.3)',
+        borderColor: '#4caf50',
+        borderWidth: 2,
+        pointBackgroundColor: '#4caf50'
+      }]
+    },
+    options: {
+      scale: {
+        ticks: { beginAtZero: true, min: 0, max: 5, stepSize: 1 },
+        pointLabels: { color: '#4b2e05', font: { size: 14 } },
+        grid: { color: 'rgba(180,150,120,0.3)' },
+        angleLines: { color: 'rgba(180,150,120,0.3)' }
+      },
+      plugins: { legend: { display: false } }
     }
+  });
+}
+
+// ===============================
+// 説明タブ
+// ===============================
+function showDescription() {
+  document.getElementById('owninfo').innerHTML = 
+     `☕ チームメンバー一覧♬へ、ようこそ!!。<br>
+    上部タブから役職区分(Master,Manager,Member) ⇒ お名前(※Memberの場合は、加入年を選択後)を選択する事で、メンバーの自己紹介、基本詳細、ステータス(※自己申告制です❦)を見る事が出来ます。<br><br>
+    <strong><u>※メンバーさんへ。</u></strong><br>
+    こちらの一覧へは、以下3つの情報を、<a href="https://twitter.com/yuliacaffe" target="_blank" rel="noopener noreferrer">私のX(DM)</a>、<a href="https://yuriacaffe2.apage.jp/" target="_blank" rel="noopener noreferrer">一般掲示板</a>、NGS内メール等に連携を頂く事で、掲載が可能です♬。<br><br>
+	&nbsp;①<span style="color: #008000;">自己紹介</span>(※以下、雛形)<br>
+	&nbsp;&nbsp;【お名前】<br>
+	&nbsp;&nbsp;【プレイヤーID】<br>
+	&nbsp;&nbsp;【お名前の由来】<br>
+	&nbsp;&nbsp;【呼んで欲しいニックネーム】<br>
+	&nbsp;&nbsp;【使用機器】<br>
+	&nbsp;&nbsp;【好きなクラス】<br>
+	&nbsp;&nbsp;【キャラ数】<br>
+	&nbsp;&nbsp;【座右の銘】<br>
+	&nbsp;&nbsp;【目標】<br>
+	&nbsp;&nbsp;【その他】<br><br>
+	
+	&nbsp;②<span style="color: #00bfff;">お写真</span>(※Xに投稿されているSS画像URLでも可)<br>
+	
+	&nbsp;③<span style="color: #c71585;">ステータス数値</span>(※x：低(1)～高(5))<br>
+	&nbsp;&nbsp;【クエスト：x　ファッション：x　交流：x　CS：x　LS：x　】<br><br>`;
+  
+  document.getElementById('photo').src = "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png";
+  const xurl = document.getElementById('xurl');
+  xurl.removeAttribute('href');
+  xurl.textContent = "X（旧Twitter）";
+  document.getElementById('profilename').textContent = '';
+  document.getElementById('profileInfo').innerHTML = 
+      `※組の勢力割合!?については、<a href="https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html" target="_blank" rel="noopener noreferrer">旧チームメンバー一覧ページ</a>をご参照♬。<br>
+	※記載頂いた自己紹介は、HTML化を行った上でJsonファイルへ格納されます。その為、もしもIT言語にご興味ある or 色も付けて拘りたい!!
+	と言うメンバーさんがおりましたら、以下をご参考に、HTML化した自己紹介をご連携頂いても大丈夫です♬。(※私の方でコピペだけで掲載可能な為ぜひ(*ﾉωﾉ)ﾊｳ❦。)<br><br>
+	～ 例 ～<br>
+	********************************<br>
+	 【お名前】ユリア<br>
+	 【目標】<span style="color: green">ナウシズ</span>最高の<span style="color: orange"><B>皆</B></span>と、ナウシズ最高の<B><u>時間</u></b>を楽しむ事。
+	 <br><br>↓ HTML化<br><br>
+	 【お名前】ユリア&lt;br&gt; 
+	 【目標】&lt;span style="color: green"&gt;ナウシズ&lt;/span&gt;最高の&lt;span style="color: orange"&gt;&lt;b&gt;皆&lt;/b&gt;&lt;/span&gt;と、ナウシズ最高の&lt;b&gt;&lt;u&gt;時間&lt;/u&gt;&lt;/b&gt;を楽しむ事。
+	 <br>********************************<br>
+	 <br>※尚、HTMLは、メモ帳に記載➤「名前を付けて保存」➤".txt"を".html"へ書き換え保存➤「プログラムから開く」➤GoogleChrome or Microsoft Edgeを選択する事で簡単にWeb上でどう表示されるかを確認する事ができます。
+	 `;
+
+  document.querySelector('.chart').style.display = 'none';
+  if (radarChart) { radarChart.destroy(); radarChart = null; }
+  document.getElementById('secondTabs').innerHTML = '';
+  document.getElementById('thirdTabs').innerHTML = '';
+}
+
+// ===============================
+// 初期化(※ボタンや、表示情報を定義、表示)
+// ===============================
+window.addEventListener('load', async () => {  // ページが読み込まれた際
+  await initData();  // 関数呼び出しで、旧メンバー一覧ページ&JSONデータ取得
+  buildTabs();  // 関数呼び出しで、ボタン(役職、年、名前)、メンバー情報の定義、表示
+  showDescription();  // 関数呼び出しで、説明タブ内情報の表示(初期状態の定義)
 });
+
 </script>
-
-    <br><br>
-    <h3>◆加入者の集計</h3>
-    <p><small><small>◆◇◆◇◆◇◆◇◆◇◆◇◆◇ 集計 ◆◇◆◇◆◇◆◇◆◇◆◇◆◇
-    <p>◆累計加入者数（在籍者数）：<span id="join_data1">433</span>名（<span id="join_data2">94</span>名）</p>
-    <p>◇ユリア・ルート加入者数（在籍者数）：<span id="join_data3">233</span>名（<span id="join_data4">76</span>名）</p>
-    <p>◆メンバー・ルート加入者数（在籍者数）：<span id="join_data5">31</span>名（<span id="join_data6">10</span>名）</p>
-    <p>◇入団希望加入者数（在籍者数）：<span id="join_data7">33</span>名（<span id="join_data8">8</span>名）</p>
-    <p>◆体験のみ加入者数：<span id="join_data9">136</span>名</p>
-    <p>◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇</small></small></p>
-
-    </body>
-    </html>
-    
+</body>
+</html>
