@@ -376,14 +376,14 @@ function createNameButton(name, info, isMember = false) {
 // タブ生成
 // ===============================
 function buildTabs() {
-  const topTabs = ['説明', 'Master', 'Manager', 'Member'];
+  const topTabs = ['説明', 'Master', 'Sub Master', 'Manager', 'Member'];
   const topContainer = document.getElementById('topTabs');
   topContainer.innerHTML = '';
   topTabs.forEach(tabName => topContainer.appendChild(createButton(tabName, () => handleTopTab(tabName))));  // tabNameには、topTabsの各要素が1つずつ入る
 }
 
 // ===============================
-// タブ切替('説明', 'Master', 'Manager', 'Member')
+// タブ切替('説明', 'Master', 'Sub Master', 'Manager', 'Member')
 // ===============================
 function handleTopTab(tabName) {
   const secondContainer = document.getElementById('secondTabs');
@@ -393,8 +393,14 @@ function handleTopTab(tabName) {
 
   if (tabName === '説明') return showDescription();  // 説明情報の表示
 
-  if (tabName === 'Master' || tabName === 'Manager') {
-    const role = tabName === 'Master' ? 'マスター' : 'マネージャー';
+  const roleMap = {
+	Master: 'マスター',
+	Manager: 'マネージャー',
+	'Sub Master': 'サブマスター'
+  };
+	
+  if (roleMap[tabName]) {
+	const role = roleMap[tabName];
     appendMembers(secondContainer, Object.entries(memberData), role);
     return;
   }
@@ -402,7 +408,7 @@ function handleTopTab(tabName) {
   // Member タブ
   for (let year = 2013; year <= currentYear; year++) {
     const yearMembers = Object.entries(memberData).filter(([_, info]) =>
-      info.post !== 'マスター' && info.post !== 'マネージャー' && info.join === String(year)
+      info.post !== 'マスター' && info.post !== 'サブマスター' && info.post !== 'マネージャー' && info.join === String(year)
     );
     if (!yearMembers.length) continue;
 
@@ -414,7 +420,7 @@ function handleTopTab(tabName) {
 }
 
 // ===============================
-// メンバー追加(マスターorマネージャーのみの処理)
+// メンバー追加(マスターorサブマスターorマネージャーのみの処理)
 // ===============================
 function appendMembers(container, members, role) {
   members.filter(([_, info]) => info.post === role)  // JSONデータ(members)の名前が"_"、以降の情報が"info"
