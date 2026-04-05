@@ -65,10 +65,20 @@
 			transition: 0.2s;
 		}
 		
+		.mini-tab-buttons .mini-btn {
+			padding: 2px 4px;
+			margin: 0 3px;
+			font-size: 12px;
+			background-color: #fff;
+			cursor: pointer;
+			border: 1px solid transparent;
+			transition: 0.2s;
+		}
+		
 		.group1 .tab-btn {
 			border-color: #008000;
 		}
-		.group1 .tab-btn.active {
+		.group1 .tab-btn.active, .mini-tab-buttons .mini-btn.active	{
 			background-color: #008000;
 		color: #fff;
 		}
@@ -82,36 +92,31 @@
 		}
 		
 		.tab-content {
-			display: block;
-			visibility: hidden;
-			height: 0;
-			overflow: hidden;
+		display: block;
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
 		}
 		
 		.tab-content.active {
-			visibility: visible;
-			height: auto;
+		visibility: visible;
+		height: auto;
 		}
 		
 		.viewer {
-			width: 60%;
-			position: relative;
-			aspect-ratio: 4 / 3;
+		width: 100%;
 		}
+		
 		.viewer img {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			transition: transform 0.6s ease;
+		width: 50%;
+		height: auto;
+		display: block;
 		}
-		.viewer img[style*="cursor: pointer"]:hover {
-			transform: scale(1.1);
-		}
+		
 		.controls {
 			font-size: 0.8rem;
 		}
-		
+
 		/* テーブル内リンク文字色 */
 		table a {
 			color: #ff1493;
@@ -285,65 +290,123 @@
 		<div class="tab-buttons">
 			<button class="tab-btn active" data-tab="1">2024年</button>
 			<button class="tab-btn" data-tab="2">2025年</button>
+			<button class="tab-btn" data-tab="3">2026年</button>
 		</div>
 		<br>
 		
-		<!-- イベント_2024 -->
+		<!-- ===================== 2024 ===================== -->
 		<div class="tab-content active" id="tab-1">
 		<div class="photo-switch">
 			<!-- ラジオボタン -->
 			<div class="controls">
-				<label><input type="radio" name="photo1" value="A" checked> 3月(SS)</label>
-				<label><input type="radio" name="photo1" value="B"> 7月(SS)</label>
-				<label><input type="radio" name="photo1" value="C"> 12月(SS)</label>
-				<label><input type="radio" name="photo1" value="D"> 12月(ポスター)</label>
+				<label><input type="radio" name="event2024" checked> 3月</label>
+				<label><input type="radio" name="event2024"> 7月</label>
+				<label><input type="radio" name="event2024"> 12月</label>
 			</div>
 			<!-- SS -->
 			<div class="viewer">
-				<img src="https://stat.ameba.jp/user_images/20240401/14/nevilia/65/4e/j/o1920108015420137597.jpg" alt="イベント_2024">
-				<img src="https://stat.ameba.jp/user_images/20240721/22/nevilia/01/ee/j/o1920108015465847511.jpg" alt="イベント_2024" style="display:none;">
-				<img src="https://stat.ameba.jp/user_images/20241229/22/nevilia/8c/b5/j/o3840216015527233097.jpg" alt="イベント_2024" style="display:none;">
-				<img src="https://stat.ameba.jp/user_images/20241229/22/nevilia/4d/a6/j/o3546236015527232602.jpg" alt="イベント_2024" style="display:none;">
-			</div>
-			<!-- 説明文 -->
-			<div class="description">
-				<p class="descA">【イベント名：ユリアカフェ♪ チーム設立11周年記念パーティー】<br>【開催日：2024年3月下旬】<br>【主催者：ユリア】</p>
-				<p class="descB" style="display:none;">【イベント名：10鯖育ちの会、夏の特大！？水着フェスティバル♬】<br>【開催日：2024年7月下旬】<br>【主催者：ユリア】</p>
-				<p class="descC" style="display:none;">【イベント名：10鯖育ちの会、冬の特大！？クリスマス・フェスティバル♬】<br>【開催日：2024年12月下旬】<br>【主催者：ユリア】</p>
-				<p class="descD" style="display:none;">【イベント名：10鯖育ちの会、冬の特大！？クリスマス・フェスティバル♬】<br>【開催日：2024年12月下旬】<br>【製作者：ユリア】</p>
-			</div>
+				<div class="content-set">
+					<br><h3>【イベント名：ユリアカフェ♪ チーム設立11周年記念パーティー】</h3>
+					<p>◆開催日：2024年3月下旬
+					<br>◆主催者：ユリア
+					<br>◆イベント時SS：
+					<br><br><img src="https://stat.ameba.jp/user_images/20240401/14/nevilia/65/4e/j/o1920108015420137597.jpg" alt="イベント_2024">
+				</div>
+				
+				<div class="content-set" style="display:none;">
+					<br><h3>【イベント名：10鯖育ちの会、夏の特大！？水着フェスティバル♬】</h3>
+					<p>◆開催日：2024年7月下旬
+					<br>◆主催者：ユリア
+					<br>◆イベント時SS：
+					<br><br><img src="https://stat.ameba.jp/user_images/20240721/22/nevilia/01/ee/j/o1920108015465847511.jpg" alt="イベント_2024">
+				</div>
+			
+				<div class="content-set" style="display:none;">
+					<br><h3>【イベント名：10鯖育ちの会、冬の特大！？クリスマス・フェスティバル♬】</h3>
+					<p>◆開催日：2024年12月下旬
+					<br>◆主催者：ユリア
+					<br>◆告知ポスター＆イベント時SS
+						<div class="mini-tabs">
+						<div class="mini-tab-buttons">
+							<button class="mini-btn active" onclick="switchTab(this, 0)">告知ポスター</button>
+							<button class="mini-btn" onclick="switchTab(this, 1)">イベント時SS</button>
+						</div><br>
+						<div class="mini-tab-content"><img src="https://stat.ameba.jp/user_images/20241229/22/nevilia/4d/a6/j/o3546236015527232602.jpg" alt="イベント_2024"><p><u><i>◇Creator：ユリア♪<br>◇Release：2024年11月10日♪</u></i></p></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://stat.ameba.jp/user_images/20241229/22/nevilia/8c/b5/j/o3840216015527233097.jpg" alt="イベント_2024"></div>
+						</div>	
+				</div>
+			</div>				
 
 		</div>
 		</div>
-		
-		<!-- イベント_2025 -->
+
+		<!-- ===================== 2025 ===================== -->
 		<div class="tab-content" id="tab-2">
 		<div class="photo-switch">
 			<!-- ラジオボタン -->
 			<div class="controls">
-				<label><input type="radio" name="photo1" value="A" checked> 3月(SS)</label>
-				<label><input type="radio" name="photo1" value="B"> 3月(ポスター)</label>
-				<label><input type="radio" name="photo1" value="C"> 12月(リンク)</label>
+				<label><input type="radio" name="event2025" checked> 3月</label>
+				<label><input type="radio" name="event2025"> 12月</label>
 			</div>
 			<!-- SS -->
 			<div class="viewer">
-				<img src="https://stat.ameba.jp/user_images/20250330/18/nevilia/f3/d6/j/o3840216015560495044.jpg" alt="イベント_2025">
-				<img src="https://stat.ameba.jp/user_images/20250330/18/nevilia/c7/c1/j/o2266150815560498467.jpg" alt="イベント_2025" style="display:none;">
-				<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/91463d5a592d894275ff6a8102dd5e2e_c71fbffb2fc7267f13ac064fe07ab76a.jpg" data-link="https://yuliacaffe.amebaownd.com/posts/58355003" alt="イベント_2025" style="display:none;">
-			</div>
-			<!-- 説明文 -->
-			<div class="description">
-				<p class="descA">【イベント名：10鯖育ちの会、ユリアカフェ♪生誕！！春の特大フェスティバル♬】<br>【開催日：2025年3月下旬】<br>【主催者：ユリア】</p>
-				<p class="descB" style="display:none;">【イベント名：10鯖育ちの会、ユリアカフェ♪生誕！！春の特大フェスティバル♬】<br>【開催日：2025年3月下旬】<br>【製作者：ユリア】</p>
-				<p class="descC" style="display:none;">【イベント名：10鯖育ちの会、冬の特大！？クリスマス・フェスティバル2025♬】<br>【開催日：2025年12月下旬】<br>【主催者：ユリア&ソーニャさん】</p>
-			</div>
+				<div class="content-set">
+					<br><h3>【イベント名：10鯖育ちの会、ユリアカフェ♪生誕！！春の特大フェスティバル♬】</h3>
+					<p>◆開催日：2025年3月下旬
+					<br>◆主催者：ユリア
+					<br>◆告知ポスター＆イベント時SS
+						<div class="mini-tabs">
+						<div class="mini-tab-buttons">
+							<button class="mini-btn active" onclick="switchTab(this, 0)">告知ポスター</button>
+							<button class="mini-btn" onclick="switchTab(this, 1)">イベント時SS</button>
+						</div><br>
+						<div class="mini-tab-content"><img src="https://stat.ameba.jp/user_images/20250330/18/nevilia/c7/c1/j/o2266150815560498467.jpg" alt="イベント_2025"><p><u><i>◇Creator：ユリア♪<br>◇Release：2025年3月13日♪</u></i></p></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://stat.ameba.jp/user_images/20250330/18/nevilia/f3/d6/j/o3840216015560495044.jpg" alt="イベント_2025"></div>
+						</div>
+				</div>
+				
+				<div class="content-set" style="display:none;">
+					<br><h3>【イベント名：10鯖育ちの会、冬の特大！？クリスマス・フェスティバル2025♬】</h3>
+					<p>◆開催日：2025年12月下旬
+					<br>◆主催者：ユリア&ソーニャさん
+					<br>◆ハッシュタグ：<a href="https://x.com/search?q=%2310%E9%AF%96%E8%82%B2%E3%81%A1%E3%81%AE%E4%BC%9A&src=hashtag_click" style="color: #ff1493" target="_blank">#10鯖育ちの会</a>
+					<br>◆告知フライヤー＆イベント時SS＆動画
+						<div class="mini-tabs">
+						<div class="mini-tab-buttons">
+							<button class="mini-btn active" onclick="switchTab(this, 0)">告知フライヤー①</button>
+							<button class="mini-btn" onclick="switchTab(this, 1)">告知フライヤー②</button>
+							<button class="mini-btn" onclick="switchTab(this, 2)">イベント時SS①</button>
+							<button class="mini-btn" onclick="switchTab(this, 3)">イベント時SS②</button>
+							<button class="mini-btn" onclick="switchTab(this, 4)">イベント時SS③</button>
+							<button class="mini-btn" onclick="switchTab(this, 5)">動画</button>
+						</div><br>
+						
+						<div class="mini-tab-content"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/d51e0a5c1554d8e1cefd678d077aa301_b949a04bcc1a3740b878ee16fc433308.png" alt="イベント_2025"><p><u><i>◇Creator：Uruさん♪<br>◇Release：2025年11月6日♪</u></i></p></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/814481c1ab5b3c1f8ce927117fd0e1d6_ed4d8554e6b9d9bcaa5e84d67ff008be.png" alt="イベント_2025"><p><u><i>◇Creator：Uruさん♪<br>◇Release：2025年11月6日♪</u></i></p></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/511d2ebd59ac44b3e75150c39c237e01_98910d10f6e32c5ceae11ebc6fc0ca6b.jpg" alt="イベント_2025"></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5613ed1a818544fce57f86b969aaa264_5790bb808acef1226c934056c9da0ee3.jpg" alt="イベント_2025"></div>
+						<div class="mini-tab-content" style="display:none;"><img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/282ef5199c9d3862bc0ca31ef6d1994b_5b8b422eb37edbaf22ce7fc3256641d5.jpg" alt="イベント_2025"></div>						
+						<div class="mini-tab-content" style="display:none;">
+							<iframe
+								src="https://www.youtube.com/embed/y_hsKRFwT7E"
+								style="width:50%; aspect-ratio:16/9;"
+								allowfullscreen>
+							</iframe>
+							<p><u><i>◇Creator：ソーニャさん♪<br>◇Release：2025年12月27日♪</u></i></p>
+						</div>
+						</div>
+					<br>◆告知フライヤー＆イベント時SS
+					
+					</p>
+				</div>
+			</div>				
+
+		</div>
+		</div>
 		</div>
 		</div>
 		
-        </div>
-		</div><br>
-		
-		
+		<br>
 		<!--専用ロゴ-->
 		<h2 class="style2">◆10鯖育ちの会ロゴ。</h2>
 		<p>10鯖育ちの会の専用ロゴです。ご使用下さ～い♬。
@@ -409,35 +472,48 @@ document.querySelectorAll(".tab-group").forEach(group => {
   });
 });
 
-// SS関連
+// イベント関連
+// ===== ラジオ → content-set 切替 =====
 document.querySelectorAll('.photo-switch').forEach(group => {
   const radios = group.querySelectorAll('input[type="radio"]');
-  const images = group.querySelectorAll('.viewer img');
-  const descriptions = group.querySelectorAll('.description p');
+  const sets = group.querySelectorAll('.content-set');
 
   radios.forEach((radio, index) => {
     radio.addEventListener('change', () => {
-      // 画像の切り替え
-      images.forEach((img, i) => {
-        img.style.display = (i === index) ? 'block' : 'none';
-		if (i === index && img.dataset.link) {
-			img.style.cursor = 'pointer';
-			img.onclick = () => {
-				window.open(img.dataset.link, '_blank');
-			};
-		} else {
-			img.onclick = null;
-			img.style.cursor = 'default';
-		}
+
+      sets.forEach((set, i) => {
+        set.style.display = (i === index) ? 'block' : 'none';
       });
 
-      // 説明文の切り替え
-      descriptions.forEach((desc, i) => {
-        desc.style.display = (i === index) ? 'block' : 'none';
-      });
     });
   });
 });
+
+// ===== クリックでリンク遷移（任意）=====
+document.querySelectorAll('.content-set').forEach(set => {
+  if (set.dataset.link) {
+    set.style.cursor = 'pointer';
+    set.onclick = () => {
+      window.open(set.dataset.link, '_blank');
+    };
+  }
+});
+
+// ===== ミニタブ=====
+function switchTab(btn, index) {
+  const container = btn.closest('.mini-tabs');
+
+  const contents = container.querySelectorAll('.mini-tab-content');
+  const buttons = container.querySelectorAll('button');
+
+  contents.forEach((c, i) => {
+    c.style.display = (i === index) ? 'block' : 'none';
+  });
+
+  buttons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 </script>
 </body>
 </html>
