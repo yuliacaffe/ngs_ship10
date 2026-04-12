@@ -100,13 +100,15 @@
 		h2 {
 			color: #fff;
 			font-size: 20px;
-			padding: 10px;
 			font-family: cursive;
 			text-align: left;
-			border-bottom: 3px solid #ddd;
-			background-color: #8e735b;
-			border-radius: 100px;
+			position: relative;
+			background: #8e735b;
+			box-shadow: 0px 0px 0px 5px #8e735b;
+			border: dashed 2px white;
+			padding: 0.2em 0.5em;
 		}
+
 
 		h3 {
 			color: #8e735b;
@@ -396,6 +398,78 @@
 		.rule4-tab-content.active,.profile-tab-content.active {
 			display: block;
 		}
+
+		#rules h3 {
+			position: relative;
+		}
+		
+		#rules h3 .line {
+			display: inline-block;
+			position: relative;
+		}
+		
+		#rules h3 .line::after {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  bottom: -2px;
+		  width: 100%;
+		  height: 100%;
+
+		  background: linear-gradient(
+			transparent 68%,
+			rgba(160, 120, 80, 0.45) 68%,
+			rgba(193, 154, 107, 0.6) 100%
+		  );
+
+		  border-radius: 8px;
+
+		  transform-origin: left;
+		  animation: coffeeMelt 7s ease-in-out infinite;
+		}
+
+		@keyframes coffeeMelt {
+		  0% {
+			transform: scaleX(0) rotate(-0.5deg);
+			opacity: 0.3;
+			filter: blur(1.5px);
+		  }
+
+		  40% {
+			transform: scaleX(1.05) rotate(-0.2deg);
+			opacity: 1;
+			filter: blur(0.3px);
+		  }
+
+		  70% {
+			transform: scaleX(1) rotate(-0.3deg);
+			opacity: 0.9;
+			filter: blur(0.5px);
+		  }
+
+		  85% {
+			transform: scaleX(1.02) rotate(-0.3deg);
+			opacity: 0.5;
+			filter: blur(1.5px);
+		  }
+
+		  100% {
+			transform: scaleX(0.95) rotate(-0.4deg);
+			opacity: 0;
+			filter: blur(3px);
+		  }
+		}
+		
+		.ruleSelect {
+			padding: 5px;
+			font-size: 14px;
+			border: 2px solid #c9b8a6;
+			border-radius: 10px;
+			background: #fdfbf8;
+			color: #4a3b2f;
+			cursor: pointer;
+		}
+		
 		
 	/* *** プロフィール *** */
 	    .profile-container,.home-container {
@@ -849,34 +923,34 @@
 			    <h1>Team Rule</h1>
 				<p class="team-subtitle">(計8つのチームルールを纏めたページです♬)</p>
 				<br>
-				<h3>☕Rule1～3：基本ルール</h3>
+				<h3><span class="line">☕Rule1～3：基本ルール</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
 					<table style="width: 90%; margin: 0 auto;">
 						<tr>
-							<td style="width: 10%;"><b>●　Rule1</b></td>
-							<td style="width: 10%;">・・・・・・・</td>
-							<td style="width: 80%;">NGSの利用規約(※<a href="https://pso2.jp/players/support/rules/" target="_blank" rel="noopener noreferrer">PC版</a>・<a href="https://pso2.jp/players/support/rules/ps4/" target="_blank" rel="noopener noreferrer">PS4版</a>・<a href="https://pso2.jp/players/support/rules/cloud/" target="_blank" rel="noopener noreferrer">クラウド版</a>)の違反者は、入団及び、在籍を拒否(※強制脱退 & 悪質な場合は<a href="https://pso2.jp/players/support/login/?ref=players%2Fsupport%2Finquiry%2F%3Fmode%3Dwickeduser&action=" target="_blank" rel="noopener noreferrer">悪質ユーザー報告</a>)の対応と致します。</td>
+							<td style="width: 8%;"><small><b>●　Rule1</b></small></td>
+							<td style="width: 10%;"><small>・・・・・・・</small></td>
+							<td style="width: 82%;"><small>NGSの利用規約(※<a href="https://pso2.jp/players/support/rules/" target="_blank" rel="noopener noreferrer">PC版</a>・<a href="https://pso2.jp/players/support/rules/ps4/" target="_blank" rel="noopener noreferrer">PS4版</a>・<a href="https://pso2.jp/players/support/rules/cloud/" target="_blank" rel="noopener noreferrer">クラウド版</a>)の違反者は、入団及び、在籍を拒否(※強制脱退 & 悪質な場合は<a href="https://pso2.jp/players/support/login/?ref=players%2Fsupport%2Finquiry%2F%3Fmode%3Dwickeduser&action=" target="_blank" rel="noopener noreferrer">悪質ユーザー報告</a>)の対応と致します。</small></td>
 						</tr>
 						<tr>
-							<td style="width: 10%;"><b>●　Rule2</b></td>
-							<td style="width: 10%;">・・・・・・・</td>
-							<td style="width: 80%;">拘束や束縛・ノルマの設定・強制は行わないで下さい。</td>
+							<td style="width: 8%;"><small><b>●　Rule2</b></small></td>
+							<td style="width: 10%;"><small>・・・・・・・</small></td>
+							<td style="width: 82%;"><small>拘束や束縛・ノルマの設定・強制は行わないで下さい。</small></td>
 						</tr>
 						<tr>
-							<td style="width: 10%;"><b>●　Rule3</b></td>
-							<td style="width: 10%;">・・・・・・・</td>
-							<td style="width: 80%;">お悩み・相談事項等は、役職者(マスター or マネージャー)まで♪。</td>
+							<td style="width: 8%;"><small><b>●　Rule3</b></small></td>
+							<td style="width: 10%;"><small>・・・・・・・</small></td>
+							<td style="width: 82%;"><small>お悩み・相談事項等は、役職者(マスター、サブマスター、マネージャー)まで♪。</small></td>
 						</tr>
 					</table>
 					<br><br>
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：設立日】</small></p>
 				</details>
 				<br>
-				<h3>☕Rule4：チームへの加入・脱退について</h3>
+				<h3><span class="line">☕Rule4：チームへの加入・脱退について</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
-					<p class="text-section" style="width: 90%; margin-left: 20px;">当チームへの加入・脱退周りについては、以下の通り定めています♬。
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>当チームへの加入・脱退周りについては、以下の通り定めています♬。</small>
 					<div style="width: 90%; margin-left: 20px;">
 						<div class="rule4-tabs">
 							<div class="rule4-tab active" data-tab="rule4-tab1"><small><span style="color: red">❦</span>加入ルート<span style="color: red">❦</span></small></div>
@@ -930,100 +1004,108 @@
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
 				</details>
 				<br>
-				<h3>☕Rule5：チームでの緊急クエスト時の運用方法について</h3>
+				<h3><span class="line">☕Rule5：チームでの緊急クエスト時の運用方法について</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
-					<p class="text-section" style="width: 90%; margin-left: 20px;">チームで赴く緊急クエストは、メンバーが気軽に意思表示でき、主催者の負担が最も少ない方法を理想と考えています。
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>チームで赴く緊急クエストは、メンバーが気軽に意思表示でき、主催者の負担が最も少ない方法を理想と考えています。
 					集まった人数に応じては、チーム固定で赴く事を最優先(※NGSより参加人数に応じたHP補正が掛る為)とし、極力調整する必要の無い自動的な流れを定めておく事と致します♬。
 					<br><br>
 					基本的には、独自の手法を優先としますが、問題(※開始時間になっても出発出来ない。主催者がジャッジを行えず、参加者さんの間で譲り合いや提案等が出てしまう。
-					メンバーさんからの問い合わせの回答が手一杯で行えない等)が続出の場合、以下手法での実施をよろしくお願い致します✨。(※画像は、Clickで拡大表示。)
-					<br>
+					メンバーさんからの問い合わせの回答が手一杯で行えない等)が続出の場合、以下手法での実施をよろしくお願い致します✨。(※画像は、Clickで拡大表示。)</small>
+					<br><br>
 					<a href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/d761cb5c6bec73c2c634d542a6638d90_b9acef99d386e46caef1664b78ba2410.png" target="_blank" rel="noopener noreferrer">
 						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/d761cb5c6bec73c2c634d542a6638d90_b9acef99d386e46caef1664b78ba2410.png" alt="るーる5-1" width="40%">
 					</a>
 					<br><br>
-					※上記資料に記載の「パターン定義」は、以下表の通り。</p>
+					<small>※上記資料に記載の「パターン定義」は、以下表の通り。(プルダウンで人数の選択が可能)</small></p>
+					<div class="table-block">
+					  <select class="ruleSelect" onchange="updateTable(this)" style="margin-left: 30px;">
+						<option value="1" data-count="4">1～7人</option>
+						<option value="2" data-count="4">8～15人</option>
+						<option value="3" data-count="4">16～24人</option>
+					  </select>
+					<br><br>
 					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
-						<tr>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">参加人数</th>
-							<th bgcolor="#c49e6c" style="width: 35%; color: white">難易度【普通】(※1)</th>
-							<th bgcolor="#c49e6c" style="width: 35%; color: white">難易度【高】(※2)</th>
-							<th bgcolor="#c49e6c" style="width: 20%; color: white">遅れての参加希望(※3)</th>
+						<tr data-rule="0" data-always="true">
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>参加人数</small></th>
+							<th bgcolor="#c49e6c" style="width: 35%; color: white"><small>難易度【普通】(※1)</small></th>
+							<th bgcolor="#c49e6c" style="width: 35%; color: white"><small>難易度【高】(※2)</small></th>
+							<th bgcolor="#c49e6c" style="width: 20%; color: white"><small>遅れての参加希望(※3)</small></th>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>1～3人</small></td>
 							<td><small>野良</small></td>
 							<td><small>野良</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>4人</small></td>
 							<td><small>野良</small></td>
 							<td><small>野良</small></td>
 							<td><small>🌞【普通】 ⛄【高】</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>5人</small></td>
 							<td><small>固定</small></td>
 							<td><small>野良(4) + 野良(1) ⇒ 主催者</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>6～7人</small></td>
 							<td><small>固定</small></td>
 							<td><small>固定</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>8人</small></td>
 							<td><small>固定</small></td>
 							<td><small>固定</small></td>
 							<td><small>⛄</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>9人</small></td>
 							<td><small>固定(8) + 野良(1) ⇒ 主催者</small></td>
 							<td><small>固定(8) + 野良(1) ⇒ 主催者</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>10～11人</small></td>
 							<td><small>固定(5:5, 6:5)</small></td>
 							<td><small>固定(8) + 野良(2,3) ⇒ 主催者&後挙手順</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>12～15人</small></td>
 							<td><small>固定(6:6, 7:6, 7:7, 8:7)</small></td>
 							<td><small>固定(6:6, 7:6, 7:7, 8:7)</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>16人</small></td>
 							<td><small>固定(8:8)</small></td>
 							<td><small>固定(8:8)</small></td>
 							<td><small>⛄</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>17人</small></td>
 							<td><small>固定(6:6:5)</small></td>
 							<td><small>固定(8:8) + 野良(1) ⇒ 主催者</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>18～23人</small></td>
 							<td><small>固定(6:6:6, 7:6:6, 7:7:6, 7:7:7, 8:7:7, 8:8:7)</small></td>
 							<td><small>固定(6:6:6, 7:6:6, 7:7:6, 7:7:7, 8:7:7, 8:8:7)</small></td>
 							<td><small>🌞</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>24人</small></td>
 							<td><small>固定(8:8:8)</small></td>
 							<td><small>固定(8:8:8)</small></td>
 							<td><small>⛄</small></td>
 						</tr>
 					</table>
+					</div>
 					<br>
 					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>(※1)固定基準5人。クエスト失敗 or Aランク以下の可能性が低い。</small>
 					<br><small>(※2)固定基準6人。クエスト失敗 or Aランク以下の可能性が高い。</small>
@@ -1032,16 +1114,16 @@
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2017年11月中旬】(※最終更新：2022年10月中旬)</small></p>
 				</details>
 				<br>
-				<h3>☕Rule6：チームでの方針決定時の運用方法について</h3>
+				<h3><span class="line">☕Rule6：チームでの方針決定時の運用方法について</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
-					<p class="text-section" style="width: 90%; margin-left: 20px;">当チームの根底にある「各々のプレイスタイル最優先」という考え方には美しい響きがある反面、
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>当チームの根底にある「各々のプレイスタイル最優先」という考え方には美しい響きがある反面、
 					とても危険な側面も併せ持っています。価値観が近しい者同士であればオアシスに、やや遠い者同士であれば無法地帯となりうるからです。その為、当チームでは「誰もが望む」方針を定めるのではなく、
 					「誰もが納得できる」プロセスを事前に確立しておく事で、チーム内の透明化は元より、トラブルの解決や方針策定のスムーズ化を目指していく事と致します♬。
 					<br><br>上記の方向性より、実際のプロセスとしては、
-					<br><small style="color: #c71585"><u>「①課題発生⇒②メンバーの意見を吸い上げ(※規模拡大に伴い、アンケート実施が多い)⇒③マネージャー会議⇒④マスターが最終的な決断及び、決断理由と共に周知✨」</u></small>
-					<br><br>の流れを取っており、具体的には、以下3つのパターンに分類が行われます。(※画像は、Clickで拡大表示。)
-					<br>
+					<br><span style="color: #c71585"><u>「①課題発生⇒②メンバーの意見を吸い上げ(※規模拡大に伴い、アンケート実施が多い)⇒③マネージャー会議⇒④マスターが最終的な決断及び、決断理由と共に周知✨」</u></span>
+					<br><br>の流れを取っており、具体的には、以下3つのパターンに分類が行われます。(※画像は、Clickで拡大表示。)</small>
+					<br><br>
 					<a href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/c54c1d8679516988e1e67479efa81f8d_1378984f7ebab3bd338085dcb96f1d39.png" target="_blank" rel="noopener noreferrer">
 						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/c54c1d8679516988e1e67479efa81f8d_1378984f7ebab3bd338085dcb96f1d39.png" alt="るーる6-1" width="40%">
 					</a>
@@ -1049,61 +1131,69 @@
 						<img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/fec7ca2ffe16ee80007bf58ebab1db05_1b2d20b4f010e379dce5ef91caf7e702.png" alt="るーる6-2" width="40%">
 					</a>
 					<br><br>
-					また、上記の「◆パターン３(メンバー起因の相談)_③相談内容は妥当？」における判定基準は、
-					<br>以下表の通りと定めています♬。</p>
+					<small>また、上記の「◆パターン３(メンバー起因の相談)_③相談内容は妥当？」における判定基準は、
+					<br>以下表の通りと定めています♬。(プルダウンで事象の選択が可能)</small></p>
+					<div class="table-block">
+					  <select class="ruleSelect" onchange="updateTable(this)" style="margin-left: 30px;">
+						<option value="1" data-count="2">批判・強制</option>
+						<option value="2" data-count="2">妨害</option>
+						<option value="3" data-count="2">迷惑</option>
+						<option value="4" data-count="2">その他、不快事項</option>
+					  </select>
+					<br><br>
 					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
-						<tr>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">事象</th>
-							<th bgcolor="#c49e6c" style="width: 30%; color: white">詳細(具体例)</th>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">ターゲット(※1)</th>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">ジャッジ</th>
-							<th bgcolor="#c49e6c" style="width: 40%; color: white">判定理由</th>
+						<tr data-rule="0" data-always="true">
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>事象</small></th>
+							<th bgcolor="#c49e6c" style="width: 30%; color: white"><small>詳細(具体例)</small></th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>ターゲット(※1)</small></th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>ジャッジ</small></th>
+							<th bgcolor="#c49e6c" style="width: 40%; color: white"><small>判定理由</small></th>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td rowspan="2"><small>批判・強制</small></td>
 							<td rowspan="2"><small>・装備(この武器・能力を使うべき)<br>・キャラクリ(この服・アクセサリーを付けるべき)<br>・戦闘方法(このクラスを使うべき、この立ち回りをすべき)</small></td>
 							<td><small>自分</small></td>
 							<td><small style="color: #4169e1">妥当</small></td>
 							<td><small>「チームルール２」に該当の為。</small></td>
 						</tr>
-						<tr>
-							<td><small>自分以外</small></td>
+						<tr data-rule="1">
+						<td><small>自分以外</small></td>
 							<td><small style="color: #c71585">不当(※2)</small></td>
 							<td><small>人により感じ方が異なり、まずはその確認(統計)が必要となる事(全メンバーへのヒアリング等)、また、最終的には、人間性(性格・個性)の改善要求となる事から、
 							ターゲットが自分でない場合、不当の判定と致します。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td rowspan="2"><small>妨害</small></td>
 							<td rowspan="2"><small>・イベント、クエスト募集の進行(仕切り(指示)、許可無くチーム外の人を呼ぶ)</small></td>
 							<td><small>自分(主催者)</small></td>
 							<td><small style="color: #4169e1">妥当</small></td>
 							<td><small>あくまでも進行等は、主催者に委ねましょう。経験則等により「こうした方が良い」等が見えた場合、チームチャットではなく、主催者へのwisがベスト♪。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>自分以外(主催者以外)</small></td>
 							<td><small style="color: #c71585">不当(※2)</small></td>
 							<td><small>基本的には、主催者からの相談時のみ、妥当の判定と致します。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td rowspan="2"><small>迷惑</small></td>
 							<td rowspan="2"><small>・戦闘中放置<br>・ストーカー行為(多数のwis等)</small></td>
 							<td><small>自分</small></td>
 							<td><small style="color: #4169e1">妥当</small></td>
 							<td><small>「チームルール1」、「チームルール2」に該当の為。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>自分以外</small></td>
 							<td><small style="color: #4169e1">妥当</small></td>
 							<td><small>事実確認を行います。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="4">
 							<td rowspan="2"><small>その他、不快事項</small></td>
 							<td rowspan="2"><small>・無視<br>・暴言</small></td>
 							<td><small>自分</small></td>
 							<td><small style="color: #4169e1">妥当</small></td>
 							<td><small>「チームルール１」に該当の為。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="4">
 							<td><small>自分以外</small></td>
 							<td><small style="color: #c71585">不当(※2)</small></td>
 							<td><small>人により感じ方が異なり、まずはその確認(統計)が必要となる事(全メンバーへのヒアリング等)、また、最終的には、人間性(性格・個性)の改善要求となる事から、
@@ -1117,75 +1207,83 @@
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2017年11月中旬】(※最終更新：2022年10月中旬)</small></p>
 				</details>
 				<br>
-				<h3>☕Rule7：チームでのチャット周りの留意点について</h3>
+				<h3><span class="line">☕Rule7：チームでのチャット周りの留意点について</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
-					<p class="text-section" style="width: 90%; margin-left: 20px;">当チームでの「チームチャット」とは、<b><u>「メンバー皆が気軽に参加できるOpenな会話(状態)」</b></u>を理想と考えています。
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>当チームでの「チームチャット」とは、<b><u>「メンバー皆が気軽に参加できるOpenな会話(状態)」</b></u>を理想と考えています。
 					<br>これは、次の2つを主な理由としており、
-					<br><br>　<small style="color: #c71585">【1】各々のスタイルを最優先とするチーム方針より、誰もが不快なく自由に楽しめる(発言できる)環境をPriorityとしている為～♪。</small>
-					<br>　<small style="color: #4169e1">【2】根底として「性善説」を採用しているチームである事から、具体的なNGな話題、挨拶の強制等を細かくルールで定める事はしない。(※性善説だからこそ、ルールを定めるという価値観もあります♬。)</small>
+					<br><br>　<span style="color: #c71585">【1】各々のスタイルを最優先とするチーム方針より、誰もが不快なく自由に楽しめる(発言できる)環境をPriorityとしている為～♪。</span>
+					<br>　<span style="color: #4169e1">【2】根底として「性善説」を採用しているチームである事から、具体的なNGな話題、挨拶の強制等を細かくルールで定める事はしない。(※性善説だからこそ、ルールを定めるという価値観もあります♬。)</span>
 					<br><br>当スタイルを実現の為、以下行為は、苦情(注意)対象となる恐れがあります><。
 					<br>参画となる方は、ご留意～の程よろしくね～✨。
-					<br><br>　<small>　●　ネガティブな内容や、装備・クラス・クエスト・運営への過渡な批判等。<span style="color: red">(※例外あり!?)<span></small>
-					<br>　<small>　●　会話に入れる人が限られる(苦手としている方がいる)話題を、淡々と話し続ける行為。</small>
+					<br><br>　　●　ネガティブな内容や、装備・クラス・クエスト・運営への過渡な批判等。<span style="color: red">(※例外あり!?)</span>
+					<br>　　●　会話に入れる人が限られる(苦手としている方がいる)話題を、淡々と話し続ける行為。
 					<br><br>･･･も!?。これらを回避すべく&リアルの会話の中でも使用できる!?いくつかの㊙コミュニケーション技法を以下に纏めてみました♬。
-					<br>ご参考～❦。(※レベルは、私の独断と偏見となっております。ご了承～(*ﾉωﾉ)。)</p>
+					<br>ご参考～❦。(※レベルは、私の独断と偏見となっております。ご了承～(*ﾉωﾉ)。)<br>プルダウンで技法の選択が可能。</small></p>
+					<div class="table-block">
+					  <select class="ruleSelect" onchange="updateTable(this)" style="margin-left: 30px;">
+						<option value="1" data-count="3">オノマトペ、ネームコーリング、ミラーリング</option>
+						<option value="2" data-count="3">Yes And、ドア・イン・ザ・フェイス、フット・イン・ザ・ドア</option>
+						<option value="3" data-count="3">バックトラッキング、ページング、オープンマインド</option>
+						<option value="4" data-count="1">プランニング</option>
+					  </select>
+					<br><br>
 					<table border="2" bordercolor="8e735b" style="width: 90%; margin: 0 auto;">
-						<tr>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">技法</th>
-							<th bgcolor="#c49e6c" style="width: 10%; color: white">レベル</th>
-							<th bgcolor="#c49e6c" style="width: 80%; color: white">詳細</th>
+						<tr data-rule="0" data-always="true">
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>技法</small></th>
+							<th bgcolor="#c49e6c" style="width: 10%; color: white"><small>レベル</small></th>
+							<th bgcolor="#c49e6c" style="width: 80%; color: white"><small>詳細</small></th>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>オノマトペ</small></td>
 							<td><small><span style="color: orange">★</span>☆☆☆☆</small></td>
 							<td><small>あらゆる物事や状態を音にして表現する、平安時代にはすでに見られたと言う歴史ある技法。直近だと、「ぴえん」もこれにあたる模様。。
 							自分が感じた感情等を、ありのままに擬音化するだけでも、会話の熱量が1ランクUPする即効性の強い魔法の技法。
 							<s>因みに私は、「ムニムニ(〃ﾉωﾉ)♪。」と、「ﾌﾟﾆﾌﾟﾆ(*>ω<*)っ♪。」を愛用。←これ、テストに出ます。ムニムニ(〃ﾉωﾉ)♪。</s></small></td>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>ネームコーリング</small></td>
 							<td><small><span style="color: orange">★</span>☆☆☆☆</small></td>
 							<td><small>相手の名前(キャラ名)を呼ぶ事で、相手からの好感度が無意識の内にUPすると言う<s>魔術的(*☆ω★*)</s>心理学的な技法。
 							相手のキャラ名が長すぎる場合？・・・ニックネームを良い感じに付けて、名付け親になっちゃえ～♪。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="1">
 							<td><small>ミラーリング</small></td>
 							<td><small><span style="color: green">★★</span>☆☆☆</small></td>
 							<td><small>相手の仕草や反応等、しつこくなり過ぎない程度で真似をする事。相手が良く使う顔文字やロビーアクション、シンボルアート等を真似てみる事で、
 							信頼感、距離感が飛躍的にUP♪。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>Yes And</small></td>
 							<td><small><span style="color: blue">★★★</span>☆☆</small></td>
 							<td><small>相手が自分の考えや感じる事を話してきたときは、まずはYes And法。いきなりButで返せば、開戦の火ぶたが切って落とされる♪。
 							まずは肯定という事は、「相互リスペクト」にも繋がる所があり、例え相手の考えが誤っていたとしても、最終的にはそれを美しく伝える事が出来る強烈な技法。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>ドア・イン・ザ・フェイス</small></td>
 							<td><small><span style="color: red">★★★★★</span></small></td>
 							<td><small>ギリギリ断られる提案を行い、次に実際お願いしたい事を提案する反報性の原理(相手から良いことをされたら、良いことを返したい♪。相手が譲歩したので、自分も譲歩しなければ♪。)
 							を用いた技法。<s>私は多分、カモになります。(*_ω_*)。</s></small></td>
 						</tr>
-						<tr>
+						<tr data-rule="2">
 							<td><small>フット・イン・ザ・ドア</small></td>
 							<td><small><span style="color: red">★★★★★</span></small></td>
 							<td><small>100%やってくれる提案を行い、段々と実際お願いしたい事に近付ける一貫性の原理(一度Yesと言えば、Noという前提を覆す事は言えにくくなる><)を用いた技法。
 							<s>マイショップの値下げ交渉に。。(*☆ω★*)(以下イメージ尊守の為、割愛。。ぇ。)</s></small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>バックトラッキング</small></td>
 							<td><small><span style="color: blue">★★★</span>☆☆</small></td>
 							<td><small>相手の感情や、お話し内容を同じ温度感で共感、要約した内容を返し、相手に寄り添い話を膨らませて行く技法。
 							「ミラーリング」と同じく、「相互リスペクト」にも繋がる所があり、例え自分の中の話題量が少なくても、相手の話題に寄り添っていく事で会話のキャッチボールのレスポンススピードを維持できるという、切り札的な技法。</s></small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>ページング</small></td>
 							<td><small><span style="color: green">★★</span>☆☆☆</small></td>
 							<td><small>相手の波長に合わせる事で、信頼関係や距離感を縮める事を可能にする技法。初対面時、チャットの速さや、話題の切り替えの早さ、ミッション受注の間隔等、
 							きっと人それぞれ異なるそのスピードを、まずは把握する事から、スタート行ってみよ～う♪。(*>ω<*)♪。</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="3">
 							<td><small>オープンマインド</small></td>
 							<td><small><span style="color: purple">★★★★</span>☆</small></td>
 							<td><small>自分の考えや感じる事、弱み等を包み隠さず公開し、まずは相手との距離感、警戒心を中和。徐々に露(あら)わとなる異なる価値観を把握していく事で、
@@ -1194,7 +1292,7 @@
 							<br><br>「私、エキスパート条件をまだ持っていなくて挑戦中なのん><」、「能力付けがイマイチ分からないのん><」、<s>「マスターのお話は、いつも校長先生のお話しみたいで長いのん><。。(*_ω_*)ぇ。」</s>
 							まずは雑談の切口として、その後に話を膨らませて行く事にも長けている為、所々で織り交ぜていくのがベストな技法。(最後のは、マイルーム呼び出しで一方通行の雑談になってしまう危険性有りだけどね。。♪。)</small></td>
 						</tr>
-						<tr>
+						<tr data-rule="4">
 							<td><small>プランニング</small></td>
 							<td><small><span style="color: purple">★★★★</span>☆</small></td>
 							<td><small>おおよそのお話ししたい内容、ゴール(オチ、結論)を事前に用意しておき、所々脱線があったとしても、最終的にはブレずに美しく纏め上げる技法。
@@ -1212,17 +1310,44 @@
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
 				</details>
 				<br>
-				<h3>☕Rule8：チーム内での配信について</h3>
+				<h3><span class="line">☕Rule8：チーム内での配信について</span></h3>
 				<details>
 					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
-					<p class="text-section" style="width: 90%; margin-left: 20px;">配信を行う際には、チーム内外でのトラブル未然防止の観点より、以下3点のご留意をお願い致します♬。
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>配信を行う際には、チーム内外でのトラブル未然防止の観点より、以下3点のご留意をお願い致します♬。
 					<br><br>　①：配信時は、各リージョンの撮影推奨ロビー【<リージョン名> 撮影推奨 00<1 or 2>】を使用。
 					<br>　②：チームチャットでの指名(話の振られ)等を回避の為、フリー(フレンド)メッセージ欄に配信中である旨を明記。
-					<br>　　　<small style="color: #c71585"><u>【※クイックメニュー➤オンラインステータス変更(フレンドメッセージ変更)➤フリー(フレンド)メッセージ欄に記入】</u></small>
+					<br>　　　<span style="color: #c71585"><u>【※クイックメニュー➤オンラインステータス変更(フレンドメッセージ変更)➤フリー(フレンド)メッセージ欄に記入】</u></span>
 					<br><br>　③：配信中のチームチャット、グループチャット、wis内容の漏洩防止の為、チャットの吹き出し＆ログは非表示設定。
-					<br>　　　<small style="color: #4169e1"><u>【※システム➤ストリーマーモード➤「使用する」に設定】</u></small>
-					<br>　　　<small style="color: #32cd32"><u>【※チャットの表示画面➤「7.システム」等、発言内容が表示されない様に設定】</u></small></p>
+					<br>　　　<span style="color: #4169e1"><u>【※システム➤ストリーマーモード➤「使用する」に設定】</u></span>
+					<br>　　　<span style="color: #32cd32"><u>【※チャットの表示画面➤「7.システム」等、発言内容が表示されない様に設定】</u></span></small></p>
 					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2022年1月下旬】(※最終更新：2022年4月上旬)</small></p>
+				</details>
+				<br>
+				<h3><span class="line">☕Rule9：チーム内での外部グループ作成時の留意点について</span></h3>
+				<details>
+					<summary class="team-subtitle" style="width: 25%;"><small>【Clickで詳細のOpen/Close】</small></summary>
+					<p class="text-section" style="width: 90%; margin-left: 20px;"><small>外部グループ(ディスコード、Xグループ等)を作成、及び運用する際には、トラブル未然防止の観点より、以下3点のご留意をお願い致します♬。
+					<br><br>
+					<span style="display:block; margin-bottom:15px;"><span style="background-color: yellow; padding: 2px 8px; border-radius: 6px;"><b><u>①：チームメンバーさんを個別に直接お誘いする行為は･･･(乂'ω')ﾒ～✨。</u></b></span>
+					<br>【理由】現在在籍のチームメンバーさんは、チームで一緒に楽しむ事を目的に、基本的には私の方でお誘いの上、入団を頂いている事から、当方向性を根底としたチーム運営方針に、影響を及ぼす可能性がある為。また、心理学上での「対人葛藤の回避」が発生しやすい状況となる為.˚‧º·(ฅдฅ｡)‧º·˚.。ｧｧ～💦。
+					<br><br>も！？チームメンバーさんの自由を制限する行為もNG(チームルール２)である事から、全体向け告知で、チームメンバーさんが参加を希望、
+					<br>もしくは、実際に参加する事は問題ありません♬。
+					<br>※自身が紹介して加入となったチームメンバーさんを、個別にお誘いする事も、もちろん可。</span>
+
+					<br><br>
+					<span style="display:block; margin-bottom:15px;"><span style="background-color: pink; padding: 2px 8px; border-radius: 6px;"><b><u>②：参加メンバーさんが安心して活動できる様、基本的ガイドラインを設けましょう♬。(※必須ではなく、努力義務)</u></b></span>
+					<br>また、チームメンバーさんが存在の場合は、チームの雰囲気や、価値観にそぐわぬ行為(非リスペクト、上品さを欠く行為等)はしない事。
+					<br>【理由】チームの品格維持の為✨。</span>
+
+					<br><br>
+					<span style="display:block; margin-bottom:15px;"><span style="background-color: skyblue; padding: 2px 8px; border-radius: 6px;"><b><u>③：チームメンバー間でのトラブルや、チーム活動に影響が出る可能性のある問題が発生した場合は、まずは当事者間にて解決を図るようお願いします。</u></b></span>
+					<br>ただし、解決が難しい場合や対応に不安がある場合は、チームマスター(役職者)まで共有してね～( 'ω' و( و"。
+					<br>【理由】外部グループの事象までは、私の方では責任は負い切れない為><。</span>
+					
+					<br><br>
+					<span style="display:inline-block; background-color:#f9f9f9; padding:10px; border-radius:6px;">※本ルール①〜③について、トラブルの多発(逆に報告が無く、トラブルが発生していた等)、
+					<br>チーム内への影響が発生の際には、是正を行う場合が有ります。ご了承～⁽⁽꜀(x3꜂ ꜆)꜄⁾⁾。</span></small></p>
+					<p class="team-subtitle" style="width: 95%; text-align:right"><small><br>【Ruleの制定：2026年4月中旬】(※最終更新：XXXX年XX月XX)</small></p>
 				</details>
 				<br><br>
 			</div>
@@ -1723,7 +1848,46 @@
 		function TeamSpacePhoto(src) {
             document.getElementById('TeamSpacePhoto').src = src;
         }
+
+		// ルールページのテーブル表示
+		document.addEventListener("DOMContentLoaded", () => {
+		document.querySelectorAll(".table-block").forEach(block => {
+			updateTable(block);
+		});
+		});
 		
+		function updateTable(el) {
+			const container = el.closest(".table-block") || el;
+			
+			const select = container.querySelector(".ruleSelect");
+			const selectedValue = select.value;
+			
+			const selectedOption = select.selectedOptions[0];
+			const count = parseInt(selectedOption.dataset.count);
+			
+			const rows = Array.from(container.querySelectorAll("table tr"));
+			
+			// 一旦全部制御
+			rows.forEach(row => {
+				if (row.dataset.always === "true") {
+				row.style.display = "table-row"; // 常に表示
+				} else {
+				row.style.display = "none";
+				}
+			});
+			
+			// 対象行を探す（alwaysは除外）
+			const filteredRows = rows.filter(row => !row.dataset.always);
+			const startIndex = filteredRows.findIndex(row => row.dataset.rule === selectedValue);
+			
+			// count分、表示
+			for (let i = 0; i < count; i++) {
+				if (filteredRows[startIndex + i]) {
+				filteredRows[startIndex + i].style.display = "table-row";
+				}
+			}
+		}
+
 		// ヘッダーランダム表示
 		document.addEventListener("DOMContentLoaded", function() {
         var images = ["https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/75625cf36d7efd63f1e490110cdb3924_f0327827518f9b104d4cb1bf3b191fd3.png", "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/18231cfc6cd708c8ac239d0a57e2dc30_9a6655bc8063a6226bdab57b374b7362.png"];
