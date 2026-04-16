@@ -1031,18 +1031,6 @@
     "radar_cs": "0",
     "radar_ls": "0"
   },
-  "サクラアイリス": {
-    "join": "2026",
-    "post": "コモン",
-    "photo": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png",
-    "xurl": "https://x.com/tak_0703Rev",
-    "info": "Coming Soon!?♬。",
-    "radar_quest": "0",
-    "radar_fashion": "0",
-    "radar_commu": "0",
-    "radar_cs": "0",
-    "radar_ls": "0"
-  },
   "音城セイラ": {
     "join": "2026",
     "post": "コモン",
@@ -1104,18 +1092,6 @@
     "radar_ls": "0"
   },
   "◇はる◇": {
-    "join": "2026",
-    "post": "コモン",
-    "photo": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png",
-    "xurl": "",
-    "info": "Coming Soon!?♬。",
-    "radar_quest": "0",
-    "radar_fashion": "0",
-    "radar_commu": "0",
-    "radar_cs": "0",
-    "radar_ls": "0"
-  },
-  "あるる": {
     "join": "2026",
     "post": "コモン",
     "photo": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png",
@@ -1198,4 +1174,29 @@
     "radar_commu": "0",
     "radar_cs": "0",
     "radar_ls": "0"
+  },
+  "raru": {
+    "join": "2026",
+    "post": "コモン",
+    "photo": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png",
+    "xurl": "",
+    "info": "Coming Soon!?♬。",
+    "radar_quest": "0",
+    "radar_fashion": "0",
+    "radar_commu": "0",
+    "radar_cs": "0",
+    "radar_ls": "0"
+  },
+  "ユキ(Re)": {
+    "join": "2026",
+    "post": "コモン",
+    "photo": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/009b537a7afa2c4663d0b23f649d4094_7cbf3fc22b7c8e5949b3f994e76c70cc.png",
+    "xurl": "",
+    "info": "Coming Soon!?♬。",
+    "radar_quest": "0",
+    "radar_fashion": "0",
+    "radar_commu": "0",
+    "radar_cs": "0",
+    "radar_ls": "0"
+  }
 }
