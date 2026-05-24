@@ -1,0 +1,28 @@
+[
+  {
+    "type":1,
+    "mission":"NGS攻略動画",
+    "release":"2026/05",
+    "videographer":"NY",
+    "detail":"初心者向け攻略",
+    "link":"https://youtube.com"
+  },
+  {
+    "type":1,
+    "mission":"Mission B",
+    "release":"2026/05",
+    "videographer":"NY",
+    "detail":"解説動画",
+    "link":"https://youtube.com"
+  },
+  {
+    "type":2,
+    "mission":"TA動画",
+    "rank":"S",
+    "time":"04:12",
+    "release":"2026/05",
+    "videographer":"NY",
+    "detail":"最速チャレンジ",
+    "link":"https://youtube.com"
+  }
+]
