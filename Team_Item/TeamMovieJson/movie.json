@@ -489,16 +489,16 @@
   },
   {
     "type":1,
-    "release":"連破演習:ハルコタン（武器縛りSHペア）",
-    "mission":"2020年7月18日",
+    "mission":"連破演習:ハルコタン（武器縛りSHペア）",
+    "release":"2020年7月18日",
     "videographer":"ユリア",
     "detail":"蒼葉さんと赴いたハルコタンTA（条件縛りSH）のペア戦～♪",
     "link":"https://www.youtube.com/watch?v=oebberAahYk&amp;feature=youtu.be"
   },
   {
     "type":1,
-    "release":"T:敵艦潜入訓練:Enhancer",
-    "mission":"2020年7月23日",
+    "mission":"T:敵艦潜入訓練:Enhancer",
+    "release":"2020年7月23日",
     "videographer":"ユリア",
     "detail":"メンバー4名で赴いた敵艦潜入訓練:Enhancerトリガ～♪",
     "link":"https://www.youtube.com/watch?v=dZaDQ9eB5Ew&amp;feature=youtu.be"
@@ -1399,21 +1399,421 @@
     "detail":"メンバー8名で赴いたチーム貸し切り、緊急クエスト♪",
     "link":"https://youtu.be/lKNCqTbWInA"
   },
-    {
+  {
     "type": 3,
-    "mission": "Mission B",
-    "release": "2024-01-12",
-    "time": "14:00",
-    "class": "Beta",
-    "link": "https://example.com/b"
+    "mission": "ファレグ決闘～♪",
+    "release": "2017年6月10日",
+    "time": "02:20",
+    "class": "Br:79/Hu:75♪",
+    "link":"https://www.youtube.com/watch?v=_eZv-Ietkr4"
+  },
+  {
+    "type": 3,
+    "mission": "独極（天極と地極）～♪",
+    "release": "2018年1月27日",
+    "time": "03:09",
+    "class": "Br:80/Hu:80♪",
+    "link":"https://www.youtube.com/watch?v=b0mN3j2VRM4"
+  },
+  {
+    "type": 3,
+    "mission": "独極（世壊の境界）～♪",
+    "release": "2018年1月27日",
+    "time": "04:55",
+    "class": "Br:80/Hu:80♪",
+    "link":"https://www.youtube.com/watch?v=Raeqv0MqlKk"
+  },
+  {
+    "type": 3,
+    "mission": "ソロ綿花～♪",
+    "release": "2018年1月27日",
+    "time": "08:17",
+    "class": "Br:80/Hu:80♪",
+    "link":"https://www.youtube.com/watch?v=BhjhAol1M5c"
+  },
+  {
+    "type": 3,
+    "mission": "独極（狂想と幻創）Br～♪",
+    "release": "2018年3月31日",
+    "time": "11:42",
+    "class": "Br:80/Hu:80♪",
+    "link":"https://www.youtube.com/watch?v=Q0gFkgq7X8Y"
+  },
+  {
+    "type": 3,
+    "mission": "独極（狂想と幻創）Hr～♪",
+    "release": "2018年8月24日",
+    "time": "12:56",
+    "class": "Hr:80♪",
+    "link":"https://www.youtube.com/watch?v=N0yiYSXvIiA"
+  },
+  {
+    "type": 3,
+    "mission": "エルゼリオン・トリガ～Ver3♪",
+    "release": "2018年11月23日",
+    "time": "12:34",
+    "class": "Br:85/Hu:85♪",
+    "link":"https://www.youtube.com/watch?v=tmg5WtTOnWo"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（マスカレーダ:ステージ50）♪",
+    "release": "2018年12月15日",
+    "time": "08:03",
+    "class": "Br:85/Hu:85♪",
+    "link":"https://www.youtube.com/watch?v=pG3JnG2qf7U&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（マスカレーダ:ステージ100）♪",
+    "release": "2019年2月15日",
+    "time": "08:52",
+    "class": "Br:89/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=rmmWgslUQf8&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "マザーデウス・トリガ～Hr♪",
+    "release": "2019年4月23日",
+    "time": "16:48",
+    "class": "Hr:88♪",
+    "link":"https://www.youtube.com/watch?v=LzGbmSZEneY&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（マスカレーダ:ステージ150）♪",
+    "release": "2019年5月1日",
+    "time": "08:30",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=RcolZkmw29c&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "マザーデウス・トリガ～Br Ver3♪",
+    "release": "2019年5月2日",
+    "time": "17:34",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=7iINe_eiqs4&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロ綿花（UH）～♪",
+    "release": "2019年8月11日",
+    "time": "11:24",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=cHgwruw4pi8&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "オムニバス・アプレンティス～♪",
+    "release": "2019年10月14日",
+    "time": "05:50",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=UKr8UkuHP2c&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロ艦内潜入戦～♪",
+    "release": "2019年10月19日",
+    "time": "被ダメージ:22157",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=9i5MeMh9iEI&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "極限（地球と幻創）ソロ～Br♪",
+    "release": "2019年11月16日",
+    "time": "09:14",
+    "class": "Br:90/Hu:90♪",
+    "link":"https://www.youtube.com/watch?v=R92JDPEvkPc&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "極限（地球と幻創）ソロ～Hr♪",
+    "release": "2019年11月17日",
+    "time": "09:22",
+    "class": "Hr:90♪",
+    "link":"https://www.youtube.com/watch?v=MnqrgtLifjE&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "極限（地球と幻創）ソロ～Ph♪",
+    "release": "2019年11月17日",
+    "time": "08:02",
+    "class": "Ph:90♪",
+    "link":"https://www.youtube.com/watch?v=JmKwEcJp3vk&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "マザーデウス・トリガ～（UH） Br♪",
+    "release": "2020年3月7日",
+    "time": "17:31",
+    "class": "Br:95/Hu:95♪",
+    "link":"https://www.youtube.com/watch?v=mCx06SAaI_0&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "マザーデウス・トリガ～Ver2（UH） Br♪",
+    "release": "2020年3月27日",
+    "time": "15:07",
+    "class": "Br:95/Hu:95♪",
+    "link":"https://www.youtube.com/watch?v=IdOEx-TsMkM&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "独極（異界と超界）Br～♪",
+    "release": "2020年12月30日",
+    "time": "08:54",
+    "class": "Br:100/Hu:100♪",
+    "link":"https://www.youtube.com/watch?v=E9Of9weTX9A&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（ソダム:ステージ50）♪",
+    "release": "2021年1月28日",
+    "time": "11:40",
+    "class": "Br:100/Ph:100♪",
+    "link":"https://www.youtube.com/watch?v=9Y4E07v99tg&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（ソダム:ステージ90）♪",
+    "release": "2021年2月22日",
+    "time": "13:32",
+    "class": "Br:100/Ph:100♪",
+    "link":"https://www.youtube.com/watch?v=__0ypzMi7ss&amp;feature=youtu.be"
+  },
+  {
+    "type": 3,
+    "mission": "ソロアルチ（ソダム:ステージ100）♪",
+    "release": "2021年3月11日",
+    "time": "14:29",
+    "class": "Br:100/Ph:100♪",
+    "link":"https://www.youtube.com/watch?v=qUXnVO7KM4o"
   },
   {
     "type": 4,
-    "mission": "Mission C",
-    "rank": "S",
-    "time": "08:15",
-    "release": "2024-02-01",
-    "class": "Gamma",
-    "link": "https://example.com/c"
+    "mission": "ジオメトリックラビリンス（ソロAランク）",
+    "rank": "－",
+    "time": "17分5秒",
+    "release": "2022年8月20日",
+    "class": "Hu:60/Br:60♪",
+    "link": "https://www.youtube.com/watch?v=Z49WnUQfIMY"
+  },
+  {
+    "type": 4,
+    "mission": "ミュージックディスク（PSZ #02『たいせつなもの』）",
+    "rank": "－",
+    "time": "－",
+    "release": "2022年11月23日",
+    "class": "－",
+    "link": "https://www.youtube.com/watch?v=K0wCe2AgjpE"
+  },
+  {
+    "type": 4,
+    "mission": "「ハルフィリア湖の戦い」エンディングムービ～",
+    "rank": "－",
+    "time": "－",
+    "release": "2023年2月4日",
+    "class": "－",
+    "link": "https://www.youtube.com/watch?v=mSjPuH1eq-8"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（エアリオ）Bランク",
+    "rank": "1",
+    "time": "4分46秒",
+    "release": "2023年4月30日",
+    "class": "Br:70/Hu:70♪",
+    "link": "https://www.youtube.com/watch?v=_g6D-wA5Mgc"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（リテム）Bランク",
+    "rank": "1",
+    "time": "4分59秒",
+    "release": "2023年4月30日",
+    "class": "Br:70/Hu:70♪",
+    "link": "https://www.youtube.com/watch?v=aVJtDtcwnaY"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（スティア）Bランク",
+    "rank": "1",
+    "time": "4分37秒",
+    "release": "2023年4月30日",
+    "class": "Br:70/Hu:70♪",
+    "link": "https://www.youtube.com/watch?v=pv1VFU9vts0"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（クヴァリス）Bランク",
+    "rank": "1",
+    "time": "4分58秒",
+    "release": "2023年5月2日",
+    "class": "Br:70/Sl:65♪",
+    "link": "https://www.youtube.com/watch?v=4gb9iuqEPSo"
+  },
+  {
+    "type": 4,
+    "mission": "ルイノ・マスカレーダ Depth.10",
+    "rank": "10",
+    "time": "9分35秒",
+    "release": "2025年3月5日",
+    "class": "Br:100/Sl:100♪",
+    "link": "https://youtu.be/2kYDLovW3gA"
+  },
+  {
+    "type": 4,
+    "mission": "ルイノ・マスカレーダ Depth.10（Br強化後～）",
+    "rank": "10",
+    "time": "7分53秒",
+    "release": "2025年4月5日",
+    "class": "Br:100/Sl:100♪",
+    "link": "https://youtu.be/8W5Vy_4OkSQ"
+  },
+  {
+    "type": 4,
+    "mission": "ルイノ・マスカレーダ Depth.10（Br強化後Ver2～）",
+    "rank": "10",
+    "time": "7分23秒",
+    "release": "2025年4月26日",
+    "class": "Br:100/Sl:100♪",
+    "link": "https://youtu.be/8niviI4_wNw"
+  },
+  {
+    "type": 4,
+    "mission": "コクーン（ローンウェイⅡ）",
+    "rank": "－",
+    "time": "3分59秒",
+    "release": "2025年8月31日",
+    "class": "Br:105/Sl:105♪",
+    "link": "https://youtu.be/ebD_iidhRvU"
+  },
+  {
+    "type": 4,
+    "mission": "コクーン（ヘリカルライン）",
+    "rank": "－",
+    "time": "2分33秒",
+    "release": "2025年8月31日",
+    "class": "Br:105/Sl:105♪",
+    "link": "https://youtu.be/0riJrXkQYAM"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ラセツ）",
+    "rank": "5",
+    "time": "6分5秒",
+    "release": "2025年11月3日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/pvJ3odGUlok"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・マクスヴァング）",
+    "rank": "5",
+    "time": "6分24秒",
+    "release": "2025年11月3日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/HoZIrmbI-pc"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ラヴィード）",
+    "rank": "5",
+    "time": "5分30秒",
+    "release": "2025年11月15日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/32GOk28XJGM"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ギルゼイヴァ）",
+    "rank": "5",
+    "time": "4分58秒",
+    "release": "2025年11月15日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/Ywcbx4ILuy4"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ヴァルザッガ）",
+    "rank": "5",
+    "time": "5分25秒",
+    "release": "2025年11月29日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/ZZQYSc9EjUk"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・プルティネーデ）",
+    "rank": "5",
+    "time": "5分40秒",
+    "release": "2025年11月29日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/-iuUMjKV3_o"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ゼレヴィン）",
+    "rank": "5",
+    "time": "5分26秒",
+    "release": "2025年12月11日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/1YxNKsHOlJs"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・リングウェッジ）",
+    "rank": "5",
+    "time": "5分30秒",
+    "release": "2025年12月11日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/LZCN8aF0crg"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・カオスザヴェル）",
+    "rank": "5",
+    "time": "5分12秒",
+    "release": "2025年12月27日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/sVDtvLn1Vjk"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・ハヌマッド）",
+    "rank": "5",
+    "time": "5分34秒",
+    "release": "2025年12月27日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/cWRKMP38yNo"
+  },
+  {
+    "type": 4,
+    "mission": "デュエル・クエスト（ハイ・アグニ）",
+    "rank": "1",
+    "time": "7分51秒",
+    "release": "2025年12月28日",
+    "class": "Br:110/Sl:110♪",
+    "link": "https://youtu.be/OMxDry-Z_io"
+  },
+  {
+    "type": 4,
+    "mission": "想定演習：ルイノ・エクス戦",
+    "rank": "1",
+    "time": "3分3秒",
+    "release": "2026年3月14日",
+    "class": "Br:115/Sl:115♪",
+    "link": "https://youtu.be/ZaTfPhPzu5A"
+  },
+  {
+    "type": 4,
+    "mission": "想定演習：焔獄の疾駆戦",
+    "rank": "1",
+    "time": "6分31秒",
+    "release": "2026年5月3日",
+    "class": "Br:115/Bo:115♪",
+    "link": "https://youtu.be/tUUjxm_rhOA"
   }
 ]
