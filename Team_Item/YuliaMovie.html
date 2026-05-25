@@ -1,1026 +1,349 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>Yulia's movie ♪</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-	  background-color: #000;
-	  color: #fff;
-	  padding-left: 20px;
-    }
-    .hidden { display: none; }
-    .tab {
-        cursor: pointer;
-        padding: 10px 20px;
-        display: inline-block;
-        background: linear-gradient(145deg, #111, #333);
-        color: white;
-        border: 1px solid #888;
-        border-radius: 5px;
-        margin: 5px;
-        transition: all 0.3s ease-in-out;
-    }
-    .tab:hover {
-        transform: scale(1.1);
-    }
-    .active {
-        background: linear-gradient(145deg, #ccc, #eee);
-        color: black;
-    }
-    table {
-        width: 60%;
-        border-collapse: collapse;
-        background: black;
-        color: white;
-    }
-    table, th, td {
-        border: 2px solid dimgray;
-		color: white;
-		font-size: 0.9em;
-    }
-	td:hover{
-		background-color: #c71585;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yulia's movie ♪</title>
+    <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のチーム動画の一覧表です♪。">
+    <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ">
+<style>
+/* ===== 全体スタイル ===== */
+*{box-sizing:border-box}
 
-  </style>
+body{
+    margin:0;
+    padding:30px;
+    background:#f3e8dc;
+    color:#5b4636;
+	font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+}
+
+header {
+  background-color: #d9c3a9;
+  padding: 16px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.heroImage{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.heroImage img{
+    width:50%;
+	height:360px;
+    max-width:600px;
+    object-fit:cover;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    border:6px solid #fffaf4;
+}
+
+.cafeSub{
+    text-align:center;
+    color:#8c6a52;
+    margin-bottom:30px;
+}
+
+.tabWrap{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.tab{
+    background:#fff9f2;
+    padding:12px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    border:2px solid #d7bfa8;
+    font-weight:bold;
+    transition:0.2s;
+	font-family: "Arial", sans-serif;
+}
+
+.tab:hover{
+    transform:translateY(-2px);
+}
+
+.tab.active{
+    background:#8b5e3c;
+    color:#fff;
+}
+
+.tabContent{
+    display:none;
+}
+
+.tabContent.active{
+    display:block;
+}
+
+table{
+    width:80%;
+	margin:auto;
+    border-collapse:separate;
+    border-spacing:0 14px;
+}
+
+.type3 th{
+    background:#8a2be2;
+    color:#fff;
+	padding:14px;
+    text-align:left;
+}
+
+.type4 th{
+    background:#008000;
+    color:#fff;
+    padding:14px;
+    text-align:left;
+}
+
+td{
+    background:#fffaf4;
+    padding:14px;
+    border-top:1px dashed #d8c4ae;
+    border-bottom:1px dashed #d8c4ae;
+    word-break:break-word;
+	font-size:14px;
+}
+
+.watchBtn{
+    display:inline-block;
+    background:#8b5e3c;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+}
+
+.watchBtn:hover{
+    opacity:.85;
+}
+
+.type3 .watchBtn{
+    background:#ba55d3;
+}
+
+.type4 .watchBtn{
+    background:#3cb371;;
+}
+
+tr:hover td{
+    background:#ead9c7;
+    transition:0.2s;
+}
+
+/* ===== フッター ===== */
+footer {
+  text-align: center;
+  margin: 24px 0;
+  color: #9a8468;
+  font-size: 13px;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:14px;
+    }
+
+    table,
+    tbody,
+    tr,
+    td{
+        display:block;
+        width:100%;
+    }
+
+    th{
+        display:none;
+    }
+
+    tr{
+        margin-bottom:18px;
+    }
+
+    td{
+        margin-bottom:2px;
+        border-radius:14px;
+    }
+}
+</style>
 </head>
+
 <body>
-<h1>Yulia's movie ♪</h1>
-<img id="displayImage" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg" width="47.5%" alt="トップSS">
-<br><br>
-<p><small><mark style="background-color:#c71585;color:inherit;">ユリア(ソロ)動画を纏めたページです♬。</mark></small></p>
-<p><small>「PSO2」、「NGS」タブで切り替えが可能で、チームのYouTubeチャンネル上で公開している動画の一覧となっています。<br>リンク先より視聴する事が可能です♬。</small></p>
-<br><br>
-<div>
-    <span class="tab" onclick="showMainTab('A', this, 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg', '47.5%')">PSO2</span>
-    <span class="tab" onclick="showMainTab('B', this, 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg', '50%')">NGS</span>
+<header>☕ Yulia's movie ♪</header>
+
+<div class="heroImage">
+    <img id="heroImg" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg" alt="Cafe">
 </div>
 
-<div id="tabA">
-    <div>
-        <span class="tab" onclick="showSubTab(1, 'A', this)">1</span>
-    </div>
-	<br><br>
-	<!-- PSO2_テーブル1 -->
-    <div id="subTab1">
-		<table>
-		<tr bgcolor="#8f20ff">
-			<th width="3%"><span style="font-style:italic;">No</span></th>
-			<th width="35%"><span style="font-style:italic;">Mission</span></th>
-			<th width="20%"><span style="font-style:italic;">Release</span></th>
-			<th width="17%"><span style="font-style:italic;">Time</span></th>
-			<th width="20%"><span style="font-style:italic;">Class</span></th>
-			<th width="5%"><span style="font-style:italic;">Link</span></th>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="6"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2017年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>ファレグ決闘～♪</td>
-			<td>2017年6月10日</td>
-			<td>02:20</td>
-			<td>Br:79/Hu:75♪</td>
-			<td><a href="https://www.youtube.com/watch?v=_eZv-Ietkr4" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="6"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2018年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>独極（天極と地極）～♪</td>
-			<td>2018年1月27日</td>
-			<td>03:09</td>
-			<td>Br:80/Hu:80♪</td>
-			<td><a href="https://www.youtube.com/watch?v=b0mN3j2VRM4" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>独極（世壊の境界）～♪</td>
-			<td>2018年1月27日</td>
-			<td>04:55</td>
-			<td>Br:80/Hu:80♪</td>
-			<td><a href="https://www.youtube.com/watch?v=Raeqv0MqlKk" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>ソロ綿花～♪</td>
-			<td>2018年1月27日</td>
-			<td>08:17</td>
-			<td>Br:80/Hu:80♪</td>
-			<td><a href="https://www.youtube.com/watch?v=BhjhAol1M5c" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>独極（狂想と幻創）Br～♪</td>
-			<td>2018年3月31日</td>
-			<td>11:42</td>
-			<td>Br:80/Hu:80♪</td>
-			<td><a href="https://www.youtube.com/watch?v=Q0gFkgq7X8Y" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>独極（狂想と幻創）Hr～♪</td>
-			<td>2018年8月24日</td>
-			<td>12:56</td>
-			<td>Hr:80♪</td>
-			<td><a href="https://www.youtube.com/watch?v=N0yiYSXvIiA" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>エルゼリオン・トリガ～Ver3♪</td>
-			<td>2018年11月23日</td>
-			<td>12:34</td>
-			<td>Br:85/Hu:85♪</td>
-			<td><a href="https://www.youtube.com/watch?v=tmg5WtTOnWo" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>ソロアルチ（マスカレーダ:ステージ50）♪</td>
-			<td>2018年12月15日</td>
-			<td>08:03</td>
-			<td>Br:85/Hu:85♪</td>
-			<td><a href="https://www.youtube.com/watch?v=pG3JnG2qf7U&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="6"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2019年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>ソロアルチ（マスカレーダ:ステージ100）♪</td>
-			<td>2019年2月15日</td>
-			<td>08:52</td>
-			<td>Br:89/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=rmmWgslUQf8&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>マザーデウス・トリガ～Hr♪</td>
-			<td>2019年4月23日</td>
-			<td>16:48</td>
-			<td>Hr:88♪</td>
-			<td><a href="https://www.youtube.com/watch?v=LzGbmSZEneY&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>ソロアルチ（マスカレーダ:ステージ150）♪</td>
-			<td>2019年5月1日</td>
-			<td>08:30</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=RcolZkmw29c&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>マザーデウス・トリガ～Br Ver3♪</td>
-			<td>2019年5月2日</td>
-			<td>17:34</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=7iINe_eiqs4&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>ソロ綿花（UH）～♪</td>
-			<td>2019年8月11日</td>
-			<td>11:24</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=cHgwruw4pi8&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>オムニバス・アプレンティス～♪</td>
-			<td>2019年10月14日</td>
-			<td>05:50</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=UKr8UkuHP2c&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>ソロ艦内潜入戦～♪</td>
-			<td>2019年10月19日</td>
-			<td>被ダメージ:22157</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=9i5MeMh9iEI&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>極限（地球と幻創）ソロ～Br♪</td>
-			<td>2019年11月16日</td>
-			<td>09:14</td>
-			<td>Br:90/Hu:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=R92JDPEvkPc&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>極限（地球と幻創）ソロ～Hr♪</td>
-			<td>2019年11月17日</td>
-			<td>09:22</td>
-			<td>Hr:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=MnqrgtLifjE&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>極限（地球と幻創）ソロ～Ph♪</td>
-			<td>2019年11月17日</td>
-			<td>08:02</td>
-			<td>Ph:90♪</td>
-			<td><a href="https://www.youtube.com/watch?v=JmKwEcJp3vk&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="6"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2020年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>マザーデウス・トリガ～（UH） Br♪</td>
-			<td>2020年3月7日</td>
-			<td>17:31</td>
-			<td>Br:95/Hu:95♪</td>
-			<td><a href="https://www.youtube.com/watch?v=mCx06SAaI_0&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>マザーデウス・トリガ～Ver2（UH） Br♪</td>
-			<td>2020年3月27日</td>
-			<td>15:07</td>
-			<td>Br:95/Hu:95♪</td>
-			<td><a href="https://www.youtube.com/watch?v=IdOEx-TsMkM&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>21</td>
-			<td>独極（異界と超界）Br～♪</td>
-			<td>2020年12月30日</td>
-			<td>08:54</td>
-			<td>Br:100/Hu:100♪</td>
-			<td><a href="https://www.youtube.com/watch?v=E9Of9weTX9A&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="6"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2021年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>ソロアルチ（ソダム:ステージ50）♪</td>
-			<td>2021年1月28日</td>
-			<td>11:40</td>
-			<td>Br:100/Ph:100♪</td>
-			<td><a href="https://www.youtube.com/watch?v=9Y4E07v99tg&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>ソロアルチ（ソダム:ステージ90）♪</td>
-			<td>2021年2月22日</td>
-			<td>13:32</td>
-			<td>Br:100/Ph:100♪</td>
-			<td><a href="https://www.youtube.com/watch?v=__0ypzMi7ss&amp;feature=youtu.be" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>24</td>
-			<td>ソロアルチ（ソダム:ステージ100）♪</td>
-			<td>2021年3月11日</td>
-			<td>14:29</td>
-			<td>Br:100/Ph:100♪</td>
-			<td><a href="https://www.youtube.com/watch?v=qUXnVO7KM4o" target="_blank">🔗</a></td>
-		</tr>
-		</table></div>
+<div class="cafeSub">
+    ユリア(ソロ)動画を纏めたページです♬。「PSO2_x」、「NGS_x」タブで切り替えが可能で、<br>チームのYouTubeチャンネル上で公開している動画の一覧となっており、リンク先より視聴する事ができます✨。
 </div>
 
-<div id="tabB" class="hidden">
-    <div>
-        <span class="tab" onclick="showSubTab(1, 'B', this)">1</span>
-		<span class="tab" onclick="showSubTab(2, 'B', this)">2</span>
-		<span class="tab" onclick="showSubTab(3, 'B', this)">3</span>
-    </div>
-	<br><br>
-	<!-- NGS_テーブル1 -->
-    <div id="subTabB1">
-		<table>
-		<tr bgcolor="#00008b">
-			<th width="3%"><span style="font-style:italic;">No</span></th>
-			<th width="40%"><span style="font-style:italic;">Mission</span></th>
-			<th width="7%"><span style="font-style:italic;">Rank</span></th>
-			<th width="15%"><span style="font-style:italic;">Time</span></th>
-			<th width="15%"><span style="font-style:italic;">Release</span></th>
-			<th width="15%"><span style="font-style:italic;">Class</span></th>
-			<th width="5%"><span style="font-style:italic;">Link</span></th>
-		</tr>
-<tr bgcolor="#FFFFFF">
-			<th colspan="7"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2022年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>25</td>
-			<td>ジオメトリックラビリンス（ソロAランク）</td>
-			<td>－</td>
-			<td>17分5秒</td>
-			<td>2022年8月20日</td>
-			<td>Hu:60/Br:60♪</td>
-			<td><a href="https://www.youtube.com/watch?v=Z49WnUQfIMY" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>26</td>
-			<td>ミュージックディスク（PSZ #02『たいせつなもの』）</td>
-			<td>－</td>
-			<td>－</td>
-			<td>2022年11月23日</td>
-			<td>－</td>
-			<td><a href="https://www.youtube.com/watch?v=K0wCe2AgjpE" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="7"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2023年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>27</td>
-			<td>「ハルフィリア湖の戦い」エンディングムービ～</td>
-			<td>－</td>
-			<td>－</td>
-			<td>2023年2月4日</td>
-			<td>－</td>
-			<td><a href="https://www.youtube.com/watch?v=mSjPuH1eq-8" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>28</td>
-			<td>デュエル・クエスト（エアリオ）Bランク</td>
-			<td>1</td>
-			<td>4分46秒</td>
-			<td>2023年4月30日</td>
-			<td>Br:70/Hu:70♪</td>
-			<td><a href="https://www.youtube.com/watch?v=_g6D-wA5Mgc" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>29</td>
-			<td>デュエル・クエスト（リテム）Bランク</td>
-			<td>1</td>
-			<td>4分59秒</td>
-			<td>2023年4月30日</td>
-			<td>Br:70/Hu:70♪</td>
-			<td><a href="https://www.youtube.com/watch?v=aVJtDtcwnaY" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>30</td>
-			<td>デュエル・クエスト（スティア）Bランク</td>
-			<td>1</td>
-			<td>4分37秒</td>
-			<td>2023年4月30日</td>
-			<td>Br:70/Hu:70♪</td>
-			<td><a href="https://www.youtube.com/watch?v=pv1VFU9vts0" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>31</td>
-			<td>デュエル・クエスト（クヴァリス）Bランク</td>
-			<td>1</td>
-			<td>4分58秒</td>
-			<td>2023年5月2日</td>
-			<td>Br:70/Sl:65♪</td>
-			<td><a href="https://www.youtube.com/watch?v=4gb9iuqEPSo" target="_blank">🔗</a></td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<th colspan="7"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2025年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>32</td>
-			<td>ルイノ・マスカレーダ Depth.10</td>
-			<td>10</td>
-			<td>9分35秒</td>
-			<td>2025年3月5日</td>
-			<td>Br:100/Sl:100♪</td>
-			<td><a href="https://youtu.be/2kYDLovW3gA" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>33</td>
-			<td>ルイノ・マスカレーダ Depth.10（Br強化後～）</td>
-			<td>10</td>
-			<td>7分53秒</td>
-			<td>2025年4月5日</td>
-			<td>Br:100/Sl:100♪</td>
-			<td><a href="https://youtu.be/8W5Vy_4OkSQ" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>34</td>
-			<td>ルイノ・マスカレーダ Depth.10（Br強化後Ver2～）</td>
-			<td>10</td>
-			<td>7分23秒</td>
-			<td>2025年4月26日</td>
-			<td>Br:100/Sl:100♪</td>
-			<td><a href="https://youtu.be/8niviI4_wNw" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>35</td>
-			<td>コクーン（ローンウェイⅡ）</td>
-			<td>－</td>
-			<td>3分59秒</td>
-			<td>2025年8月31日</td>
-			<td>Br:105/Sl:105♪</td>
-			<td><a href="https://youtu.be/ebD_iidhRvU" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>36</td>
-			<td>コクーン（ヘリカルライン）</td>
-			<td>－</td>
-			<td>2分33秒</td>
-			<td>2025年8月31日</td>
-			<td>Br:105/Sl:105♪</td>
-			<td><a href="https://youtu.be/0riJrXkQYAM" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>37</td>
-			<td>デュエル・クエスト（ハイ・ラセツ）</td>
-			<td>5</td>
-			<td>6分5秒</td>
-			<td>2025年11月3日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/pvJ3odGUlok" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>38</td>
-			<td>デュエル・クエスト（ハイ・マクスヴァング）</td>
-			<td>5</td>
-			<td>6分24秒</td>
-			<td>2025年11月3日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/HoZIrmbI-pc" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>39</td>
-			<td>デュエル・クエスト（ハイ・ラヴィード）</td>
-			<td>5</td>
-			<td>5分30秒</td>
-			<td>2025年11月15日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/32GOk28XJGM" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>40</td>
-			<td>デュエル・クエスト（ハイ・ギルゼイヴァ）</td>
-			<td>5</td>
-			<td>4分58秒</td>
-			<td>2025年11月15日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/Ywcbx4ILuy4" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>41</td>
-			<td>デュエル・クエスト（ハイ・ヴァルザッガ）</td>
-			<td>5</td>
-			<td>5分25秒</td>
-			<td>2025年11月29日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/ZZQYSc9EjUk" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>42</td>
-			<td>デュエル・クエスト（ハイ・プルティネーデ）</td>
-			<td>5</td>
-			<td>5分40秒</td>
-			<td>2025年11月29日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/-iuUMjKV3_o" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>43</td>
-			<td>デュエル・クエスト（ハイ・ゼレヴィン）</td>
-			<td>5</td>
-			<td>5分26秒</td>
-			<td>2025年12月11日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/1YxNKsHOlJs" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>44</td>
-			<td>デュエル・クエスト（ハイ・リングウェッジ）</td>
-			<td>5</td>
-			<td>5分30秒</td>
-			<td>2025年12月11日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/LZCN8aF0crg" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>45</td>
-			<td>デュエル・クエスト（ハイ・カオスザヴェル）</td>
-			<td>5</td>
-			<td>5分12秒</td>
-			<td>2025年12月27日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/sVDtvLn1Vjk" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>46</td>
-			<td>デュエル・クエスト（ハイ・ハヌマッド）</td>
-			<td>5</td>
-			<td>5分34秒</td>
-			<td>2025年12月27日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/cWRKMP38yNo" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>47</td>
-			<td>デュエル・クエスト（ハイ・アグニ）</td>
-			<td>1</td>
-			<td>7分51秒</td>
-			<td>2025年12月28日</td>
-			<td>Br:110/Sl:110♪</td>
-			<td><a href="https://youtu.be/OMxDry-Z_io" target="_blank">🔗</a></td>
-		</tr>
-		</table></div>
-		
-	<!-- NGS_テーブル2 -->
-    <div id="subTabB2">
-		<table>
-		<tr bgcolor="#8b0000">
-			<th width="3%"><span style="font-style:italic;">No</span></th>
-			<th width="40%"><span style="font-style:italic;">Mission</span></th>
-			<th width="7%"><span style="font-style:italic;">Rank</span></th>
-			<th width="15%"><span style="font-style:italic;">Time</span></th>
-			<th width="15%"><span style="font-style:italic;">Release</span></th>
-			<th width="15%"><span style="font-style:italic;">Class</span></th>
-			<th width="5%"><span style="font-style:italic;">Link</span></th>
-		</tr>
-        <tr bgcolor="#FFFFFF">
-			<th colspan="7"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2026年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>48</td>
-			<td>想定演習：ルイノ・エクス戦</td>
-			<td>1</td>
-			<td>3分3秒</td>
-			<td>2026年3月14日</td>
-			<td>Br:115/Sl:115♪</td>
-			<td><a href="https://youtu.be/ZaTfPhPzu5A" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>49</td>
-			<td>想定演習：焔獄の疾駆戦</td>
-			<td>1</td>
-			<td>6分31秒</td>
-			<td>2026年5月3日</td>
-			<td>Br:115/Bo:115♪</td>
-			<td><a href="https://youtu.be/tUUjxm_rhOA" target="_blank">🔗</a></td>
-		</tr>
-		<tr>
-			<td>50</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>51</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>52</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>53</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>54</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>55</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>56</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>57</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>58</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>59</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>60</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>61</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>62</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>63</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>64</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>65</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>66</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>67</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>68</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>69</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>70</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>71</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		</table></div>
-		
-	<!-- NGS_テーブル3 -->
-    <div id="subTabB3">
-		<table>
-		<tr bgcolor="#006400">
-			<th width="3%"><span style="font-style:italic;">No</span></th>
-			<th width="40%"><span style="font-style:italic;">Mission</span></th>
-			<th width="7%"><span style="font-style:italic;">Rank</span></th>
-			<th width="15%"><span style="font-style:italic;">Time</span></th>
-			<th width="15%"><span style="font-style:italic;">Release</span></th>
-			<th width="15%"><span style="font-style:italic;">Class</span></th>
-			<th width="5%"><span style="font-style:italic;">Link</span></th>
-		</tr>
-        <tr bgcolor="#FFFFFF">
-			<th colspan="7"><span style="color:#000000;"><span style="font-weight:bold;"><span style="font-style:italic;">2026年♪</span></span></span></th>
-		</tr>
-		<tr>
-			<td>72</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>73</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>74</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>75</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>76</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>77</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>78</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>79</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>80</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>81</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>82</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>83</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>84</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>85</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>86</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>87</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>88</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>89</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>90</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>91</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>92</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>93</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>94</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>95</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		</table></div>
-</div>
-<br><br>
-    <script>
-    function showMainTab(tab, element, imageSrc, widthValue) {
-		// 画像切り替え
-		const imgElement = document.getElementById('displayImage');
-		imgElement.src = imageSrc;
-		imgElement.style.width = widthValue;
+<div class="tabWrap" id="tabWrap"></div>
+<div id="content"></div>
+<footer>
+  <p>☕ YuliaCaffe♪ Members © <span id="current-year"></span>.</p>
+</footer>
+<script>
+const PER = 50;
 
-		// タブ切り替え
-        document.getElementById('tabA').classList.add('hidden');
-        document.getElementById('tabB').classList.add('hidden');
-        document.getElementById('tab' + tab).classList.remove('hidden');
-        
-        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-        element.classList.add('active');
-		showSubTab(1, tab, document.querySelector('#tab' + tab + ' .tab'));
-    }
-    
-    function showSubTab(index, tab = 'A', element) {
-		const tabCount = document.querySelectorAll('#tab' + tab + ' .tab').length;
-        for (let i = 1; i <= tabCount; i++) {
-            document.getElementById(`subTab${tab === 'A' ? '' : 'B'}${i}`).classList.add('hidden');
+fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMovieJson/movie.json')
+.then(r => r.json())
+.then(data => {
+
+    let no = 1;
+    let tabNo = 1;
+    let tabs = '';
+    let pages = '';
+
+    [3,4].forEach(type => {
+
+        const list =
+        data.filter(x => x.type === type);
+
+        for(let i=0;i<list.length;i+=PER){
+
+            const rows =
+            list.slice(i,i+PER);
+
+            rows.forEach(x =>
+                x.no = no++
+            );
+
+            const page =
+            Math.floor(i / PER) + 1;
+
+            const tabName =
+            type === 3
+            ? `PSO2_${page}`
+            : `NGS_${page}`;
+
+            tabs += `
+            <span
+            class="tab ${tabNo===1?'active':''}"
+            onclick="showTab(${tabNo},this)">
+            ${tabName}
+            </span>`;
+
+            pages += `
+            <div
+            id="tab${tabNo}"
+            class="tabContent ${tabNo===1?'active':''}">
+
+            <table class="type${type}">
+
+			${
+			type === 3
+			? `
+			<tr>
+				<th style="width:5%">No</th>
+				<th style="width:30%">Mission</th>
+				<th style="width:15%">Release</th>
+				<th style="width:20%">Time</th>
+				<th style="width:20%">Class</th>
+				<th style="width:10%">Link</th>
+			</tr>
+			`
+			: `
+			<tr>
+				<th style="width:5%">No</th>
+				<th style="width:30%">Mission</th>
+				<th style="width:10%">Rank</th>
+				<th style="width:15%">Time</th>
+				<th style="width:15%">Release</th>
+				<th style="width:15%">Class</th>
+				<th style="width:10%">Link</th>
+			</tr>
+			`
+			}
+
+            ${rows.map(x => `
+
+            <tr>
+
+                <td>${x.no}</td>
+                <td>${x.mission||''}</td>
+
+			${
+			type === 4
+			? `
+				<td>${x.rank || ''}</td>
+				<td>${x.time || ''}</td>
+				<td>${x.release || ''}</td>
+			`
+			: `
+				<td>${x.release || ''}</td>
+				<td>${x.time || ''}</td>
+			`
+			}
+				
+				<td>${x.class || ''}</td>
+
+                <td>
+                    <a class="watchBtn"
+                    href="${x.link||'#'}"
+                    target="_blank">
+                    OPEN
+                    </a>
+                </td>
+
+            </tr>
+
+            `).join('')}
+
+            </table>
+
+            </div>`;
+
+            tabNo++;
         }
-        document.getElementById(`subTab${tab === 'A' ? '' : 'B'}${index}`).classList.remove('hidden');
-        
-        document.querySelectorAll('#tab' + tab + ' .tab').forEach(tab => tab.classList.remove('active'));
-        element.classList.add('active');
-    }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        showMainTab('A', document.querySelector('.tab'), 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg', '47.5%');
-        showSubTab(1, 'A', document.querySelector('#tabA .tab'));
     });
-    </script>
+
+    tabWrap.innerHTML = tabs;
+    content.innerHTML = pages;
+});
+
+function showTab(id,el){
+
+    document
+    .querySelectorAll('.tab')
+    .forEach(x =>
+        x.classList.remove('active')
+    );
+
+    document
+    .querySelectorAll('.tabContent')
+    .forEach(x =>
+        x.classList.remove('active')
+    );
+
+    el.classList.add('active');
+
+    document
+    .getElementById('tab'+id)
+    .classList.add('active');
+	
+	// hero画像切替
+    const hero =
+    document.getElementById('heroImg');
+
+    hero.src =
+    el.textContent.includes('PSO2')
+    ? 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg'
+    : 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg';
+}
+</script>
 
 </body>
 </html>
