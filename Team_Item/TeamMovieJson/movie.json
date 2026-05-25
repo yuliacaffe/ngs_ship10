@@ -861,7 +861,7 @@
   },
   {
     "type":2,
-    "mission":"アイドルユニット！？～４♪",
+    "mission":"アイドルユニット4～♪",
     "rank":"－",
     "time":"－",
     "release":"2022年9月17日",
@@ -1398,5 +1398,22 @@
     "videographer":"ユリア",
     "detail":"メンバー8名で赴いたチーム貸し切り、緊急クエスト♪",
     "link":"https://youtu.be/lKNCqTbWInA"
-  }
+  },
+    {
+    "type": 3,
+    "mission": "Mission B",
+    "release": "2024-01-12",
+    "time": "14:00",
+    "class": "Beta",
+    "link": "https://example.com/b"
+  },
+  {
+    "type": 4,
+    "mission": "Mission C",
+    "rank": "S",
+    "time": "08:15",
+    "release": "2024-02-01",
+    "class": "Gamma",
+    "link": "https://example.com/c"
+  },
 ]
