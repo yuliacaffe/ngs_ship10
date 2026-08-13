@@ -1845,5 +1845,25 @@
     "videographer":"ユリア",
     "detail":"メンバー4名で赴いた、高難易度クエスト♪",
     "link":"https://youtu.be/viIIBnZjUq8"
+  },
+  {
+    "type":2,
+    "mission":"現れる創られし覇者【敗者】D.2(期間限定の再配信120Lv Ver)～♪",
+    "rank":"1",
+    "time":"8分18秒",
+    "release":"2026年8月13日",
+    "videographer":"ユリア",
+    "detail":"メンバー8名で赴いたチーム貸し切り、緊急クエスト♪",
+    "link":"https://youtu.be/LNYsbZubk68"
+  },
+  {
+    "type":2,
+    "mission":"歪みの森に潜むもの(期間限定の配信)～♪",
+    "rank":"1",
+    "time":"5分42秒",
+    "release":"2026年8月13日",
+    "videographer":"ユリア",
+    "detail":"メンバー8名で赴いたチーム貸し切り、期間限定常設クエスト♪",
+    "link": "https://youtu.be/xbINfN6u2qw"
   }
 ]
