@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスワード保護ページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>パスワードを入力してください♬</h2>
+        <input type="password" id="password" placeholder="パスワード">
+        <button onclick="unlockURL()">送信♬</button>
+		<button onclick="resetFields()">リセット</button>
+        <p id="error" class="error"></p>
+        <p id="link"></p>
+    </div>
+
+	<script>
+		function unlockURL() {
+			const inputPassword = document.getElementById("password").value;
+			const errorElement = document.getElementById("error");
+			const linkElement = document.getElementById("link");
+	
+			errorElement.textContent = "";
+			linkElement.textContent = "";
+
+			if (inputPassword.length !== 6 || /[=&?%]/.test(inputPassword)) {
+				errorElement.textContent = "パスワードが間違っています。";
+				return;
+			}
+
+			const one = inputPassword.charAt(0);
+			const two = inputPassword.charAt(1);
+			const thr = inputPassword.charAt(2);
+			const fou = inputPassword.charAt(3);
+			const fiv = inputPassword.charAt(4);
+			const six = inputPassword.charAt(5);
+	
+			const generatedURL = `h${six}${six}ps://docs.google.com/spreadshee${six}s/d/1${fou}NmOI${six}4sQtHlu4BU${one}8${two}XgI5qZC${fiv}uoEqH${six}${thr}wNBjyN1hI/view?usp=sharing`;
+			linkElement.innerHTML = `<a href="${generatedURL}" target="_blank">チームのスプレッドシートを開く♬</a>`;
+		}
+		
+
+		function resetFields() {
+			const errorElement = document.getElementById("error");
+			const linkElement = document.getElementById("link");
+			const passwordInput = document.getElementById("password");
+	
+			errorElement.textContent = "";
+			linkElement.innerHTML = "";
+	
+			passwordInput.value = "";
+		}
+	</script>
+
+</body>
+</html>

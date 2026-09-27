@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yuliacaffe♪'s movie ♪</title>
+    <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のチーム動画の一覧表です♪。">
+    <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ">
+<style>
+/* ===== 全体スタイル ===== */
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    padding:30px;
+    background:#f3e8dc;
+    color:#5b4636;
+	font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+}
+
+header {
+  background-color: #d9c3a9;
+  padding: 16px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.heroImage{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.heroImage img{
+    width:50%;
+	height:360px;
+    max-width:600px;
+    object-fit:cover;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    border:6px solid #fffaf4;
+}
+
+.cafeSub{
+    text-align:center;
+    color:#8c6a52;
+    margin-bottom:30px;
+}
+
+.tabWrap{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.tab{
+    background:#fff9f2;
+    padding:12px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    border:2px solid #d7bfa8;
+    font-weight:bold;
+    transition:0.2s;
+	font-family: "Arial", sans-serif;
+}
+
+.tab:hover{
+    transform:translateY(-2px);
+}
+
+.tab.active{
+    background:#8b5e3c;
+    color:#fff;
+}
+
+.tabContent{
+    display:none;
+}
+
+.tabContent.active{
+    display:block;
+}
+
+table{
+    width:80%;
+	margin:auto;
+    border-collapse:separate;
+    border-spacing:0 14px;
+}
+
+.type1 th{
+    background:#8b0000;
+    color:#fff;
+	padding:14px;
+    text-align:left;
+}
+
+.type2 th{
+    background:#00008b;
+    color:#fff;
+    padding:14px;
+    text-align:left;
+}
+
+td{
+    background:#fffaf4;
+    padding:14px;
+    border-top:1px dashed #d8c4ae;
+    border-bottom:1px dashed #d8c4ae;
+    word-break:break-word;
+	font-size:14px;
+}
+
+.watchBtn{
+    display:inline-block;
+    background:#8b5e3c;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+}
+
+.watchBtn:hover{
+    opacity:.85;
+}
+
+.type1 .watchBtn{
+    background:#cd5c5c;
+}
+
+.type2 .watchBtn{
+    background:#3b5f7d;;
+}
+
+tr:hover td{
+    background:#ead9c7;
+    transition:0.2s;
+}
+
+/* ===== フッター ===== */
+footer {
+  text-align: center;
+  margin: 24px 0;
+  color: #9a8468;
+  font-size: 13px;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:14px;
+    }
+
+    table,
+    tbody,
+    tr,
+    td{
+        display:block;
+        width:100%;
+    }
+
+    th{
+        display:none;
+    }
+
+    tr{
+        margin-bottom:18px;
+    }
+
+    td{
+        margin-bottom:2px;
+        border-radius:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+<header>☕ Yuliacaffe♪'s movie ♪</header>
+
+<div class="heroImage">
+    <img id="heroImg" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg" alt="Cafe">
+</div>
+
+<div class="cafeSub">
+    チーム動画を纏めたページです♬。「PSO2_x」、「NGS_x」タブで切り替えが可能で、<br>チームのYouTubeチャンネル上には掲載していない限定公開動画を、リンク先より視聴する事ができます✨。
+</div>
+
+<div class="tabWrap" id="tabWrap"></div>
+<div id="content"></div>
+<footer>
+  <p>☕ YuliaCaffe♪ Members © <span id="current-year"></span>.</p>
+</footer>
+<script>
+const PER = 50;
+
+fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMovieJson/movie.json')
+.then(r => r.json())
+.then(data => {
+
+    let no = 1;
+    let tabNo = 1;
+    let tabs = '';
+    let pages = '';
+
+    [1,2].forEach(type => {
+
+        const list =
+        data.filter(x => x.type === type);
+
+        for(let i=0;i<list.length;i+=PER){
+
+            const rows =
+            list.slice(i,i+PER);
+
+            rows.forEach(x =>
+                x.no = no++
+            );
+
+            const page =
+            Math.floor(i / PER) + 1;
+
+            const tabName =
+            type === 1
+            ? `PSO2_${page}`
+            : `NGS_${page}`;
+
+            tabs += `
+            <span
+            class="tab ${tabNo===1?'active':''}"
+            onclick="showTab(${tabNo},this)">
+            ${tabName}
+            </span>`;
+
+            pages += `
+            <div
+            id="tab${tabNo}"
+            class="tabContent ${tabNo===1?'active':''}">
+
+            <table class="type${type}">
+
+            ${
+                type===1
+                ?
+                `<tr>
+					<th style="width:5%">No</th>
+					<th style="width:20%">Mission</th>
+					<th style="width:12%">Release</th>
+					<th style="width:13%">Videographer</th>
+					<th style="width:40%">Detail</th>
+					<th style="width:10%">Link</th>
+				</tr>`
+                :
+                `<tr>
+					<th style="width:5%">No</th>
+					<th style="width:18%">Mission</th>
+					<th style="width:7%">Rank</th>
+					<th style="width:8%">Time</th>
+					<th style="width:12%">Release</th>
+					<th style="width:12%">Videographer</th>
+					<th style="width:28%">Detail</th>
+					<th style="width:10%">Link</th>
+				</tr>`
+            }
+
+            ${rows.map(x => `
+
+            <tr>
+
+                <td>${x.no}</td>
+                <td>${x.mission||''}</td>
+
+                ${
+                    type===2
+                    ? `<td>${x.rank||''}</td>`
+                    : ''
+                }
+
+                ${
+                    type===2
+                    ? `<td>${x.time||''}</td>`
+                    : ''
+                }
+
+                <td>${x.release||''}</td>
+                <td>${x.videographer||''}</td>
+                <td>${x.detail||''}</td>
+
+                <td>
+                    <a class="watchBtn"
+                    href="${x.link||'#'}"
+                    target="_blank">
+                    OPEN
+                    </a>
+                </td>
+
+            </tr>
+
+            `).join('')}
+
+            </table>
+
+            </div>`;
+
+            tabNo++;
+        }
+    });
+
+    tabWrap.innerHTML = tabs;
+    content.innerHTML = pages;
+});
+
+function showTab(id,el){
+
+    document
+    .querySelectorAll('.tab')
+    .forEach(x =>
+        x.classList.remove('active')
+    );
+
+    document
+    .querySelectorAll('.tabContent')
+    .forEach(x =>
+        x.classList.remove('active')
+    );
+
+    el.classList.add('active');
+
+    document
+    .getElementById('tab'+id)
+    .classList.add('active');
+	
+	// hero画像切替
+    const hero =
+    document.getElementById('heroImg');
+
+    hero.src =
+    el.textContent.includes('PSO2')
+    ? 'https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg'
+    : 'https://stat.ameba.jp/user_images/20241222/19/nevilia/61/4c/j/o3840216015524421570.jpg';
+}
+</script>
+
+</body>
+</html>
