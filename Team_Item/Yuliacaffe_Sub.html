@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index, follow">
+	<title>ユリアカフェ サブ</title>
+    <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のサブホームページです♪。">
+    <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ, NGS チームサイト, NGS チームHP, NGS ship10 チームHP">
+	<link rel="icon" href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/33db48ba43bcf409215a12d6b5ffc6fa_4166dcca86226da1ffbc6cd66d9e27d8.png" type="image/png">
+	<script type="application/ld+json">
+	{
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "PSO2 NGS Ship10 ユリアカフェ",
+	"alternateName": ["ユリアカフェ", "ユリアカフェ♪", "NGS ユリアカフェ", "PSO2 ユリアカフェ", "NGS Ship10 チーム"],
+	"url": "https://example.com",
+	"logo": {
+		"@type": "ImageObject",
+		"url": "https://example.com/logo.png"
+	},
+	"description": "PSO2 NGS Ship10で活動するチーム『ユリアカフェ』の公式サイト。ルールや軌跡、活動情報を掲載しています。",
+	"member": [
+		{
+		"@type": "Person",
+		"name": "ユリア",
+		"jobTitle": "チームリーダー"
+		}
+	],
+	"foundingDate": "2013-03-30T00:00:00Z",
+	"about": {
+		"@type": "Thing",
+		"name": "Phantasy Star Online 2: New Genesis",
+		"url": "https://pso2.jp"
+	}
+	}
+	</script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:0;font-family:'Yomogi','Zen Maru Gothic','Segoe UI',sans-serif;background:#f7f3ee;color:#4b2e05;line-height:1.6}
+#app{width:100%;max-width:1200px;margin:0 auto;padding:18px}
+.page-title{text-align:center;color:#6b4216;font-size:30px;margin:8px 0 18px}
+.main-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px auto 22px}
+.main-tabs button,.sub-tabs button,.movie-tabs button,.mode-tabs button{
+  font-family:inherit;background:#f3e9de;color:#4b2e05;border:2px solid #d9c3a9;border-radius:20px;
+  padding:8px 15px;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s
+}
+.main-tabs button:hover,.main-tabs button.active,.sub-tabs button:hover,.sub-tabs button.active,
+.movie-tabs button:hover,.movie-tabs button.active,.mode-tabs button:hover,.mode-tabs button.active{
+  background:#8f6b43;color:#fff;border-color:#765536;transform:translateY(-1px)
+}
+.page-section{display:none;width:100%;padding:8px 4px 30px;animation:fade .2s ease}
+.page-section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.page-header{text-align:center;color:#6b4216;font-size:26px;margin:8px 0 16px}
+.card{width:100%;max-width:1100px;margin:14px auto;padding:18px;background:#fffdf9;border:2px solid #e5d5c2;border-radius:18px;box-shadow:0 4px 12px rgba(75,46,5,.08)}
+.sub-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px auto}
+.member-tabs .role{background:#f3e9de}.member-tabs .year{background:#f8f8ff}.member-tabs .name{background:#f0fff0}
+.member-tabs .role.active{background:#8f6b43}.member-tabs .year.active{background:#4169e1}.member-tabs .name.active{background:#32cd32}
+.cafeSub{max-width:1000px;margin:10px auto 18px;padding:15px 20px;background:#fffaf4;border-left:5px solid #c7a47a;border-radius:10px}
+#member-page .container{width:100%;max-width:1100px;margin:auto}
+#member-page .photo-area{text-align:center;margin:15px auto}
+#member-page .photo img{max-width:100%;height:auto;border-radius:15px;box-shadow:0 3px 10px rgba(75,46,5,.12)}
+#member-page #xurl{color:#79552f;font-weight:bold}
+#member-page .profile-info{padding:15px 20px;background:#fffaf4;border:1px solid #e5d5c2;border-radius:12px}
+#member-page .chart{max-width:420px;margin:20px auto;text-align:center}
+#member-page canvas{max-width:100%}
+.name-button{font-family:inherit;background:#f3e9de;color:#4b2e05;border:2px solid #d9c3a9;border-radius:18px;padding:7px 14px;margin:4px;font-size:16px;cursor:pointer}
+.name-button:hover{background:#b8996f;color:#fff}
+.movie-hero{text-align:center;margin:8px auto 15px}
+.movie-hero img{width:100%;max-width:1000px;height:auto;border-radius:18px;box-shadow:0 4px 12px rgba(75,46,5,.12)}
+.movie-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:12px auto}
+.movie-content{display:none}.movie-content.active{display:block}
+.movie-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.movie-table{width:100%;min-width:700px;border-collapse:collapse;background:#fffdf9}
+.movie-table th{background:#eee2d3;color:#4b2e05;padding:8px;border:1px solid #d9c3a9}
+.movie-table td{padding:7px 9px;border:1px solid #e5d5c2;background:#fffdf9}
+.movie-table a{color:#79552f;font-weight:bold}
+.movie-note{text-align:center}
+.mode-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:15px}
+.roulette-mode{display:none}.roulette-mode.active{display:block}
+.roulette-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.roulette-table{border-collapse:collapse;margin:12px auto;background:#fffdf9}
+.roulette-table th,.roulette-table td{border:1px solid #d9c3a9;padding:5px;text-align:center;white-space:nowrap}
+.roulette-table th{background:#eee2d3}
+.roulette-table input[type=checkbox]{transform:scale(1.15)}
+.roulette-table select{font-family:inherit;border:1px solid #d9c3a9;border-radius:7px;padding:4px;background:#fffdf9}
+.roulette-results{width:100%;max-width:900px;border-collapse:collapse;margin:15px auto}
+.roulette-results th,.roulette-results td{border:1px solid #d9c3a9;padding:10px;text-align:center}
+.roulette-results th{background:#eee2d3}
+.lule{min-height:65px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#6b4216}
+.roulette-actions{text-align:center;margin:12px}
+.roulette-actions button{margin:4px}
+.party-output input{font-family:inherit;width:100%;min-width:100px;padding:6px;border:1px solid #d9c3a9;border-radius:7px;background:#fffdf9}
+.spreadsheet-card{max-width:520px;text-align:center;margin:35px auto}
+.spreadsheet-card input[type=password]{width:90%;max-width:360px;padding:10px;margin:10px 0;font-family:inherit;font-size:16px;border:2px solid #d9c3a9;border-radius:10px;background:#fffaf4}
+.spreadsheet-card .error{color:#b33a3a;font-weight:bold;min-height:1.6em}
+.spreadsheet-card a{color:#79552f;font-weight:bold}
+button,input{font-family:inherit}
+@media(max-width:768px){
+ #app{padding:10px}.page-title{font-size:24px}.main-tabs button{font-size:14px;padding:7px 11px}
+ .sub-tabs button,.movie-tabs button,.mode-tabs button{font-size:14px;padding:6px 10px}
+ .card{padding:12px;border-radius:14px}.page-header{font-size:22px}
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <h1 class="page-title">☕ ユリアカフェ♪ チームページ ♬</h1>
+
+  <nav class="main-tabs" aria-label="メインメニュー">
+    <button type="button" data-page="member" onclick="switchMainPage('member',this)">☕ メンバー</button>
+    <button type="button" data-page="spreadsheet" onclick="switchMainPage('spreadsheet',this)">📋 スプレッドシート</button>
+    <button type="button" data-page="team-movie" onclick="switchMainPage('team-movie',this)">🎬 チーム動画</button>
+    <button type="button" data-page="yulia-movie" onclick="switchMainPage('yulia-movie',this)">🎥 ユリア動画</button>
+    <button type="button" data-page="roulette" onclick="switchMainPage('roulette',this)">🎲 ルーレット＆パーティー</button>
+  </nav>
+
+  <section id="page-member" class="page-section active">
+    <div id="member-page">
+      <div class="page-header">☕ チームメンバー一覧♬</div>
+      <div class="container">
+        <div id="topTabs" class="sub-tabs member-tabs"></div>
+        <div id="secondTabs" class="sub-tabs member-tabs"></div>
+        <div id="thirdTabs" class="sub-tabs member-tabs"></div>
+
+        <div class="card">
+          <div class="photo-area">
+            <div class="photo">
+              <img id="photo" src="" alt="photo" style="display:none">
+            </div>
+            <p><a id="xurl" href="#" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a></p>
+          </div>
+          <div class="profile-info" id="profileInfo"></div>
+          <div id="owninfo" class="cafeSub"></div>
+          <div class="chart" id="chartInfo">
+            <canvas id="radarChart" width="300" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-spreadsheet" class="page-section">
+    <div class="page-header">📋 チームのスプレッドシート ♬</div>
+    <div class="spreadsheet-card card">
+      <h2>パスワードを入力してください♬</h2>
+      <input type="password" id="sheetPassword" placeholder="パスワード" maxlength="6" autocomplete="off">
+      <div>
+        <button type="button" onclick="unlockSpreadsheet()">送信♬</button>
+        <button type="button" onclick="resetSpreadsheet()">リセット</button>
+      </div>
+      <p id="sheetError" class="error"></p>
+      <p id="sheetLink"></p>
+    </div>
+  </section>
+
+  <section id="page-team-movie" class="page-section">
+    <div class="page-header">🎬 Yuliacaffe♪'s movie ♪</div>
+    <div class="movie-hero"><img id="teamMovieHero" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg" alt="Cafe"></div>
+    <div class="card">
+      <div class="movie-note">チーム「ユリアカフェ♪」のチーム動画一覧です♬</div>
+      <div id="teamMovieTabs" class="movie-tabs"></div>
+      <div id="teamMovieContent"></div>
+    </div>
+  </section>
+
+  <section id="page-yulia-movie" class="page-section">
+    <div class="page-header">🎥 Yulia's movie ♪</div>
+    <div class="movie-hero"><img id="yuliaMovieHero" src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg" alt="Cafe"></div>
+    <div class="card">
+      <div class="movie-note">Yuliaさんの動画一覧です♬</div>
+      <div id="yuliaMovieTabs" class="movie-tabs"></div>
+      <div id="yuliaMovieContent"></div>
+    </div>
+  </section>
+
+  <section id="page-roulette" class="page-section">
+    <div class="page-header">🎲 リーダールーレット＆パーティー自動振り分け♬</div>
+    <div class="card">
+      <div class="mode-tabs">
+        <button type="button" class="active" onclick="showRouletteMode('roulette',this)">★ ルーレット</button>
+        <button type="button" onclick="showRouletteMode('party',this)">☆ パーティー振り分け</button>
+      </div>
+
+      <div id="roulette-mode" class="roulette-mode active">
+        <h2>リーダールーレットモード</h2>
+        <div id="rouletteTables" class="roulette-scroll"></div>
+        <div class="roulette-actions">
+          <button type="button" id="rouletteStart">ルーレット開始♪</button>
+          <button type="button" id="rouletteReset">選択リセット♪</button>
+        </div>
+        <table class="roulette-results">
+          <thead><tr><th>当選者A</th><th>当選者B</th><th>当選者C</th><th>当選者D</th></tr></thead>
+          <tbody><tr>
+            <td><div class="lule" id="lule0">????</div></td>
+            <td><div class="lule" id="lule1">????</div></td>
+            <td><div class="lule" id="lule2">????</div></td>
+            <td><div class="lule" id="lule3">????</div></td>
+          </tr></tbody>
+        </table>
+        <div class="roulette-actions">
+          <button type="button" id="stop0">STOP</button>
+          <button type="button" id="stop1">STOP</button>
+          <button type="button" id="stop2">STOP</button>
+          <button type="button" id="stop3">STOP</button>
+        </div>
+      </div>
+
+      <div id="party-mode" class="roulette-mode">
+        <h2>パーティー振り分けモード</h2>
+        <div id="partyTables" class="roulette-scroll"></div>
+        <div class="roulette-actions">
+          <button type="button" id="partyRun">実行</button>
+          <button type="button" id="partyReset">選択リセット♪</button>
+        </div>
+        <div class="party-output roulette-scroll">
+          <table class="roulette-results">
+            <thead><tr><th>グループ</th><th>パーティー<br>リーダー</th><th>メンバーA</th><th>メンバーB</th><th>メンバーC</th></tr></thead>
+            <tbody id="partyOutputBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+/* =========================================================
+   メインタブ：URL hashで初期表示。履歴APIは使用しない
+   ========================================================= */
+const MAIN_PAGES = ['member','spreadsheet','team-movie','yulia-movie','roulette'];
+
+function switchMainPage(page, button, updateHash=true){
+  if(!MAIN_PAGES.includes(page)) page='member';
+  document.querySelectorAll('.page-section').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+page)?.classList.add('active');
+  document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.remove('active'));
+  const activeButton = button || document.querySelector(`.main-tabs button[data-page="${page}"]`);
+  activeButton?.classList.add('active');
+  if(updateHash) location.hash = page;
+}
+function initMainPage(){
+  const hash=(location.hash||'').replace(/^#/,'');
+  switchMainPage(MAIN_PAGES.includes(hash)?hash:'member',null,false);
+}
+window.addEventListener('load',initMainPage);
+
+/* =========================================================
+   メンバー一覧
+   元ページの公開HTML/JSON取得方式を維持
+   ========================================================= */
+let memberRadarChart=null, memberTableData=[], memberData={};
+const memberCurrentYear=new Date().getFullYear();
+
+async function initMemberData(){
+  try{
+    const tableRes=await fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html');
+    const tableText=await tableRes.text();
+    const doc=new DOMParser().parseFromString(tableText,'text/html');
+    const table=doc.querySelector('table');
+    if(table){
+      const rows=table.querySelectorAll('tr');
+      if(rows.length){
+        const headers=Array.from(rows[0].querySelectorAll('th,td')).map(x=>x.textContent.trim());
+        memberTableData=Array.from(rows).slice(1).map(row=>{
+          const cells=Array.from(row.querySelectorAll('td')).map(x=>x.textContent.trim());
+          return Object.fromEntries(headers.map((h,i)=>[h,cells[i]||'']));
+        });
+      }
+    }
+    const memberRes=await fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberJson/members.json');
+    memberData=await memberRes.json();
+    buildMemberTabs();
+    showMemberDescription();
+  }catch(e){
+    document.getElementById('owninfo').innerHTML='<b>メンバー情報の取得に失敗しました。</b><br>公開データの読み込み状態をご確認ください。';
+  }
+}
+function createMemberButton(text,fn,cls=''){
+  const b=document.createElement('button'); b.type='button'; b.textContent=text; b.className=cls; b.onclick=fn; return b;
+}
+function createNameButton(name,info,isMember=false){
+  const b=createMemberButton(name,()=>displayMemberProfile(info,name),'name-button name');
+  if(isMember)b.style.marginLeft='8px';
+  return b;
+}
+function appendMembers(container,members,role){
+  members.filter(([,info])=>info.post===role).forEach(([name,info])=>container.appendChild(createNameButton(name,info)));
+}
+function buildMemberTabs(){
+  const top=document.getElementById('topTabs'), second=document.getElementById('secondTabs'), third=document.getElementById('thirdTabs');
+  top.innerHTML=''; second.innerHTML=''; third.innerHTML='';
+  const roleMap={'Master':'マスター','Sub Master':'サブマスター','Manager':'マネージャー'};
+  ['説明','Master','Sub Master','Manager','Member'].forEach(tabName=>{
+    const b=createMemberButton(tabName,()=>{
+      top.querySelectorAll('button').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+      second.innerHTML=''; third.innerHTML='';
+      if(tabName==='説明'){showMemberDescription();return;}
+      if(roleMap[tabName]){appendMembers(second,Object.entries(memberData),roleMap[tabName]);return;}
+      for(let year=2013;year<=memberCurrentYear;year++){
+        const yearMembers=Object.entries(memberData).filter(([,info])=>
+          info.post!=='マスター'&&info.post!=='サブマスター'&&info.post!=='マネージャー'&&info.join===String(year));
+        if(!yearMembers.length)continue;
+        const yb=createMemberButton(year,()=>{
+          second.querySelectorAll('button').forEach(x=>x.classList.remove('active'));yb.classList.add('active');
+          third.innerHTML='';yearMembers.forEach(([name,info])=>third.appendChild(createNameButton(name,info,true)));
+        },'year');
+        second.appendChild(yb);
+      }
+    },'role');
+    top.appendChild(b);
+  });
+  top.querySelector('button')?.classList.add('active');
+}
+function showMemberDescription(){
+  document.getElementById('owninfo').innerHTML=`
+    <div style="text-align:center;font-weight:bold;font-size:20px;margin-bottom:6px;">☕ チームメンバー一覧♬へ、ようこそ!!。</div><br>
+    上部タブから役職区分(Master, Sub Master, Manager, Member)を選択してください♬。<br>
+    Memberは加入年を選択すると、該当するメンバーさんを表示します♬。<br><br>
+    メンバー名を選択すると、プロフィール・基本詳細・ステータスが表示されます。<br><br>
+    ※組の勢力割合!?については、<a href="https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html" target="_blank" rel="noopener noreferrer">旧チームメンバー一覧ページ</a>をご参照♬。
+  `;
+  document.getElementById('profileInfo').innerHTML='';
+  document.getElementById('photo').style.display='none';
+  document.getElementById('xurl').removeAttribute('href');
+  document.getElementById('xurl').textContent='X（旧Twitter）';
+  document.getElementById('chartInfo').style.display='none';
+}
+function displayMemberProfile(info,name){
+  document.getElementById('profilename')?.remove();
+  const profile=document.getElementById('profileInfo');
+  const own=document.getElementById('owninfo');
+  profile.innerHTML=`<div style="text-align:center;font-weight:bold;font-size:20px;margin-bottom:6px;">☕お名前：${escapeHtml(name)}</div><br>`+
+    (()=>{const m=memberTableData.find(x=>x.Name===name);return m?`◇Join Date: ${escapeHtml(m['Join Date']||'')}<br>◇Class: ${escapeHtml(m['Class']||'')}<br>◇Ship: ${escapeHtml(m['Ship']||'')}<br>`:''})();
+  own.innerHTML='<div style="text-align:center;font-weight:bold;font-size:20px;margin-bottom:6px;">～ 自己紹介 ～</div><br>'+(info.info||'').replace(/\\n/g,'<br>');
+  const photo=document.getElementById('photo');
+  if(info.photo){photo.src=info.photo;photo.style.display='inline-block'}else{photo.style.display='none'}
+  const xurl=document.getElementById('xurl');
+  if(info.x){xurl.href=info.x;xurl.textContent='X（旧Twitter）'}else{xurl.removeAttribute('href');xurl.textContent='X（旧Twitter）'}
+  document.getElementById('chartInfo').style.display='block';
+  initMemberRadar(info);
+}
+function initMemberRadar(info){
+  const canvas=document.getElementById('radarChart');
+  if(memberRadarChart)memberRadarChart.destroy();
+  memberRadarChart=new Chart(canvas.getContext('2d'),{
+    type:'radar',
+    data:{labels:['クエスト','CS','LS','交流','ファッション'],datasets:[{
+      label:'プレイスタイル',
+      data:[info.radar_quest,info.radar_cs,info.radar_ls,info.radar_commu,info.radar_fashion].map(v=>Number(v||0)),
+      backgroundColor:'rgba(100,180,100,.3)',borderColor:'#4caf50',borderWidth:2,pointBackgroundColor:'#4caf50'
+    }]},
+    options:{responsive:true,maintainAspectRatio:true,scale:{ticks:{beginAtZero:true,max:5,stepSize:1}}}
+  });
+}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+/* =========================================================
+   動画ページ
+   ========================================================= */
+const MOVIE_URL='https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMovieJson/movie.json';
+const PSO2_HERO='https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg';
+const NGS_HERO='https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg';
+
+async function initMoviePage(kind,types,tabsId,contentId,heroId){
+  try{
+    const data=await (await fetch(MOVIE_URL)).json();
+    const list=[];
+    types.forEach(type=>list.push({type,rows:data.filter(x=>x.type===type)}));
+    const tabs=document.getElementById(tabsId), content=document.getElementById(contentId);
+    tabs.innerHTML='';content.innerHTML='';
+    let tabNo=1;
+    list.forEach(group=>{
+      const rows=group.rows;
+      for(let i=0;i<rows.length;i+=50){
+        const chunk=rows.slice(i,i+50), id=`${kind}-tab-${tabNo}`;
+        const label=(group.type===1||group.type===3?'PSO2':'NGS')+'_'+(Math.floor(i/50)+1);
+        const b=document.createElement('button');b.type='button';b.textContent=label;b.className=tabNo===1?'active':'';
+        b.onclick=()=>showMovieTab(id,b,kind,heroId);
+        tabs.appendChild(b);
+        const div=document.createElement('div');div.id=id;div.className='movie-content'+(tabNo===1?' active':'');
+        const table=document.createElement('table');table.className='movie-table';
+        let head='';
+        if(group.type===1)head='<tr><th>No</th><th>Mission</th><th>Release</th><th>Videographer</th><th>Detail</th><th>Link</th></tr>';
+        if(group.type===2)head='<tr><th>No</th><th>Mission</th><th>Rank</th><th>Time</th><th>Release</th><th>Videographer</th><th>Detail</th><th>Link</th></tr>';
+        if(group.type===3)head='<tr><th>No</th><th>Mission</th><th>Release</th><th>Time</th><th>Class</th><th>Link</th></tr>';
+        if(group.type===4)head='<tr><th>No</th><th>Mission</th><th>Rank</th><th>Time</th><th>Release</th><th>Class</th><th>Link</th></tr>';
+        table.innerHTML='<thead>'+head+'</thead>';
+        const tbody=document.createElement('tbody');
+        chunk.forEach((x,j)=>{
+          const tr=document.createElement('tr');
+          const n=i+j+1;
+          const val=(obj,...keys)=>{for(const k of keys){if(obj[k]!==undefined&&obj[k]!==null)return obj[k]}return ''};
+          let cells=[];
+          if(group.type===1)cells=[n,val(x,'mission','Mission'),val(x,'release','Release'),val(x,'videographer','Videographer'),val(x,'detail','Detail')];
+          if(group.type===2)cells=[n,val(x,'mission','Mission'),val(x,'rank','Rank'),val(x,'time','Time'),val(x,'release','Release'),val(x,'videographer','Videographer'),val(x,'detail','Detail')];
+          if(group.type===3)cells=[n,val(x,'mission','Mission'),val(x,'release','Release'),val(x,'time','Time'),val(x,'class','Class')];
+          if(group.type===4)cells=[n,val(x,'mission','Mission'),val(x,'rank','Rank'),val(x,'time','Time'),val(x,'release','Release'),val(x,'class','Class')];
+          cells.forEach(v=>{const td=document.createElement('td');td.textContent=v??'';tr.appendChild(td)});
+          const td=document.createElement('td');const a=document.createElement('a');a.href=x.link||x.url||'#';a.target='_blank';a.rel='noopener noreferrer';a.textContent='OPEN';td.appendChild(a);tr.appendChild(td);tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);div.appendChild(table);content.appendChild(div);tabNo++;
+      }
+    });
+  }catch(e){
+    document.getElementById(contentId).innerHTML='<div class="card">動画データを取得できませんでした。</div>';
+  }
+}
+function showMovieTab(id,button,kind,heroId){
+  const root=button.closest('.card');
+  root.querySelectorAll('.movie-content').forEach(x=>x.classList.remove('active'));
+  root.querySelectorAll('.movie-tabs button').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id)?.classList.add('active');button.classList.add('active');
+  const label=button.textContent||'';
+  document.getElementById(heroId).src=label.startsWith('PSO2')?PSO2_HERO:NGS_HERO;
+}
+
+/* =========================================================
+   スプレッドシート
+   ========================================================= */
+function unlockSpreadsheet(){
+  const p=document.getElementById('sheetPassword').value;
+  const err=document.getElementById('sheetError'),link=document.getElementById('sheetLink');
+  err.textContent='';link.textContent='';
+  if(p.length!==6||/[=&?%]/.test(p)){err.textContent='パスワードが間違っています。';return}
+  const [one,two,thr,fou,fiv,six]=p.split('');
+  const generatedURL=`h${six}${six}ps://docs.google.com/spreadshee${six}s/d/1${fou}NmOI${six}4sQtHlu4BU${one}8${two}XgI5qZC${fiv}uoEqH${six}${thr}wNBjyN1hI/view?usp=sharing`;
+  const a=document.createElement('a');a.href=generatedURL;a.target='_blank';a.rel='noopener noreferrer';a.textContent='チームのスプレッドシートを開く♬';
+  link.appendChild(a);
+}
+function resetSpreadsheet(){document.getElementById('sheetPassword').value='';document.getElementById('sheetError').textContent='';document.getElementById('sheetLink').innerHTML=''}
+
+/* =========================================================
+   ルーレット＆パーティー
+   ========================================================= */
+let rouletteTimers=[null,null,null,null],rouletteIndex=0;
+function showRouletteMode(mode,button){
+  document.querySelectorAll('#page-roulette .roulette-mode').forEach(x=>x.classList.remove('active'));
+  document.getElementById(mode+'-mode').classList.add('active');
+  document.querySelectorAll('#page-roulette .mode-tabs button').forEach(x=>x.classList.remove('active'));
+  button.classList.add('active');
+}
+function buildRouletteTables(names){
+  const r=document.getElementById('rouletteTables'),p=document.getElementById('partyTables');
+  r.innerHTML='';p.innerHTML='';
+  for(let t=1;t<=6;t++){
+    const rt=document.createElement('table');rt.className='roulette-table';rt.id='roulette-table-'+t;
+    rt.innerHTML='<tbody><tr><th>お名前</th>'+Array.from({length:16},()=>'<th></th>').join('')+'</tr><tr><td><b>参加有無</b></td>'+Array.from({length:16},(_,i)=>`<td><input type="checkbox" name="rouletteMember" value="${escapeHtml(names[i]||'')}"></td>`).join('')+'</tr></tbody>';
+    r.appendChild(rt);
+    const pt=document.createElement('table');pt.className='roulette-table';pt.id='party-table-'+t;
+    pt.innerHTML='<tbody><tr><th>お名前</th>'+Array.from({length:16},()=>'<th></th>').join('')+'</tr><tr><td><b>参加：「〇」<br>不参加：「－」</b></td>'+Array.from({length:16},(_,i)=>`<td><select name="partyMember"><option value="N">－</option><option value="${escapeHtml(names[i]||'')}">〇</option></select></td>`).join('')+'</tr></tbody>';
+    p.appendChild(pt);
+  }
+}
+async function initRouletteData(){
+  try{
+    const text=await (await fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html')).then(r=>r.text());
+    const doc=new DOMParser().parseFromString(text,'text/html'),table=doc.querySelector('table');
+    const names=table?[...table.querySelectorAll('tr')].slice(1).map(row=>row.querySelector('td')?.textContent.trim()).filter(Boolean):[];
+    buildRouletteTables(names);
+  }catch(e){buildRouletteTables([])}
+}
+function selectedRouletteNames(){
+  const all=[...document.querySelectorAll('#rouletteTables input[name="rouletteMember"]:checked')];
+  return [...new Set(all.map(x=>x.value).filter(Boolean))].slice(0,16);
+}
+function stopRoulette(n){if(rouletteTimers[n]){clearInterval(rouletteTimers[n]);rouletteTimers[n]=null}}
+function resetRoulette(){
+  document.querySelectorAll('#rouletteTables input[name="rouletteMember"]').forEach(x=>x.checked=false);
+  [0,1,2,3].forEach(i=>{stopRoulette(i);document.getElementById('lule'+i).textContent='????'})
+}
+function startRoulette(){
+  const names=selectedRouletteNames();
+  if(!names.length){alert('メンバーが1人も選択されておりません。1人以上を選択くだちぃぃぃ♪。');return}
+  if(names.length>16){alert('17人以上が選択されています。16人以下で選択してくだちぃぃぃ♪。');return}
+  [0,1,2,3].forEach(stopRoulette);
+  const count=names.length<=4?1:names.length<=8?2:names.length<=12?3:4;
+  for(let n=0;n<4;n++)document.getElementById('lule'+n).textContent=n<count?'????':'????';
+  for(let n=0;n<count;n++){
+    let idx=Math.floor(Math.random()*names.length);
+    rouletteTimers[n]=setInterval(()=>{document.getElementById('lule'+n).textContent=names[idx++%names.length]},35);
+  }
+}
+function runParty(){
+  let names=[];
+  document.querySelectorAll('#partyTables select[name="partyMember"]').forEach(s=>{if(s.value!=='N'&&s.value)names.push(s.value)});
+  names=[...new Set(names)];
+  if(!names.length){alert('1人も「〇」が選択されていません。1人以上を選択してくだちぃ～♪。');return}
+  for(let i=names.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[names[i],names[j]]=[names[j],names[i]]}
+  const out=new Array(16).fill(' ');
+  names.forEach((n,i)=>out[i]=n);
+  if(names.length===5)[out[5],out[3]]=[out[3],out[5]];
+  if(names.length===6)[out[6],out[3]]=[out[3],out[6]];
+  if(names.length===9){[out[9],out[3]]=[out[3],out[9]];[out[10],out[7]]=[out[7],out[10]]}
+  if(names.length===10)[out[10],out[7]]=[out[7],out[10]];
+  if(names.length===13){[out[13],out[7]]=[out[7],out[13]];[out[14],out[11]]=[out[11],out[14]]}
+  if(names.length===14)[out[14],out[11]]=[out[11],out[14]];
+  const body=document.getElementById('partyOutputBody');body.innerHTML='';
+  for(let g=0;g<4;g++){
+    const tr=document.createElement('tr');tr.innerHTML=`<th>${g+1}</th>`;
+    for(let j=0;j<4;j++){const td=document.createElement('td'),inp=document.createElement('input');inp.value=out[g*4+j]||'';inp.readOnly=true;td.appendChild(inp);tr.appendChild(td)}
+    body.appendChild(tr);
+  }
+}
+function resetParty(){
+  document.querySelectorAll('#partyTables select[name="partyMember"]').forEach(x=>x.value='N');
+  document.getElementById('partyOutputBody').innerHTML='';
+}
+document.getElementById('rouletteStart').onclick=startRoulette;
+document.getElementById('rouletteReset').onclick=resetRoulette;
+[0,1,2,3].forEach(n=>document.getElementById('stop'+n).onclick=()=>stopRoulette(n));
+document.getElementById('partyRun').onclick=runParty;
+document.getElementById('partyReset').onclick=resetParty;
+
+/* 初期化 */
+window.addEventListener('load',async()=>{
+  await initMemberData();
+  await document.getElementById('teamMovieHero').src=PSO2_HERO;
+  await initMoviePage('team',[1,2],'teamMovieTabs','teamMovieContent','teamMovieHero');
+  await document.getElementById('yuliaMovieHero').src='https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg';
+  await initMoviePage('yulia',[3,4],'yuliaMovieTabs','yuliaMovieContent','yuliaMovieHero');
+  await initRouletteData();
+});
+</script>
+</body>
+</html>
