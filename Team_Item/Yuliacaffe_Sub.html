@@ -35,75 +35,673 @@
 	}
 	}
 	</script>
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;padding:0;font-family:'Yomogi','Zen Maru Gothic','Segoe UI',sans-serif;background:#f7f3ee;color:#4b2e05;line-height:1.6}
-#app{width:100%;max-width:1200px;margin:0 auto;padding:18px}
-.page-title{text-align:center;color:#6b4216;font-size:30px;margin:8px 0 18px}
-.main-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px auto 22px}
-.main-tabs button,.sub-tabs button,.movie-tabs button,.mode-tabs button{
-  font-family:inherit;background:#f3e9de;color:#4b2e05;border:2px solid #d9c3a9;border-radius:20px;
-  padding:8px 15px;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s
+/* =========================================================
+   ① ページ全体の基本設定
+   ========================================================= */
+
+/* すべての要素のサイズ計算を分かりやすくする */
+* {
+  box-sizing: border-box;
 }
-.main-tabs button:hover,.main-tabs button.active,.sub-tabs button:hover,.sub-tabs button.active,
-.movie-tabs button:hover,.movie-tabs button.active,.mode-tabs button:hover,.mode-tabs button.active{
-  background:#8f6b43;color:#fff;border-color:#765536;transform:translateY(-1px)
+
+/* ページ内リンクをクリックしたとき、なめらかにスクロール */
+html {
+  scroll-behavior: smooth;
 }
-.page-section{display:none;width:100%;padding:8px 4px 30px;animation:fade .2s ease}
-.page-section.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-.page-header{text-align:center;color:#6b4216;font-size:26px;margin:8px 0 16px}
-.card{width:100%;max-width:1100px;margin:14px auto;padding:18px;background:#fffdf9;border:2px solid #e5d5c2;border-radius:18px;box-shadow:0 4px 12px rgba(75,46,5,.08)}
-.sub-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px auto}
-.member-tabs .role{background:#f3e9de}.member-tabs .year{background:#f8f8ff}.member-tabs .name{background:#f0fff0}
-.member-tabs .role.active{background:#8f6b43}.member-tabs .year.active{background:#4169e1}.member-tabs .name.active{background:#32cd32}
-.cafeSub{max-width:1000px;margin:10px auto 18px;padding:15px 20px;background:#fffaf4;border-left:5px solid #c7a47a;border-radius:10px}
-#member-page .container{width:100%;max-width:1100px;margin:auto}
-#member-page .photo-area{text-align:center;margin:15px auto}
-#member-page .photo img{max-width:100%;height:auto;border-radius:15px;box-shadow:0 3px 10px rgba(75,46,5,.12)}
-#member-page #xurl{color:#79552f;font-weight:bold}
-#member-page .profile-info{padding:15px 20px;background:#fffaf4;border:1px solid #e5d5c2;border-radius:12px}
-#member-page .chart{max-width:420px;margin:20px auto;text-align:center}
-#member-page canvas{max-width:100%}
-.name-button{font-family:inherit;background:#f3e9de;color:#4b2e05;border:2px solid #d9c3a9;border-radius:18px;padding:7px 14px;margin:4px;font-size:16px;cursor:pointer}
-.name-button:hover{background:#b8996f;color:#fff}
-.movie-hero{text-align:center;margin:8px auto 15px}
-.movie-hero img{width:100%;max-width:1000px;height:auto;border-radius:18px;box-shadow:0 4px 12px rgba(75,46,5,.12)}
-.movie-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:12px auto}
-.movie-content{display:none}.movie-content.active{display:block}
-.movie-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.movie-table{width:100%;min-width:700px;border-collapse:collapse;background:#fffdf9}
-.movie-table th{background:#eee2d3;color:#4b2e05;padding:8px;border:1px solid #d9c3a9}
-.movie-table td{padding:7px 9px;border:1px solid #e5d5c2;background:#fffdf9}
-.movie-table a{color:#79552f;font-weight:bold}
-.movie-note{text-align:center}
-.mode-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:15px}
-.roulette-mode{display:none}.roulette-mode.active{display:block}
-.roulette-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.roulette-table{border-collapse:collapse;margin:12px auto;background:#fffdf9}
-.roulette-table th,.roulette-table td{border:1px solid #d9c3a9;padding:5px;text-align:center;white-space:nowrap}
-.roulette-table th{background:#eee2d3}
-.roulette-table input[type=checkbox]{transform:scale(1.15)}
-.roulette-table select{font-family:inherit;border:1px solid #d9c3a9;border-radius:7px;padding:4px;background:#fffdf9}
-.roulette-results{width:100%;max-width:900px;border-collapse:collapse;margin:15px auto}
-.roulette-results th,.roulette-results td{border:1px solid #d9c3a9;padding:10px;text-align:center}
-.roulette-results th{background:#eee2d3}
-.lule{min-height:65px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#6b4216}
-.roulette-actions{text-align:center;margin:12px}
-.roulette-actions button{margin:4px}
-.party-output input{font-family:inherit;width:100%;min-width:100px;padding:6px;border:1px solid #d9c3a9;border-radius:7px;background:#fffdf9}
-.spreadsheet-card{max-width:520px;text-align:center;margin:35px auto}
-.spreadsheet-card input[type=password]{width:90%;max-width:360px;padding:10px;margin:10px 0;font-family:inherit;font-size:16px;border:2px solid #d9c3a9;border-radius:10px;background:#fffaf4}
-.spreadsheet-card .error{color:#b33a3a;font-weight:bold;min-height:1.6em}
-.spreadsheet-card a{color:#79552f;font-weight:bold}
-button,input{font-family:inherit}
-@media(max-width:768px){
- #app{padding:10px}.page-title{font-size:24px}.main-tabs button{font-size:14px;padding:7px 11px}
- .sub-tabs button,.movie-tabs button,.mode-tabs button{font-size:14px;padding:6px 10px}
- .card{padding:12px;border-radius:14px}.page-header{font-size:22px}
+
+/* ページ全体 */
+body {
+  margin: 0;                         /* 外側の余白をなくす */
+  padding: 0;                        /* 内側の余白をなくす */
+  font-family: 'Yomogi', 'Zen Maru Gothic', 'Segoe UI', sans-serif;
+                                     /* 文字の種類 */
+  background: #f7f3ee;              /* 背景色 */
+  color: #4b2e05;                   /* 基本の文字色 */
+  line-height: 1.6;                 /* 行間 */
 }
-</style>
+
+
+/* =========================================================
+   ② ページ全体を入れる箱
+   ========================================================= */
+
+#app {
+  width: 100%;                      /* 横幅いっぱい */
+  max-width: 1200px;                /* 最大1200px */
+  margin: 0 auto;                   /* 左右中央揃え */
+  padding: 18px;                    /* 内側の余白 */
+}
+
+
+/* =========================================================
+   ③ ページタイトル
+   ========================================================= */
+
+.page-title {
+  text-align: center;               /* 中央揃え */
+  color: #6b4216;                   /* タイトルの色 */
+  font-size: 30px;                  /* 文字サイズ */
+  margin: 8px 0 18px;               /* 上8px、左右0、下18px */
+}
+
+
+/* =========================================================
+   ④ メインタブ
+   ========================================================= */
+
+.main-tabs {
+  display: flex;                    /* 横並びにする */
+  flex-wrap: wrap;                  /* 入りきらなければ折り返す */
+  justify-content: center;          /* 中央揃え */
+  gap: 8px;                         /* ボタン同士の間隔 */
+  margin: 10px auto 22px;           /* 上10、左右auto、下22 */
+}
+
+
+/* メイン・サブ・映画・モードのボタン共通設定 */
+
+.main-tabs button,
+.sub-tabs button,
+.movie-tabs button,
+.mode-tabs button {
+  font-family: inherit;             /* 親のフォントを使う */
+  background: #f3e9de;              /* ボタン背景 */
+  color: #4b2e05;                   /* 文字色 */
+  border: 2px solid #d9c3a9;        /* 枠線 */
+  border-radius: 20px;              /* 丸み */
+  padding: 8px 15px;                /* 内側の余白 */
+  font-size: 16px;                  /* 文字サイズ */
+  font-weight: bold;                /* 太字 */
+  cursor: pointer;                  /* マウスを乗せると指マーク */
+  transition: .2s;                  /* 変化を0.2秒かけて行う */
+}
+
+
+/* =========================================================
+   ⑤ タブの「マウスを乗せたとき」と「選択中」
+   ========================================================= */
+
+.main-tabs button:hover,
+.main-tabs button.active,
+.sub-tabs button:hover,
+.sub-tabs button.active,
+.movie-tabs button:hover,
+.movie-tabs button.active,
+.mode-tabs button:hover,
+.mode-tabs button.active {
+  background: #8f6b43;              /* 背景を濃くする */
+  color: #fff;                      /* 文字を白にする */
+  border-color: #765536;            /* 枠線も濃くする */
+  transform: translateY(-1px);      /* 少し上に動かす */
+}
+
+
+/* =========================================================
+   ⑥ ページの各セクション
+   ========================================================= */
+
+/* 普段は非表示 */
+.page-section {
+  display: none;
+  width: 100%;
+  padding: 8px 4px 30px;
+  animation: fade .2s ease;         /* 表示時のアニメーション */
+}
+
+
+/* active が付いたセクションだけ表示 */
+.page-section.active {
+  display: block;
+}
+
+
+/* 表示するときのフェードアニメーション */
+
+@keyframes fade {
+  from {
+    opacity: 0;                     /* 最初は透明 */
+    transform: translateY(4px);     /* 少し下 */
+  }
+
+  to {
+    opacity: 1;                     /* 完全表示 */
+    transform: none;                /* 元の位置 */
+  }
+}
+
+
+/* =========================================================
+   ⑦ ページ内の見出し
+   ========================================================= */
+
+.page-header {
+  text-align: center;
+  color: #6b4216;
+  font-size: 26px;
+  margin: 8px 0 16px;
+}
+
+
+/* =========================================================
+   ⑧ 共通カード
+   ========================================================= */
+
+.card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 14px auto;
+  padding: 18px;
+
+  background: #fffdf9;              /* カードの背景 */
+  border: 2px solid #e5d5c2;        /* 枠線 */
+  border-radius: 18px;              /* 角を丸くする */
+
+  /* 影 */
+  box-shadow: 0 4px 12px rgba(75,46,5,.08);
+}
+
+
+/* =========================================================
+   ⑨ サブタブ
+   ========================================================= */
+
+.sub-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px auto;
+}
+
+
+/* サブタブの種類ごとの色 */
+
+.member-tabs .role {
+  background: #f3e9de;
+}
+
+.member-tabs .year {
+  background: #f8f8ff;
+}
+
+.member-tabs .name {
+  background: #f0fff0;
+}
+
+
+/* 選択中の色 */
+
+.member-tabs .role.active {
+  background: #8f6b43;
+}
+
+.member-tabs .year.active {
+  background: #4169e1;
+}
+
+.member-tabs .name.active {
+  background: #32cd32;
+}
+
+
+/* =========================================================
+   ⑩ カフェ風の説明ボックス
+   ========================================================= */
+
+.cafeSub {
+  max-width: 1000px;
+  margin: 10px auto 18px;
+  padding: 15px 20px;
+
+  background: #fffaf4;
+
+  /* 左側だけ太い線 */
+  border-left: 5px solid #c7a47a;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   ⑪ メンバーページ
+   ========================================================= */
+
+#member-page .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* 写真部分 */
+
+#member-page .photo-area {
+  text-align: center;
+  margin: 15px auto;
+}
+
+
+/* 写真 */
+
+#member-page .photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+
+  box-shadow: 0 3px 10px rgba(75,46,5,.12);
+}
+
+
+/* XのURL */
+
+#member-page #xurl {
+  color: #79552f;
+  font-weight: bold;
+}
+
+
+/* プロフィール情報 */
+
+#member-page .profile-info {
+  padding: 15px 20px;
+  background: #fffaf4;
+  border: 1px solid #e5d5c2;
+  border-radius: 12px;
+}
+
+
+/* グラフ */
+
+#member-page .chart {
+  max-width: 420px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+/* Canvas（グラフなど）のサイズ */
+
+#member-page canvas {
+  max-width: 100%;
+}
+
+
+/* 名前ボタン */
+
+.name-button {
+  font-family: inherit;
+  background: #f3e9de;
+  color: #4b2e05;
+  border: 2px solid #d9c3a9;
+  border-radius: 18px;
+  padding: 7px 14px;
+  margin: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* 名前ボタンにマウスを乗せたとき */
+
+.name-button:hover {
+  background: #b8996f;
+  color: #fff;
+}
+
+
+/* =========================================================
+   ⑫ 映画ページ
+   ========================================================= */
+
+
+/* 映画のメイン画像 */
+
+.movie-hero {
+  text-align: center;
+  margin: 8px auto 15px;
+}
+
+
+/* 映画の画像 */
+
+.movie-hero img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(75,46,5,.12);
+}
+
+
+/* 映画タブ */
+
+.movie-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin: 12px auto;
+}
+
+
+/* 映画の内容は最初は非表示 */
+
+.movie-content {
+  display: none;
+}
+
+
+/* active が付いた映画内容だけ表示 */
+
+.movie-content.active {
+  display: block;
+}
+
+
+/* 横幅が大きい表をスマホで横スクロール可能にする */
+
+.movie-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* 映画の表 */
+
+.movie-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  background: #fffdf9;
+}
+
+
+/* 表の見出し */
+
+.movie-table th {
+  background: #eee2d3;
+  color: #4b2e05;
+  padding: 8px;
+  border: 1px solid #d9c3a9;
+}
+
+
+/* 表の中身 */
+
+.movie-table td {
+  padding: 7px 9px;
+  border: 1px solid #e5d5c2;
+  background: #fffdf9;
+}
+
+
+/* 表の中のリンク */
+
+.movie-table a {
+  color: #79552f;
+  font-weight: bold;
+}
+
+
+/* 映画の注意書き */
+
+.movie-note {
+  text-align: center;
+}
+
+
+/* =========================================================
+   ⑬ ルーレット
+   ========================================================= */
+
+
+/* モード切替ボタン */
+
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+
+/* ルーレットの各モードは最初は非表示 */
+
+.roulette-mode {
+  display: none;
+}
+
+
+/* active のモードだけ表示 */
+
+.roulette-mode.active {
+  display: block;
+}
+
+
+/* 表を横スクロールできるようにする */
+
+.roulette-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* ルーレットの表 */
+
+.roulette-table {
+  border-collapse: collapse;
+  margin: 12px auto;
+  background: #fffdf9;
+}
+
+
+/* 表のセル */
+
+.roulette-table th,
+.roulette-table td {
+  border: 1px solid #d9c3a9;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* 表の見出し */
+
+.roulette-table th {
+  background: #eee2d3;
+}
+
+
+/* チェックボックスを少し大きくする */
+
+.roulette-table input[type=checkbox] {
+  transform: scale(1.15);
+}
+
+
+/* セレクトボックス */
+
+.roulette-table select {
+  font-family: inherit;
+  border: 1px solid #d9c3a9;
+  border-radius: 7px;
+  padding: 4px;
+  background: #fffdf9;
+}
+
+
+/* ルーレット結果の表 */
+
+.roulette-results {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 15px auto;
+}
+
+
+/* 結果表のセル */
+
+.roulette-results th,
+.roulette-results td {
+  border: 1px solid #d9c3a9;
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* 結果表の見出し */
+
+.roulette-results th {
+  background: #eee2d3;
+}
+
+
+/* ルーレットの表示部分 */
+
+.lule {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: bold;
+  color: #6b4216;
+}
+
+
+/* ルーレットのボタン */
+
+.roulette-actions {
+  text-align: center;
+  margin: 12px;
+}
+
+
+/* ボタン同士の余白 */
+
+.roulette-actions button {
+  margin: 4px;
+}
+
+
+/* =========================================================
+   ⑭ パーティー結果などの入力欄
+   ========================================================= */
+
+.party-output input {
+  font-family: inherit;
+  width: 100%;
+  min-width: 100px;
+  padding: 6px;
+  border: 1px solid #d9c3a9;
+  border-radius: 7px;
+  background: #fffdf9;
+}
+
+
+/* =========================================================
+   ⑮ スプレッドシート画面
+   ========================================================= */
+
+.spreadsheet-card {
+  max-width: 520px;
+  text-align: center;
+  margin: 35px auto;
+}
+
+
+/* パスワード入力欄 */
+
+.spreadsheet-card input[type=password] {
+  width: 90%;
+  max-width: 360px;
+  padding: 10px;
+  margin: 10px 0;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  border: 2px solid #d9c3a9;
+  border-radius: 10px;
+  background: #fffaf4;
+}
+
+
+/* エラーメッセージ */
+
+.spreadsheet-card .error {
+  color: #b33a3a;
+  font-weight: bold;
+
+  /* エラーが出てもレイアウトがガタつかないようにする */
+  min-height: 1.6em;
+}
+
+
+/* スプレッドシートへのリンク */
+
+.spreadsheet-card a {
+  color: #79552f;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   ⑯ input / button のフォント
+   ========================================================= */
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   ⑰ スマホ対応
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ページ全体 */
+  #app {
+    padding: 10px;
+  }
+
+  /* タイトルを小さくする */
+  .page-title {
+    font-size: 24px;
+  }
+
+  /* メインタブを小さくする */
+  .main-tabs button {
+    font-size: 14px;
+    padding: 7px 11px;
+  }
+
+  /* その他のボタンも小さくする */
+  .sub-tabs button,
+  .movie-tabs button,
+  .mode-tabs button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* カードを少しコンパクトにする */
+  .card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  /* 見出しを小さくする */
+  .page-header {
+    font-size: 22px;
+  }
+}
 </head>
 
 <body>
@@ -518,10 +1116,10 @@ document.getElementById('partyReset').onclick=resetParty;
 /* 初期化 */
 window.addEventListener('load',async()=>{
   await initMemberData();
-  await document.getElementById('teamMovieHero').src=PSO2_HERO;
+  document.getElementById('teamMovieHero').src=PSO2_HERO;
   await initMoviePage('team',[1,2],'teamMovieTabs','teamMovieContent','teamMovieHero');
-  await document.getElementById('yuliaMovieHero').src='https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg';
-  await initMoviePage('yulia',[3,4],'yuliaMovieTabs','yuliaMovieContent','yuliaMovieHero');
+  document.getElementById('yuliaMovieHero').src='https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg';
+  initMoviePage('yulia',[3,4],'yuliaMovieTabs','yuliaMovieContent','yuliaMovieHero');
   await initRouletteData();
 });
 </script>
