@@ -3316,43 +3316,59 @@ loadMovieData();
     }
 
     function renderSelectedTab() {
-		updateActiveTab();
-		hideProfile();
-	
-		// 名前・加入年の一覧をリセット
-		elements.picker.replaceChildren();
-	
-		// 第3階層の本文をいったん空にする
-		elements.selection.replaceChildren();
-	
-		// デフォルトSS画像に戻す
-		const mainImage = $("mainSsImage");
-		if (mainImage && initialMainSsImageSrc !== null) {
-			mainImage.setAttribute("src", initialMainSsImageSrc);
-		}
-	
-		// 第3階層は毎回説明文に戻す
+    updateActiveTab();
+    hideProfile();
+    elements.picker.replaceChildren();
+    elements.selection.replaceChildren();
+
+    // Team Memberのメイン画像に戻す
+    if (
+        ["description", "master", "submaster", "manager", "member"].includes(selectedTab)
+    ) {
+        const teamMemberTab = document.querySelector(
+            '.mainTab[data-main="teamMember"]'
+        );
+
+        if (teamMemberTab?.classList.contains("active")) {
+            const visual = mainVisuals.teamMember;
+            const image = $("mainSsImage");
+            const caption = $("mainCafeSub");
+
+            if (visual && image) image.src = visual.image;
+            if (visual && caption) caption.textContent = visual.text;
+        }
+    }
+
+    // 説明タブ
+    if (selectedTab === "description") {
+        showDescription();
+        return;
+    }
+
+    // Memberタブ
+    if (selectedTab === "member") {
 		showDescription();
-	
-		if (selectedTab === "description") {
-			return;
-		}
-	
-		if (selectedTab === "member") {
-			showJoinYears();
-			return;
-		}
-	
-		const tab = ROLE_TABS.find(item => item.type === selectedTab);
-	
-		if (tab?.role) {
-			const list = Object.entries(members)
-				.filter(([, member]) => member?.post === tab.role)
-				.sort(([nameA], [nameB]) => nameA.localeCompare(nameB, "ja"));
-	
-			renderMemberButtons(list);
-		}
-	}
+        showJoinYears();
+        return;
+    }
+
+    // Master / Sub Master / Manager
+    const tab = ROLE_TABS.find(item => item.type === selectedTab);
+
+    if (tab?.role) {
+        // 説明欄を表示
+        showDescription();
+
+        // 説明欄の下にメンバー一覧を表示
+        const list = Object.entries(members)
+            .filter(([, member]) => member?.post === tab.role)
+            .sort(([nameA], [nameB]) =>
+                nameA.localeCompare(nameB, "ja")
+            );
+
+        renderMemberButtons(list);
+    }
+}
 
     function showDescription() {
 		elements.title.textContent = "説明";
@@ -3417,6 +3433,8 @@ loadMovieData();
 	
 		description.append(ownInfo, profileInfo);
 		elements.selection.appendChild(description);
+		elements.selection.hidden = false;
+		
 	}
 
     function showMembersByRole(role) {
@@ -3480,8 +3498,7 @@ loadMovieData();
 				member &&
 				member.post === "コモン" &&
 				String(member.join).trim() === year
-			)
-			.sort(([nameA], [nameB]) => nameA.localeCompare(nameB, "ja"));
+			);
 	
 		if (list.length === 0) return;
 	
