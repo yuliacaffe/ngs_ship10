@@ -813,10 +813,6 @@ line-height: 1.5;
 /* ========================================
    メンバー一覧ページ：Team Member
 ======================================== */
-/* ========================================
-   Team Member：全体設定
-======================================== */
-
 #teamMember {
     width: 100%;
     min-width: 0;
@@ -832,7 +828,6 @@ line-height: 1.5;
 /* ========================================
    1. コンテンツ・見出し
 ======================================== */
-
 #teamMember #teamMemberContent {
     display: block;
     width: 100%;
@@ -852,7 +847,6 @@ line-height: 1.5;
 /* ========================================
    2. 第2階層：タブ
 ======================================== */
-
 #teamMember #teamMemberTabs {
     display: flex;
     flex-direction: column;
@@ -883,7 +877,6 @@ line-height: 1.5;
 /* ========================================
    3. 加入年・メンバー名の選択ボタン
 ======================================== */
-
 #teamMember #teamMemberPicker {
     display: block;
     width: 100%;
@@ -965,7 +958,6 @@ line-height: 1.5;
 /* ========================================
    4. 第3階層：表示エリア
 ======================================== */
-
 #teamMember #teamMemberSelection {
     display: block;
     width: 100%;
@@ -1048,7 +1040,7 @@ line-height: 1.5;
 
 /* 説明欄内のリンク */
 #teamMember .teamMemberDescription a {
-    color: #8b5e34;
+    color: #4169e1;
     text-decoration: underline;
     text-underline-offset: 3px;
     overflow-wrap: anywhere;
@@ -1061,7 +1053,6 @@ line-height: 1.5;
 /* ========================================
    5. プロフィール全体
 ======================================== */
-
 #teamMember #teamMemberProfile {
     width: 100%;
     min-width: 0;
@@ -1085,7 +1076,8 @@ line-height: 1.5;
 
 /* 基本詳細：ピンク系 */
 #teamMember .teamMemberDetails {
-    min-width: 0;
+    min-height: 305px;
+	min-width: 0;
     margin-bottom: 8px;
     padding: 12px;
     color: #4b2e05;
@@ -1127,28 +1119,32 @@ line-height: 1.5;
 /* ========================================
    6. 基本情報
 ======================================== */
-
 #teamMember #teamMemberBasicInfo {
     width: 100%;
     min-width: 0;
 }
 
 #teamMember .teamMemberInfoRow {
-    display: grid;
-    grid-template-columns: minmax(100px, 35%) minmax(0, 1fr);
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin: 0;
+    padding: 2px 0;
+    border: none;
 }
 
-#teamMember .teamMemberInfoLabel {
-    font-weight: bold;
+#teamMember .teamMemberInfoLabel,
+#teamMember .teamMemberInfoValue {
+    display: inline;
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
     overflow-wrap: anywhere;
 }
 
 #teamMember .teamMemberInfoValue {
     min-width: 0;
-    overflow-wrap: anywhere;
     white-space: pre-wrap;
 }
 
@@ -1158,14 +1154,35 @@ line-height: 1.5;
     overflow-wrap: anywhere;
 }
 
+/* Xリンクボタン */
+#teamMember .teamMemberXLink a {
+    display: inline-block;
+    padding: 7px 16px;
+    border: 1px solid #c8b49a;
+    border-radius: 6px;
+    background: #6495ed;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Xリンクボタンホバー時 */
+#teamMember .teamMemberXLink a:hover {
+    background: #ff1493;
+    border-color: #ff1493;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(65, 85, 48, 0.2);
+}
+
 /* ========================================
    7. レーダーチャート
 ======================================== */
-
 #teamMember .teamMemberChart {
     position: relative;
     width: 100%;
-    max-width: 440px;
+    max-width: 240px;
     min-width: 0;
     margin: 0 auto;
 }
@@ -1181,7 +1198,6 @@ line-height: 1.5;
 /* ========================================
    8. 自己紹介
 ======================================== */
-
 #teamMember .teamMemberIntroduction {
     min-width: 0;
     margin-top: 24px;
@@ -1206,10 +1222,10 @@ line-height: 1.5;
     white-space: pre-wrap;
 }
 
+
 /* ========================================
    9. メッセージ
 ======================================== */
-
 #teamMember .teamMemberMessage {
     width: 100%;
     margin: 12px 0;
@@ -1220,7 +1236,6 @@ line-height: 1.5;
 /* ========================================
    10. スマートフォン対応
 ======================================== */
-
 @media (max-width: 700px) {
 
     #teamMember #teamMemberContent {
@@ -1256,22 +1271,19 @@ line-height: 1.5;
         font-size: 15px;
     }
 
-    /* 基本情報の列幅 */
-    #teamMember .teamMemberInfoRow {
-        grid-template-columns: minmax(85px, 35%) minmax(0, 1fr);
-        gap: 8px;
-    }
-
     /* 自己紹介の上余白 */
     #teamMember .teamMemberIntroduction {
         margin-top: 16px;
     }
+	
+	#teamMember .teamMemberDetails {
+    min-height: 0px;
+	}
 }
 
 /* ========================================
    11. 動きを控えたい環境への配慮
 ======================================== */
-
 @media (prefers-reduced-motion: reduce) {
     #teamMember *,
     #teamMember *::before,
@@ -1284,10 +1296,144 @@ line-height: 1.5;
 }
 
 
+/* =========================
+   Task Rank
+========================= */
+#taskRankDescription {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+#taskRankPeriodTabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 20px 0 12px;
+}
+
+#taskRankPeriodTabs .taskRankPeriodTab {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-block;
+    min-width: 38px;
+    padding: 7px 12px;
+    border: 1px solid #d7bfa8;
+    border-radius: 9px;
+    background: #fff9f2;
+    color: #5b4636;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+#taskRankPeriodTabs .taskRankPeriodTab:hover {
+    background: #ead9c7;
+    color: #5b4636;
+}
+
+#taskRankPeriodTabs .taskRankPeriodTab.active {
+    background: #8b5e3c;
+    color: #fff;
+    border-color: #8b5e3c;
+}
+
+#taskRankPeriodTitle {
+    margin: 0 0 20px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+#taskRankPeriodTitle .taskRankDate {
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+#taskRank .taskRankChartBox {
+    width: 95%;
+    max-width: 850px;
+    margin: 0 auto 24px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 2px solid #3399ff;
+    border-radius: 4px;
+}
+
+#taskRank .taskRankCanvasWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+#taskRank .taskRankCanvasWrapper canvas {
+    display: block;
+    width: 100%;
+}
+
+#taskRank .taskRankLegend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    margin-top: 16px;
+    color: #000;
+    font-size: 14px;
+}
+
+#taskRank .taskRankLegendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#taskRank .taskRankLegendColor {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+#taskRank .taskRankChartTitle {
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    #taskRank .taskRankChartBox {
+        padding: 10px;
+    }
+
+    #taskRank .taskRankCanvasWrapper {
+        min-height: 260px;
+    }
+
+    #taskRank .taskRankLegend {
+        gap: 8px 12px;
+        font-size: 12px;
+    }
+
+    #taskRankPeriodTitle {
+        font-size: 0.95em;
+    }
+}
+
+
+
 /* =========================================================
    タブレット
 ========================================================= */
-
 @media (max-width: 900px) {
 
     .mainTabs,
@@ -1306,7 +1452,6 @@ line-height: 1.5;
 /* =========================================================
    スマートフォン
 ========================================================= */
-
 @media (max-width: 600px) {
 
     body {
@@ -1778,32 +1923,47 @@ line-height: 1.5;
          TASK RANK
          第2階層：JSONから生成
     ================================================== -->
-    <section class="mainContent" id="taskRank">
+	<section class="mainContent" id="taskRank">
 
-        <!-- JSONからタブを生成する場所 -->
-
-        <div
-            class="subTabs"
-            id="taskRankTabs"
-        >
-        </div>
-
-
-        <!-- 第3階層 -->
-
-        <div
-            class="subContent"
-            id="taskRankContent"
-        >
-            <h2 class="contentTitle">
-                Task Rank
-            </h2>
-
-            <!-- JSON読み込み後に内容を表示 -->
-
-        </div>
-
-    </section>
+		<!-- 第二階層：周年タブ（JavaScriptで生成） -->
+		<div class="subTabs" id="taskRankTabs"></div>
+	
+		<div class="subContent active" id="taskRankContent">
+	
+			<h2 class="contentTitle">Task Rank</h2>
+	
+			<!-- 説明文 -->
+			<div id="taskRankDescription">
+				<p>
+				今までに開催されたチームタスクレコードの各開催回における順位、ポイント数を集計したグラフです。<br>タブを切り替える事で、半年ごとの集計グラフが表示されます♬。
+				</p>
+			</div>
+	
+			<!-- 第三階層：前期・後期（HTMLで固定） -->
+			<div class="taskRankPeriodTabs" id="taskRankPeriodTabs">
+	
+				<button
+					type="button"
+					class="taskRankPeriodTab active"
+					data-period="first"
+				>前期</button>
+	
+				<button
+					type="button"
+					class="taskRankPeriodTab"
+					data-period="second"
+				>後期</button>
+	
+			</div>
+	
+			<!-- 集計タイトル・集計期間 -->
+			<div id="taskRankPeriodTitle"></div>
+	
+			<!-- グラフ -->
+			<div id="taskRankChartArea"></div>
+	
+		</div>
+	</section>
 
 
     <!-- =================================================
@@ -2110,7 +2270,7 @@ line-height: 1.5;
 </footer>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
 // 年を算出して表示
 document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -3225,7 +3385,6 @@ loadMovieData();
     let selectedTab = "description";
     let radarChart = null;
     let initialized = false;
-	let initialMainSsImageSrc = null;
 
     const elements = {
 		tabs: $("teamMemberRoleTabs"),
@@ -3240,22 +3399,17 @@ loadMovieData();
 		radarCanvas: $("teamMemberRadarChart")
 	};
 
-    async function init() {
+	// 初期化処理をまとめて実行する関数
+    async function MemberInit() {
         if (initialized) return;
 
-        if (Object.values(elements).some(element => !element)) return;
-		
-		const mainImage = $("mainSsImage");
-
-		initialMainSsImageSrc = mainImage
-			? mainImage.getAttribute("src")
-			: null;
-
+        if (Object.values(elements).some(element => !element)) return;  // elements辞書で定義の要素が1つでも見付からないものが有ればreturn
         initialized = true;
 
         createTabs();
         showDescription();
 
+		// メンバーJSONファイルの読み取り
         try {
             const response = await fetch(MEMBER_JSON_URL);
 
@@ -3265,6 +3419,7 @@ loadMovieData();
 
             members = await response.json();
 
+			// メンバーHTMLファイルの読み取り(table要素部分)
             try {
                 const tableResponse = await fetch(MEMBER_TABLE_URL);
 
@@ -3278,12 +3433,13 @@ loadMovieData();
 
             renderSelectedTab();
         } catch {
-            setMessage("メンバー情報を読み込めませんでした。");
+            MemberSetMessage("メンバー情報を読み込めませんでした。");
         }
     }
 
+	// 役職ごとのタブボタンを作成して画面に表示する関数
     function createTabs() {
-        elements.tabs.replaceChildren();
+        elements.tabs.replaceChildren();  // 初期化
 
         ROLE_TABS.forEach(tab => {
             const button = document.createElement("button");
@@ -3294,6 +3450,7 @@ loadMovieData();
             button.setAttribute("role", "tab");
             button.textContent = tab.label;
 
+			// ボタン押下時の動作を定義
             button.addEventListener("click", () => {
 				selectedTab = tab.type;
 				renderSelectedTab();
@@ -3305,6 +3462,7 @@ loadMovieData();
         updateActiveTab();
     }
 
+	// selectedTab に設定されているタブをアクティブ化して、ほかのタブを非アクティブ化する関数
     function updateActiveTab() {
         elements.tabs.querySelectorAll(".subTab").forEach(button => {
             const active = button.dataset.type === selectedTab;
@@ -3315,20 +3473,23 @@ loadMovieData();
         });
     }
 
+	// 選択中のタブに合わせて画面の表示内容を更新する関数
     function renderSelectedTab() {
     updateActiveTab();
     hideProfile();
-    elements.picker.replaceChildren();
-    elements.selection.replaceChildren();
+    elements.picker.replaceChildren();  // elements関数で定義のpicker変数が参照するHTML要素(id)の中身を、標準メソッドで空にする
+    elements.selection.replaceChildren();  // elements関数で定義のselection変数が参照するHTML要素(id)の中身を、標準メソッドで空にする
 
     // Team Memberのメイン画像に戻す
     if (
         ["description", "master", "submaster", "manager", "member"].includes(selectedTab)
     ) {
+		// メインタブのHTML要素を取得する
         const teamMemberTab = document.querySelector(
             '.mainTab[data-main="teamMember"]'
         );
 
+		// メインタブのHTML要素がteamMemberだった場合、mainVisuals辞書内のteamMember変数情報を、SSと、説明欄に表示
         if (teamMemberTab?.classList.contains("active")) {
             const visual = mainVisuals.teamMember;
             const image = $("mainSsImage");
@@ -3370,8 +3531,9 @@ loadMovieData();
     }
 }
 
+	// Team Memberの「説明」タブの内容を画面に表示する関数
     function showDescription() {
-		elements.title.textContent = "説明";
+		elements.title.textContent = "説明";  // elements関数で定義のtitle変数が参照するHTML要素(id)の中身を、"説明"表示
 	
 		const description = document.createElement("div");
 		description.className = "teamMemberDescription";
@@ -3433,23 +3595,15 @@ loadMovieData();
 	
 		description.append(ownInfo, profileInfo);
 		elements.selection.appendChild(description);
-		elements.selection.hidden = false;
+		elements.selection.hidden = false;  // false(表示)
 		
 	}
 
-    function showMembersByRole(role) {
-        elements.title.textContent = role;
-
-        const list = Object.entries(members)
-            .filter(([, member]) => member?.post === role)
-            .sort(([nameA], [nameB]) => nameA.localeCompare(nameB, "ja"));
-
-        renderMemberButtons(list);
-    }
-
+	// 年ごとのメンバーボタンを画面に表示する関数
     function showJoinYears() {
-        elements.title.textContent = "説明";
+        elements.title.textContent = "説明";  // elements関数で定義のtitle変数が参照するHTML要素(id)の中身を、"説明"表示
 
+		// イメージ：years = ["2019", "2020", "2021"];
         const years = [...new Set(
             Object.values(members)
                 .filter(member =>
@@ -3462,7 +3616,7 @@ loadMovieData();
         )].sort((a, b) => Number(a) - Number(b));
 
         if (years.length === 0) {
-            setMessage("加入年の情報がありません。");
+            MemberSetMessage("加入年の情報がありません。");
             return;
         }
 
@@ -3476,9 +3630,10 @@ loadMovieData();
             button.className = "teamMemberYearButton";
             button.textContent = year;
 
+			// ボタン押下時の動作を定義
             button.addEventListener("click", () => {
                 yearList.querySelectorAll("button").forEach(item => {
-                    item.classList.toggle("active", item === button);
+                    item.classList.toggle("active", item === button);  // 押されたボタンをアクティブ化
                 });
 
                 showMembersByYear(year, yearList);
@@ -3490,8 +3645,9 @@ loadMovieData();
         elements.picker.appendChild(yearList);
     }
 
+	// 選択した入団年に該当するメンバーの一覧を表示する関数
     function showMembersByYear(year, yearList) {
-		elements.picker.querySelector(".teamMemberNameList")?.remove();
+		elements.picker.querySelector(".teamMemberNameList")?.remove();  // 初期化
 	
 		const list = Object.entries(members)
 			.filter(([, member]) =>
@@ -3509,12 +3665,13 @@ loadMovieData();
 			nameList.appendChild(createMemberButton(name, member));
 		});
 	
-		yearList.after(nameList);
+		yearList.after(nameList);  // after:後ろに要素を挿入する標準メソッド
 	}
 
+	// メンバー名のボタン一覧を画面に表示する関数
     function renderMemberButtons(list) {
         if (list.length === 0) {
-            setMessage("該当するメンバーが見つかりません。");
+            MemberSetMessage("該当するメンバーが見つかりません。");
             return;
         }
 
@@ -3528,6 +3685,7 @@ loadMovieData();
         elements.picker.appendChild(nameList);
     }
 
+	// メンバー名のボタンを作成し、クリック時の処理を設定する関数
     function createMemberButton(name, member) {
         const button = document.createElement("button");
 
@@ -3551,6 +3709,7 @@ loadMovieData();
         return button;
     }
 
+	// 選択したメンバーのプロフィール情報を画面に表示する関数
     function displayProfile(name, member) {
 		hideProfile();
 	
@@ -3559,6 +3718,7 @@ loadMovieData();
 	
 		elements.title.textContent = "☕お名前：" + name;
 
+		// 写真のセット
         if (member.photo) {
             const image = $("mainSsImage");
 
@@ -3571,21 +3731,23 @@ loadMovieData();
         renderXLink(member);
         renderIntroduction(member);
 
-        elements.profile.hidden = false;
+        elements.profile.hidden = false;  // false(表示)
         initRadarChart(member);
     }
 
+	// 選択したメンバーの基本詳細を画面に表示する関数
     function renderBasicInfo(name, member) {
         elements.basicInfo.replaceChildren();
 
+		// JSON内の対象メンバーの行数
         const rowData = memberTable.find(row => row.Name === name);
 
         const fields = [
-            ["Join Date", rowData?.["Join Date"] ?? member.join],
-            ["組", rowData?.["組"]],
-            ["定例祭の指標値", rowData?.["定例祭の指標値"]],
-            ["定例祭の累計リーダー数", rowData?.["定例祭の累計リーダー数"]],
-            ["備考", rowData?.["備考"]]
+            ["◇Join Date：", rowData?.["Join Date"] ?? member.join],
+            ["◇組：", rowData?.["組"]],
+            ["◇定例祭の指標値：", rowData?.["定例祭の指標値"]],
+            ["◇定例祭の累計リーダー数：", rowData?.["定例祭の累計リーダー数"]],
+            ["◇備考：", rowData?.["備考"]]
         ];
 
         fields.forEach(([label, value]) => {
@@ -3596,11 +3758,11 @@ loadMovieData();
 
             const title = document.createElement("div");
             title.className = "teamMemberInfoLabel";
-            title.textContent = label;
+            title.textContent = label;  // ラベルの表示
 
             const content = document.createElement("div");
             content.className = "teamMemberInfoValue";
-            content.textContent = value;
+            content.textContent = value;  // ラベルに対応するメンバー情報表示
 
             row.append(title, content);
             elements.basicInfo.appendChild(row);
@@ -3614,6 +3776,7 @@ loadMovieData();
         }
     }
 
+	// メンバーのX（旧Twitter）のリンクを画面に表示する関数
     function renderXLink(member) {
         const url = String(member.xurl || "").trim();
 
@@ -3626,10 +3789,20 @@ loadMovieData();
         }
     }
 
+	// 選択したメンバーの自己紹介を画面に表示する関数
     function renderIntroduction(member) {
-        elements.ownInfo.textContent = member.info || "自己紹介は未登録です。";
-    }
+            const info = member.info || "自己紹介は未登録です。";
 
+			// JSON内の文字としての \n を改行に変換
+			const formattedInfo = info
+				.replace(/\\+n/g, "\n")
+				.replace(/\r\n?/g, "\n");
+		
+			// 自己紹介のHTMLタグや色指定を反映
+			elements.ownInfo.innerHTML = formattedInfo;
+	}
+
+	// 選択したメンバーのステータスをレーダーチャートで表示する関数
     function initRadarChart(member) {
         if (typeof Chart === "undefined") return;
 
@@ -3649,31 +3822,30 @@ loadMovieData();
             data: {
                 labels: RADAR_LABELS,
                 datasets: [{
-                    label: "ステータス",
+                    label: "プレイスタイル",
                     data: values,
                     fill: true,
-                    backgroundColor: "rgba(54, 162, 235, 0.2)",
-                    borderColor: "rgb(54, 162, 235)",
-                    pointBackgroundColor: "rgb(54, 162, 235)"
+                    backgroundColor: "rgba(100,180,100,0.3)",
+                    borderColor: "#4caf50",
+                    pointBackgroundColor: "#4caf50"
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    r: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 5,
-                        ticks: {
-                            stepSize: 1
-                        }
-                    }
-                }
-            }
+				responsive: true,
+				maintainAspectRatio: true,
+				scale: {
+					ticks: {
+						beginAtZero: true,
+						min: 0,
+						max: 5,
+						stepSize: 1
+					}
+				}
+			}
         });
     }
 
+	// メンバー一覧の表データを解析して、JavaScriptで扱える形に変換する関数
     function parseMemberTable(html) {
         const documentData = new DOMParser().parseFromString(
             html,
@@ -3707,7 +3879,8 @@ loadMovieData();
             .filter(row => row.Name);
     }
 
-    function setMessage(message) {
+	// 画面にメッセージを設定・表示する関数
+    function MemberSetMessage(message) {
         const paragraph = document.createElement("p");
 
         paragraph.className = "teamMemberMessage";
@@ -3716,6 +3889,7 @@ loadMovieData();
         elements.selection.replaceChildren(paragraph);
     }
 
+	// メンバーのプロフィールを非表示にして、レーダーチャートを破棄する関数(別のメンバーを選んだ際の前のメンバー表示の残像防止)
     function hideProfile() {
         elements.profile.hidden = true;
 
@@ -3725,20 +3899,434 @@ loadMovieData();
         }
     }
 
+	// resetTeamMemberToDescription関数の定義
     window.resetTeamMemberToDescription = function () {
-		selectedTab = "description";
+		selectedTab = "description";  // 選択中のタブを「説明」に変更
 	
-		if (initialized) {
+		if (initialized) {  // 初期化が完了しているか?
 			renderSelectedTab();
 		}
 	};
 
+	// HTMLが読み込まれたら、init関数実行
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init, { once: true });
+        document.addEventListener("DOMContentLoaded", MemberInit, { once: true });
     } else {
-        init();
+        MemberInit();
     }
 })();
+
+
+/* ========================================
+   TaskRanking用
+======================================== */
+(() => {
+    "use strict";
+
+    const JSON_PATH = "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamTaskJson/ranking.json";
+
+    // 順位ごとの色
+    const RANK_COLORS = {
+        1: "rgba(255, 0, 0, 0.8)",
+        2: "rgba(255, 0, 255, 0.8)",
+        3: "rgba(51, 153, 255, 0.8)",
+        4: "rgba(255, 255, 0, 0.8)",
+        5: "rgba(153, 51, 255, 0.8)",
+        6: "rgba(0, 153, 51, 0.8)",
+        7: "rgba(255, 165, 0, 0.8)",
+        8: "rgba(139, 0, 0, 0.8)",
+        9: "rgba(255, 192, 203, 0.8)",
+        10: "rgba(192, 192, 192, 0.8)"
+    };
+
+    const DEFAULT_COLOR = "rgba(200, 200, 200, 0.8)";
+
+    // HTML要素の定義
+    const elements = {
+        root: document.getElementById("taskRank"),
+        anniversaryTabs: document.getElementById("taskRankTabs"),
+        content: document.getElementById("taskRankContent"),
+        periodTabs: document.getElementById("taskRankPeriodTabs"),
+        periodTitle: document.getElementById("taskRankPeriodTitle"),
+        chartArea: document.getElementById("taskRankChartArea")
+    };
+
+    let taskRankData = null;
+    let currentChart = null;
+    let currentAnniversary = null;
+    let currentPeriodId = "first";
+
+	// グラフを表示するための準備を整え、最初の表示を開始する関数
+    async function RankingInit() {
+        if (!elements.root) {
+            return;
+        }
+
+        if (typeof Chart === "undefined") {
+            RankingSetMessage("Chart.jsが読み込まれていません。");
+            return;
+        }
+
+        if (
+            !elements.anniversaryTabs ||
+            !elements.content ||
+            !elements.periodTabs ||
+            !elements.periodTitle ||
+            !elements.chartArea
+        ) {
+            console.error("Task Rank：必要なHTML要素が見つかりません。");
+            return;
+        }
+
+        // 固定ボタンにクリックイベントを設定
+        bindPeriodTabs();
+
+        // ランキングJSONファイルの読み込み
+        try {
+            const response = await fetch(JSON_PATH);
+
+            if (!response.ok) {
+                throw new Error(
+                    `JSONの読み込みに失敗しました: ${response.status}`
+                );
+            }
+
+            taskRankData = await response.json();
+
+            if (
+                !Array.isArray(taskRankData.anniversaries) ||
+                taskRankData.anniversaries.length === 0
+            ) {
+                RankingSetMessage("周年データがありません。");
+                return;
+            }
+
+			// 表示エリアに activeクラスを追加して、表示状態へ
+            elements.content.classList.add("active");
+
+            // 周年タブを生成
+            renderAnniversaryTabs();
+
+        } catch (error) {
+            console.error("Task Rankの初期化エラー:", error);
+            RankingSetMessage("Task Rankのデータを読み込めませんでした。");
+        }
+    }
+
+    // 周年ごとのタブを作成して画面に表示する関数
+    function renderAnniversaryTabs() {
+        elements.anniversaryTabs.replaceChildren();  // 初期化
+
+        taskRankData.anniversaries.forEach((anniversary, index) => {
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "subTab";
+            button.textContent = anniversary.label;
+
+			// ボタンのイベント定義
+            button.addEventListener("click", event => {
+                event.stopPropagation();
+                selectAnniversary(anniversary, button);
+            });
+
+            elements.anniversaryTabs.appendChild(button);
+
+            // 最初の周年を初期表示
+            if (index === 0) {
+                selectAnniversary(anniversary, button);
+            }
+        });
+    }
+
+	// 選択された周年を現在の表示対象に設定し、その周年のランキングを表示する関数
+    function selectAnniversary(anniversary, selectedButton) {
+        currentAnniversary = anniversary;
+
+        setActiveTab(elements.anniversaryTabs, selectedButton);
+
+        // 選択中の前期・後期を維持する。
+        // データが存在しない場合は、もう一方の期間を表示する。
+        const periods = Array.isArray(anniversary.periods)  // 配列かどうかを判定
+            ? anniversary.periods
+            : [];
+
+        let period = periods.find(
+            item => item.id === currentPeriodId  // currentPeriodId⇒"first"へ変更すると、周年タブ移動時は前期となる(※後期同士を比較する為、残す)
+        );
+
+        if (!period) {
+            period = periods[0];
+        }
+
+        if (!period) {
+            setActivePeriodTab(null);  // 何も表示させない(各ボタンに対してtoggle("active", false) を実行)
+            elements.periodTitle.replaceChildren();
+            RankingSetMessage("この周年には期間データがありません。");
+            return;
+        }
+
+        currentPeriodId = period.id;
+        setActivePeriodTab(currentPeriodId);
+        renderPeriod(period);
+    }
+
+    // 前期・後期ボタンにクリック処理を登録する関数
+    function bindPeriodTabs() {
+        elements.periodTabs
+            .querySelectorAll(".taskRankPeriodTab")  // elements辞書のperiodTabs変数(id)の中から、クラス名が .taskRankPeriodTab の要素をすべて取得
+            .forEach(button => {
+                button.addEventListener("click", event => {
+                    event.stopPropagation();  // 親要素への伝播防止
+
+                    if (!currentAnniversary) {  // あくまでもこの判定処理をボタンに定義するのみ(初回で実行されるわけではない)
+                        return;
+                    }
+
+                    const periodId = button.dataset.period;  // 押されたボタンの期間IDを取得(前期ボタン:"first" 後期ボタン:"second")
+                    const period = currentAnniversary.periods?.find(  // 表示対象の周年データ
+                        item => item.id === periodId
+                    );
+
+                    if (!period) {
+                        RankingSetMessage("この期間のデータはありません。");
+                        return;
+                    }
+
+                    currentPeriodId = periodId;
+                    setActivePeriodTab(periodId);
+                    renderPeriod(period);
+                });
+            });
+    }
+
+	// 前期・後期ボタンの選択状態（見た目）を切り替える関数
+    function setActivePeriodTab(periodId) {
+        elements.periodTabs
+            .querySelectorAll(".taskRankPeriodTab")
+            .forEach(button => {
+                const isActive = button.dataset.period === periodId;  // nullの場合は、全てFalse
+
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+    }
+
+    // 選択中の周年タブに active クラスを付け、見た目を切り替える関数
+    function setActiveTab(container, selectedButton) {
+        container.querySelectorAll(".subTab").forEach(button => {
+            const isActive = button === selectedButton;
+
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+        });
+    }
+
+    // 選択した期間のタイトルとグラフを表示する関数
+    function renderPeriod(period) {
+        renderPeriodTitle(currentAnniversary, period);
+        renderChart(period.records);
+    }
+
+	// 選択した周年と期間のタイトル・集計期間を画面に表示する関数
+    function renderPeriodTitle(anniversary, period) {
+        elements.periodTitle.replaceChildren();  // 初期化
+
+        const title = document.createElement("div");
+        title.textContent =
+            `【チーム${anniversary.label}（${period.label}）】`;
+
+        const date = document.createElement("div");
+        date.className = "taskRankDate";
+        date.textContent =
+            `【集計期間：${period.start} ～ ${period.end}】`;
+
+        elements.periodTitle.append(title, date);
+    }
+
+    // 選択した期間のデータを使って、順位とポイント数の棒グラフを描画する関数
+    function renderChart(records) {
+        clearChart();
+
+        if (!Array.isArray(records) || records.length === 0) {
+            RankingSetMessage("この期間のグラフデータはありません。");
+            return;
+        }
+
+        const sortedRecords = [...records].sort(  // [...records]：コピーした配列
+            (a, b) => a["開催回"] - b["開催回"]
+        );
+
+        const chartBox = document.createElement("div");
+        chartBox.className = "taskRankChartBox";
+
+        const canvasWrapper = document.createElement("div");
+        canvasWrapper.className = "taskRankCanvasWrapper";
+
+        const canvas = document.createElement("canvas");
+        canvas.setAttribute("role", "img");
+        canvas.setAttribute(
+            "aria-label",
+            "開催回ごとの順位とポイント数を示す棒グラフ"
+        );
+
+        canvasWrapper.appendChild(canvas);
+		
+		const chartTitle = document.createElement("div");
+		chartTitle.className = "taskRankChartTitle";
+		chartTitle.textContent = "集計";
+		
+        const legend = document.createElement("div");
+        legend.className = "taskRankLegend";
+
+        chartBox.append(chartTitle, legend, canvasWrapper);
+        elements.chartArea.replaceChildren(chartBox);  // 中身の置き換え
+
+        const ctx = canvas.getContext("2d");
+
+		const rainbow = ctx.createLinearGradient(0, 300, 0, 0);
+		rainbow.addColorStop(0, "rgba(160, 0, 255, 0.85)");
+		rainbow.addColorStop(0.2, "rgba(0, 100, 255, 0.85)");
+		rainbow.addColorStop(0.4, "rgba(0, 200, 0, 0.85)");
+		rainbow.addColorStop(0.6, "rgba(255, 255, 0, 0.85)");
+		rainbow.addColorStop(0.8, "rgba(255, 165, 0, 0.85)");
+		rainbow.addColorStop(1, "rgba(255, 0, 0, 0.85)");
+		
+		// 棒グラフ本体の色を定義
+		const barColors = sortedRecords.map(record =>
+			Number(record["順位"]) === 1
+				? rainbow
+				: (RANK_COLORS[record["順位"]] || DEFAULT_COLOR)
+		);
+
+        currentChart = new Chart(canvas.getContext("2d"), {
+            type: "bar",
+
+            data: {
+                labels: sortedRecords.map(
+                    record => record["開催回"]
+                ),
+
+                datasets: [{
+                    label: "",
+                    data: sortedRecords.map(
+                        record => record["ポイント数"]
+                    ),
+                    backgroundColor: barColors
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                animation: false,
+
+                legend: {
+                    display: false
+                },
+
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: "開催回"
+                        },
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 0,
+                            minRotation: 0
+                        },
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8
+                    }],
+
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            suggestedMax: 300
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "ポイント数"
+                        }
+                    }]
+                },
+
+				// グラフの棒にマウスを乗せたときに表示される説明
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            const record =
+                                sortedRecords[tooltipItem.index];
+
+                            return (
+                                `${record["順位"]}位：` +
+                                `${record["ポイント数"]}pt`
+                            );
+                        }
+                    }
+                }
+            }
+        });
+
+        renderLegend(sortedRecords, legend);
+    }
+
+    // グラフの順位別の凡例（色見本と順位名）を生成して表示する関数
+    function renderLegend(records, container) {
+        const ranks = [
+            ...new Set(records.map(record => record["順位"]))
+        ].sort((a, b) => a - b);
+
+        ranks.forEach(rank => {
+            const item = document.createElement("div");
+            item.className = "taskRankLegendItem";
+
+            const colorBox = document.createElement("span");
+            colorBox.className = "taskRankLegendColor";
+            if (Number(rank) === 1) {
+				colorBox.style.background =
+					"linear-gradient(to right, red, orange, yellow, green, blue, violet)";
+			} else {
+				colorBox.style.backgroundColor =
+					RANK_COLORS[rank] || DEFAULT_COLOR;
+			}
+
+            const label = document.createElement("span");
+            label.textContent = `${rank}位`;
+
+            item.append(colorBox, label);
+            container.appendChild(item);
+        });
+    }
+
+    // 現在表示されているグラフを破棄し、グラフ表示エリアを空にする関数
+    function clearChart() {
+        if (currentChart) {
+            currentChart.destroy();
+            currentChart = null;
+        }
+
+        elements.chartArea.replaceChildren();
+    }
+
+	// 画面にメッセージを設定・表示する関数
+    function RankingSetMessage(message) {
+        clearChart();
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = message;
+
+        elements.chartArea.appendChild(paragraph);
+    }
+
+    // 実行
+    RankingInit();
+})();
+
 
 </script>
 </body>
