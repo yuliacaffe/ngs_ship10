@@ -370,6 +370,239 @@ footer { max-width: 1200px;
 
 
 /* =========================================================
+   Home共通
+========================================================= */
+#home h2.style1.homeHeading {
+    margin: 24px 0 14px;
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+    background: #dce8f5;
+    box-shadow: 0 0 0 5px #dce8f5;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+}
+
+/* =========================
+   Home：使い方一覧
+========================= */
+#home .homeGuideList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#home .homeGuideList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+/* Home：紹介カードのホバー効果 */
+#home .homeGuideList li {
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    border-radius: 8px;
+}
+
+#home .homeGuideList li:hover {
+    background-color: #dda0dd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+#home .homeGuideList li > b {
+    flex: 0 0 26px;
+    color: var(--accent-color, #5279a5);
+    font-size: 0.9rem;
+}
+
+#home .homeGuideList li > div {
+    min-width: 0;
+}
+
+#home .homeGuideList strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+}
+
+#home .homeGuideList p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   Home：体制図の開閉ボタン
+========================= */
+#home .homeOrgToggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background: var(--card-background, #fff);
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#home .homeOrgToggle:hover {
+    background: var(--hover-background, #f3f5f7);
+}
+
+#home .homeOrgToggle:focus-visible {
+    outline: 2px solid var(--accent-color, #5279a5);
+    outline-offset: 2px;
+}
+
+#home .homeOrgPanel[hidden] {
+    display: none;
+}
+
+/* =========================
+   Home：体制図本体
+========================= */
+#home .homeOrgPanel {
+    padding: 12px 0 8px;
+}
+
+#home .homeOrgTree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+#home .homeOrgItem {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background: var(--card-background, #fff);
+    text-align: center;
+}
+
+#home .homeOrgRole {
+    display: block;
+    padding: 8px 6px;
+    background: var(--hover-background, #f3f5f7);
+    border-bottom: 1px solid var(--border-color, #ddd);
+    font-size: 0.9rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+#home .homeOrgNames {
+    display: block;
+    padding: 9px 6px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#home .homeOrgConnector {
+    flex: 0 0 24px;
+    width: 1px;
+    height: 24px;
+    background: var(--border-color, #bbb);
+}
+
+/* マネージャーから4部隊へつながる分岐 */
+#home .homeOrgBranch {
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+}
+
+#home .homeOrgBranchLine {
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    right: 12.5%;
+    height: 40px;
+    border-top: 1px solid var(--border-color, #bbb);
+}
+
+#home .homeOrgBranchLine {
+    background:
+        linear-gradient(var(--border-color, #bbb), var(--border-color, #bbb))
+            0% 0% / 1px 40px no-repeat,
+        linear-gradient(var(--border-color, #bbb), var(--border-color, #bbb))
+            33.333% 0% / 1px 40px no-repeat,
+        linear-gradient(var(--border-color, #bbb), var(--border-color, #bbb))
+            66.666% 0% / 1px 40px no-repeat,
+        linear-gradient(var(--border-color, #bbb), var(--border-color, #bbb))
+            100% 0% / 1px 40px no-repeat;
+}
+
+#home .homeOrgDepartments {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    position: relative;
+}
+
+#home .homeOrgDepartments .homeOrgItem {
+    position: relative;
+    width: 100%;
+}
+
+/* =========================
+   Home：スマートフォン対応
+========================= */
+
+@media (max-width: 640px) {
+    #home .homeGuideList {
+        grid-template-columns: 1fr;
+    }
+
+    #home .homeOrgPanel {
+        overflow-x: auto;
+    }
+
+    #home .homeOrgTree {
+        min-width: 320px;
+    }
+
+    #home .homeOrgItem {
+        width: 200px;
+    }
+
+    #home .homeOrgDepartments {
+        gap: 8px;
+    }
+
+    #home .homeOrgDepartments .homeOrgRole {
+        padding: 8px 3px;
+        font-size: 0.72rem;
+    }
+
+    #home .homeOrgDepartments .homeOrgNames {
+        padding: 8px 3px;
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================================
    Team Festival：見出し
 ========================================================= */
 #teamFestival h2.style1 {
@@ -1667,19 +1900,34 @@ line-height: 1.5;
          第2階層なし
     ================================================== -->
     <section class="mainContent active" id="home">
-
 		<div class="subContent active">
+			<h2 class="contentTitle">Home</h2>
+			
+			<p><strong>【※最終更新日：2026年10月18日】</strong></p>
+			<p>
+				2026年10月中旬にリリースのサブホームページです♬。<br>
+				乱立していたチームの資産を1つに集約✨。各々ページもリニューアルとなっています(*>ω<*)❦。<br><br>
+			</p>
+	
+			<h2 class="style1 homeHeading">◆当サイトのページ詳細。</h2>
+			<p>上記8つのタブページの詳細です。</p>
 
-			<h2 class="contentTitle">
-				Home
-			</h2>
-
-			<!-- ここにHomeの内容 -->
-
+			<ul class="homeGuideList">
+				<li><b>01</b><div><strong>Home</strong><p>当サイトの詳細と、チームの体制図です。</p></div></li>
+				<li><b>02</b><div><strong>Team Member</strong><p>チームのメンバー一覧ページです。</p></div></li>
+				<li><b>03</b><div><strong>Spread Sheet</strong><p>チームのスプレッドシートへのログインページです。</p></div></li>
+				<li><b>04</b><div><strong>Team Festival</strong><p>定例祭についての概要ページです。</p></div></li>
+				<li><b>05</b><div><strong>Task Rank</strong><p>チームタスクランキングの集計ページです。</p></div></li>
+				<li><b>06</b><div><strong>Weapon</strong><p>武器・防具の強化方法、理論値構成のページです。<span style="color: red;">(※現在工事中～)</span></p></div></li>
+				<li><b>07</b><div><strong>Movie</strong><p>チームと、ユリア動画の一覧です。</p></div></li>
+				<li><b>08</b><div><strong>Roulette</strong><p>パーティー振り分け機能と、リーダールーレット機能です。</p></div></li>
+			</ul><br><br>
+	
+			<h2 class="style1 homeHeading">◆体制図。</h2>
+			<p>チームの体制図です。<br>各部隊への参画のご希望、歓迎中～( 'ω' و( و"✨。</p>
+			<div id="homeOrgRoot"></div>
 		</div>
-
 	</section>
-
 
 
     <!-- =================================================
@@ -4327,6 +4575,168 @@ loadMovieData();
     RankingInit();
 })();
 
+
+/* ========================================
+   Home用
+======================================== */
+(() => {
+    "use strict";
+
+    const root = document.getElementById("homeOrgRoot");
+
+    if (!root || root.dataset.initialized === "true") return;
+    root.dataset.initialized = "true";
+
+    /* =========================
+       体制図データ
+       担当者はここを編集
+    ========================= */
+
+    const organization = {
+        master: {
+            role: "マスター",
+            names: ["ユリア"]
+        },
+        subMaster: {
+            role: "サブマスター",
+            names: ["北の黒猫さん"]
+        },
+        manager: {
+            role: "マネージャー",
+            names: ["ニスリーフさん", "まりんさん", "零さん"]
+        },
+        departments: [
+			{
+				role: "CS部隊",
+				names: ["ユリア", "のらてぃーさん", "ルイぴょい", "フィルさん", "おさかなさん"]
+			},
+			{
+				role: "勧誘部隊",
+				names: ["ユリア", "まゆさん"]
+			},
+			{
+				role: "クエスト部隊",
+				names: ["ユリア", "雷さん", "raruさん", "Milieuさん"]
+			},
+			{
+				role: "イベント部隊！？",
+				names: ["ユリア", "まりんさん"]
+			}
+		]	
+    };
+
+    const createElement = (tag, className, text) => {
+        const element = document.createElement(tag);
+
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+
+        return element;
+    };
+
+    const createOrgItem = (item) => {
+        const card = createElement("div", "homeOrgItem");
+
+        card.append(
+            createElement("strong", "homeOrgRole", item.role),
+            createElement("span", "homeOrgNames", item.names.join("、"))
+        );
+
+        return card;
+    };
+
+    /* =========================
+       開閉ボタン
+    ========================= */
+
+    const toggle = createElement("button", "homeOrgToggle", "展開 ▼");
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "homeOrgPanel");
+
+    const panel = createElement("div", "homeOrgPanel");
+    panel.id = "homeOrgPanel";
+    panel.hidden = true;
+
+    /* =========================
+       組織ツリー
+    ========================= */
+
+    const tree = createElement("div", "homeOrgTree");
+
+    tree.append(
+        createOrgItem(organization.master),
+        createElement("div", "homeOrgConnector"),
+        createOrgItem(organization.subMaster),
+        createElement("div", "homeOrgConnector"),
+        createOrgItem(organization.manager),
+        createElement("div", "homeOrgConnector")
+    );
+
+    /* 4部隊への分岐線 */
+    const branch = createElement("div", "homeOrgBranch");
+    branch.appendChild(
+        createElement("div", "homeOrgBranchLine")
+    );
+
+    const departments = createElement("div", "homeOrgDepartments");
+
+    organization.departments.forEach((department) => {
+        departments.appendChild(createOrgItem(department));
+    });
+
+    branch.appendChild(departments);
+    tree.appendChild(branch);
+    panel.appendChild(tree);
+
+    /* =========================
+       開閉動作
+    ========================= */
+
+    toggle.addEventListener("click", () => {
+        const expanded =
+            toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        panel.hidden = expanded;
+        toggle.textContent = expanded ? "展開 ▼" : "折りたたむ ▲";
+    });
+
+    root.append(toggle, panel);
+	
+	document.querySelectorAll('#home .homeGuideList li').forEach((item) => {
+		const links = {
+			'01': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#home',
+			'02': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#teamMember',
+			'03': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#spreadSheet',
+			'04': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#teamFestival',
+			'05': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#taskRank',
+			'06': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#weapon',
+			'07': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#movie',
+			'08': 'https://yuliacaffe.github.io/ngs_ship10/Team_Item/YuliacaffeSub.html#roulette'
+		};
+	
+		const number = item.querySelector('b')?.textContent.trim();
+		const url = links[number];
+	
+		if (!url) return;
+	
+		item.style.cursor = 'pointer';
+		item.setAttribute('role', 'link');
+		item.setAttribute('tabindex', '0');
+	
+		item.addEventListener('click', () => {
+			location.href = url;
+		});
+	
+		item.addEventListener('keydown', (event) => {
+			if (event.key === 'Enter' || event.key === ' ') {
+				event.preventDefault();
+				location.href = url;
+			}
+		});
+	});
+})();
 
 </script>
 </body>
