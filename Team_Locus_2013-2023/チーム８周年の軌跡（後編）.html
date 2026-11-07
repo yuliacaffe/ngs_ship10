@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>チーム８周年の軌跡♪（後編）</title>
+	<style>
+        body {
+            background-color: black;
+            color: white;
+			padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>チーム８周年の軌跡♪（後編）</h1>
+<p><strong><font color="#00ff00">◇2020年10月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ： <strong><font color="#ffff00">ユリアカフェ♪</font></strong>、8周年目（後半期）突入♪。</p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#00afff;">六華</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ff007d;">フィリア</span>ちゃんとの、おそろ2ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201017/10/nevilia/23/6d/j/o1920108014836072923.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201017/10/nevilia/23/6d/j/o1920108014836072923.jpg" width="220"></a></p>
+<p><em><u><strong>◆<span style="color:#7cd300;">シキミ</span>さん、<span style="color:#ffcc00;">ディケム</span>さん</strong></u></em><em><u><strong>との3ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201018/11/nevilia/7f/ae/j/o1920108014836616345.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201018/11/nevilia/7f/ae/j/o1920108014836616345.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#ff7f00;">めぐ</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ee82ee">ユリア</span>＆<span style="color:#7cd300;">シキミ</span>＆<span style="color:#00afff;">ディケム</span>共催、<span style="color:#ff7f00;">ハロウィン</span>仮装パーティーのSS～♪</strong></u></em></p>
+<img src="https://stat.ameba.jp/user_images/20201101/12/nevilia/e5/3e/j/o1920108014844038304.jpg" id="sd" width="50%" alt="">
+<br><br>
+
+  <button id="start">スライドショー開始</button>
+  <button id="stop">スライドショー停止</button>
+<br><br><h6 id="txtfld" >【1枚目/9枚目】 <br></h6>
+<script>
+
+var image = new Array();
+var txt = new Array();
+
+image[0]=new Image();
+image[0].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/e5/3e/j/o1920108014844038304.jpg";
+image[1]=new Image();
+image[1].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/14/19/j/o1920108014844038856.jpg";
+image[2]=new Image();
+image[2].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/51/ef/j/o1920108014844039059.jpg";
+image[3]=new Image();
+image[3].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/54/b8/j/o1920108014844039463.jpg";
+image[4]=new Image();
+image[4].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/15/5c/j/o1920108014844039635.jpg";
+image[5]=new Image();
+image[5].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/51/13/j/o1920108014844039799.jpg";
+image[6]=new Image();
+image[6].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/c6/92/j/o1920108014844039891.jpg";
+image[7]=new Image();
+image[7].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/08/38/j/o1920108014844040367.jpg";
+image[8]=new Image();
+image[8].src="https://stat.ameba.jp/user_images/20201101/12/nevilia/6b/90/j/o1920108014844040529.jpg";
+
+txt[0]="【1枚目/9枚目】 ";
+txt[1]="【2枚目/9枚目】 ";
+txt[2]="【3枚目/9枚目】 ";
+txt[3]="【4枚目/9枚目】 ";
+txt[4]="【5枚目/9枚目】 ";
+txt[5]="【6枚目/9枚目】 ";
+txt[6]="【7枚目/9枚目】 ";
+txt[7]="【8枚目/9枚目】 ";
+txt[8]="【9枚目/9枚目】 ";
+
+var timer1 = []; 
+var timer2 = []; 
+var cnt=0;
+var txtnaiyo = 	document.getElementById("txtfld")
+var startButton = document.getElementById('start');
+var stopButton = document.getElementById('stop');
+
+startButton.onclick = function() {
+    stop();
+    start();
+  }
+
+stopButton.onclick = function() {
+    stop();
+  }
+
+function start()
+{
+    document.getElementById("sd").src = image[cnt].src;
+	txtnaiyo.innerHTML = txt[cnt];
+    cnt++;
+	
+    if( cnt <= 8 )
+    {
+	  clearTimeout(timer2);
+	  timer1=setTimeout("start()",2000);
+      
+    }
+    else
+    {
+      cnt=0;
+      clearTimeout(timer1);
+      timer2=setTimeout("start()",2000);
+
+    }}
+	
+function stop()
+{
+	  clearTimeout(timer1);
+	  clearTimeout(timer2);
+}
+</script>
+<p>&nbsp;</p>
+<p><strong><font color="#00ff00">◇2020年11月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ： <span style="color:#00afff;">C</span>さん体験加入♪。（正式加入前に脱退＞＜。）</p>
+<p><em><u><strong>◆</strong></u></em><em><u><strong><span style="color:#7cd300;">シキミ</span>さんとの2ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201111/21/nevilia/e4/84/j/o1920108014849633369.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201111/21/nevilia/e4/84/j/o1920108014849633369.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ：&nbsp;<span style="color:#7cd300;">ノワ</span>さん、コモンへ役職変更。</p>
+<p><em><u><strong>◆</strong></u></em><em><u><strong><span style="color:#ff007d;">フィリア</span>ちゃんとの、おそろ2ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201115/00/nevilia/6f/38/j/o1920108014851200147.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201115/00/nevilia/6f/38/j/o1920108014851200147.jpg" width="220"></a></p>
+<p><em><u><strong>◆<span style="color:#00afff;">アヤカ</span>さんとの、おそろ2ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201118/12/nevilia/70/2a/j/o1920108014853022075.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201118/12/nevilia/70/2a/j/o1920108014853022075.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ：&nbsp;<s style="text-decoration:line-through;">(*=ω=*)♪。</s></p>
+<p>&nbsp;</p>
+<p><strong><font color="#00ff00">◇2020年12月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ： <strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#7cd300;">カナ</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ffcc00;">アストラル・クラウン</span>マスター、<span style="color:#ffcc00;">フィー</span>さんとの2ショット～♪</strong></u></em></p>
+<p><s style="text-decoration:line-through;"><a href="https://stat.ameba.jp/user_images/20201205/08/nevilia/13/e1/j/o1920108014861678797.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201205/08/nevilia/13/e1/j/o1920108014861678797.jpg" width="220"></a></s></p>
+<p><em><u><strong>◆<span style="color:#ff0000;">ソーラ</span>ちゃ</strong></u></em><em><u><strong>んとの2ショット～♪（ロゴ有SSは<span style="color:#ff0000;">ソーラ</span>ちゃんのTwitterよりご拝借♪）</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201212/00/nevilia/f1/29/j/o1920108014865066966.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201212/00/nevilia/f1/29/j/o1920108014865066966.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201212/00/nevilia/58/62/j/o1920104514865066862.jpg"><img alt="" height="120" src="https://stat.ameba.jp/user_images/20201212/00/nevilia/58/62/j/o1920104514865066862.jpg" width="220"></a></p>
+<p><a href="https://stat.ameba.jp/user_images/20201212/00/nevilia/75/e6/j/o1200101614865066822.jpg"><img alt="" height="186" src="https://stat.ameba.jp/user_images/20201212/00/nevilia/75/e6/j/o1200101614865066822.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ： 瑞木さん、かおるさん、整理脱退＞＜。</p>
+<p><strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#ffcc00;">ノエル</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ee82ee">ユリア</span>＆<span style="color:#7cd300;">シキミ</span>＆<span style="color:#00afff;">ディケム</span>＆<span style="color:#ffcc00;">フィー</span>さん共催、<span style="color:#ee82ee">ユリアカフェ♪</span>×<span style="color:#ffcc00;">アストラル・クラウン</span></strong></u></em></p>
+<p><em><u><strong><span style="color:#ff007d;">2</span><span style="color:#7cd300;">チ</span><span style="color:#ff007d;">ー</span><span style="color:#7cd300;">ム</span><span style="color:#ff007d;">合</span><span style="color:#7cd300;">同</span><span style="color:#ff007d;">ク</span><span style="color:#7cd300;">リ</span><span style="color:#ff007d;">ス</span><span style="color:#7cd300;">マ</span><span style="color:#ff007d;">ス</span><span style="color:#7cd300;">イ</span><span style="color:#ff007d;">ベ</span><span style="color:#7cd300;">ン</span><span style="color:#ff007d;">ト</span><span style="color:#7cd300;">の</span><span style="color:#ff007d;">S</span><span style="color:#7cd300;">S</span><span style="color:#ff007d;">♪</span></strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/fd/d2/j/o1920108014869432950.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/fd/d2/j/o1920108014869432950.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/2f/8b/j/o1920108014869434738.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/2f/8b/j/o1920108014869434738.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/bb/4f/j/o1920108014869434830.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/bb/4f/j/o1920108014869434830.jpg" width="220"></a></p>
+<p><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/0a/e4/j/o1920108014869435029.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/0a/e4/j/o1920108014869435029.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/26/8e/j/o1920108014869436200.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/26/8e/j/o1920108014869436200.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201220/23/nevilia/50/ab/j/o1920108014869436240.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201220/23/nevilia/50/ab/j/o1920108014869436240.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ： <s style="text-decoration:line-through;">(*=ω=*)♪。</s></p>
+<p><em><u><strong>◆カタナ<span style="color:#c78fff;">クラース</span>武器（★15）完成～♪<s>ィェィ(*&gt;ω&lt;*)♪</s></strong></u></em></p>
+<p><s style="text-decoration:line-through;"><a href="https://stat.ameba.jp/user_images/20201228/19/nevilia/1d/7b/j/o1920108014873289070.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201228/19/nevilia/1d/7b/j/o1920108014873289070.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20201228/19/nevilia/77/0b/j/o1920108014873289148.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201228/19/nevilia/77/0b/j/o1920108014873289148.jpg" width="220"></a></s></p>
+<p><em><u><strong>◆お越し頂いた<span style="color:#ff007d;">サ</span><span style="color:#7cd300;">ン</span><span style="color:#ff007d;">タ</span><span style="color:#7cd300;">・</span><span style="color:#ff007d;">ア</span><span style="color:#7cd300;">ー</span><span style="color:#ff007d;">ク</span><span style="color:#7cd300;">ス</span>の皆さんに多くの<span style="color:#ff007d;">幸</span>あれ♪</strong></u></em></p>
+<p><s style="text-decoration:line-through;"><a href="https://stat.ameba.jp/user_images/20201228/19/nevilia/5e/e2/j/o1920108014873289490.jpg"><img alt="" contenteditable="inherit" height="124" src="https://stat.ameba.jp/user_images/20201228/19/nevilia/5e/e2/j/o1920108014873289490.jpg" width="220"></a></s></p>
+<p><em><u><strong>◆<span style="color:#ff0000;">ソーラ</span>ちゃ</strong></u></em><em><u><strong>んとの2ショット～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20201230/18/nevilia/e9/bd/j/o1920108014874276572.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20201230/18/nevilia/e9/bd/j/o1920108014874276572.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#00ff00">◇2021年1月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ： 出欠用ホームページ開設、<span style="color:#c78fff;"><span style="font-weight:bold;">チームルール９</span></span>（チームイベントについて）を新設～♪。</p>
+<p><span style="color:#ff7f00;">C</span>さん体験加入♪。（正式加入前に脱退＞＜。）</p>
+<p><span style="color:#ff7fbe;">白龍寺エリカ</span>さん復帰♪。</p>
+<p><span style="font-weight:bold;"><span style="color:#ff007d;">20代目</span>マネージャーに、<span style="color:#ff007d;">フィリア</span>さん就任！！♪。(*★ω☆*)♪。</span></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ：&nbsp;<s style="text-decoration:line-through;">(*=ω=*)♪。</s></p>
+<p><em><u><strong>◆<span style="color:#ff7f00;">めぐりあい宇宙</span>さん</strong></u></em><em><u><strong>とのミニ交流会～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20210117/23/nevilia/e9/d8/j/o1920108014883165618.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210117/23/nevilia/e9/d8/j/o1920108014883165618.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210117/23/nevilia/8b/5a/j/o1920108014883165653.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210117/23/nevilia/8b/5a/j/o1920108014883165653.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ：&nbsp;<span style="color:#ffcc00;">S</span>さん体験加入♪。（正式加入前に脱退＞＜。）</p>
+<p>チラ猫さん、カマエルさん、みとにゃんさん、めぐさん、整理脱退＞＜。</p>
+<p><strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#00afff;">トウマ</span>さん加入♪。</p>
+<p>2021年のチームスローガンは、ズバリ！！</p>
+<p><span style="color:#00afff;"><span style="font-weight:bold;">「Don't be afraid of change and push forward！！ （変化を恐れず、突き進め♪。）」</span></span></p>
+<p>皆、まずは健康第一。 各々のライフスタイル、プレイスタイル最優先に、</p>
+<p>来る（きたる）ジェネシス襲来に備えられよ～。（*☆ω★*）♪。</p>
+<p><s style="text-decoration:line-through;">…な旨の、マスター締めの挨拶となりました↓。</s></p>
+<p><em><u><strong>◆<span style="color:#ff007d;">レミ</span>にゃん<span style="color:#ff007d;">格付けクイズ</span>・イベントのSS～♪</strong></u></em></p>
+<p><s style="text-decoration:line-through;"><a href="https://stat.ameba.jp/user_images/20210124/14/nevilia/37/62/j/o1920108014886127990.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210124/14/nevilia/37/62/j/o1920108014886127990.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210124/14/nevilia/c2/bb/j/o1920108014886128080.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210124/14/nevilia/c2/bb/j/o1920108014886128080.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210124/14/nevilia/96/bc/j/o1920108014886128165.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210124/14/nevilia/96/bc/j/o1920108014886128165.jpg" width="220"></a></s></p>
+<p><a href="https://stat.ameba.jp/user_images/20210124/14/nevilia/6a/bf/j/o1920108014886128353.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210124/14/nevilia/6a/bf/j/o1920108014886128353.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#00ff00">◇2021年2月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ：&nbsp;<s style="text-decoration:line-through;">(*=ω=*)♪。</s></p>
+<p><em><u><strong>◆<span style="color:#ee82ee">ユリア</span>主催、<span style="color:#ff7f00;">チャレンジ</span>激震＆<span style="color:#00afff;">超界</span>探索イベントのSS～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20210207/17/nevilia/95/71/j/o1920108014892830843.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210207/17/nevilia/95/71/j/o1920108014892830843.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210207/17/nevilia/66/6f/j/o1920108014892830932.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210207/17/nevilia/66/6f/j/o1920108014892830932.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#7cd300;">バッジ</span>さん、<span style="color:#ff7f00;">ソルミ</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ee82ee">ユリア</span>主催、<span style="color:#ff7f00;">チャレンジ</span>激震＆<font color="#00afff"><span style="color:#c78fff;">闇鍋トリガ～</span></font>イベントのSS～♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20210222/20/nevilia/25/2c/j/o1920108014900430990.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210222/20/nevilia/25/2c/j/o1920108014900430990.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210222/20/nevilia/2d/9a/j/o1920108014900431072.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210222/20/nevilia/2d/9a/j/o1920108014900431072.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<font color="#00afff">ryukon</font>さん加入♪。</p>
+<p>&nbsp;</p>
+<p><strong><font color="#00ff00">◇2021年3月♪</font></strong></p>
+<p><strong><font color="#ffff00">上旬♪</font></strong> ：&nbsp;<span style="color:#ff007d;">佳奈</span>さん、整理脱退＞＜。</p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">中旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#ff0000;">華</span>さん加入♪。</p>
+<p>&nbsp;</p>
+<p><strong><font color="#ffff00">下旬♪</font></strong> ：&nbsp;<strong><font color="#ee82ee">ユリア・ルート</font></strong>から、<span style="color:#ff7fbe;">香音</span>さん加入♪。</p>
+<p><em><u><strong>◆<span style="color:#ff007d;">チーム設立9周年目開幕</span>イベントのSS♪</strong></u></em></p>
+<p><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/63/83/j/o1920108014917214612.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/63/83/j/o1920108014917214612.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/4e/4a/j/o1920108014917214770.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/4e/4a/j/o1920108014917214770.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/b1/77/j/o1920108014917214778.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/b1/77/j/o1920108014917214778.jpg" width="220"></a></p>
+<p><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/c5/97/j/o1920108014917214784.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/c5/97/j/o1920108014917214784.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/7c/76/j/o1920108014917214793.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/7c/76/j/o1920108014917214793.jpg" width="220"></a><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/f4/02/j/o1920108014917214798.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/f4/02/j/o1920108014917214798.jpg" width="220"></a></p>
+<p><a href="https://stat.ameba.jp/user_images/20210328/12/nevilia/0e/75/j/o1920108014917214810.jpg"><img alt="" height="124" src="https://stat.ameba.jp/user_images/20210328/12/nevilia/0e/75/j/o1920108014917214810.jpg" width="220"></a></p>
+<p>&nbsp;</p>
+<p><u><em>※2021年3月31日～2021年9月30日までの軌跡は、</em></u></p>
+<p><u><em>「チーム9周年の軌跡♪（前編）」記事を参照♪。 </em></u></p>
+<p>&nbsp;</p>
+<p><em><font color="#00ff00" size="5"><strong>For♪</strong></font></em></p>
+<p><font size="5"><font color="#ee82ee"><strong><em>The ninth anniversary～♪</em></strong></font></font></p>
+</body>
+</html>
