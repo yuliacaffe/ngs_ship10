@@ -183,7 +183,7 @@
 </div>
 
 <div class="character-container">
-    <img src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/dca487eac36437a4e358a85364c09d79_c7f74a8ecb17919537f404994fa51a10.png" id="characterImage" class="character-image">
+    <img src="https://stat.ameba.jp/user_images/20261107/17/nevilia/d9/59/p/o0750075015839310018.png" id="characterImage" class="character-image">
 	<div>ゆりあちゃん♪<br>(Ver 2.3 才❦)</div>
 	<small><br>============<br>【ご機嫌度✨】
 	<div id="response">0</div>
@@ -220,9 +220,9 @@ let botData3 = [];
 
 // JSONファイルを読み込み
 Promise.all([
-  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamChatBotJson/botData1.json').then(res => res.json()),
-  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamChatBotJson/botData2.json').then(res => res.json()),
-  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamChatBotJson/botData3.json').then(res => res.json())
+  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/botData1.json').then(res => res.json()),
+  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/botData2.json').then(res => res.json()),
+  fetch('https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/botData3.json').then(res => res.json())
 ]).then(([data1, data2, data3]) => {
   botData1 = data1;
   botData2 = data2;
@@ -231,23 +231,23 @@ Promise.all([
 
 // 表情の画像パス（pngファイル）
 const expressions = [
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/dca487eac36437a4e358a85364c09d79_c7f74a8ecb17919537f404994fa51a10.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/3f6119c5c6d1f2cfeec784ba83ccd5e3_a5904cbd95ac94194894536041693386.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/2881b80b5702a6c0b528b16241ea6ec3_b1432aa31a1d4c4cff137a09dd8aeb35.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/8931d1b99db543ce467224699febd568_362cf7d8521e7a74cd677bcb51ffc9f2.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/0e5bb5264ad630f2df3accae72abb4fd_34e630c1ede5e649c86e8d40c8fd2b4a.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/706fc9fef07976250bcebabd7e1dc744_7565786c1d81ae1d51047ee5aa26e0ba.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/3da84e190daf97aee070536d5513cc42_5b7ca826a1086731f95c03ad5d5f98c2.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/96be6058737b147a1b358c92184c0b6d_ba16cac192d2498f1ea75839434cdfa5.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/61df0d4818ded70029f2260b0a221fab_416089224a5de74b3ebf1c6b712c9287.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/aa65385337b8ed051114af2e9de22924_f5c98ab79cc79be5d706f34e88a29777.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/55a78895073382f21169ce4125cb8de0_4d85f8a377af18fbecd44bd5fe8cb253.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/75711d8249d3dc98b7486d24e67ccd1f_36157cf69079ac044c4ecd33afa9b3a0.png",
-    "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/39ae9ab506cbbcf2d55d86cda68fa031_6e0ef7d342a25e329d0e3e2fdcf07581.png"
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/d9/59/p/o0750075015839310018.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/3f/3a/p/o0750075015839310023.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/21/f5/p/o0750075015839310026.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/74/c0/p/o0750075015839310032.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/af/85/p/o0750075015839310029.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/cb/5a/p/o0750075015839310021.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/d7/e3/p/o0750075015839310039.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/81/3b/p/o0750075015839310034.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/54/93/p/o0750075015839310028.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/85/0c/p/o0750075015839310033.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/11/70/p/o0750075015839310022.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/68/c7/p/o0750075015839310038.png",
+    "https://stat.ameba.jp/user_images/20261107/17/nevilia/cf/1b/p/o0750075015839310036.png"
 ];
 
 // デフォルト画像パス
-const defaultImage = "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/dca487eac36437a4e358a85364c09d79_c7f74a8ecb17919537f404994fa51a10.png";
+const defaultImage = "https://stat.ameba.jp/user_images/20261107/17/nevilia/d9/59/p/o0750075015839310018.png";
 
 // 適性試験モード用
 const questions = [
