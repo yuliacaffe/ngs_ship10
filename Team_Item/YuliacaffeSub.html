@@ -7,7 +7,7 @@
 	<title>ユリアカフェ サブ</title>
     <meta name="description" content="PSO2 NGS Ship10で活動する、チーム「ユリアカフェ♪」のサブホームページです♪。">
     <meta name="keywords" content="ユリアカフェ, NGS ユリアカフェ, PSO2 ユリアカフェ, NGS ship10 チーム, NGS ship10, NGS, PSO2, NGS チーム, NGS チームホームページ, NGS チームサイト, NGS チームHP, NGS ship10 チームHP">
-	<link rel="icon" href="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/b499352c4c84a3cda61ad7f4ae615b59_57855fde10425ae3b6373c58bd067388.jpg" type="image/png">
+	<link rel="icon" href="https://stat.ameba.jp/user_images/20261107/14/nevilia/44/cd/j/o1536204815839261540.jpg" type="image/png">
 	<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 	<script type="application/ld+json">
 	{
@@ -2559,12 +2559,12 @@ const mainVisuals = {
     },
 
     movie: {
-        image: "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg",
+        image: "https://stat.ameba.jp/user_images/20210612/18/nevilia/00/0d/j/o1024076814956331225.jpg",
         text: "動画の一覧ページです♬。"
     },
 
     roulette: {
-        image: "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/7ec139329140f92a4e6c89a27f03b212_3391502d4b10918ac5695a7dbfe39534.jpg",
+        image: "https://stat.ameba.jp/user_images/20250209/21/nevilia/84/75/j/o3840216015542451177.jpg",
         text: "ルーレット、パーティー振り分け機能のページです♬。"
     }
 
@@ -2806,7 +2806,7 @@ const movieSettings = {
 		title: "PSO2_Team MOVIE",
 		intro: "PSO2のチーム動画を纏めたページです♬。<br>チームのYouTubeチャンネル上で公開、及び、限定公開している動画の一覧となっており、リンク先より視聴する事ができます✨。<br><br>",
 		color: "#8b0000",
-        image: "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/5e7bd996069ed91b0043636684b58c6f_507d60c778794ee4990120d56bd9435c.jpg",
+        image: "https://stat.ameba.jp/user_images/20210612/18/nevilia/00/0d/j/o1024076814956331225.jpg",
         columns: [
             ["No", "no", "5%"],
 			["Mission", "mission", "20%"],
@@ -2840,7 +2840,7 @@ const movieSettings = {
 		title: "PSO2_Yulia MOVIE",
         intro: "PSO2のユリア(ソロ)動画を纏めたページです♬。<br>チームのYouTubeチャンネル上で公開している動画の一覧となっており、リンク先より視聴する事ができます✨。<br><br>",
 		color: "#8a2be2",
-        image: "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/197f13bbeae4948724dfa61dd803c99c_f2791f968494a6325977992341f6ecda.jpg",
+        image: "https://stat.ameba.jp/user_images/20210612/18/nevilia/02/ed/j/o1022060514956331237.jpg",
         columns: [
             ["No", "no", "5%"],
 			["Mission", "mission", "30%"],
@@ -2856,7 +2856,7 @@ const movieSettings = {
 		title: "NGS_Yulia MOVIE",
         intro: "NGSのユリア(ソロ)動画を纏めたページです♬。<br>チームのYouTubeチャンネル上で公開している動画の一覧となっており、リンク先より視聴する事ができます✨。<br><br>",
 		color: "#008000",
-        image: "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/127612/ec1dfdfac9f221fe3f8ecd1fb2fefcbd_5b8fe48d46e7b9db40c14a89fb1dda5c.jpg",
+        image: "https://stat.ameba.jp/user_images/20230715/18/nevilia/4e/f7/j/o1920108015312599279.jpg",
         columns: [
             ["No", "no", "5%"],
 			["Mission", "mission", "30%"],
@@ -2882,7 +2882,7 @@ async function loadMovieData() {
 
     try {
         const response = await fetch(
-            "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMovieJson/movie.json"
+            "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/movie.json"
         );
 
         if (!response.ok) {
@@ -3160,7 +3160,7 @@ loadMovieData();
     "use strict";
 
     // JSONファイルの読み込み
-    const MEMBER_JSON_URL = "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberJson/members.json";
+    const MEMBER_JSON_URL = "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/members.json";
 
     const MAX_PARTICIPANTS = 16;
     const TEAM_COUNT = 4;
@@ -3599,7 +3599,7 @@ loadMovieData();
     "use strict";
 
     const MEMBER_JSON_URL =
-        "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberJson/members.json";
+        "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/members.json";
 
     const MEMBER_TABLE_URL =
         "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamMemberList.html";
@@ -4171,7 +4171,7 @@ loadMovieData();
 (() => {
     "use strict";
 
-    const JSON_PATH = "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamTaskJson/ranking.json";
+    const JSON_PATH = "https://yuliacaffe.github.io/ngs_ship10/Team_Item/TeamJson/ranking.json";
 
     // 順位ごとの色
     const RANK_COLORS = {
