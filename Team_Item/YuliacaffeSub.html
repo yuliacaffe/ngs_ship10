@@ -617,6 +617,21 @@ footer { max-width: 1200px;
 
 
 /* =========================================================
+   Weapon：見出し
+========================================================= */
+#weaponHard h2.style1 {
+	font-size: 20px;
+	text-align: left;
+	position: relative;
+	background: #cd5c5c;
+	box-shadow: 0px 0px 0px 5px #cd5c5c;
+	border: dashed 2px white;
+	padding: 0.2em 0.5em;
+	color: #ffffff;
+}
+
+
+/* =========================================================
    Spread Sheet：パスワード入力エリア
 ========================================================= */
 .spreadSheetContainer {
@@ -1918,7 +1933,7 @@ line-height: 1.5;
 				<li><b>03</b><div><strong>Spread Sheet</strong><p>チームのスプレッドシートへのログインページです。</p></div></li>
 				<li><b>04</b><div><strong>Team Festival</strong><p>定例祭についての概要ページです。</p></div></li>
 				<li><b>05</b><div><strong>Task Rank</strong><p>チームタスクランキングの集計ページです。</p></div></li>
-				<li><b>06</b><div><strong>Weapon</strong><p>武器・防具の強化方法、理論値構成のページです。<span style="color: red;">(※現在工事中～)</span></p></div></li>
+				<li><b>06</b><div><strong>Weapon</strong><p>武器・防具の強化方法、理論値構成のページです。</p></div></li>
 				<li><b>07</b><div><strong>Movie</strong><p>チームと、ユリア動画の一覧です。</p></div></li>
 				<li><b>08</b><div><strong>Roulette</strong><p>パーティー振り分け機能と、リーダールーレット機能です。</p></div></li>
 			</ul><br><br>
@@ -2220,55 +2235,598 @@ line-height: 1.5;
     ================================================== -->
     <section class="mainContent" id="weapon">
 
+        <!-- 第2階層タブ -->
         <div class="subTabs">
-
             <button
+                type="button"
                 class="subTab active"
                 data-sub="weaponEnhance"
-            >
-                武器強化
-            </button>
+            >強化手順</button>
 
             <button
+                type="button"
                 class="subTab"
                 data-sub="weaponTheory"
-            >
-                理論値構成
-            </button>
+            >理論値構成</button>
 
+            <button
+                type="button"
+                class="subTab"
+                data-sub="weaponHard"
+            >高難易度クエスト</button>
         </div>
 
 
-        <!-- 武器強化 -->
+        <!-- 強化手順 -->
+        <div class="subContent active" id="weaponEnhance">
+            
+            <style>
+                #weaponEnhance {
+                    --bg:#f5f6f8; --surface:#fff; --surface-2:#eff1f4; --text:#1b1f24; --muted:#5d6672; --border:#d9dde3;
+                    --accent:#2563c9; --accent-soft:#e5edfb; --on-accent:#fff;
+                    --diff-bg:#fdf1d8; --diff-text:#6e4c00;
+                    --ok:#1f7a4d; --plan:#8a5a00;
+                    --star:#2563c9; --lg:#a0422a;
+                    background: var(--bg); color: var(--text);
+                    font-family: "Hiragino Sans","Yu Gothic UI","Meiryo",system-ui,sans-serif;
+                    font-size: 15px; line-height: 1.7; padding: 20px; border-radius: 12px;
+                }
+                #weaponEnhance h2 { font-size: 1.14rem; margin: 0 0 10px; color: var(--text); }
+                #weaponEnhance h3 { font-size: .98rem; margin: 16px 0 6px; color: var(--text); }
+                #weaponEnhance h3:first-child { margin-top: 0; }
+                #weaponEnhance p { margin: 6px 0; }
+                #weaponEnhance ul { margin: 4px 0; padding-left: 1.25em; }
+                #weaponEnhance li { margin: 2px 0; }
+                #weaponEnhance .tbl { overflow-x: auto; }
+                #weaponEnhance table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+                #weaponEnhance th, #weaponEnhance td { border-bottom: 1px solid var(--border); padding: 7px 9px; text-align: left; vertical-align: top; background: #ffffff; }
+                #weaponEnhance th { background: var(--surface-2); white-space: nowrap; color: var(--text); }
+                #weaponEnhance td.c, #weaponEnhance th.c { text-align: center; }
+				#weaponEnhance tr:hover td {background: rgba(255, 0, 0, 0.15); }
+                #weaponEnhance .yes { color: var(--ok); font-weight: 700; }
+                #weaponEnhance .call { background: var(--accent-soft); border-radius: 8px; padding: 9px 13px; margin-top: 10px; font-size: .9rem; color: var(--text); }
+                #weaponEnhance .grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+                #weaponEnhance .card { background: var(--surface-2); border-radius: 9px; padding: 12px 14px; font-size: .9rem; }
+                #weaponEnhance .card h3 { margin: 0 0 4px; }
+                @media (max-width:760px){
+                    #weaponEnhance .grid { grid-template-columns: 1fr; }
+                }
+            </style>
 
-        <div
-            class="subContent active"
-            id="weaponEnhance"
-        >
+            <h2 class="contentTitle" style="font-size: 1.5rem; margin-bottom: 2px;">◆武器・防具の強化手順</h2>
+            <p class="lead" style="margin: 2px 0 18px; color: var(--muted); font-size: .88rem;">【※最終更新日：2026年11月10日】<br>武器・防具の強化手順を纏めたページです♬。</p>
 
-            <h2 class="contentTitle">
-                武器強化
-            </h2>
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇強化の流れ</h2>
+              <div class="tbl"><table>
+                <thead><tr><th class="c">#</th><th>作業</th><th class="c">武器</th><th class="c">防具</th><th>補足</th></tr></thead>
+                <tbody>
+                  <tr><td class="c">1</td><td>ベース選定</td><td class="c yes">○</td><td class="c yes">○</td><td>武器種・プリセットを確定します。</td></tr>
+                  <tr><td class="c">2</td><td>マルチウェポン化</td><td class="c yes">○</td><td class="c no">×</td><td>必要な場合のみ行います。（※アップグレード前がベスト!!）</td></tr>
+                  <tr><td class="c">3</td><td>アップグレード</td><td class="c yes">○</td><td class="c yes">○</td><td>シリーズ品のみが対象です。</td></tr>
+                  <tr><td class="c">4</td><td>限界突破</td><td class="c yes">○</td><td class="c yes">○</td><td>強化上限を+100にします。</td></tr>
+                  <tr><td class="c">5</td><td>アイテム強化</td><td class="c yes">○</td><td class="c yes">○</td><td>+100で特殊能力が8枠となります。</td></tr>
+                  <tr><td class="c">6</td><td>潜在能力解放</td><td class="c yes">○</td><td class="c no">×</td><td>原則Lv.6です。</td></tr>
+                  <tr><td class="c">7</td><td>EX特殊能力を確定</td><td class="c yes">○</td><td class="c no">×</td><td>最大3枠です。</td></tr>
+                  <tr><td class="c">8</td><td>通常特殊能力を追加</td><td class="c yes">○</td><td class="c yes">○</td><td>付ける能力については、「理論値構成」タブを参照下さい✨。</td></tr>
+                  <tr><td class="c">9</td><td>プリセット強化・移植</td><td class="c yes">○</td><td class="c yes">○</td><td>目的に合う能力をLv.5へ強化します。（※種類の一覧は当ページ下部）</td></tr>
+                  <tr><td class="c">10</td><td>最終確認・ロック</td><td class="c yes">○</td><td class="c yes">○</td><td>+100、8枠能力、プリセット（武器は潜在も）を確認します。</td></tr>
+                </tbody>
+              </table></div>
+            </section>
 
-            <!-- ここに武器強化の内容 -->
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇各工程のポイント</h2>
+              <div class="grid">
+                <div class="card">
+                  <h3>～ 【#1】最初に決める5点 ～</h3>
+                  <ul>
+                    <li>武器シリーズの決定</li>
+                    <li>メイン武器種の決定</li>
+                    <li>マルチウェポンの組み合わせの決定</li>
+                    <li>プリセット能力の決定</li>
+                    <li>カラーバリアント（威力には無関係）の決定</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <h3>～ 【#2】マルチウェポン化 ～</h3>
+                  <ul>
+                    <li>同シリーズの別武器種を組み合わせる</li>
+                    <li>強化値・潜在・特殊能力・プリセットは<b><u>ベース側</u></b>を使用</li>
+                    <li>素材側の武器は強化内容ごと消滅（武器種は後から上書き可）</li>
+                    <li>単体武器には戻せない</li>
+                  </ul>
+                  <p><b>※強化済み・高プリセット品を素材側に置かないこと。</b></p>
+                </div>
+                <div class="card">
+                  <h3>～ 【#5】+100まで強化 ～</h3>
+                  <ul>
+                    <li>完成条件は<b><u>+100・8スロット</u></b></li>
+                    <li>限界突破は最初に済ませると効率的</li>
+                    <li>高強化値のシリーズ装備を素材にすると効率的</li>
+                    <li>強化大成功ブースト期間でメセタを節約</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <h3>～ 【#6】潜在Lv.6で確認する点 ～</h3>
+                  <p>威力倍率のほか、クリティカル発生率・クリティカル威力、PP消費軽減、ダメージ耐性、HP・PP条件、発動条件を確認します。</p>
+                  <p>一番上の威力は常時発動ですが、それ以外の条件付き効果は表示どおりの倍率が出ないことがあります。</p>
+                </div>
+              </div>
+            </section>
 
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇武器プリセット（Lv.5）一覧</h2>
+              <div class="tbl"><table>
+                <thead><tr><th>フィクサ・</th><th>性能</th><th>向いている条件</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">アタック</th><td>威力 常時+10%</td><td>常時安定</td></tr>
+                  <tr><th scope="row">ブラストル</th><td>威力 常時+9%、PB威力+12%</td><td>PB比率が高い</td></tr>
+                  <tr><th scope="row">アバンダク</th><td>最大威力12%（常時+2%、最大+10%）</td><td>特殊能力20種類を維持</td></tr>
+                  <tr><th scope="row">ウィクス</th><td>最大威力14%（常時+2%、弱点時+12%）</td><td>弱点へ安定して攻撃</td></tr>
+                  <tr><th scope="row">アンウィクス</th><td>最大威力17%（常時+2%、非弱点時+15%）</td><td>非弱点への攻撃が多い</td></tr>
+                  <tr><th scope="row">テルミナ</th><td>クリティカル時の威力+29%</td><td>Sl・高クリティカル</td></tr>
+                  <tr><th scope="row">フェタル</th><td>クリティカル発生率+28%</td><td>低クリティカル武器</td></tr>
+                </tbody>
+              </table></div>
+              <div class="call"><b><span style="color: red;"><u>【One Point!!】</u></span></b>迷ったらブラストル。現状の威力比較では、これ1本でどの高難易度にも対応可能です。無条件の理論倍率はアバンダク最大1.12倍、アタック1.10倍ですが、アバンダクは装備全体で特殊能力20種類が必要です。</div>
+            </section>
+
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇防具プリセット（Lv.5）一覧</h2>
+              <div class="tbl"><table>
+                <thead><tr><th>フィクサ・</th><th>性能</th><th>向いている条件</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">エンソジア</th><td>攻撃時PP回復+6%</td><td>攻撃手数が多い</td></tr>
+                  <tr><th scope="row">ナトゥーラ</th><td>PP自然回復速度+7%</td><td>非連続のPA比率が高い</td></tr>
+                  <tr><th scope="row">パフォーマ</th><td>PP消費量軽減+5%</td><td>連続のPA比率が高い</td></tr>
+                  <tr><th scope="row">ガード</th><td>ダメージ耐性+7%</td><td>被弾率が高い</td></tr>
+                  <tr><th scope="row">オーグシス</th><td>攻撃時のPBゲージ増加+10%</td><td>攻撃手数が多くPB比率が高い</td></tr>
+                  <tr><th scope="row">インクレサ</th><td>PBゲージ自動蓄積量+10%</td><td>攻撃手数が少なくPB比率が高い</td></tr>
+                </tbody>
+              </table></div>
+            </section>
         </div>
 
 
         <!-- 理論値構成 -->
+        <div class="subContent" id="weaponTheory">
+            
+            <style>
+                #weaponTheory {
+                    --bg:#f5f6f8; --surface:#fff; --surface-2:#eff1f4; --text:#1b1f24; --muted:#5d6672; --border:#d9dde3;
+                    --accent:#2563c9; --accent-soft:#e5edfb; --on-accent:#fff;
+                    --diff-bg:#fdf1d8; --diff-text:#6e4c00;
+                    --ok:#1f7a4d; --plan:#8a5a00;
+                    --star:#2563c9; --lg:#a0422a;
+                    background: var(--bg); color: var(--text);
+                    font-family: "Hiragino Sans","Yu Gothic UI","Meiryo",system-ui,sans-serif;
+                    font-size: 15px; line-height: 1.7; padding: 20px; border-radius: 12px;
+                }
+                #weaponTheory h2 { font-size: 1.14rem; margin: 0 0 10px; color: var(--text); }
+                #weaponTheory h3 { font-size: .98rem; margin: 16px 0 6px; color: var(--text); }
+                #weaponTheory p { margin: 6px 0; }
+                #weaponTheory .tbl { overflow-x: auto; }
+                #weaponTheory table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+                #weaponTheory th, #weaponTheory td { border-bottom: 1px solid var(--border); padding: 7px 9px; text-align: left; vertical-align: top; background: #ffffff; }
+                #weaponTheory th { background: var(--surface-2); white-space: nowrap; color: var(--text); }
+                #weaponTheory td.c, #weaponTheory th.c { text-align: center; }
+				#weaponTheory tr:hover td {background: rgba(0, 168, 255, 0.18); }
+                #weaponTheory .diff { background: var(--diff-bg); color: var(--diff-text); font-weight: 600; }
+                #weaponTheory .key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--diff-bg); border: 1px solid var(--diff-text); vertical-align: -1px; margin-right: 4px; }
+                #weaponTheory .note { font-size: .84rem; color: var(--muted); }
+                #weaponTheory .call { background: var(--accent-soft); border-radius: 8px; padding: 9px 13px; margin-top: 10px; font-size: .9rem; color: var(--text); }
+                #weaponTheory .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin: 10px 0; }
+                #weaponTheory .stat { background: var(--surface-2); border-radius: 9px; padding: 10px 12px; }
+                #weaponTheory .stat b { display: block; font-size: 1.25rem; line-height: 1.3; }
+                #weaponTheory .stat span { font-size: .8rem; color: var(--muted); }
+                /* 派生図 */
+                #weaponTheory .tree { display: grid; gap: 12px; margin-top: 8px; }
+                #weaponTheory .line { display: flex; align-items: center; gap: 0; background: var(--surface-2); border-radius: 10px; padding: 12px; }
+                #weaponTheory .node { flex: 1 1 0; min-width: 0; background: var(--surface); border: 1.5px solid var(--border); border-radius: 9px; padding: 9px 11px; font-size: .8rem; line-height: 1.5; color: var(--text); }
+                #weaponTheory .node strong { display: block; font-size: .98rem; line-height: 1.35; }
+                #weaponTheory .node.top { border-color: var(--accent); border-width: 2px; }
+                #weaponTheory .node.plan { border-style: dashed; background: transparent; color: var(--muted); }
+                #weaponTheory .node.plan strong { color: var(--plan); }
+                #weaponTheory .rar { font-weight: 700; color: var(--star); }
+                #weaponTheory .rar.lg { color: var(--lg); }
+                #weaponTheory .arrow { flex: 0 0 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 5px; font-size: .68rem; line-height: 1.35; color: var(--muted); text-align: center; }
+                #weaponTheory .arrow i { font-style: normal; font-size: 1.15rem; color: var(--accent); line-height: 1.1; }
+                #weaponTheory .branch { flex: 1 1 0; min-width: 0; display: grid; gap: 8px; }
+                #weaponTheory .spacer { flex: 1 1 0; min-width: 0; margin-left: 96px; }
+                #weaponTheory .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .8rem; color: var(--muted); margin: 6px 0; }
+                #weaponTheory .sample { display: inline-block; width: 22px; height: 13px; border: 1.5px solid var(--border); border-radius: 3px; vertical-align: -2px; margin-right: 4px; background: var(--surface); }
+                #weaponTheory .sample.top { border: 2px solid var(--accent); }
+                #weaponTheory .sample.plan { border-style: dashed; border-color: var(--plan); background: none; }
+                @media (max-width:760px){
+                    #weaponTheory section { padding: 15px; }
+                    #weaponTheory .stats { grid-template-columns: 1fr; }
+                    #weaponTheory .line { flex-direction: column; align-items: stretch; }
+                    #weaponTheory .node, #weaponTheory .branch { flex: none; }
+                    #weaponTheory .spacer { display: none; }
+                    #weaponTheory .arrow { flex: none; padding: 5px 0; }
+                    #weaponTheory .arrow i { transform: rotate(90deg); display: block; }
+                    #weaponTheory table.wide { min-width: 560px; }
+                }
+            </style>
+			<h2 class="contentTitle" style="font-size: 1.5rem; margin-bottom: 2px;">◆理論値構成</h2>
+			<p class="lead" style="margin: 2px 0 18px; color: var(--muted); font-size: .88rem;">【※最終更新日：2026年11月10日】<br>理論値構成を纏めたページです♬。</p>
 
-        <div
-            class="subContent"
-            id="weaponTheory"
-        >
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇構成の比較</h2>
+              <p class="note"><b>ユリアLv</b>：高難易度にも挑戦できる最低限の装備帯 ／ <b>最上級Lv</b>：高難易度のソロ挑戦レベルな装備帯<br><span class="key"></span>ユリアLvとの違い</p>
 
-            <h2 class="contentTitle">
-                理論値構成
-            </h2>
+              <h3>☕武器（8枠）</h3>
+              <div class="tbl"><table class="wide">
+                <thead><tr><th class="c">枠</th><th>ユリアLv</th><th>最上級Lv</th><th>Sl威力盛り</th></tr></thead>
+                <tbody>
+                  <tr><td class="c">1〜3</td><td>EX特殊能力 ×3</td><td>EX特殊能力 ×3</td><td>EX特殊能力 ×3</td></tr>
+                  <tr><td class="c">4</td><td>エミスハルフィニリア LC/MN</td><td class="diff">エミスハルフィニリア</td><td class="diff">エミスハルフィニリア</td></tr>
+                  <tr><td class="c">5</td><td>テルフィア・ドミナ</td><td class="diff">エミスガギガス・マエスティ（またはテルフィア・ドミナ）</td><td class="diff">エミスガギガス・マエスティ</td></tr>
+                  <tr><td class="c">6</td><td>ペタドライエル LC</td><td class="diff">ペタドライエル</td><td class="diff">ペタドライエル</td></tr>
+                  <tr><td class="c">7</td><td>ユディ・〇〇（クラスに合う安価なもの）</td><td class="diff">ユディ・アム〇〇</td><td class="diff">ユディ・アム〇〇</td></tr>
+                  <tr><td class="c">8</td><td>ユーゼ・〇〇（クラスに合う安価なもの）</td><td class="diff">ユーゼ・アム〇〇</td><td class="diff">ユーゼ・アム〇〇</td></tr>
+                </tbody>
+              </table></div>
 
-            <!-- ここに理論値構成の内容 -->
+              <h3>☕防具（8枠）</h3>
+              <div class="tbl"><table class="wide">
+                <thead><tr><th class="c">枠</th><th>ユリアLv</th><th>最上級Lv</th><th>Sl威力盛り</th></tr></thead>
+                <tbody>
+                  <tr><td class="c">1</td><td>エミスハルフィニリア LC/MN</td><td class="diff">エミスハルフィニリア</td><td class="diff">エミスハルフィニリア</td></tr>
+                  <tr><td class="c">2</td><td>エルガギガス・マエスティ</td><td class="diff">エミスガギガス・マエスティ</td><td class="diff">エミスガギガス・マエスティ</td></tr>
+                  <tr><td class="c">3</td><td>エルガグラディエ・ソール</td><td>エルガグラディエ・ソール</td><td>エルガグラディエ・ソール</td></tr>
+                  <tr><td class="c">4</td><td>エルガドレド・キーパ</td><td>エルガドレド・キーパ</td><td class="diff">トリアブルⅡG（配布から移す）</td></tr>
+                  <tr><td class="c">5</td><td>テルフィア・ドミナ</td><td>テルフィア・ドミナ</td><td>テルフィア・ドミナ</td></tr>
+                  <tr><td class="c">6</td><td>ペタドライエル（あればLC）</td><td class="diff">ペタドライエル</td><td class="diff">ペタドライエル</td></tr>
+                  <tr><td class="c">7</td><td>ユディ系（クラスに合う安価なもの）</td><td class="diff">ユディ・アム〇〇 または アルムパルフト</td><td class="diff">ユディ・アム〇〇 または アルムパルフト</td></tr>
+                  <tr><td class="c">8</td><td>ユーゼ系（クラスに合う安価なもの）</td><td class="diff">ユーゼ・アム〇〇 または アルムパルフト</td><td class="diff">ユーゼ・アム〇〇 または アルムパルフト</td></tr>
+                </tbody>
+              </table></div>
+            </section>
 
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇補足（武器）</h2>
+              <p>最大威力と下限補正を両立する<b><u>アルム型</u></b>が基本となります。<br>
+              <b>EX特殊能力 ×3 ＋ テルフィア・ドミナ ＋ ペタドライエル ＋ エミスハルフィニリア ＋ ユディ・アルム系 ＋ ユーゼ・アルム系</b></p>
+              <div class="stats">
+                <div class="stat"><b>+60〜66%</b><span>武器特殊能力の威力</span></div>
+                <div class="stat"><b>約1.159倍</b><span>武器特殊能力の下限補正</span></div>
+                <div class="stat"><b>+1%以上</b><span>ダメージ耐性</span></div>
+              </div>
+              <h3>☕下限補正の内訳</h3>
+              <p class="note">ユディ・ユーゼは別カテゴリなので、同じ武器に両方付けられます。</p>
+              <div class="tbl"><table>
+                <thead><tr><th>能力</th><th>下限補正</th></tr></thead>
+                <tbody>
+                  <tr><td>EX特殊能力 ×3</td><td>+2% ×3</td></tr>
+                  <tr><td>テルフィア・ドミナ</td><td>+3%</td></tr>
+                  <tr><td>ユディ・アルム系</td><td>+5%（他のユディ派生より+1%）</td></tr>
+                  <tr><td>ユーゼ・アルム系</td><td>+1%</td></tr>
+                </tbody>
+              </table></div>
+              <div class="call"><b><span style="color: red;"><u>【One Point!!】</u></span></b>節約するなら：ユディ・ユーゼは高価ですが、安いものに替えても火力は大きく変わりません。</div>
+            </section>
+
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇アルム型との比較</h2>
+              <div class="tbl"><table>
+                <thead><tr><th>構成</th><th>威力</th><th>下限</th><th>特徴</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">アルム型</th><td>+66.25%</td><td>最大</td><td>基本推奨</td></tr>
+                  <tr><th scope="row">ガーディ型</th><td>+66.25%</td><td>少し低下</td><td>ダメージ耐性重視</td></tr>
+                  <tr><th scope="row">スタム型</th><td>+66.25%</td><td>少し低下</td><td>HP重視</td></tr>
+                  <tr><th scope="row">スピレ型</th><td>+66.25%</td><td>少し低下</td><td>PP重視</td></tr>
+                </tbody>
+              </table></div>
+              <p class="note">威力はEXOPがすべて6.5%の場合です。耐久が足りないときだけガーディ系に替えます（期待DPSはわずかに低下）。</p>
+
+              <h3>☕打射法を絞る場合</h3>
+              <p>武器で1〜2系統しか使わない場合、パルフトの代わりに次の派生でも同じ倍率となります。</p>
+              <div class="tbl"><table>
+                <thead><tr><th>使う系統</th><th>能力</th></tr></thead>
+                <tbody>
+                  <tr><td>打撃＋射撃</td><td>アムダシャ</td></tr>
+                  <tr><td>打撃＋法撃</td><td>アムダホウ</td></tr>
+                  <tr><td>射撃＋法撃</td><td>アムシャホウ</td></tr>
+                  <tr><td>全系統</td><td>アルムパルフト</td></tr>
+                </tbody>
+              </table></div>
+              <div class="call"><b><span style="color: red;"><u>【One Point!!】</u></span></b>安価なアバンダク構成：上記のOPをなるべくMNカプセルに置き換え、ユディ・ユーゼを防具と別の種類にすると20種類に届きます。ただしMNカプセルはHP・PPのデメリットが大きくなります。</div>
+            </section>
+
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇EX特殊能力の注意点</h2>
+              <ul>
+                <li>武器に最大3枠。<b><u>異なる3系統</u></b>を選びます。</li>
+                <li>EX特殊能力Aは1枠だけです。</li>
+                <li>同系統のAとⅢは併用不可（※例：ターンオーバーA＋ターンオーバーⅢ）です。</li>
+                <li>現在のEXⅢは威力+6.0〜6.5%が基本です。</li>
+                <li>条件付きの追加威力を維持できれば、表示値以上の実効DPSになります。</li>
+              </ul>
+              <p class="note">※EXOPは種類が多く、戦闘スタイルの根幹にもなる要素です。詳しく知りたい方はチームのクエスト部隊まで✨。</p>
+            </section>
+
+            <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px;">
+              <h2>◇シリーズ派生図</h2>
+              <div class="legend">
+                <span><span class="sample"></span>実装済み</span>
+                <span><span class="sample top"></span>シリーズ内の現在の最上位</span>
+                <span><span class="sample plan"></span>予定（未実装）</span>
+              </div>
+
+              <h3>☕武器</h3>
+              <div class="tree">
+                <div class="line">
+                  <div class="node"><strong>コウゲンセイ</strong><span class="rar">★15</span>・攻撃力1563<br>幽豪の型<br>2026/06</div>
+                  <div class="arrow"><i>→</i>ヴォルトⅠ×150<br>グラインダー×200</div>
+                  <div class="node"><strong>ショウゲンセイ</strong><span class="rar">★15</span>・攻撃力1568<br>幽豪の型・弐式<br>2026/08/05</div>
+                  <div class="arrow"><i>→</i>ヴォルトⅡ×150<br>ヴォルトⅠ×300<br>グラインダー×400</div>
+                  <div class="node top"><strong>リュウゲンセイ</strong><span class="rar">★15</span>・攻撃力1578<br>幽豪の型・極式<br>2026/10/07</div>
+                </div>
+                <div class="line">
+                  <div class="node"><strong>カイズ</strong><span class="rar">★15</span>・攻撃力1583<br>達輝の型<br>2026/07/08</div>
+                  <div class="arrow"><i>→</i>カイズキューブ×5</div>
+                  <div class="node top"><strong>リイズ</strong><span class="rar">★15</span>・攻撃力1593<br>達輝の型・極式<br>2026/09/09</div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="line">
+                  <div class="node"><strong>レアレンス</strong><span class="rar lg">LG5</span>・攻撃力1588<br>幻精の型<br>2026/08/05</div>
+                  <div class="arrow"><i>→</i>ヴォルト×150<br>グラインダー×200</div>
+                  <div class="node top"><strong>レアレンスⅡ</strong><span class="rar lg">LG5</span>・攻撃力1593<br>幻精の型・弐式<br>2026/10/21</div>
+                  <div class="arrow"><i>→</i>2026年末の予定</div>
+                  <div class="node plan"><strong>2回目のアップグレード</strong>名称・素材は未発表</div>
+                </div>
+                <div class="line">
+                  <div class="node top"><strong>レクシオ</strong><span class="rar lg">LG4</span>・攻撃力1573<br>追輝の型<br>2026/04/08</div>
+                  <div class="arrow"><i>→</i>時期未定</div>
+                  <div class="node plan"><strong>アップグレード予定</strong>名称・素材は未発表</div>
+                  <div class="spacer"></div>
+                </div>
+              </div>
+              <p class="note">※攻撃力は+100時。コウゲンセイからリュウゲンセイへは、ヴォルトⅡ×150、ヴォルトⅠ×450、グラインダー×600で一度に上げることもできます。「ヴォルト」は各シリーズ専用のヴォルト、「グラインダー」はプログレグラインダーです。アップグレード先は素材装備の強化状態を引き継ぎます。</p>
+
+              <h3>☕防具</h3>
+              <div class="tree">
+                <div class="line">
+                  <div class="node"><strong>エヴァルトアーマ</strong><span class="rar">★14</span>・防御力166<br>武器上昇+8.2%</div>
+                  <div class="arrow"><i>→</i>1部位あたり<br>ヴァンス×75<br>グラインダー×500</div>
+                  <div class="branch">
+                    <div class="node top"><strong>サヴェルトアーマ</strong><span class="rar">★15</span>・防御力168<br>武器上昇+8.5%／HP+90・PP+8〜9<br>2026/07/01</div>
+                    <div class="node top"><strong>サヴェルトアーマ・リゼ</strong><span class="rar">★15</span>・防御力168〜169<br>武器上昇+8.5%／HP+180・PP−27<br>2026/07/01</div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="line">
+                  <div class="node top"><strong>インクレディアアーマ</strong><span class="rar">★15</span>・防御力170<br>武器上昇+8.7%<br>2026/10/28（ダリオ・ルデアンからドロップ）</div>
+                  <div class="arrow"><i>→</i>時期未定</div>
+                  <div class="node plan"><strong>強化予定</strong>詳細は未発表</div>
+                  <div class="spacer"></div>
+                </div>
+              </div>
+              <p class="note">※防御力は+100時。アップグレード先は素材装備の強化状態を引き継ぎます。</p>
+            </section>
         </div>
+
+
+        <!-- 高難易度クエスト -->
+        <div class="subContent" id="weaponHard">
+            <h2 class="contentTitle">高難易度クエスト</h2>
+            <p><strong>【※最終更新日：2026年11月10日】</strong></p>
+			<p>
+				約2か月ごとに実装の高難易度系クエストについて、多くのメンバーさんが武具強化、及び、練習やクリアに向けての挑戦を行われている現状を鑑み、<br>
+				チームのスプレッドシートの「BK_2024年」シート、「◆【2/2】2024年9月：前半期総括。【チーム内周知日：2024/9/21 13:08】④ 」
+				
+				<br><br>に記載のチームでの高難易度系クエストについての方針を改め、仕事やリアル都合により、<br>挑戦したいけど･･･そもそもインして受注する事が高難易度(*_ω_*)ﾊｩ。
+				<br>知見や知識を増やしつつ練習を重ね、自信を増やしておく事でセーフティーにクリアを目指したい(まずは敵を知る)、<br>チームの皆と気軽にたくさんクリア(練習含む)を目指したい(知見共有、皆でパワーアップ)etc✨。
+				<br><br>そんなメンバーさんのニーズを、可能な限り実現させていく事を目的としたページです♬。
+				<br>具体的には、下記2点。
+				<br><br>　<b><span style="color: #cd5c5c"><u>①床ペロとなりやすいポイント、シーン、それに対する回避方法(*ﾉωﾉ)。</u></b></span>
+				<br>　<b><span style="color: #6495ed"><u>②ワンポイントアドバイス。</u></b></span>
+				<br><br>についてを、もしも挙動等の把握が行えたメンバーさんがおりましたら、私(ユリア)までNGS内メール、<br>XのDM(SSもあると嬉しいかも❦)等で遠慮なくご共有下さ～い( ✌︎'ω')✌︎✨。
+				
+				<br><br>頂いた内容は随時、以下対象クエスト欄へ追加を行っていきます。
+				<br>(※私の方でクリア後は、クリア動画URLを参考情報の1つとして掲載。参考になるかは･･･別だが(*_ω_*)。<br>また、高難易度が実装された週の定例祭2部では練習として取り上げる予定。)
+				
+				<br><br><b><u>【当取り組みによる目標✨】</b></u>
+				<br>2025年6月11日に実装のヴァエルで、おおよそチーム内クリアタイミングとクリア率を把握。
+				<br>実装1週間目までのクリア希望者のクリア率70%、実装2週間目までのクリア率100%を目標とする～(*☆ω★*)♬。
+				<br><br>
+				<div style="width:100%; max-width:712px; font-family:'Meiryo',sans-serif; font-size:12px;">
+					
+					<!-- 日付表示 -->
+					<div style="display:flex; height:32px; align-items:center;">
+						<div style="width:23%; color:#ff00ff; text-align:left;">実装日</div>
+						<div style="width:27%; text-align:left;">3日後</div>
+						<div style="width:50%; display:flex; justify-content:space-between;">
+						<span>1週間後</span>
+						<span style="color:#3399ff;">2週間後</span>
+						</div>
+					</div>
+					
+					<!-- 期間表示 -->
+					<div style="display:flex; height:48px; box-sizing:border-box;">
+					
+						<div style="width:23%; box-sizing:border-box; background:#ead4ed; border:1px solid #a855f7; color:#000; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+						<span>挙動把握期間</span>
+						<span>（※推定クリア率10%）</span>
+						</div>
+					
+						<div style="width:27%; box-sizing:border-box; background:#d9d9f5; border:1px solid #a855f7; color:#000; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+						<span>挑戦期間</span>
+						<span>（※推定クリア率50%⇒<span style="color:red;">70%</span>）</span>
+						</div>
+					
+						<div style="width:50%; box-sizing:border-box; background:#fff0c9; border:1px solid #a855f7; color:#000; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+						<span>本気出す(*★ω☆*)期間♪</span>
+						<span>（※推定クリア率70%⇒<span style="color:red;">100%</span>）</span>
+						</div>
+					</div>
+				</div>
+				<br><br>
+			</p>
+			
+			<!-- ヴァエル -->
+			<h2 class="style1">◆【実装日：2025年06月11日】星蝕の狂流（ヴァエル）</h2>
+			<p>
+				制限時間15分。4人制。5回戦闘不能でクエスト失敗となる系！？高難易度クエスト。(※必要戦闘力：4630以上)
+				<br>大きく分けて5つのフェーズが存在。
+				
+				<br><br>　①通常フェーズ：攻撃パターンがやや鮮明な為、挙動把握が最初のステップ。(～残<span style="color: #00ff00"><b>HP70%</b></span>)
+				<br>　②ややお怒りフェーズ：レーザー(攻撃判定：見えたら直ぐ)&地面からの竜巻(攻撃判定：円が重なったら)、
+				<br>キューブ弾(攻撃判定：見えてから2秒後くらい)の挙動が追加。(～残<span style="color: #00ff00"><b>HP50%</b></span>)
+				
+				<br><br>　③柱(4つ)出現フェーズ：横からキューブと壁(回避不能)が、下から嵐がの混沌フェーズ。4つの柱を壊し終わると次のフェーズへ移行。(～残<span style="color: #00ff00"><b>HP30%</b></span>)
+				<br>　④柱(1つ)出現フェーズ：「③」がより激化するフェーズ。下から嵐も一部、回避不能のものも発生。(～残<span style="color: #00ff00"><b>HP20%</b></span>)
+				<br>　⑤お怒りデッドラインフェーズ：お怒りの大技前に、ひたすら攻撃～。(～残<span style="color: #00ff00"><b>HP10%</b></span>)
+				
+				<br><br><b><u>🔷知見集約</b></u>
+				<ul>
+				<li>①、②の移行期間に、自身を守る三角形の壁を作る必要がある。基準となる壁を設置→90度直角くらいになる角度で2個目の壁を設置→最後に90度の角にキャラを突っ込ませて真後ろを向いて壁を設置→三角形で自キャラを囲めると安全に対処し易い。(※知見提供：こなさん♬)</li>
+				<li>ブレイクの瞬間にM.A.R.S.を起動して、ハイドラ砲により大きなダメージを与える事が可能。(※知見提供：こなさん♬)</li>
+				</ul>
+				<div style="margin: 16px 0;">
+					<img src="https://stat.ameba.jp/user_images/20261111/21/nevilia/30/5d/j/o1024102215840650914.jpg" alt="攻略画像" style="width: 25%; max-width: 50%; height: auto; display: block; border-radius: 6px;">
+				</div>
+				
+				<br><br><b><u>🔶ユリア動画</b></u>
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); gap: 14px; margin: 16px 0;">
+
+					<!-- 動画カード 1 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/ETlKOda29mk" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #ff0000; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画①
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー4名と赴いた、討伐の動画～ૡ(・ꈊ・ૡ)˚*ʸᵉᵃʰᵎᵎ。
+							</p>
+						</div>
+					</div>
+				
+					<!-- 動画カード 2 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/muhHOcuJxJA" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #ffff00; color: #000; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画②
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー4名と赴いた、討伐の動画～( 'ω' و( و"♬。
+							</p>
+						</div>
+					</div>
+				</div>
+			</p><br><br>
+				
+			<!-- ルーサー -->
+			<h2 class="style1">◆【実装日：2026年04月08日】顕現せし偽りの覇者【敗者】（ルーサー）</h2>
+			<p>
+				制限時間15分。4人制。5回戦闘不能でクエスト失敗となる系！？高難易度クエスト。(※必要戦闘力：5010以上)
+				<br>大きく分けて前半、後半の2つのフェーズが存在。
+				<br><br>　①前半フェーズ：時止めは、赤い球体が地面に接触するタイミングで回避可能。2回目の時止め時は、複数剣の内、1つだけ近付くと黄色く発光する剣が存在⇒それを破壊。
+				<br>　②後半フェーズ：エリア全体が攻撃範囲。前半フェーズから、後半フェーズへの移行の際、MARS砲を打ち込む事が可能。
+				
+				<br><br><b><u>🔶ユリア動画</b></u>
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); gap: 14px; margin: 16px 0;">
+
+					<!-- 動画カード 1 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/Bhi5HwEjXKU" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #00ffff; color: #000; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画①
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー4名と赴いた、討伐の動画～ૡ(・ꈊ・ૡ)˚*ʸᵉᵃʰᵎᵎ。
+							</p>
+						</div>
+					</div>
+				
+					<!-- 動画カード 2 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/Bhi5HwEjXKU" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #00ff00; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画②
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー12名と赴いた、緊急クエスト版の動画～( 'ω' و( و"♬。
+							</p>
+						</div>
+					</div>
+					
+					<!-- 動画カード 3 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/AQbEsfHexg8" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #ff1493; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画②
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー12名と赴いた、緊急クエスト版の動画～(๑و•̀ω•́)و✨。
+							</p>
+						</div>
+					</div>
+				</div>
+			</p><br><br>
+				
+			<!-- ソラス・クリプト -->
+			<h2 class="style1">◆【実装日：2026年07月08日】星滅の表徴（ソラス・クリプト）</h2>
+			<p>
+				制限時間15分。4人制。5回戦闘不能でクエスト失敗となる系！？高難易度クエスト。(※必要戦闘力：5100以上)
+				<br>大きく分けて3つのフェーズが存在。
+				
+				<br><br>　①通常フェーズ：ガード不可の床が2つ、時計回りに周回。
+				<br>　②ややお怒りフェーズ：ガード不可の床が4つ、時計回りに周回。（※通常フェーズで尻尾を部位破壊していないと、フィールド全体がガード不可状態に。。）
+				<br>　③柱(2つ)出現フェーズ：2人ずつに分かれて、瞬間火力に不安な場合は、MARS砲を打ち込めばOK✨。
+				<br>　④お怒りフェーズ：ガード不可の横柱2本攻撃時は、内側より外側にいた方がかわしやすい。
+				<br>　⑤お怒りデッドライン（卵9個）フェーズ：中央の卵を破壊すると吸引攻撃が発生の為、中央の卵は、必ず最後に破壊～。
+				
+				<br><br><b><u>🔶ユリア動画</b></u>
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); gap: 14px; margin: 16px 0;">
+
+					<!-- 動画カード 1 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/viIIBnZjUq8" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #9400d3; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画①
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー4名と赴いた、討伐の動画～ૡ(・ꈊ・ૡ)˚*ʸᵉᵃʰᵎᵎ。
+							</p>
+						</div>
+					</div>
+				</div>
+			</p><br><br>
+			
+			<!-- ダリオ・ルデアン -->
+			<h2 class="style1">◆【実装日：2026年10月28日】星滅の表徴（ダリオ・ルデアン）</h2>
+			<p>
+				制限時間15分。4人制。5回戦闘不能でクエスト失敗となる系！？高難易度クエスト。(※必要戦闘力：5280以上)
+				<br>大きく分けて5つのフェーズが存在。事前に仕組みやカラクリを知っているかが、かなり生存率に影響。床ペロ防止に、サブウェイカー(被弾時、ダメージ軽減 or HP回復)、💍ペイシェントフォロー(被弾時、HP回復)有効。
+				
+				<br><br>　①通常フェーズ：分離体と1:1で対峙。プレイヤー同士が近付き過ぎると大ダメージ(接近制限リング)を受けるので注意><。
+				<br>　②モバキャフェーズ：接近制限リング継続中。分離体の上下どこか1つに弱点があり、そこを部位破壊後に狙い撃ち。モバキャは押し続ける事で威力上昇な為、可能な限り途切れずに打ち続けたい。8方向回転は、ジャンプ回避が有効✨。
+				<br><br>　③ややお怒りフェーズ：接近制限リング継続中。フェーズ移行時は、床の紫色の丸印が安全地帯。黄色の球体が出現時は、プレイヤー間の接近制限リングは解除されるが、破壊せずにいると、黄色の球体が接近制限リング扱いとなる(※破壊推奨、<span style="color: red"><b>床ペロ原因は、ほぼこれ!!</b></span>)。
+				小分離体のガード不可の突進攻撃は空中にいれば安全。床一面のガード不可攻撃は、4辺の内1辺だけガード可能エリアが存在するのでそこへ移動(※第二の床ペロ原因だが、上から降りてくる白い線が床に到達した瞬間が攻撃判定で、意外と時間がある)。
+				<br><br>　④お怒りフェーズ：接近制限リング継続中。糸に捕まらない様に、動き回れば安全。
+				<br>　⑤お怒りデッドラインフェーズ：接近制限リング解除。従来のダリオンとほぼ同じ。
+				
+				<br><br><b><u>🔶ユリア動画</b></u>
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 280px)); gap: 14px; margin: 16px 0;">
+
+					<!-- 動画カード 1 -->
+					<div style="background: var(--surface, #fff); border: 1px solid var(--border, #d9dde3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+						<div>
+							<a href="https://youtu.be/o6NxFTWKn3A" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #ff7f50; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 10px 14px; border-radius: 6px; text-align: center;">
+								▶ 動画①
+							</a>
+							<p style="font-size: 0.85rem; color: var(--muted, #5d6672); margin: 10px 0 0; line-height: 1.5;">
+								チームメンバー4名と赴いた、討伐の動画～ૡ(・ꈊ・ૡ)˚*ʸᵉᵃʰᵎᵎ。
+							</p>
+						</div>
+					</div>
+				</div>
+			</p>
+			
+		</div>
 
     </section>
 
