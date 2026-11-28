@@ -1918,7 +1918,7 @@ line-height: 1.5;
 		<div class="subContent active">
 			<h2 class="contentTitle">Home</h2>
 			
-			<p><strong>【※最終更新日：2026年11月23日】</strong></p>
+			<p><strong>【※最終更新日：2026年11月28日】</strong></p>
 			<p>
 				2026年10月中旬にリリースのサブホームページです♬。<br>
 				乱立していたチームの資産を1つに集約✨。各々ページもリニューアルとなっています(*>ω<*)❦。<br><br>
@@ -2248,6 +2248,12 @@ line-height: 1.5;
                 class="subTab"
                 data-sub="weaponTheory"
             >理論値構成</button>
+			
+			<button
+                type="button"
+                class="subTab"
+                data-sub="weaponAddon"
+            >アドオン</button>
 
             <button
                 type="button"
@@ -2621,6 +2627,343 @@ line-height: 1.5;
             </section>
         </div>
 
+
+		<!-- アドオンスキル -->
+        <div class="subContent" id="weaponAddon">
+            <style>
+                #weaponAddon { --bg: #f5f6f8; --surface: #ffffff; --surface-2: #eff1f4; --text: #1b1f24; --muted: #5d6672; --border: #d9dde3; --accent: #2563c9; --accent-soft: #e5edfb; --on-accent: #ffffff; --pick: #1d7a46; --pick-soft: #e3f4ea; --up: #c03a2b; --warn-bg: #fff6e0; --warn-text: #7a5300; --warn-border: #f0d9a0; --bar: #4f86e0; --bar-max: #2f9a5e; background: var(--bg); color: var(--text); font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif; font-size: 15px; line-height: 1.7; padding: 20px; border-radius: 12px; }
+                #weaponAddon * { box-sizing: border-box; }
+                #weaponAddon .contentTitle { font-size: 1.5rem; margin: 0 0 2px; color: var(--text); }
+                #weaponAddon .lead { margin: 2px 0 18px; color: var(--muted); font-size: .88rem; }
+                #weaponAddon section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-top: 14px; }
+                #weaponAddon h2 { font-size: 1.14rem; margin: 0 0 10px; color: var(--text); }
+                #weaponAddon h3 { font-size: .98rem; margin: 16px 0 6px; color: var(--text); }
+                #weaponAddon h3:first-child { margin-top: 0; }
+                #weaponAddon p { margin: 6px 0; }
+                #weaponAddon ul, #weaponAddon ol { margin: 4px 0; padding-left: 1.3em; }
+                #weaponAddon li { margin: 2px 0; }
+                #weaponAddon .tbl { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+                #weaponAddon table { border-collapse: collapse !important; border-spacing: 0 !important; width: 100% !important; margin: 0 !important; font-size: .88rem; }
+                #weaponAddon th, #weaponAddon td { border-top: none !important; border-left: none !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 7px 9px !important; text-align: left; vertical-align: top; background: #ffffff !important; }
+                #weaponAddon th { background: var(--surface-2) !important; white-space: nowrap; color: var(--text); }
+                #weaponAddon td.r, #weaponAddon th.r { text-align: right; white-space: nowrap; }
+                #weaponAddon tr:hover td { background: rgba(0, 168, 255, 0.18) !important; }
+                #weaponAddon .note { font-size: .84rem; color: var(--muted); }
+                #weaponAddon .warn { margin-top: 10px; padding: 9px 13px; border: 1px solid var(--warn-border); background: var(--warn-bg); color: var(--warn-text); border-radius: 8px; font-size: .86rem; }
+                #weaponAddon .call { background: var(--accent-soft); border-radius: 8px; padding: 9px 13px; margin-top: 10px; font-size: .9rem; color: var(--text); }
+                #weaponAddon .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+                #weaponAddon .row > section { margin-top: 0; }
+                #weaponAddon .steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+                #weaponAddon .steps li { counter-increment: s; display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--border); }
+                #weaponAddon .steps li:last-child { border-bottom: 0; }
+                #weaponAddon .steps li::before { content: counter(s); flex: 0 0 24px; height: 24px; border-radius: 6px; background: var(--accent); color: var(--on-accent); font-size: .8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; align-self: center; }
+                #weaponAddon .steps .what { flex: 1; }
+                #weaponAddon .steps .why { font-size: .82rem; color: var(--muted); text-align: right; }
+                #weaponAddon .boost { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 10px 0; }
+                #weaponAddon .tile { background: var(--surface-2); border-radius: 9px; padding: 10px 12px; }
+                #weaponAddon .tile b { display: block; font-size: 1.3rem; line-height: 1.3; color: var(--pick); }
+                #weaponAddon .tile span { font-size: .82rem; color: var(--muted); }
+                #weaponAddon .cls { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+                #weaponAddon .cls abbr { text-decoration: none; font-weight: 700; font-size: .78rem; background: var(--accent-soft); color: var(--accent); border-radius: 5px; padding: 1px 6px; min-width: 30px; text-align: center; }
+                #weaponAddon .main-v { font-weight: 700; color: var(--up); white-space: nowrap; }
+                #weaponAddon .subs { list-style: none; padding: 0; margin: 0; }
+                #weaponAddon .subs li { margin: 0; }
+                #weaponAddon .pick { color: var(--pick); font-weight: 700; }
+                #weaponAddon .legend-pick { display: inline-block; background: var(--pick-soft); color: var(--pick); font-weight: 700; border-radius: 4px; padding: 0 6px; font-size: .8rem; }
+                #weaponAddon .bars { display: grid; gap: 8px; margin-top: 6px; }
+                #weaponAddon .bar { display: grid; grid-template-columns: 52px 1fr 44px; align-items: center; gap: 10px; font-size: .88rem; }
+                #weaponAddon .bar .track { height: 14px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+                #weaponAddon .bar .fill { height: 100%; background: var(--bar); border-radius: 4px; }
+                #weaponAddon .bar.max .fill { background: var(--bar-max); }
+                #weaponAddon .bar .v { text-align: right; font-weight: 700; }
+                #weaponAddon .mats { display: grid; gap: 10px; }
+                #weaponAddon .mat { background: var(--surface-2); border-radius: 9px; padding: 10px 12px; font-size: .88rem; }
+                #weaponAddon .mat b { display: block; font-size: .95rem; }
+                #weaponAddon .prio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+                #weaponAddon .prio .box { background: var(--surface-2); border-radius: 9px; padding: 12px 14px; }
+                #weaponAddon .prio h3 { margin: 0 0 6px; }
+                #weaponAddon .prio ol { padding-left: 1.4em; font-size: .88rem; }
+                #weaponAddon .perf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+                #weaponAddon .formula { background: var(--surface-2); border-radius: 9px; padding: 10px 14px; margin-top: 8px; }
+                #weaponAddon .formula .eq { font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+                #weaponAddon .formula .res { color: var(--up); font-weight: 700; }
+                #weaponAddon .check { list-style: none; padding: 0; margin: 0; }
+                #weaponAddon .check li { border-bottom: 1px solid var(--border); margin: 0; }
+                #weaponAddon .check li:last-child { border-bottom: 0; }
+                #weaponAddon .check label { display: flex; gap: 10px; align-items: center; padding: 6px 2px; cursor: pointer; font-size: .92rem; }
+                #weaponAddon .check input { width: 18px; height: 18px; accent-color: var(--pick); flex: none; }
+                #weaponAddon .check input:checked + span { color: var(--muted); text-decoration: line-through; }
+                @media (max-width: 760px) {
+                    #weaponAddon { padding: 14px; }
+                    #weaponAddon section { padding: 15px; }
+                    #weaponAddon .row, #weaponAddon .prio { grid-template-columns: 1fr; }
+                    #weaponAddon .perf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                    #weaponAddon .boost { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+                    #weaponAddon .tile b { font-size: 1.1rem; }
+                    #weaponAddon table { display: table !important; min-width: 560px !important; font-size: .84rem; }
+                    #weaponAddon thead { display: table-header-group !important; }
+                    #weaponAddon tbody { display: table-row-group !important; }
+                    #weaponAddon tr { display: table-row !important; width: auto !important; border: none !important; margin: 0 !important; }
+                    #weaponAddon th, #weaponAddon td { display: table-cell !important; width: auto !important; }
+                    #weaponAddon th, #weaponAddon td, #weaponAddon tr:hover th, #weaponAddon tr:hover td { border-radius: 0 !important; -webkit-border-radius: 0 !important; }
+                }
+            </style>
+
+            <h2 class="contentTitle">◆アドオンスキル強化ガイド</h2>
+			<p class="lead" style="margin: 2px 0 18px; color: var(--muted); font-size: .88rem;">【※最終更新日：2026年11月28日】<br>アドオンスキルについてを纏めたページです♬。</p>
+
+            <!-- 基礎と生成 -->
+            <div class="row">
+                <section>
+                    <h2>◇アドオンスキルとは</h2>
+                    <p>通常のクラススキルとは別に、戦闘能力や利便性を強化できるクラスごとのスキルシステムです。</p>
+                    <ul>
+                        <li>使用中のクラスに関係なく効果が出る</li>
+                        <li><b><u>10クラスすべての効果</u></b>を同時に受けられる</li>
+                        <li><b><u>メイン効果1つ＋サブ効果2つ</u></b>で構成</li>
+                        <li>各効果の最大レベルは<b><u>Lv.20</u></b></li>
+                        <li>使わないクラスも含めて強化する価値がある</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>◇生成の手順</h2>
+                    <ol class="steps">
+                        <li><span class="what">クラスカウンターを利用</span></li>
+                        <li><span class="what">「アドオンスキル」を選択</span></li>
+                        <li><span class="what">生成するクラスを選択</span></li>
+                        <li><span class="what">生成方法を選び、素材を消費</span></li>
+                        <li><span class="what">結果を確認し、保存・セット</span></li>
+                    </ol>
+                </section>
+            </div>
+
+            <section>
+                <h2>◇アドオンスキルブースト</h2>
+                <p>各クラスのアドオンスキルを<b><u>一度でも生成</u></b>すると、永続的なブースト効果を得られます。1クラスにつき各+1%、全10クラスで最大+10%です。</p>
+                <div class="boost">
+                    <div class="tile"><span>獲得経験値</span><b>+10%</b></div>
+                    <div class="tile"><span>獲得メセタ</span><b>+10%</b></div>
+                    <div class="tile"><span>レアドロップ倍率</span><b>+10%</b></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>◇生成方法の一覧</h2>
+                <div class="tbl"><table>
+                    <thead><tr><th>生成方法</th><th class="r">最低保証Lv</th><th class="r">必要メセタ</th><th>必要素材</th><th>解放条件</th></tr></thead>
+                    <tbody>
+                        <tr><td>生成1</td><td class="r">Lv.1</td><td class="r">5,000</td><td>キューブ ×1</td><td>—</td></tr>
+                        <tr><td>生成2</td><td class="r">Lv.5</td><td class="r">10,000</td><td>キューブ ×1</td><td>5回生成</td></tr>
+                        <tr><td>生成3</td><td class="r">Lv.10</td><td class="r">50,000</td><td>キューブ ×1</td><td>20回生成</td></tr>
+                        <tr><td>生成4</td><td class="r">Lv.15</td><td class="r">5,000</td><td>キューブ ×100</td><td>20回生成</td></tr>
+                        <tr><td>生成5</td><td class="r">Lv.20</td><td class="r">1,000,000</td><td>マスター ×5</td><td>20回生成</td></tr>
+                    </tbody>
+                </table></div>
+                <p class="note">キューブ＝N-クラスエクスキューブ、マスター＝N-マスターキューブ。入手方法は下記の「必要素材の主な入手方法」を参照してください。</p>
+            </section>
+
+            <!-- 全クラス一覧 -->
+            <section>
+                <h2>◇全クラスのアドオンスキルの一覧</h2>
+                <p class="note">メイン効果はLv.20の値。サブ効果は4種の候補から2種が抽選されます。<span class="legend-pick">緑字</span>は汎用的な厳選候補です。</p>
+                <div class="tbl"><table>
+                    <thead><tr><th>クラス</th><th>メイン効果（Lv.20）</th><th>サブ効果の候補</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="cls"><abbr>Hu</abbr>ハンター</span></td><td>打撃武器威力 <span class="main-v">+5%</span></td>
+                            <td><ul class="subs"><li class="pick">PAチャージ移動速度 +30%</li><li>トライアル参加時PP回復 +20%</li><li>バーン耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Fi</abbr>ファイター</span></td><td>クリティカル威力 <span class="main-v">+10%</span></td>
+                            <td><ul class="subs"><li class="pick">ジャンプ力 +50%</li><li>トライアル参加時PP回復 +20%</li><li>フリーズ耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Ra</abbr>レンジャー</span></td><td>射撃武器威力 <span class="main-v">+5%</span></td>
+                            <td><ul class="subs"><li class="pick">フォトンブラスト威力 +10%</li><li>トライアル参加時HP回復 +20%</li><li>ショック耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Gu</abbr>ガンナー</span></td><td>攻撃時PBゲージ蓄積量 <span class="main-v">+20%</span></td>
+                            <td><ul class="subs"><li class="pick">攻撃時PP回復量 +10%</li><li>トライアル参加時PP回復 +20%</li><li>ミラージュ耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Fo</abbr>フォース</span></td><td>法撃武器威力 <span class="main-v">+5%</span></td>
+                            <td><ul class="subs"><li class="pick">PP自然回復量アップ（最大 +10%）</li><li>トライアル参加時HP回復 +20%</li><li>パニック耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Te</abbr>テクター</span></td><td>PBゲージ自動蓄積量 <span class="main-v">+20%</span></td>
+                            <td><ul class="subs"><li class="pick">ダメージ耐性 +10%</li><li>トライアル参加時PP回復 +20%</li><li>ポイズン耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Br</abbr>ブレイバー</span></td><td>クリティカル率 <span class="main-v">+10%</span></td>
+                            <td><ul class="subs"><li class="pick">レスタサイン回復量 +10%</li><li>トライアル参加時HP回復 +20%</li><li>バーンズ耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Bo</abbr>バウンサー</span></td><td>ダッシュ・グライド中PP回復 <span class="main-v">自然回復量の100%</span></td>
+                            <td><ul class="subs"><li class="pick">ワンモアジャンプ（威力25%）</li><li>トライアル参加時PP回復 +20%</li><li>フリーズ耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Wa</abbr>ウェイカー</span></td><td>最大PP <span class="main-v">+20</span></td>
+                            <td><ul class="subs"><li class="pick">静止状態HP回復 +5%</li><li>トライアル参加時HP回復 +20%</li><li>ショック耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                        <tr><td><span class="cls"><abbr>Sl</abbr>スレイヤー</span></td><td>ダウン時クリティカル率 <span class="main-v">+15%</span></td>
+                            <td><ul class="subs"><li class="pick">PB再使用時間短縮（通常の75%）</li><li>トライアル参加時PP回復 +20%</li><li>ミラージュ耐性 +50%</li><li class="pick">HP +20</li></ul></td></tr>
+                    </tbody>
+                </table></div>
+            </section>
+
+            <!-- 厳選と構成 -->
+            <div class="row">
+                <section>
+                    <h2>◇厳選までの手順</h2>
+                    <ol class="steps">
+                        <li><span class="what">全クラスで生成1を実行</span><span class="why">ブースト最大化（+10%）</span></li>
+                        <li><span class="what">各クラスで生成20回</span><span class="why">全生成方法の解放</span></li>
+                        <li><span class="what">火力系スキルを強化</span><span class="why">メインLv.15以上</span></li>
+                        <li><span class="what">耐久・PP関連を強化</span><span class="why">実戦性能の向上</span></li>
+                        <li><span class="what">全メイン効果を強化</span><span class="why">Lv.18〜20</span></li>
+                        <li><span class="what">有用なサブ効果を厳選</span><span class="why">Lv.15〜20</span></li>
+                        <li><span class="what">理想の効果を保存・セット</span><span class="why">全効果Lv.20</span></li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>◇必要素材の主な入手方法</h2>
+                    <div class="mats">
+                        <div class="mat"><b>N-クラスエクスキューブ</b>レベル上限到達後の経験値、一部クエスト・エネミー、称号報酬など</div>
+                        <div class="mat"><b>N-マスターキューブ</b>イベント報酬、称号報酬、トレジャーショップなど</div>
+                        <div class="mat"><b>N-メセタ</b>デイリータスク、戦闘セクションなど</div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="row">
+                <section>
+                    <h2>◇メイン効果のレベル別効果量</h2>
+                    <p class="note">Lv.20を100%とした場合の目安</p>
+                    <div class="bars">
+                        <div class="bar"><span>Lv.10</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="v">50%</span></div>
+                        <div class="bar"><span>Lv.15</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="v">75%</span></div>
+                        <div class="bar"><span>Lv.18</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="v">90%</span></div>
+                        <div class="bar"><span>Lv.19</span><div class="track"><div class="fill" style="width:95%"></div></div><span class="v">95%</span></div>
+                        <div class="bar max"><span>Lv.20</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">100%</span></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>◇ポイント</h2>
+                    <ul>
+                        <li>Lv.18でも最大の<b>90%</b>の効果を得られる</li>
+                        <li>資金が少ないうちは、1クラスに集中せず<b>全クラスをバランスよく</b>強化する</li>
+                        <li>生成5でも希望のサブ効果が出るとは限らないので、計画的に厳選する</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section>
+                <h2>◇理想のサブ効果構成（例）</h2>
+                <p class="note">高難易度クエストを想定した構成です。</p>
+                <div class="tbl"><table>
+                    <thead><tr><th>クラス</th><th>サブ効果①</th><th>サブ効果②</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="cls"><abbr>Hu</abbr></span></td><td>PAチャージ移動速度</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Fi</abbr></span></td><td>ジャンプ力</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Ra</abbr></span></td><td>PB威力</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Gu</abbr></span></td><td>攻撃時PP回復量</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Fo</abbr></span></td><td>PP自然回復量</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Te</abbr></span></td><td>ダメージ耐性</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Br</abbr></span></td><td>レスタサイン回復量</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Bo</abbr></span></td><td>ワンモアジャンプ</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Wa</abbr></span></td><td>静止状態HP回復</td><td>HPアップ</td></tr>
+                        <tr><td><span class="cls"><abbr>Sl</abbr></span></td><td>PB再使用時間短縮</td><td>HPアップ</td></tr>
+                    </tbody>
+                </table></div>
+                <p class="note">サブ効果②は全クラスとも「HPアップ」です。</p>
+            </section>
+
+            <section>
+                <h2>◇目的別の強化優先順位（例）</h2>
+                <div class="prio">
+                    <div class="box">
+                        <h3>火力重視</h3>
+                        <ol>
+                            <li>Br：クリティカル率</li>
+                            <li>Fi：クリティカル威力</li>
+                            <li>Hu・Ra・Fo：対応武器の威力</li>
+                            <li>Sl：ダウン時クリティカル率</li>
+                            <li>Ra：PB威力</li>
+                        </ol>
+                    </div>
+                    <div class="box">
+                        <h3>耐久重視</h3>
+                        <ol>
+                            <li>Te：ダメージ耐性</li>
+                            <li>全クラス：HPアップ</li>
+                            <li>Br：レスタサイン回復量</li>
+                            <li>Wa：静止状態HP回復</li>
+                            <li>各クラス：状況に応じた状態異常耐性</li>
+                        </ol>
+                    </div>
+                    <div class="box">
+                        <h3>汎用性・快適性重視</h3>
+                        <ol>
+                            <li>Bo：ダッシュ・グライド中PP回復</li>
+                            <li>Wa：最大PP</li>
+                            <li>Gu：攻撃時PP回復量</li>
+                            <li>Fo：PP自然回復量</li>
+                            <li>Sl：PB再使用時間短縮</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 理論値とチェック -->
+            <section>
+                <h2>◇全強化時の主な性能</h2>
+                <p class="note">推奨サブ効果をすべてLv.20にした場合</p>
+                <div class="perf">
+                    <div class="tile"><span>最大HP（20×10クラス）</span><b>+200</b></div>
+                    <div class="tile"><span>最大PP</span><b>+20</b></div>
+                    <div class="tile"><span>ダメージ耐性</span><b>+10%</b></div>
+                    <div class="tile"><span>各武器系統の威力</span><b>+5%</b></div>
+                    <div class="tile"><span>クリティカル威力</span><b>+10%</b></div>
+                    <div class="tile"><span>通常時クリティカル率</span><b>+10%</b></div>
+                    <div class="tile"><span>ダウン時クリティカル率（合計）</span><b>+25%</b></div>
+                    <div class="tile"><span>PB威力</span><b>+10%</b></div>
+                    <div class="tile"><span>攻撃時PP回復量</span><b>+10%</b></div>
+                    <div class="tile"><span>PP自然回復量</span><b>+10%</b></div>
+                    <div class="tile"><span>PB再使用時間</span><b>−25%</b></div>
+                    <div class="tile"><span>レスタサイン回復量</span><b>+10%</b></div>
+                </div>
+            </section>
+
+            <div class="row">
+                <section>
+                    <h2>◇クリティカル時の威力上昇（例）</h2>
+                    <div class="formula">
+                        <div class="note">通常攻撃（武器威力 × クリ威力）</div>
+                        <div class="eq">1.05 × 1.10 = 1.155</div>
+                        <div>→ <span class="res">15.5%</span> の威力上昇</div>
+                    </div>
+                    <div class="formula">
+                        <div class="note">PB使用時（＋PB威力）</div>
+                        <div class="eq">1.05 × 1.10 × 1.10 = 1.2705</div>
+                        <div>→ <span class="res">27.05%</span> の威力上昇</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>◇全クラスを生成5で強化する場合の費用</h2>
+                    <div class="tbl"><table>
+                        <thead><tr><th>項目</th><th class="r">1回あたり</th><th class="r">全10クラス×1回</th></tr></thead>
+                        <tbody>
+                            <tr><td>N-マスターキューブ</td><td class="r">5個</td><td class="r">50個</td></tr>
+                            <tr><td>N-メセタ</td><td class="r">1,000,000</td><td class="r">10,000,000</td></tr>
+                            <tr><td>生成回数</td><td class="r">1回</td><td class="r">計10回</td></tr>
+                        </tbody>
+                    </table></div>
+                    <p class="note">全10クラスの列は、生成方法一覧の1回分の値を10倍した計算値です。</p>
+                    <div class="warn">理想のサブ効果が揃うまでには、追加の生成費用がかかります。</div>
+                </section>
+            </div>
+
+            <section>
+                <h2>◇完成チェックリスト</h2>
+                <ul class="check">
+                    <li><label><input type="checkbox"><span>全10クラスのアドオンスキルを生成</span></label></li>
+                    <li><label><input type="checkbox"><span>アドオンスキルブーストを最大化（+10%）</span></label></li>
+                    <li><label><input type="checkbox"><span>全クラスのメイン効果 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>全クラスのHPアップ Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Ra：PB威力 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Gu：攻撃時PP回復量 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Fo：PP自然回復量 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Te：ダメージ耐性 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Br：レスタサイン回復量 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>Sl：PB再使用時間短縮 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>その他の固有サブ効果 Lv.20</span></label></li>
+                    <li><label><input type="checkbox"><span>使用キャラクターへのセットを確認</span></label></li>
+                </ul>
+            </section>
+        </div>
 
         <!-- 高難易度クエスト -->
         <div class="subContent" id="weaponHard">
